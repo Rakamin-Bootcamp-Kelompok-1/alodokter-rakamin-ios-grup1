@@ -1,0 +1,893 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E97F1CE2748858D00C2366D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CD2748858D00C2366D /* AppDelegate.swift */; };
+		4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CF2748858D00C2366D /* SceneDelegate.swift */; };
+		4E97F1D52748858D00C2366D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E97F1D32748858D00C2366D /* Main.storyboard */; };
+		4E97F1D72748858F00C2366D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E97F1D62748858F00C2366D /* Assets.xcassets */; };
+		4E97F1DA2748858F00C2366D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E97F1D82748858F00C2366D /* LaunchScreen.storyboard */; };
+		4E97F1E52748858F00C2366D /* Alodokter_bootcampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1E42748858F00C2366D /* Alodokter_bootcampTests.swift */; };
+		4E97F1EF2748858F00C2366D /* Alodokter_bootcampUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1EE2748858F00C2366D /* Alodokter_bootcampUITests.swift */; };
+		4E97F1F12748858F00C2366D /* Alodokter_bootcampUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1F02748858F00C2366D /* Alodokter_bootcampUITestsLaunchTests.swift */; };
+		4E97F21327488BAB00C2366D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1FE27488BAA00C2366D /* UIColor.swift */; };
+		4E97F21427488BAB00C2366D /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1FF27488BAA00C2366D /* DeviceHelper.swift */; };
+		4E97F21527488BAB00C2366D /* Utiliy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F20027488BAA00C2366D /* Utiliy.swift */; };
+		4E97F21627488BAB00C2366D /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E97F20327488BAA00C2366D /* SplashScreenViewController.xib */; };
+		4E97F21727488BAB00C2366D /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F20427488BAA00C2366D /* SplashScreenViewController.swift */; };
+		4E97F21827488BAB00C2366D /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E97F20627488BAA00C2366D /* MainViewController.xib */; };
+		4E97F21927488BAB00C2366D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F20727488BAA00C2366D /* MainViewController.swift */; };
+		4E97F21A27488BAB00C2366D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F20827488BAA00C2366D /* MainViewModel.swift */; };
+		4E97F21B27488BAB00C2366D /* AlbumsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E97F20A27488BAA00C2366D /* AlbumsCell.xib */; };
+		4E97F21C27488BAB00C2366D /* AlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F20B27488BAA00C2366D /* AlbumsCell.swift */; };
+		4E97F21D27488BAB00C2366D /* DummyAlbumsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F20D27488BAA00C2366D /* DummyAlbumsModel.swift */; };
+		4E97F21E27488BAB00C2366D /* DummyAlbumsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F20F27488BAB00C2366D /* DummyAlbumsService.swift */; };
+		4E97F21F27488BAB00C2366D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F21127488BAB00C2366D /* BaseViewController.swift */; };
+		4E97F22027488BAB00C2366D /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F21227488BAB00C2366D /* BaseService.swift */; };
+		6778426BC0821FD950B0921A /* Pods_Alodokter_bootcampTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381744D040FF8C533B3155AB /* Pods_Alodokter_bootcampTests.framework */; };
+		8A46F6E6C05003DC0F5BD809 /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8947D88ACBB42AFDC870192F /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework */; };
+		FAB7B29BC482E4895EAD1233 /* Pods_Alodokter_bootcamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1C8877C0AD54B5F4660C13 /* Pods_Alodokter_bootcamp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E97F1E12748858F00C2366D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E97F1C22748858D00C2366D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E97F1C92748858D00C2366D;
+			remoteInfo = Alodokter_bootcamp;
+		};
+		4E97F1EB2748858F00C2366D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E97F1C22748858D00C2366D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E97F1C92748858D00C2366D;
+			remoteInfo = Alodokter_bootcamp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0723D39FFFC9D19151A887CE /* Pods-Alodokter_bootcampTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcampTests.release.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcampTests/Pods-Alodokter_bootcampTests.release.xcconfig"; sourceTree = "<group>"; };
+		1598CDD2261946A8F0BF702D /* Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1AD78B1351395AD1E988703A /* Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.release.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.release.xcconfig"; sourceTree = "<group>"; };
+		28344C9029D69F7FA96C2C4F /* Pods-Alodokter_bootcamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp.release.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp.release.xcconfig"; sourceTree = "<group>"; };
+		381744D040FF8C533B3155AB /* Pods_Alodokter_bootcampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcampTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44D1D72584417F3B8420172F /* Pods-Alodokter_bootcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp.debug.xcconfig"; sourceTree = "<group>"; };
+		4E97F1CA2748858D00C2366D /* Alodokter_bootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alodokter_bootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E97F1CD2748858D00C2366D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E97F1CF2748858D00C2366D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4E97F1D42748858D00C2366D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4E97F1D62748858F00C2366D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E97F1D92748858F00C2366D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4E97F1DB2748858F00C2366D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E97F1E02748858F00C2366D /* Alodokter_bootcampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Alodokter_bootcampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E97F1E42748858F00C2366D /* Alodokter_bootcampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alodokter_bootcampTests.swift; sourceTree = "<group>"; };
+		4E97F1EA2748858F00C2366D /* Alodokter_bootcampUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Alodokter_bootcampUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E97F1EE2748858F00C2366D /* Alodokter_bootcampUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alodokter_bootcampUITests.swift; sourceTree = "<group>"; };
+		4E97F1F02748858F00C2366D /* Alodokter_bootcampUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alodokter_bootcampUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4E97F1FE27488BAA00C2366D /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		4E97F1FF27488BAA00C2366D /* DeviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
+		4E97F20027488BAA00C2366D /* Utiliy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utiliy.swift; sourceTree = "<group>"; };
+		4E97F20327488BAA00C2366D /* SplashScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
+		4E97F20427488BAA00C2366D /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		4E97F20627488BAA00C2366D /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		4E97F20727488BAA00C2366D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4E97F20827488BAA00C2366D /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		4E97F20A27488BAA00C2366D /* AlbumsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumsCell.xib; sourceTree = "<group>"; };
+		4E97F20B27488BAA00C2366D /* AlbumsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsCell.swift; sourceTree = "<group>"; };
+		4E97F20D27488BAA00C2366D /* DummyAlbumsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyAlbumsModel.swift; sourceTree = "<group>"; };
+		4E97F20F27488BAB00C2366D /* DummyAlbumsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyAlbumsService.swift; sourceTree = "<group>"; };
+		4E97F21127488BAB00C2366D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4E97F21227488BAB00C2366D /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		8947D88ACBB42AFDC870192F /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A1C8877C0AD54B5F4660C13 /* Pods_Alodokter_bootcamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8E618D3DF91A64C2A1C5B95 /* Pods-Alodokter_bootcampTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcampTests.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcampTests/Pods-Alodokter_bootcampTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E97F1C72748858D00C2366D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAB7B29BC482E4895EAD1233 /* Pods_Alodokter_bootcamp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E97F1DD2748858F00C2366D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6778426BC0821FD950B0921A /* Pods_Alodokter_bootcampTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E97F1E72748858F00C2366D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A46F6E6C05003DC0F5BD809 /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E97F1C12748858D00C2366D = {
+			isa = PBXGroup;
+			children = (
+				4E97F1CC2748858D00C2366D /* Alodokter_bootcamp */,
+				4E97F1E32748858F00C2366D /* Alodokter_bootcampTests */,
+				4E97F1ED2748858F00C2366D /* Alodokter_bootcampUITests */,
+				4E97F1CB2748858D00C2366D /* Products */,
+				79DC3765A9DDCDAC0C607DE7 /* Pods */,
+				D29C455D0EB5B2BA2B5C0B31 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4E97F1CB2748858D00C2366D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E97F1CA2748858D00C2366D /* Alodokter_bootcamp.app */,
+				4E97F1E02748858F00C2366D /* Alodokter_bootcampTests.xctest */,
+				4E97F1EA2748858F00C2366D /* Alodokter_bootcampUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E97F1CC2748858D00C2366D /* Alodokter_bootcamp */ = {
+			isa = PBXGroup;
+			children = (
+				4E97F21027488BAB00C2366D /* Base */,
+				4E97F20127488BAA00C2366D /* Feature */,
+				4E97F1FD27488BAA00C2366D /* Helper */,
+				4E97F20C27488BAA00C2366D /* Model */,
+				4E97F20E27488BAB00C2366D /* Service */,
+				4E97F1CD2748858D00C2366D /* AppDelegate.swift */,
+				4E97F1CF2748858D00C2366D /* SceneDelegate.swift */,
+				4E97F1D32748858D00C2366D /* Main.storyboard */,
+				4E97F1D62748858F00C2366D /* Assets.xcassets */,
+				4E97F1D82748858F00C2366D /* LaunchScreen.storyboard */,
+				4E97F1DB2748858F00C2366D /* Info.plist */,
+			);
+			path = Alodokter_bootcamp;
+			sourceTree = "<group>";
+		};
+		4E97F1E32748858F00C2366D /* Alodokter_bootcampTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E97F1E42748858F00C2366D /* Alodokter_bootcampTests.swift */,
+			);
+			path = Alodokter_bootcampTests;
+			sourceTree = "<group>";
+		};
+		4E97F1ED2748858F00C2366D /* Alodokter_bootcampUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4E97F1EE2748858F00C2366D /* Alodokter_bootcampUITests.swift */,
+				4E97F1F02748858F00C2366D /* Alodokter_bootcampUITestsLaunchTests.swift */,
+			);
+			path = Alodokter_bootcampUITests;
+			sourceTree = "<group>";
+		};
+		4E97F1FD27488BAA00C2366D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4E97F1FE27488BAA00C2366D /* UIColor.swift */,
+				4E97F1FF27488BAA00C2366D /* DeviceHelper.swift */,
+				4E97F20027488BAA00C2366D /* Utiliy.swift */,
+			);
+			path = Helper;
+			sourceTree = SOURCE_ROOT;
+		};
+		4E97F20127488BAA00C2366D /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				4E97F20227488BAA00C2366D /* SplashScreen */,
+				4E97F20527488BAA00C2366D /* MainView */,
+			);
+			path = Feature;
+			sourceTree = SOURCE_ROOT;
+		};
+		4E97F20227488BAA00C2366D /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4E97F20327488BAA00C2366D /* SplashScreenViewController.xib */,
+				4E97F20427488BAA00C2366D /* SplashScreenViewController.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		4E97F20527488BAA00C2366D /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				4E97F20627488BAA00C2366D /* MainViewController.xib */,
+				4E97F20727488BAA00C2366D /* MainViewController.swift */,
+				4E97F20827488BAA00C2366D /* MainViewModel.swift */,
+				4E97F20927488BAA00C2366D /* CustomView */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		4E97F20927488BAA00C2366D /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				4E97F20A27488BAA00C2366D /* AlbumsCell.xib */,
+				4E97F20B27488BAA00C2366D /* AlbumsCell.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		4E97F20C27488BAA00C2366D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E97F20D27488BAA00C2366D /* DummyAlbumsModel.swift */,
+			);
+			path = Model;
+			sourceTree = SOURCE_ROOT;
+		};
+		4E97F20E27488BAB00C2366D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4E97F20F27488BAB00C2366D /* DummyAlbumsService.swift */,
+			);
+			path = Service;
+			sourceTree = SOURCE_ROOT;
+		};
+		4E97F21027488BAB00C2366D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4E97F21127488BAB00C2366D /* BaseViewController.swift */,
+				4E97F21227488BAB00C2366D /* BaseService.swift */,
+			);
+			path = Base;
+			sourceTree = SOURCE_ROOT;
+		};
+		79DC3765A9DDCDAC0C607DE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44D1D72584417F3B8420172F /* Pods-Alodokter_bootcamp.debug.xcconfig */,
+				28344C9029D69F7FA96C2C4F /* Pods-Alodokter_bootcamp.release.xcconfig */,
+				1598CDD2261946A8F0BF702D /* Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.debug.xcconfig */,
+				1AD78B1351395AD1E988703A /* Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.release.xcconfig */,
+				F8E618D3DF91A64C2A1C5B95 /* Pods-Alodokter_bootcampTests.debug.xcconfig */,
+				0723D39FFFC9D19151A887CE /* Pods-Alodokter_bootcampTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D29C455D0EB5B2BA2B5C0B31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A1C8877C0AD54B5F4660C13 /* Pods_Alodokter_bootcamp.framework */,
+				8947D88ACBB42AFDC870192F /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework */,
+				381744D040FF8C533B3155AB /* Pods_Alodokter_bootcampTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E97F1C92748858D00C2366D /* Alodokter_bootcamp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E97F1F42748858F00C2366D /* Build configuration list for PBXNativeTarget "Alodokter_bootcamp" */;
+			buildPhases = (
+				FC8700CCAB52942ACB5E21D9 /* [CP] Check Pods Manifest.lock */,
+				4E97F1C62748858D00C2366D /* Sources */,
+				4E97F1C72748858D00C2366D /* Frameworks */,
+				4E97F1C82748858D00C2366D /* Resources */,
+				1E3A02D065E9F576C93FAAD7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Alodokter_bootcamp;
+			productName = Alodokter_bootcamp;
+			productReference = 4E97F1CA2748858D00C2366D /* Alodokter_bootcamp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4E97F1DF2748858F00C2366D /* Alodokter_bootcampTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E97F1F72748858F00C2366D /* Build configuration list for PBXNativeTarget "Alodokter_bootcampTests" */;
+			buildPhases = (
+				C6FE97893E8C672CC3A890F3 /* [CP] Check Pods Manifest.lock */,
+				4E97F1DC2748858F00C2366D /* Sources */,
+				4E97F1DD2748858F00C2366D /* Frameworks */,
+				4E97F1DE2748858F00C2366D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E97F1E22748858F00C2366D /* PBXTargetDependency */,
+			);
+			name = Alodokter_bootcampTests;
+			productName = Alodokter_bootcampTests;
+			productReference = 4E97F1E02748858F00C2366D /* Alodokter_bootcampTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4E97F1E92748858F00C2366D /* Alodokter_bootcampUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E97F1FA2748858F00C2366D /* Build configuration list for PBXNativeTarget "Alodokter_bootcampUITests" */;
+			buildPhases = (
+				2875ECC95CE5735F8F8155A8 /* [CP] Check Pods Manifest.lock */,
+				4E97F1E62748858F00C2366D /* Sources */,
+				4E97F1E72748858F00C2366D /* Frameworks */,
+				4E97F1E82748858F00C2366D /* Resources */,
+				0F5597AF837FAB54C2E4BFFD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E97F1EC2748858F00C2366D /* PBXTargetDependency */,
+			);
+			name = Alodokter_bootcampUITests;
+			productName = Alodokter_bootcampUITests;
+			productReference = 4E97F1EA2748858F00C2366D /* Alodokter_bootcampUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E97F1C22748858D00C2366D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					4E97F1C92748858D00C2366D = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					4E97F1DF2748858F00C2366D = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 4E97F1C92748858D00C2366D;
+					};
+					4E97F1E92748858F00C2366D = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 4E97F1C92748858D00C2366D;
+					};
+				};
+			};
+			buildConfigurationList = 4E97F1C52748858D00C2366D /* Build configuration list for PBXProject "Alodokter_bootcamp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4E97F1C12748858D00C2366D;
+			productRefGroup = 4E97F1CB2748858D00C2366D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E97F1C92748858D00C2366D /* Alodokter_bootcamp */,
+				4E97F1DF2748858F00C2366D /* Alodokter_bootcampTests */,
+				4E97F1E92748858F00C2366D /* Alodokter_bootcampUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E97F1C82748858D00C2366D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E97F1DA2748858F00C2366D /* LaunchScreen.storyboard in Resources */,
+				4E97F21627488BAB00C2366D /* SplashScreenViewController.xib in Resources */,
+				4E97F21827488BAB00C2366D /* MainViewController.xib in Resources */,
+				4E97F21B27488BAB00C2366D /* AlbumsCell.xib in Resources */,
+				4E97F1D72748858F00C2366D /* Assets.xcassets in Resources */,
+				4E97F1D52748858D00C2366D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E97F1DE2748858F00C2366D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E97F1E82748858F00C2366D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F5597AF837FAB54C2E4BFFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E3A02D065E9F576C93FAAD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2875ECC95CE5735F8F8155A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6FE97893E8C672CC3A890F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Alodokter_bootcampTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC8700CCAB52942ACB5E21D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Alodokter_bootcamp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E97F1C62748858D00C2366D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E97F21F27488BAB00C2366D /* BaseViewController.swift in Sources */,
+				4E97F21D27488BAB00C2366D /* DummyAlbumsModel.swift in Sources */,
+				4E97F21327488BAB00C2366D /* UIColor.swift in Sources */,
+				4E97F22027488BAB00C2366D /* BaseService.swift in Sources */,
+				4E97F21727488BAB00C2366D /* SplashScreenViewController.swift in Sources */,
+				4E97F21E27488BAB00C2366D /* DummyAlbumsService.swift in Sources */,
+				4E97F21427488BAB00C2366D /* DeviceHelper.swift in Sources */,
+				4E97F1CE2748858D00C2366D /* AppDelegate.swift in Sources */,
+				4E97F21C27488BAB00C2366D /* AlbumsCell.swift in Sources */,
+				4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */,
+				4E97F21527488BAB00C2366D /* Utiliy.swift in Sources */,
+				4E97F21927488BAB00C2366D /* MainViewController.swift in Sources */,
+				4E97F21A27488BAB00C2366D /* MainViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E97F1DC2748858F00C2366D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E97F1E52748858F00C2366D /* Alodokter_bootcampTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E97F1E62748858F00C2366D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E97F1EF2748858F00C2366D /* Alodokter_bootcampUITests.swift in Sources */,
+				4E97F1F12748858F00C2366D /* Alodokter_bootcampUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E97F1E22748858F00C2366D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E97F1C92748858D00C2366D /* Alodokter_bootcamp */;
+			targetProxy = 4E97F1E12748858F00C2366D /* PBXContainerItemProxy */;
+		};
+		4E97F1EC2748858F00C2366D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E97F1C92748858D00C2366D /* Alodokter_bootcamp */;
+			targetProxy = 4E97F1EB2748858F00C2366D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4E97F1D32748858D00C2366D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E97F1D42748858D00C2366D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4E97F1D82748858F00C2366D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E97F1D92748858F00C2366D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E97F1F22748858F00C2366D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4E97F1F32748858F00C2366D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E97F1F52748858F00C2366D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44D1D72584417F3B8420172F /* Pods-Alodokter_bootcamp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Alodokter_bootcamp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E97F1F62748858F00C2366D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28344C9029D69F7FA96C2C4F /* Pods-Alodokter_bootcamp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Alodokter_bootcamp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4E97F1F82748858F00C2366D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8E618D3DF91A64C2A1C5B95 /* Pods-Alodokter_bootcampTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp.Alodokter-bootcampTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Alodokter_bootcamp.app/Alodokter_bootcamp";
+			};
+			name = Debug;
+		};
+		4E97F1F92748858F00C2366D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0723D39FFFC9D19151A887CE /* Pods-Alodokter_bootcampTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp.Alodokter-bootcampTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Alodokter_bootcamp.app/Alodokter_bootcamp";
+			};
+			name = Release;
+		};
+		4E97F1FB2748858F00C2366D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1598CDD2261946A8F0BF702D /* Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp.Alodokter-bootcampUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Alodokter_bootcamp;
+			};
+			name = Debug;
+		};
+		4E97F1FC2748858F00C2366D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AD78B1351395AD1E988703A /* Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp.Alodokter-bootcampUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Alodokter_bootcamp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E97F1C52748858D00C2366D /* Build configuration list for PBXProject "Alodokter_bootcamp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E97F1F22748858F00C2366D /* Debug */,
+				4E97F1F32748858F00C2366D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E97F1F42748858F00C2366D /* Build configuration list for PBXNativeTarget "Alodokter_bootcamp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E97F1F52748858F00C2366D /* Debug */,
+				4E97F1F62748858F00C2366D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E97F1F72748858F00C2366D /* Build configuration list for PBXNativeTarget "Alodokter_bootcampTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E97F1F82748858F00C2366D /* Debug */,
+				4E97F1F92748858F00C2366D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E97F1FA2748858F00C2366D /* Build configuration list for PBXNativeTarget "Alodokter_bootcampUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E97F1FB2748858F00C2366D /* Debug */,
+				4E97F1FC2748858F00C2366D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E97F1C22748858D00C2366D /* Project object */;
+}

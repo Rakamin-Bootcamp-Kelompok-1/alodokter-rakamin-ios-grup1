@@ -10,7 +10,7 @@ import UIKit
 
 typealias callBack = () -> ()
 
-class BaseViewController : UIViewController {
+class BaseViewController : UIViewController, UIGestureRecognizerDelegate {
     var spinnerContainer: UIView!
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var labelledButton : UIButton = UIButton()

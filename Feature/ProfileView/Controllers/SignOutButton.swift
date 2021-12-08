@@ -11,7 +11,6 @@ class SignOutButton: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var buttonOutlet: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
     
     // For using CustomView in code
     override init(frame: CGRect) {

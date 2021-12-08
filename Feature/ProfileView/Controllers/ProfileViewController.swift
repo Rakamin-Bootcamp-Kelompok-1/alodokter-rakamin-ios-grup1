@@ -18,10 +18,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        prepareUI()
-    }
-    
-    override func viewDidLayoutSubviews() {
         prepareUI()
     }
     
@@ -30,15 +26,15 @@ class ProfileViewController: UIViewController {
             // Navigation Bar Title
             guard let navBarTitleFont = UIFont(name: "Nunito-SemiBold", size: 17) else {
                 fatalError("""
-                        Failed to load the "CustomFont-Light" font.
+                        Failed to load the "Nunito-SemiBold" font.
                         Make sure the font file is included in the project and the font name is spelled correctly.
                         """
                     )
             }
             
-            let attributes = [NSAttributedString.Key.font: UIFontMetrics(forTextStyle: .headline).scaledFont(for: navBarTitleFont)]
+            let navBarTitleAttributes = [NSAttributedString.Key.font: UIFontMetrics(forTextStyle: .headline).scaledFont(for: navBarTitleFont)]
             
-            self.navigationController?.navigationBar.titleTextAttributes = attributes
+            self.navigationController?.navigationBar.titleTextAttributes = navBarTitleAttributes
             self.title = "My Profile"
             
             
@@ -102,13 +98,23 @@ class ProfileViewController: UIViewController {
             // Sign Out Button
             signOutButton.contentView.layer.cornerRadius = 5
             
-//            SignOutButton.layer.shadowPath = UIBezierPath(rect: profileHeaderView.bounds).cgPath
+            signOutButton.layer.shadowPath = UIBezierPath(rect: profileHeaderView.bounds).cgPath
             signOutButton.contentView.layer.shadowColor = UIColor.black.cgColor
             signOutButton.contentView.layer.shadowOpacity = 0.25
             signOutButton.contentView.layer.shadowOffset = .zero
             signOutButton.contentView.layer.shadowRadius = 4
             
-            signOutButton.titleLabel.text = "Sign Out"
+            guard let signOutButtonFont = UIFont(name: "Nunito-Regular", size: 17) else {
+                fatalError("""
+                        Failed to load the "Nunito-Regular" font.
+                        Make sure the font file is included in the project and the font name is spelled correctly.
+                        """
+                    )
+            }
+            
+            let signOutButtonAttributes = NSAttributedString(string: "Sign Out", attributes: [NSAttributedString.Key.font: UIFontMetrics(forTextStyle: .body).scaledFont(for: signOutButtonFont)])
+            
+            signOutButton.buttonOutlet.setAttributedTitle(signOutButtonAttributes, for: .normal)
             
         } else {
             // Fallback on earlier versions

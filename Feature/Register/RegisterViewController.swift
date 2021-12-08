@@ -53,13 +53,6 @@ class RegisterViewController: BaseViewController {
     }
     
     @IBAction func actionBtnSignUp(_ sender: Any) {
-        guard let email = emailTxtField.text, email != "" else {
-            let alertController = UIAlertController(title: "Error" , message: "Email is Require", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
-            alertController.addAction(alertAction)
-            self.present(alertController, animated: true, completion: nil)
-            return
-        }
         guard let name = nameTxtField.text, name != "" else {
             let alertController = UIAlertController(title: "Error" , message: "Full Name is Require", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
@@ -67,8 +60,29 @@ class RegisterViewController: BaseViewController {
             self.present(alertController, animated: true, completion: nil)
             return
         }
+        guard let email = emailTxtField.text, email != "" else {
+            let alertController = UIAlertController(title: "Error" , message: "Email is Require", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        guard let date = dateTxtField.text, date != "" else {
+            let alertController = UIAlertController(title: "Error" , message: "Date is Require", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
         guard let phone = phoneTxtField.text, phone != "" else {
             let alertController = UIAlertController(title: "Error" , message: "Phone Number is Require", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        guard let gender = genderTxtField.text, gender != "" else {
+            let alertController = UIAlertController(title: "Error" , message: "Gender is Require", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
             alertController.addAction(alertAction)
             self.present(alertController, animated: true, completion: nil)
@@ -94,7 +108,7 @@ class RegisterViewController: BaseViewController {
             alertController.addAction(alertAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
-            
+            print("Register")
         }
     }
     func btnShowPassword() {

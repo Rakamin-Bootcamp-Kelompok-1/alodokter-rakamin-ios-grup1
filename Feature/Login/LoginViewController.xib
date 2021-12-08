@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
+            <connections>
+                <outlet property="btnForgot" destination="kcD-Gx-dEx" id="77j-um-ueq"/>
+                <outlet property="btnLogin" destination="Eza-Fs-WQw" id="9kT-Nt-vGh"/>
+                <outlet property="btnSignUp" destination="kdK-yS-9na" id="ogN-Oz-SnC"/>
+                <outlet property="emailTxtField" destination="zdx-X1-g5p" id="4oz-ET-0DZ"/>
+                <outlet property="passwordTxtField" destination="v7b-jL-9ZO" id="oJu-fX-02S"/>
+                <outlet property="view" destination="Lki-6n-ccU" id="Aql-r6-iMw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Lki-6n-ccU">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaE-PX-PXU">
+                    <rect key="frame" x="20" y="94" width="374" height="82"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Welcome  In The App!">
+                            <attributes>
+                                <font key="NSFont" size="35" name="Poppins-Regular"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="95h-Qn-4sw">
+                    <rect key="frame" x="20" y="256" width="374" height="175"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-X1-g5p">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="0RW-nK-Qj2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7b-jL-9ZO">
+                            <rect key="frame" x="0.0" y="65" width="374" height="45"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eza-Fs-WQw">
+                            <rect key="frame" x="0.0" y="130" width="374" height="45"/>
+                            <color key="backgroundColor" red="0.27450980392156865" green="0.63921568627450975" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Login">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name="Poppins-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="baseForegroundColor" red="0.08235294118" green="0.078431372550000003" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="actionBtnLogin:" destination="-1" eventType="touchUpInside" id="Pae-Fz-79Y"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8m-AZ-6hy">
+                    <rect key="frame" x="107" y="819.5" width="200" height="20.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="eg8-ap-3CR"/>
+                        <constraint firstAttribute="height" constant="20.5" id="m3h-dd-stT"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="Don't Have an Account?">
+                            <attributes>
+                                <font key="NSFont" size="17" name="Poppins-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdK-yS-9na">
+                    <rect key="frame" x="157" y="845" width="100" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="3jX-a8-DQU"/>
+                        <constraint firstAttribute="width" constant="100" id="ecj-BR-4Q8"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Sign Up">
+                                <attributes>
+                                    <color key="NSColor" red="0.28977522249999998" green="0.64235186580000003" blue="0.97258621450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <font key="NSFont" size="14" name="Poppins-Regular"/>
+                                    <integer key="NSUnderline" value="1"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <color key="baseForegroundColor" red="0.27450980390000002" green="0.63921568630000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="actionBtnSignUp:" destination="-1" eventType="touchUpInside" id="VHb-eA-9Xt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcD-Gx-dEx">
+                    <rect key="frame" x="122" y="446" width="170" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="goT-rQ-njo"/>
+                        <constraint firstAttribute="height" constant="31" id="yJd-b3-R6d"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" subtitle="">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Forgot Password">
+                                <attributes>
+                                    <font key="NSFont" size="14" name="Poppins-Regular"/>
+                                    <integer key="NSUnderline" value="1"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <color key="baseForegroundColor" red="0.27450980392156865" green="0.63921568627450975" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="actionBtnForgot:" destination="-1" eventType="touchUpInside" id="6eh-AJ-Ko6"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="uUZ-Qi-izC"/>
+            <color key="backgroundColor" red="0.50196078431372548" green="0.80784313725490198" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="kcD-Gx-dEx" firstAttribute="centerX" secondItem="Lki-6n-ccU" secondAttribute="centerX" id="5M9-B3-YgB"/>
+                <constraint firstItem="95h-Qn-4sw" firstAttribute="leading" secondItem="uUZ-Qi-izC" secondAttribute="leading" constant="20" id="9lB-I4-Ppc"/>
+                <constraint firstItem="95h-Qn-4sw" firstAttribute="top" secondItem="JaE-PX-PXU" secondAttribute="bottom" constant="80" id="Fsk-4K-ufO"/>
+                <constraint firstAttribute="bottom" secondItem="kdK-yS-9na" secondAttribute="bottom" constant="20" id="Sh6-ha-Tby"/>
+                <constraint firstItem="x8m-AZ-6hy" firstAttribute="centerX" secondItem="Lki-6n-ccU" secondAttribute="centerX" id="TMl-LT-jhV"/>
+                <constraint firstItem="JaE-PX-PXU" firstAttribute="top" secondItem="uUZ-Qi-izC" secondAttribute="top" constant="50" id="TbR-B2-WS7"/>
+                <constraint firstItem="kcD-Gx-dEx" firstAttribute="top" secondItem="95h-Qn-4sw" secondAttribute="bottom" constant="15" id="ePz-ze-Gyu"/>
+                <constraint firstItem="uUZ-Qi-izC" firstAttribute="trailing" secondItem="95h-Qn-4sw" secondAttribute="trailing" constant="20" id="fyd-fE-GkI"/>
+                <constraint firstItem="kdK-yS-9na" firstAttribute="top" secondItem="x8m-AZ-6hy" secondAttribute="bottom" constant="5" id="l3f-2h-MOI"/>
+                <constraint firstItem="uUZ-Qi-izC" firstAttribute="trailing" secondItem="JaE-PX-PXU" secondAttribute="trailing" constant="20" id="lgj-Kt-Fx6"/>
+                <constraint firstItem="kdK-yS-9na" firstAttribute="centerX" secondItem="Lki-6n-ccU" secondAttribute="centerX" id="nzG-Lk-bD4"/>
+                <constraint firstItem="JaE-PX-PXU" firstAttribute="leading" secondItem="uUZ-Qi-izC" secondAttribute="leading" constant="20" id="vSq-bN-Uuf"/>
+            </constraints>
+            <point key="canvasLocation" x="218.84057971014494" y="117.85714285714285"/>
+        </view>
+    </objects>
+</document>

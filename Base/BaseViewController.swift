@@ -10,7 +10,7 @@ import UIKit
 
 typealias callBack = () -> ()
 
-class BaseViewController : UIViewController, UIGestureRecognizerDelegate {
+class BaseViewController : UIViewController {
     var spinnerContainer: UIView!
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var labelledButton : UIButton = UIButton()
@@ -18,10 +18,9 @@ class BaseViewController : UIViewController, UIGestureRecognizerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //self.tabBarController?.setTabBar(hidden: true)
         self.navigationController?.isNavigationBarHidden = true
     }
-    
-    
     
     func onBackPressed() {
         self.navigationController?.popViewController(animated: true)

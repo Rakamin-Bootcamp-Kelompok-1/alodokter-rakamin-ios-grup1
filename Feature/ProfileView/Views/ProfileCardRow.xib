@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileCardRow" customModule="Alodokter_bootcamp" customModuleProvider="target">
             <connections>
+                <outlet property="buttonOutlet" destination="YnJ-xp-bgT" id="fqg-aa-NHX"/>
                 <outlet property="chevronImageView" destination="7fm-aI-LO4" id="nCy-ZG-3XW"/>
                 <outlet property="contentView" destination="woS-CQ-jKv" id="JQO-ui-X3R"/>
                 <outlet property="iconImageView" destination="qaW-oM-pbg" id="Ulw-eE-919"/>
@@ -28,6 +29,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnJ-xp-bgT">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
+                </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qaW-oM-pbg">
                     <rect key="frame" x="16" y="7" width="30" height="30"/>
                     <constraints>
@@ -55,9 +62,13 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="JqP-6g-7Ax" firstAttribute="trailing" secondItem="7fm-aI-LO4" secondAttribute="trailing" constant="16" id="0RW-GY-7YS"/>
+                <constraint firstItem="JqP-6g-7Ax" firstAttribute="bottom" secondItem="YnJ-xp-bgT" secondAttribute="bottom" id="2M8-T9-HDq"/>
+                <constraint firstItem="YnJ-xp-bgT" firstAttribute="top" secondItem="JqP-6g-7Ax" secondAttribute="top" id="930-7Y-5zq"/>
                 <constraint firstItem="qaW-oM-pbg" firstAttribute="leading" secondItem="JqP-6g-7Ax" secondAttribute="leading" constant="16" id="JjR-AM-hd8"/>
+                <constraint firstItem="JqP-6g-7Ax" firstAttribute="trailing" secondItem="YnJ-xp-bgT" secondAttribute="trailing" id="TcR-Fx-Nec"/>
                 <constraint firstItem="QmF-XK-v8S" firstAttribute="centerY" secondItem="qaW-oM-pbg" secondAttribute="centerY" id="dLW-o4-aEd"/>
                 <constraint firstItem="QmF-XK-v8S" firstAttribute="leading" secondItem="qaW-oM-pbg" secondAttribute="trailing" constant="16" id="mlZ-Gz-AmM"/>
+                <constraint firstItem="YnJ-xp-bgT" firstAttribute="leading" secondItem="JqP-6g-7Ax" secondAttribute="leading" id="ogb-OG-SfL"/>
                 <constraint firstItem="qaW-oM-pbg" firstAttribute="centerY" secondItem="JqP-6g-7Ax" secondAttribute="centerY" id="rPX-KC-Pez"/>
                 <constraint firstItem="7fm-aI-LO4" firstAttribute="centerY" secondItem="QmF-XK-v8S" secondAttribute="centerY" id="u3a-N4-3eU"/>
             </constraints>

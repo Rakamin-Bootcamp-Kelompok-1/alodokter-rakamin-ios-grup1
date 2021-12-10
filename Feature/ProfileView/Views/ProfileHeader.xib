@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+        <array key="Nunito-SemiBold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileHeader" customModule="Alodokter_bootcamp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iTJ-ZZ-cRG" id="jLD-1v-yMS"/>
+                <outlet property="profileImageView" destination="UJY-Gn-fWD" id="Ndb-G2-whf"/>
+                <outlet property="profileNameLabel" destination="VQ2-Sh-33B" id="Hy5-Ev-krh"/>
+                <outlet property="profilePhoneNumberLabel" destination="nN1-3I-CI9" id="JjI-6t-ykt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iTJ-ZZ-cRG" userLabel="Content View">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UJY-Gn-fWD" userLabel="Profile Image View">
+                    <rect key="frame" x="16" y="423" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="YQ0-am-0Ip"/>
+                        <constraint firstAttribute="height" constant="60" id="eBh-An-tWy"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exd-0q-Slp">
+                    <rect key="frame" x="84" y="417" width="314" height="72"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQ2-Sh-33B" userLabel="Profile Name Label">
+                            <rect key="frame" x="0.0" y="16" width="306" height="23.5"/>
+                            <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nN1-3I-CI9" userLabel="Profile Phone Number Label">
+                            <rect key="frame" x="0.0" y="38" width="306" height="18"/>
+                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
+                            <color key="textColor" systemColor="systemGrayColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="nN1-3I-CI9" secondAttribute="bottom" constant="16" id="2Dg-P3-cLY"/>
+                        <constraint firstAttribute="trailing" secondItem="VQ2-Sh-33B" secondAttribute="trailing" constant="8" id="i52-Pm-Pgv"/>
+                        <constraint firstAttribute="trailing" secondItem="nN1-3I-CI9" secondAttribute="trailing" constant="8" id="jZU-SK-LDC"/>
+                        <constraint firstItem="VQ2-Sh-33B" firstAttribute="leading" secondItem="exd-0q-Slp" secondAttribute="leading" id="lrv-j8-40R"/>
+                        <constraint firstItem="VQ2-Sh-33B" firstAttribute="top" secondItem="exd-0q-Slp" secondAttribute="top" constant="16" id="tCO-xX-z0K"/>
+                        <constraint firstItem="nN1-3I-CI9" firstAttribute="leading" secondItem="exd-0q-Slp" secondAttribute="leading" id="vCn-Ub-GNA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Cej-xk-SfA"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="exd-0q-Slp" firstAttribute="centerY" secondItem="UJY-Gn-fWD" secondAttribute="centerY" id="JRn-yu-kjF"/>
+                <constraint firstItem="UJY-Gn-fWD" firstAttribute="leading" secondItem="Cej-xk-SfA" secondAttribute="leading" constant="16" id="O5d-60-MB2"/>
+                <constraint firstItem="UJY-Gn-fWD" firstAttribute="centerY" secondItem="Cej-xk-SfA" secondAttribute="centerY" id="RD3-99-6p1"/>
+                <constraint firstItem="Cej-xk-SfA" firstAttribute="trailing" secondItem="exd-0q-Slp" secondAttribute="trailing" constant="16" id="SRn-uA-rlZ"/>
+                <constraint firstItem="exd-0q-Slp" firstAttribute="height" secondItem="UJY-Gn-fWD" secondAttribute="height" multiplier="1.2" id="oa9-B3-fDV"/>
+                <constraint firstItem="exd-0q-Slp" firstAttribute="leading" secondItem="UJY-Gn-fWD" secondAttribute="trailing" constant="8" id="yFN-Ll-6HX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="36.231884057971016" y="243.08035714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileCard" customModule="Alodokter_bootcamp" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="XPd-rj-u3V" id="PaG-QJ-Zee"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="S3m-o2-tVY"/>
+                <outlet property="headerLabel" destination="qIP-oA-81h" id="CmH-Nt-Npr"/>
+                <outlet property="profileCardRow1" destination="jZ2-i1-6Ze" id="jmZ-p4-kpv"/>
+                <outlet property="profileCardRow2" destination="kIR-d5-GOb" id="lBn-tA-dMP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPd-rj-u3V">
+                    <rect key="frame" x="0.0" y="380" width="414" height="146"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIP-oA-81h">
+                            <rect key="frame" x="16" y="8" width="37.5" height="21"/>
+                            <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuy-HM-yry">
+                            <rect key="frame" x="0.0" y="37" width="414" height="1"/>
+                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="KoL-xe-EUi"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZ2-i1-6Ze" customClass="ProfileCardRow" customModule="Alodokter_bootcamp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="54" width="414" height="30"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="xMy-6Y-9Rk"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIR-d5-GOb" customClass="ProfileCardRow" customModule="Alodokter_bootcamp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="100" width="414" height="30"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="R7o-6M-Tl1"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="kIR-d5-GOb" secondAttribute="bottom" constant="16" id="2L3-Ci-c11"/>
+                        <constraint firstItem="qIP-oA-81h" firstAttribute="top" secondItem="XPd-rj-u3V" secondAttribute="top" constant="8" id="5xT-4i-OM6"/>
+                        <constraint firstItem="jZ2-i1-6Ze" firstAttribute="top" secondItem="uuy-HM-yry" secondAttribute="bottom" constant="16" id="DcM-4p-ZFe"/>
+                        <constraint firstItem="kIR-d5-GOb" firstAttribute="leading" secondItem="XPd-rj-u3V" secondAttribute="leading" id="G1o-qp-oDw"/>
+                        <constraint firstAttribute="trailing" secondItem="kIR-d5-GOb" secondAttribute="trailing" id="G4b-SH-FVE"/>
+                        <constraint firstItem="uuy-HM-yry" firstAttribute="leading" secondItem="XPd-rj-u3V" secondAttribute="leading" id="K0l-Ih-6Lk"/>
+                        <constraint firstAttribute="trailing" secondItem="uuy-HM-yry" secondAttribute="trailing" id="Mwa-v8-Oec"/>
+                        <constraint firstItem="jZ2-i1-6Ze" firstAttribute="leading" secondItem="XPd-rj-u3V" secondAttribute="leading" id="OwH-6M-RW2"/>
+                        <constraint firstAttribute="height" constant="146" id="TKt-BB-pK0"/>
+                        <constraint firstItem="qIP-oA-81h" firstAttribute="leading" secondItem="XPd-rj-u3V" secondAttribute="leading" constant="16" id="TVZ-Ev-uQG"/>
+                        <constraint firstItem="kIR-d5-GOb" firstAttribute="top" secondItem="jZ2-i1-6Ze" secondAttribute="bottom" constant="16" id="evx-3h-MuL"/>
+                        <constraint firstAttribute="trailing" secondItem="jZ2-i1-6Ze" secondAttribute="trailing" id="fFJ-Hm-wL1"/>
+                        <constraint firstItem="uuy-HM-yry" firstAttribute="top" secondItem="qIP-oA-81h" secondAttribute="bottom" constant="8" id="txX-Rl-ybh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="XPd-rj-u3V" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="1ZX-2c-HlQ"/>
+                <constraint firstItem="XPd-rj-u3V" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bVg-6V-AaQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XPd-rj-u3V" secondAttribute="trailing" id="qmj-JG-IJq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="171" y="9"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

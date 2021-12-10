@@ -33,6 +33,22 @@
 		2C68A3F127612D96002B8997 /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3E127612D93002B8997 /* Nunito-ExtraBoldItalic.ttf */; };
 		2C68A3F227612D96002B8997 /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3E227612D94002B8997 /* Nunito-LightItalic.ttf */; };
 		2C68A3F327612D96002B8997 /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3E327612D95002B8997 /* Nunito-BlackItalic.ttf */; };
+		320CDADE275DA1DA00141D2F /* ArticleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320CDADD275DA1DA00141D2F /* ArticleListViewController.xib */; };
+		320CDAE0275DA1F000141D2F /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320CDADF275DA1F000141D2F /* ArticleListViewController.swift */; };
+		320CDAE8275DAA5B00141D2F /* ArticleListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320CDAE7275DAA5B00141D2F /* ArticleListCell.xib */; };
+		320CDAEA275DAA8100141D2F /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320CDAE9275DAA8100141D2F /* ArticleListCell.swift */; };
+		320CDAEF275DDB5400141D2F /* ArticleAllListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320CDAEE275DDB5400141D2F /* ArticleAllListViewController.swift */; };
+		320CDAF3275DDBA400141D2F /* ArticleAllListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320CDAF2275DDBA400141D2F /* ArticleAllListViewController.xib */; };
+		320CDAF6275DDEB300141D2F /* ArticleAllListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320CDAF5275DDEB300141D2F /* ArticleAllListCollectionViewCell.swift */; };
+		320CDAF8275DDECB00141D2F /* ArticleAllListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320CDAF7275DDECB00141D2F /* ArticleAllListCollectionViewCell.xib */; };
+		320CDAFC275DE84A00141D2F /* ArticleAllListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320CDAFB275DE84A00141D2F /* ArticleAllListTableViewCell.swift */; };
+		320CDAFE275DE85100141D2F /* ArticleAllListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320CDAFD275DE85100141D2F /* ArticleAllListTableViewCell.xib */; };
+		32142E0D2761D7D0005A50B9 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32142E0C2761D7D0005A50B9 /* ProfileView.xib */; };
+		32142E0F2761D7E2005A50B9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32142E0E2761D7E2005A50B9 /* ProfileView.swift */; };
+		32142E11276206F8005A50B9 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32142E10276206F8005A50B9 /* ArticleService.swift */; };
+		32142E132762071C005A50B9 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32142E122762071C005A50B9 /* ArticleModel.swift */; };
+		32142E152762087A005A50B9 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32142E142762087A005A50B9 /* ArticleViewModel.swift */; };
+		322B22D927612FCE00247A3A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322B22D827612FCE00247A3A /* TabBarViewController.swift */; };
 		4E97F1CE2748858D00C2366D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CD2748858D00C2366D /* AppDelegate.swift */; };
 		4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CF2748858D00C2366D /* SceneDelegate.swift */; };
 		4E97F1D52748858D00C2366D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E97F1D32748858D00C2366D /* Main.storyboard */; };
@@ -108,6 +124,22 @@
 		2C68A3E127612D93002B8997 /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		2C68A3E227612D94002B8997 /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
 		2C68A3E327612D95002B8997 /* Nunito-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BlackItalic.ttf"; sourceTree = "<group>"; };
+		320CDADD275DA1DA00141D2F /* ArticleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListViewController.xib; sourceTree = "<group>"; };
+		320CDADF275DA1F000141D2F /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
+		320CDAE7275DAA5B00141D2F /* ArticleListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListCell.xib; sourceTree = "<group>"; };
+		320CDAE9275DAA8100141D2F /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
+		320CDAEE275DDB5400141D2F /* ArticleAllListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAllListViewController.swift; sourceTree = "<group>"; };
+		320CDAF2275DDBA400141D2F /* ArticleAllListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleAllListViewController.xib; sourceTree = "<group>"; };
+		320CDAF5275DDEB300141D2F /* ArticleAllListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAllListCollectionViewCell.swift; sourceTree = "<group>"; };
+		320CDAF7275DDECB00141D2F /* ArticleAllListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleAllListCollectionViewCell.xib; sourceTree = "<group>"; };
+		320CDAFB275DE84A00141D2F /* ArticleAllListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAllListTableViewCell.swift; sourceTree = "<group>"; };
+		320CDAFD275DE85100141D2F /* ArticleAllListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleAllListTableViewCell.xib; sourceTree = "<group>"; };
+		32142E0C2761D7D0005A50B9 /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		32142E0E2761D7E2005A50B9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		32142E10276206F8005A50B9 /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
+		32142E122762071C005A50B9 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		32142E142762087A005A50B9 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		322B22D827612FCE00247A3A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		381744D040FF8C533B3155AB /* Pods_Alodokter_bootcampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcampTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D1D72584417F3B8420172F /* Pods-Alodokter_bootcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp.debug.xcconfig"; sourceTree = "<group>"; };
 		4E97F1CA2748858D00C2366D /* Alodokter_bootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alodokter_bootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +263,63 @@
 				2C68A3D0275FF3BF002B8997 /* SignOutButton.swift */,
 			);
 			path = Controllers;
+		320CDADC275DA18A00141D2F /* ArticleListView */ = {
+			isa = PBXGroup;
+			children = (
+				320CDAEB275DDB1600141D2F /* ArticleAllListView */,
+				320CDAE3275DA97200141D2F /* ArticleListView */,
+				32142E142762087A005A50B9 /* ArticleViewModel.swift */,
+			);
+			path = ArticleListView;
+			sourceTree = "<group>";
+		};
+		320CDAE3275DA97200141D2F /* ArticleListView */ = {
+			isa = PBXGroup;
+			children = (
+				320CDAE4275DA9FC00141D2F /* ArticleListCell */,
+				320CDADD275DA1DA00141D2F /* ArticleListViewController.xib */,
+				320CDADF275DA1F000141D2F /* ArticleListViewController.swift */,
+			);
+			path = ArticleListView;
+			sourceTree = "<group>";
+		};
+		320CDAE4275DA9FC00141D2F /* ArticleListCell */ = {
+			isa = PBXGroup;
+			children = (
+				320CDAE7275DAA5B00141D2F /* ArticleListCell.xib */,
+				320CDAE9275DAA8100141D2F /* ArticleListCell.swift */,
+			);
+			path = ArticleListCell;
+			sourceTree = "<group>";
+		};
+		320CDAEB275DDB1600141D2F /* ArticleAllListView */ = {
+			isa = PBXGroup;
+			children = (
+				320CDAF4275DDE6800141D2F /* ArticleAllListCell */,
+				320CDAEE275DDB5400141D2F /* ArticleAllListViewController.swift */,
+				320CDAF2275DDBA400141D2F /* ArticleAllListViewController.xib */,
+			);
+			path = ArticleAllListView;
+			sourceTree = "<group>";
+		};
+		320CDAF4275DDE6800141D2F /* ArticleAllListCell */ = {
+			isa = PBXGroup;
+			children = (
+				320CDAF5275DDEB300141D2F /* ArticleAllListCollectionViewCell.swift */,
+				320CDAF7275DDECB00141D2F /* ArticleAllListCollectionViewCell.xib */,
+				320CDAFB275DE84A00141D2F /* ArticleAllListTableViewCell.swift */,
+				320CDAFD275DE85100141D2F /* ArticleAllListTableViewCell.xib */,
+			);
+			path = ArticleAllListCell;
+			sourceTree = "<group>";
+		};
+		32142E0B2761D7C0005A50B9 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				32142E0C2761D7D0005A50B9 /* ProfileView.xib */,
+				32142E0E2761D7E2005A50B9 /* ProfileView.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		4E97F1C12748858D00C2366D = {
@@ -304,6 +393,7 @@
 		4E97F20127488BAA00C2366D /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				320CDADC275DA18A00141D2F /* ArticleListView */,
 				4E97F20227488BAA00C2366D /* SplashScreen */,
 				4E97F20527488BAA00C2366D /* MainView */,
 				2C68A3BD275F5985002B8997 /* ProfileView */,
@@ -344,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				4E97F20D27488BAA00C2366D /* DummyAlbumsModel.swift */,
+				32142E122762071C005A50B9 /* ArticleModel.swift */,
 			);
 			path = Model;
 			sourceTree = SOURCE_ROOT;
@@ -352,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				4E97F20F27488BAB00C2366D /* DummyAlbumsService.swift */,
+				32142E10276206F8005A50B9 /* ArticleService.swift */,
 			);
 			path = Service;
 			sourceTree = SOURCE_ROOT;
@@ -359,6 +451,8 @@
 		4E97F21027488BAB00C2366D /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				32142E0B2761D7C0005A50B9 /* ProfileView */,
+				322B22D827612FCE00247A3A /* TabBarViewController.swift */,
 				4E97F21127488BAB00C2366D /* BaseViewController.swift */,
 				4E97F21227488BAB00C2366D /* BaseService.swift */,
 			);
@@ -501,6 +595,7 @@
 				2C68A3F327612D96002B8997 /* Nunito-BlackItalic.ttf in Resources */,
 				2C68A3E427612D96002B8997 /* Nunito-SemiBold.ttf in Resources */,
 				4E97F1DA2748858F00C2366D /* LaunchScreen.storyboard in Resources */,
+				320CDADE275DA1DA00141D2F /* ArticleListViewController.xib in Resources */,
 				4E97F21627488BAB00C2366D /* SplashScreenViewController.xib in Resources */,
 				2C68A3EC27612D96002B8997 /* Nunito-Medium.ttf in Resources */,
 				2C68A3EA27612D96002B8997 /* Nunito-Bold.ttf in Resources */,
@@ -517,8 +612,14 @@
 				2C68A3EB27612D96002B8997 /* Nunito-BoldItalic.ttf in Resources */,
 				4E97F21B27488BAB00C2366D /* AlbumsCell.xib in Resources */,
 				2C68A3CF275FF2AB002B8997 /* SignOutButton.xib in Resources */,
-				4E97F1D72748858F00C2366D /* Assets.xcassets in Resources */,
 				2C68A3CD275F7E52002B8997 /* ProfileViewController.xib in Resources */,
+				320CDAE8275DAA5B00141D2F /* ArticleListCell.xib in Resources */,
+				320CDAF8275DDECB00141D2F /* ArticleAllListCollectionViewCell.xib in Resources */,
+				320CDAF3275DDBA400141D2F /* ArticleAllListViewController.xib in Resources */,
+				4E97F21B27488BAB00C2366D /* AlbumsCell.xib in Resources */,
+				32142E0D2761D7D0005A50B9 /* ProfileView.xib in Resources */,
+				4E97F1D72748858F00C2366D /* Assets.xcassets in Resources */,
+				320CDAFE275DE85100141D2F /* ArticleAllListTableViewCell.xib in Resources */,
 				4E97F1D52748858D00C2366D /* Main.storyboard in Resources */,
 				2C68A3F127612D96002B8997 /* Nunito-ExtraBoldItalic.ttf in Resources */,
 				2C68A3E527612D96002B8997 /* Nunito-ExtraLight.ttf in Resources */,
@@ -651,11 +752,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				320CDAEA275DAA8100141D2F /* ArticleListCell.swift in Sources */,
+				320CDAFC275DE84A00141D2F /* ArticleAllListTableViewCell.swift in Sources */,
+				320CDAF6275DDEB300141D2F /* ArticleAllListCollectionViewCell.swift in Sources */,
 				4E97F21F27488BAB00C2366D /* BaseViewController.swift in Sources */,
 				4E97F21D27488BAB00C2366D /* DummyAlbumsModel.swift in Sources */,
 				2C68A3C9275F7C95002B8997 /* ProfileCardRow.swift in Sources */,
 				4E97F21327488BAB00C2366D /* UIColor.swift in Sources */,
 				4E97F22027488BAB00C2366D /* BaseService.swift in Sources */,
+				322B22D927612FCE00247A3A /* TabBarViewController.swift in Sources */,
+				32142E152762087A005A50B9 /* ArticleViewModel.swift in Sources */,
 				4E97F21727488BAB00C2366D /* SplashScreenViewController.swift in Sources */,
 				2C68A3C5275F79B2002B8997 /* ProfileCard.swift in Sources */,
 				2C68A3CB275F7E10002B8997 /* ProfileViewController.swift in Sources */,
@@ -668,7 +774,12 @@
 				4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */,
 				4E97F21527488BAB00C2366D /* Utiliy.swift in Sources */,
 				4E97F21927488BAB00C2366D /* MainViewController.swift in Sources */,
+				32142E132762071C005A50B9 /* ArticleModel.swift in Sources */,
 				4E97F21A27488BAB00C2366D /* MainViewModel.swift in Sources */,
+				320CDAE0275DA1F000141D2F /* ArticleListViewController.swift in Sources */,
+				32142E0F2761D7E2005A50B9 /* ProfileView.swift in Sources */,
+				32142E11276206F8005A50B9 /* ArticleService.swift in Sources */,
+				320CDAEF275DDB5400141D2F /* ArticleAllListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,6 +959,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CN329Q28W4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Alodokter_bootcamp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -860,7 +972,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp";
+				PRODUCT_BUNDLE_IDENTIFIER = "Koron.Alodokter-bootcamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -876,6 +988,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CN329Q28W4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Alodokter_bootcamp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -888,7 +1001,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp";
+				PRODUCT_BUNDLE_IDENTIFIER = "Koron.Alodokter-bootcamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

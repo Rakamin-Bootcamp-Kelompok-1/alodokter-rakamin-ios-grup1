@@ -9,10 +9,16 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var profileHeaderView: ProfileHeader!
     @IBOutlet weak var profileCardView1: ProfileCard!
     @IBOutlet weak var profileCardView2: ProfileCard!
     @IBOutlet weak var signOutButton: SignOutButton!
+    
+    
+    // MARK: - View Life Cycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +26,9 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
         prepareUI()
     }
+    
+    
+    // MARK: - Prepare UI Method
     
     func prepareUI() {
         if #available(iOS 13.0, *) {
@@ -66,7 +75,7 @@ class ProfileViewController: UIViewController {
             profileCardView1.containerView.layer.shadowOffset = .zero
             profileCardView1.containerView.layer.shadowRadius = 4
             
-            // Profile Card Row 1
+            // Profile Card 1 Row
             profileCardView1.profileCardRow1.iconImageView.image = UIImage(systemName: "person.circle")
             profileCardView1.profileCardRow1.titleLabel.text = "Edit Profile"
             
@@ -87,7 +96,7 @@ class ProfileViewController: UIViewController {
             profileCardView2.containerView.layer.shadowOffset = .zero
             profileCardView2.containerView.layer.shadowRadius = 4
             
-            // Profile Card Row 2
+            // Profile Card 2 Row
             profileCardView2.profileCardRow1.iconImageView.image = UIImage(systemName: "house")
             profileCardView2.profileCardRow1.titleLabel.text = "About Us"
             
@@ -104,6 +113,7 @@ class ProfileViewController: UIViewController {
             signOutButton.contentView.layer.shadowOffset = .zero
             signOutButton.contentView.layer.shadowRadius = 4
             
+            // Sign Out Button Attributed Title
             guard let signOutButtonFont = UIFont(name: "Nunito-Regular", size: 17) else {
                 fatalError("""
                         Failed to load the "Nunito-Regular" font.

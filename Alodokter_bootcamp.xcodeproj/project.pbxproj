@@ -29,6 +29,8 @@
 		49669A922761435E00D8782A /* HistoryItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49669A902761435E00D8782A /* HistoryItemCell.xib */; };
 		49669ABC2761D77B00D8782A /* DetailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49669ABA2761D77B00D8782A /* DetailHistoryViewController.swift */; };
 		49669ABD2761D77B00D8782A /* DetailHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49669ABB2761D77B00D8782A /* DetailHistoryViewController.xib */; };
+		49AA047E2763BE3F00B05A1A /* HistoryBookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AA047D2763BE3F00B05A1A /* HistoryBookingViewModel.swift */; };
+		49AA04802763C22A00B05A1A /* DetailBookingHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AA047F2763C22A00B05A1A /* DetailBookingHistoryViewModel.swift */; };
 		4E97F1CE2748858D00C2366D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CD2748858D00C2366D /* AppDelegate.swift */; };
 		4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CF2748858D00C2366D /* SceneDelegate.swift */; };
 		4E97F1D52748858D00C2366D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E97F1D32748858D00C2366D /* Main.storyboard */; };
@@ -102,6 +104,8 @@
 		49669A902761435E00D8782A /* HistoryItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryItemCell.xib; sourceTree = "<group>"; };
 		49669ABA2761D77B00D8782A /* DetailHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHistoryViewController.swift; sourceTree = "<group>"; };
 		49669ABB2761D77B00D8782A /* DetailHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailHistoryViewController.xib; sourceTree = "<group>"; };
+		49AA047D2763BE3F00B05A1A /* HistoryBookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBookingViewModel.swift; sourceTree = "<group>"; };
+		49AA047F2763C22A00B05A1A /* DetailBookingHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookingHistoryViewModel.swift; sourceTree = "<group>"; };
 		4E97F1CA2748858D00C2366D /* Alodokter_bootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alodokter_bootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E97F1CD2748858D00C2366D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E97F1CF2748858D00C2366D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				49669A8E2761431600D8782A /* HistoryCell */,
 				49669A682761024100D8782A /* HistoryViewController.swift */,
 				49669A692761024100D8782A /* HistoryViewController.xib */,
+				49AA047D2763BE3F00B05A1A /* HistoryBookingViewModel.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 			children = (
 				49669ABA2761D77B00D8782A /* DetailHistoryViewController.swift */,
 				49669ABB2761D77B00D8782A /* DetailHistoryViewController.xib */,
+				49AA047F2763C22A00B05A1A /* DetailBookingHistoryViewModel.swift */,
 			);
 			path = DetailHistory;
 			sourceTree = "<group>";
@@ -637,6 +643,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49AA047E2763BE3F00B05A1A /* HistoryBookingViewModel.swift in Sources */,
 				49669ABC2761D77B00D8782A /* DetailHistoryViewController.swift in Sources */,
 				4E97F21F27488BAB00C2366D /* BaseViewController.swift in Sources */,
 				4E97F21D27488BAB00C2366D /* DummyAlbumsModel.swift in Sources */,
@@ -650,6 +657,7 @@
 				4E97F21C27488BAB00C2366D /* AlbumsCell.swift in Sources */,
 				4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */,
 				4E97F21527488BAB00C2366D /* Utiliy.swift in Sources */,
+				49AA04802763C22A00B05A1A /* DetailBookingHistoryViewModel.swift in Sources */,
 				49669A912761435E00D8782A /* HistoryItemCell.swift in Sources */,
 				4E97F21927488BAB00C2366D /* MainViewController.swift in Sources */,
 				4E97F21A27488BAB00C2366D /* MainViewModel.swift in Sources */,

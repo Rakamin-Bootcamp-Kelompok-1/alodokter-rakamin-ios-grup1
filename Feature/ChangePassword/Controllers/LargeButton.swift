@@ -1,18 +1,16 @@
 //
-//  ProfileCardRow.swift
+//  LargeButton.swift
 //  Alodokter_bootcamp
 //
-//  Created by Rayhan Faluda on 07/12/21.
+//  Created by Rayhan Faluda on 10/12/21.
 //
 
 import UIKit
 
-class ProfileCardRow: UIView {
+class LargeButton: UIView {
 
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var chevronImageView: UIImageView!
+    @IBOutlet weak var buttonOutlet: UIButton!
     
     // For using CustomView in code
     override init(frame: CGRect) {
@@ -28,7 +26,7 @@ class ProfileCardRow: UIView {
     
     // Do stuffs here
     private func commonInit() {
-        Bundle.main.loadNibNamed("ProfileCardRow", owner: self, options: nil)
+        Bundle.main.loadNibNamed("LargeButton", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

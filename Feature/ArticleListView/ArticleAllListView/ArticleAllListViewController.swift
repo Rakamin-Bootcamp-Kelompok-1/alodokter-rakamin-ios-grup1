@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct ArticleModel {
+struct ArticleModelDummy {
     var title: String
     var description: String
     var image: String
@@ -16,14 +16,19 @@ struct ArticleModel {
 class ArticleAllListViewController: BaseViewController {
     @IBOutlet weak var kategoriCollectionView: UICollectionView!
     @IBOutlet weak var articleTableView: UITableView!
-    @IBOutlet weak var backImageView: UIImageView!
+    @IBOutlet weak var articleSearchBar: UISearchBar!
     
     let category = ["Keluarga", "Nutrisi", "Bayi", "Kehamilan", "Kecantikan", "Diabetes"]
-    let articles: [ArticleModel] = [ArticleModel(title: "4 Manfaat Daun Sambiloto untuk Kulit yang Sayang Dilewatkan", description: "Tak hanya baik untuk kesehatan tubuh, manfaat daun sambiloto untuk kesehatan kulit pun begitu beragam. Berbagai kandungan nutrisi di dalamnya dipercaya baik", image: "article_pic_example1"), ArticleModel(title: "Mengenal COVID-19 Varian Omicron", description: "Varian Omicron (B.1.1.529) merupakan salah satu hasil mutasi virus Corona. Berdasarkan bukti yang ada sejauh ini, varian Omicron memiliki tingkat mutasi yang tinggi", image: "article_pic_example2"), ArticleModel(title: "4 Manfaat Daun Sambiloto untuk Kulit yang Sayang Dilewatkan", description: "Tak hanya baik untuk kesehatan tubuh, manfaat daun sambiloto untuk kesehatan kulit pun begitu beragam. Berbagai kandungan nutrisi di dalamnya dipercaya baik", image: "article_pic_example1")]
+    let articles: [ArticleModelDummy] = [ArticleModelDummy(title: "4 Manfaat Daun Sambiloto untuk Kulit yang Sayang Dilewatkan", description: "Tak hanya baik untuk kesehatan tubuh, manfaat daun sambiloto untuk kesehatan kulit pun begitu beragam. Berbagai kandungan nutrisi di dalamnya dipercaya baik", image: "article_pic_example1"), ArticleModelDummy(title: "Mengenal COVID-19 Varian Omicron", description: "Varian Omicron (B.1.1.529) merupakan salah satu hasil mutasi virus Corona. Berdasarkan bukti yang ada sejauh ini, varian Omicron memiliki tingkat mutasi yang tinggi", image: "article_pic_example2"), ArticleModelDummy(title: "4 Manfaat Daun Sambiloto untuk Kulit yang Sayang Dilewatkan", description: "Tak hanya baik untuk kesehatan tubuh, manfaat daun sambiloto untuk kesehatan kulit pun begitu beragam. Berbagai kandungan nutrisi di dalamnya dipercaya baik", image: "article_pic_example1")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setNavigationBarVisibility(hide: false)
     }
     
     func viewSetup() {
@@ -36,13 +41,11 @@ class ArticleAllListViewController: BaseViewController {
         articleTableView.register(UINib(nibName: "ArticleAllListTableViewCell", bundle: nil), forCellReuseIdentifier: "ArticleAllListCell")
         articleTableView.rowHeight = UITableView.automaticDimension
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(back(_:)))
-        tapGesture.delegate = self
-        backImageView.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func back(_ sender: UIImageView) {
-        self.navigationController?.popViewController(animated: true)
+        articleSearchBar.backgroundImage = UIImage()
+        
+        self.navigationItem.title = "Medikuy Artikel"
+        navigationController?.navigationBar.prefersLargeTitles = false
+//        navigationController?.navigationBar.backgroundColor = UIColor(named: "blue something")
     }
 }
 

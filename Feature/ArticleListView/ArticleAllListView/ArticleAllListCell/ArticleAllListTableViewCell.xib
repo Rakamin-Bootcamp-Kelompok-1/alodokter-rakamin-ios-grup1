@@ -10,10 +10,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleAllListCell" id="WCA-BI-dbF" customClass="ArticleAllListTableViewCell" customModule="Alodokter_bootcamp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="374" height="311.5"/>
+            <rect key="frame" x="0.0" y="0.0" width="374" height="340.5"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WCA-BI-dbF" id="iPO-h6-8tM">
-                <rect key="frame" x="0.0" y="0.0" width="374" height="311.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="374" height="340.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Manfaat Daun Sambiloto untuk Kulit yang Sayang Dilewatkan" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCg-1h-5JF">
@@ -26,9 +26,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="txT-MN-x73">
-                        <rect key="frame" x="0.0" y="155.5" width="374" height="156"/>
+                        <rect key="frame" x="0.0" y="155.5" width="374" height="165"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="txT-MN-x73" secondAttribute="height" multiplier="187:78" id="1wK-j1-Ky8"/>
+                            <constraint firstAttribute="width" secondItem="txT-MN-x73" secondAttribute="height" multiplier="34:15" id="YTH-V3-0mL"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzW-AZ-FuS">
@@ -42,7 +42,7 @@
                 <constraints>
                     <constraint firstItem="aCg-1h-5JF" firstAttribute="top" secondItem="iPO-h6-8tM" secondAttribute="top" constant="20" id="1kz-hp-l3s"/>
                     <constraint firstItem="aCg-1h-5JF" firstAttribute="leading" secondItem="iPO-h6-8tM" secondAttribute="leading" id="4nm-9h-ybM"/>
-                    <constraint firstAttribute="bottom" secondItem="txT-MN-x73" secondAttribute="bottom" id="HbK-sq-uMD"/>
+                    <constraint firstAttribute="bottom" secondItem="txT-MN-x73" secondAttribute="bottom" constant="20" id="HbK-sq-uMD"/>
                     <constraint firstItem="txT-MN-x73" firstAttribute="top" secondItem="xzW-AZ-FuS" secondAttribute="bottom" constant="20" id="M1N-O3-8ZT"/>
                     <constraint firstAttribute="trailing" secondItem="xzW-AZ-FuS" secondAttribute="trailing" id="Qep-Oj-S89"/>
                     <constraint firstItem="xzW-AZ-FuS" firstAttribute="top" secondItem="aCg-1h-5JF" secondAttribute="bottom" constant="10" id="Rfe-qS-eOt"/>

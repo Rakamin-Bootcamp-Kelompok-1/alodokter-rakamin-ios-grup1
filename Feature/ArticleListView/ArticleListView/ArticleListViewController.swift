@@ -14,11 +14,13 @@ class ArticleListViewController: BaseViewController {
     @IBOutlet weak var articleCollectionView: UICollectionView!
     @IBOutlet weak var doctorView: UIView!
     @IBOutlet weak var allArticleView: UIView!
+    @IBOutlet weak var articleSearchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initArticleCollectionView()
         viewSetup()
+        
     }
     
     func viewSetup() {
@@ -31,17 +33,20 @@ class ArticleListViewController: BaseViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewAllArticle(_:)))
         tapGesture.delegate = self
         allArticleView.addGestureRecognizer(tapGesture)
+        
+        articleSearchBar.backgroundImage = UIImage()
     }
     
     func initArticleCollectionView() {
         articleCollectionView.delegate = self
         articleCollectionView.dataSource = self
         articleCollectionView.register(UINib(nibName: "ArticleListCell", bundle: nil), forCellWithReuseIdentifier: "ArticleListCell")
-        articleCollectionView.showsHorizontalScrollIndicator = false
+        
     }
     
     @objc func viewAllArticle(_ sender: UIView) {
         let vc = ArticleAllListViewController()
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

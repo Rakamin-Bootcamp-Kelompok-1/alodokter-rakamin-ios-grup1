@@ -18,9 +18,10 @@ class BaseViewController : UIViewController, UIGestureRecognizerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //self.tabBarController?.setTabBar(hidden: true)
         self.navigationController?.isNavigationBarHidden = true
     }
+    
+    
     
     func onBackPressed() {
         self.navigationController?.popViewController(animated: true)

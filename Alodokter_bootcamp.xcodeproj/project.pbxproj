@@ -195,8 +195,8 @@
 		4E97F20127488BAA00C2366D /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				80BC4A49275F640200E7E8FF /* Login */,
-				80613360275BCE370065B62E /* Register */,
+				80BC4A49275F640200E7E8FF /* SignIn */,
+				80613360275BCE370065B62E /* SignUp */,
 				4E97F20227488BAA00C2366D /* SplashScreen */,
 				4E97F20527488BAA00C2366D /* MainView */,
 			);
@@ -270,22 +270,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		80613360275BCE370065B62E /* Register */ = {
+		80613360275BCE370065B62E /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				80613363275BCE8C0065B62E /* RegisterViewController.swift */,
 				800E9C5627608E1100C88B7D /* RegisterViewController.xib */,
 			);
-			path = Register;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
-		80BC4A49275F640200E7E8FF /* Login */ = {
+		80BC4A49275F640200E7E8FF /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
 				80BC4A4A275F642400E7E8FF /* LoginViewController.swift */,
 				80BC4A4E275F647C00E7E8FF /* LoginViewController.xib */,
 			);
-			path = Login;
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		D29C455D0EB5B2BA2B5C0B31 /* Frameworks */ = {

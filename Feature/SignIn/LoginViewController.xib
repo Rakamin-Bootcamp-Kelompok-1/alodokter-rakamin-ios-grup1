@@ -37,17 +37,17 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="95h-Qn-4sw">
                     <rect key="frame" x="20" y="256" width="374" height="175"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-X1-g5p">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-X1-g5p">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="0RW-nK-Qj2"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7b-jL-9ZO">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7b-jL-9ZO">
                             <rect key="frame" x="0.0" y="65" width="374" height="45"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eza-Fs-WQw">
@@ -56,9 +56,11 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain">
                                 <attributedString key="attributedTitle">
-                                    <fragment content="Login">
+                                    <fragment content="Sign In">
                                         <attributes>
-                                            <font key="NSFont" size="16" name="Poppins-Regular"/>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="16" name="Nunito-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -133,7 +135,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="uUZ-Qi-izC"/>
-            <color key="backgroundColor" red="0.50196078431372548" green="0.80784313725490198" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="kcD-Gx-dEx" firstAttribute="centerX" secondItem="Lki-6n-ccU" secondAttribute="centerX" id="5M9-B3-YgB"/>
                 <constraint firstItem="95h-Qn-4sw" firstAttribute="leading" secondItem="uUZ-Qi-izC" secondAttribute="leading" constant="20" id="9lB-I4-Ppc"/>

@@ -8,8 +8,6 @@
 import UIKit
 
 class RegisterViewController: BaseViewController {
-
-    @IBOutlet weak var genderPickerView: UIPickerView!
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var confirmationTxtField: UITextField!
@@ -23,6 +21,9 @@ class RegisterViewController: BaseViewController {
     let buttonConfirmation = UIButton(type: .custom)
     let genders = ["Female", "Male"]
     var pickerView = UIPickerView()
+    let colorBorder = UIColor(red: 170, green: 217, blue: 233, alpha: 1)
+    let textfieldColorBorder: UIColor = UIColor.rgb(red: 170, green: 217, blue: 233)
+    var activeTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,62 @@ class RegisterViewController: BaseViewController {
         btnShowPassword()
         setDateTextField()
         setGenderTextField()
+        setTextfieldBorder()
+        let dateImage = UIImage(named: "calender")
+        addImageTextfield(txtField: dateTxtField, img: dateImage!)
+        
     }
+    @objc private func hideKeyboard(){
+        
+    }
+
+    func addImageTextfield(txtField: UITextField, img: UIImage){
+        let rightImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height))
+        rightImageView.image = img
+        txtField.rightView = rightImageView
+        txtField.rightViewMode = .always
+    }
+
+    func setTextfieldBorder() {
+        genderTxtField.layer.borderColor = textfieldColorBorder.cgColor
+        genderTxtField.layer.masksToBounds = true
+        genderTxtField.layer.borderWidth = 2
+        genderTxtField.layer.cornerRadius = 10
+        
+        
+        confirmationTxtField.layer.borderColor = textfieldColorBorder.cgColor
+        confirmationTxtField.layer.masksToBounds = true
+        confirmationTxtField.layer.borderWidth = 2
+        confirmationTxtField.layer.cornerRadius = 10
+        
+        passwordTxtField.layer.borderColor = textfieldColorBorder.cgColor
+        passwordTxtField.layer.masksToBounds = true
+        passwordTxtField.layer.borderWidth = 2
+        passwordTxtField.layer.cornerRadius = 10
+        
+        phoneTxtField.layer.borderColor = textfieldColorBorder.cgColor
+        phoneTxtField.layer.masksToBounds = true
+        phoneTxtField.layer.borderWidth = 2
+        phoneTxtField.layer.cornerRadius = 10
+        
+        dateTxtField.layer.borderColor = textfieldColorBorder.cgColor
+        dateTxtField.layer.masksToBounds = true
+        dateTxtField.layer.borderWidth = 2
+        dateTxtField.layer.cornerRadius = 10
+        
+        
+        emailTxtField.layer.borderColor = textfieldColorBorder.cgColor
+        emailTxtField.layer.masksToBounds = true
+        emailTxtField.layer.borderWidth = 2
+        emailTxtField.layer.cornerRadius = 10
+        
+        nameTxtField.layer.borderColor = textfieldColorBorder.cgColor
+        nameTxtField.layer.masksToBounds = true
+        nameTxtField.layer.borderWidth = 2
+        nameTxtField.layer.cornerRadius = 10
+
+    }
+  
     
     func setGenderTextField() {
         pickerView.delegate = self
@@ -44,6 +100,7 @@ class RegisterViewController: BaseViewController {
         datePicker.addTarget(self, action: #selector(datePickerValueChange), for: UIControl.Event.valueChanged)
         datePicker.frame.size = CGSize(width: 0, height: 250)
         dateTxtField.inputView = datePicker
+        
         
     }
     @objc func datePickerValueChange(sender: UIDatePicker) {

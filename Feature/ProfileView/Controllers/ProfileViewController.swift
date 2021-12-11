@@ -33,17 +33,6 @@ class ProfileViewController: UIViewController {
     func prepareUI() {
         if #available(iOS 13.0, *) {
             // Navigation Bar Title
-            guard let navBarTitleFont = UIFont(name: "Nunito-SemiBold", size: 17) else {
-                fatalError("""
-                        Failed to load the "Nunito-SemiBold" font.
-                        Make sure the font file is included in the project and the font name is spelled correctly.
-                        """
-                    )
-            }
-            
-            let navBarTitleAttributes = [NSAttributedString.Key.font: UIFontMetrics(forTextStyle: .headline).scaledFont(for: navBarTitleFont)]
-            
-            self.navigationController?.navigationBar.titleTextAttributes = navBarTitleAttributes
             self.title = "My Profile"
             
             

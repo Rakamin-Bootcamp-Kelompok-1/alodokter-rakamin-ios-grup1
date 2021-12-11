@@ -45,14 +45,18 @@ class ChangePasswordViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = navBarTitleAttributes
         self.title = "Change Password"
         
+        
+        // Secured Text Field
         oldPasswordTextField.textField.delegate = self
         newPasswordTextField.textField.delegate = self
         confirmPasswordTextField.textField.delegate = self
         
+        // Bottom Border/Underline
         oldPasswordTextField.textField.addBottomBorder(color: UIColor(hex: "BCBCBC", alpha: 1.0))
         newPasswordTextField.textField.addBottomBorder(color: UIColor(hex: "BCBCBC", alpha: 1.0))
         confirmPasswordTextField.textField.addBottomBorder(color: UIColor(hex: "BCBCBC", alpha: 1.0))
         
+        // Secured Text Field Placeholder Attributed String
         guard let placeholderFont = UIFont(name: "Nunito-Regular", size: 16) else {
             fatalError("""
                     Failed to load the "Nunito-Regular" font.
@@ -65,10 +69,12 @@ class ChangePasswordViewController: UIViewController {
         newPasswordTextField.textField.attributedPlaceholder = NSAttributedString(string: "New Password", attributes: [NSAttributedString.Key.font: UIFontMetrics(forTextStyle: .body).scaledFont(for: placeholderFont)])
         confirmPasswordTextField.textField.attributedPlaceholder = NSAttributedString(string: "Confirm Password", attributes: [NSAttributedString.Key.font: UIFontMetrics(forTextStyle: .body).scaledFont(for: placeholderFont)])
         
+        // Keyboard Control
         oldPasswordTextField.textField.becomeFirstResponder()
         
-        let tapGestureReconizer = UITapGestureRecognizer(target: self, action: #selector(ChangePasswordViewController.tap(_:)))
-        view.addGestureRecognizer(tapGestureReconizer)
+        // Tap Gesture Recognizer for dismissing keyboard on tap
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ChangePasswordViewController.tap(_:)))
+        view.addGestureRecognizer(tapGestureRecognizer)
         
         
         // Update Password Button

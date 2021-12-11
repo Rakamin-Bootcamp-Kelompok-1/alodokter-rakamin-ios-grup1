@@ -9,11 +9,17 @@ import UIKit
 
 class ProfileCard: UIView {
 
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var profileCardRow1: ProfileCardRow!
     @IBOutlet weak var profileCardRow2: ProfileCardRow!
+    
+    
+    // MARK: - View Methods
     
     // For using CustomView in code
     override init(frame: CGRect) {

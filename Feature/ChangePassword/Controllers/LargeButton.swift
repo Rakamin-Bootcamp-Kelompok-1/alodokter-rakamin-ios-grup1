@@ -9,8 +9,14 @@ import UIKit
 
 class LargeButton: UIView {
 
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var buttonOutlet: UIButton!
+    
+    
+    // MARK: - View Methods
     
     // For using CustomView in code
     override init(frame: CGRect) {

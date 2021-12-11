@@ -9,10 +9,15 @@ import UIKit
 
 class SecuredTextField: UIView {
 
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var textField: TextFieldWithPadding!
-    @IBOutlet weak var underlineView: UIView!
     @IBOutlet weak var eyeButtonOutlet: UIButton!
+    
+    
+    // MARK: - View Methods
     
     // For using CustomView in code
     override init(frame: CGRect) {
@@ -44,6 +49,8 @@ class SecuredTextField: UIView {
         }
     }
     
+    
+    // MARK: - Eye Button Methods
     
     @objc
     func toggleShowHide(button: UIButton) {

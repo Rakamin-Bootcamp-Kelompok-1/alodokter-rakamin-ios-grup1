@@ -115,6 +115,8 @@ class ProfileViewController: UIViewController {
             let signOutButtonAttributes = NSAttributedString(string: "Sign Out", attributes: [NSAttributedString.Key.font: UIFontMetrics(forTextStyle: .body).scaledFont(for: signOutButtonFont)])
             
             signOutButton.buttonOutlet.setAttributedTitle(signOutButtonAttributes, for: .normal)
+            signOutButton.buttonOutlet.setAttributedTitle(signOutButtonAttributes, for: .highlighted)
+            signOutButton.buttonOutlet.setAttributedTitle(signOutButtonAttributes, for: .focused)
             
         } else {
             // Fallback on earlier versions

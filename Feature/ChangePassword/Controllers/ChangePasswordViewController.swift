@@ -81,6 +81,8 @@ class ChangePasswordViewController: UIViewController {
         let updatePasswordButtonAttributes = NSAttributedString(string: "Update Password", attributes: [NSAttributedString.Key.font: UIFontMetrics(forTextStyle: .headline).scaledFont(for: updatePasswordButtonFont)])
         
         updatePasswordButton.buttonOutlet.setAttributedTitle(updatePasswordButtonAttributes, for: .normal)
+        updatePasswordButton.buttonOutlet.setAttributedTitle(updatePasswordButtonAttributes, for: .highlighted)
+        updatePasswordButton.buttonOutlet.setAttributedTitle(updatePasswordButtonAttributes, for: .focused)
         updatePasswordButton.buttonOutlet.tintColor = UIColor.white
         
         if oldPasswordTextField.textField.text!.isEmpty && newPasswordTextField.textField.text!.isEmpty && confirmPasswordTextField.textField.text!.isEmpty {

@@ -18,8 +18,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="vtP-Ga-Veo"/>
                 <outlet property="eyeButtonOutlet" destination="Fzr-CQ-X3k" id="Qy5-h3-8ZU"/>
-                <outlet property="textField" destination="z4E-yL-Zfe" id="xDh-cW-kxc"/>
-                <outlet property="underlineView" destination="Jdl-LM-mzt" id="wGM-g2-8Jt"/>
+                <outlet property="textField" destination="z4E-yL-Zfe" id="1vY-Wo-Cfa"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -27,18 +26,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z4E-yL-Zfe">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z4E-yL-Zfe" customClass="TextFieldWithPadding" customModule="Alodokter_bootcamp" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                     <fontDescription key="fontDescription" name="Nunito-ExtraLight" family="Nunito" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jdl-LM-mzt">
-                    <rect key="frame" x="0.0" y="29" width="375" height="1"/>
-                    <color key="backgroundColor" red="0.73725490196078436" green="0.73725490196078436" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="d4r-hD-nGY"/>
-                    </constraints>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzr-CQ-X3k">
                     <rect key="frame" x="341" y="0.0" width="30" height="30"/>
                     <constraints>
@@ -54,10 +46,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="z4E-yL-Zfe" secondAttribute="top" id="1TA-73-5ui"/>
-                <constraint firstItem="Jdl-LM-mzt" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="IC2-X8-pmL"/>
                 <constraint firstItem="z4E-yL-Zfe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="JBQ-6E-Zph"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Jdl-LM-mzt" secondAttribute="trailing" id="Zc8-M3-VbW"/>
-                <constraint firstItem="Jdl-LM-mzt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fuO-Me-irG"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="z4E-yL-Zfe" secondAttribute="trailing" id="hdx-QT-cny"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Fzr-CQ-X3k" secondAttribute="trailing" constant="4" id="iUg-Sp-gqt"/>
                 <constraint firstItem="Fzr-CQ-X3k" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="lRc-AX-E1I"/>

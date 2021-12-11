@@ -13,12 +13,12 @@
             <connections>
                 <outlet property="btnRegister" destination="kZt-cb-Pah" id="a2e-jE-Ncb"/>
                 <outlet property="btnSignIn" destination="Yh3-kU-8ZC" id="vNG-2L-WEQ"/>
-                <outlet property="confirmationTxtField" destination="Vue-dx-rAS" id="lFH-G4-IIT"/>
+                <outlet property="confirmationTxtField" destination="s4N-V3-Qgv" id="mVQ-uy-bDX"/>
                 <outlet property="dateTxtField" destination="ytg-Xw-ZTH" id="ZHy-2X-3vn"/>
                 <outlet property="emailTxtField" destination="KRZ-OW-IoQ" id="5Kf-B9-gx6"/>
                 <outlet property="genderTxtField" destination="AX1-Cp-w1v" id="yE7-0f-mYf"/>
                 <outlet property="nameTxtField" destination="88f-5n-3NF" id="NuA-Rk-W5M"/>
-                <outlet property="passwordTxtField" destination="y6I-YA-N2J" id="Xjh-ee-bYH"/>
+                <outlet property="passwordTxtField" destination="Zul-ey-EuA" id="iif-J9-kwi"/>
                 <outlet property="phoneTxtField" destination="cIU-nQ-JSL" id="fzV-jA-c5a"/>
                 <outlet property="view" destination="dmA-9n-WAj" id="5Bg-b0-Eg6"/>
             </connections>
@@ -37,12 +37,12 @@
                                 <constraint firstAttribute="height" constant="45" id="cur-Zs-SFG"/>
                             </constraints>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" textContentType="name"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KRZ-OW-IoQ">
                             <rect key="frame" x="0.0" y="60" width="374" height="45"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" textContentType="email"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Date of Birth" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ytg-Xw-ZTH">
                             <rect key="frame" x="0.0" y="120" width="374" height="45"/>
@@ -52,22 +52,22 @@
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIU-nQ-JSL">
                             <rect key="frame" x="0.0" y="180" width="374" height="45"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Gender" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AX1-Cp-w1v">
                             <rect key="frame" x="0.0" y="240" width="374" height="45"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y6I-YA-N2J">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zul-ey-EuA">
                             <rect key="frame" x="0.0" y="300" width="374" height="45"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Confirmation Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vue-dx-rAS">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Confirmation Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s4N-V3-Qgv">
                             <rect key="frame" x="0.0" y="360" width="374" height="45"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                 </stackView>
@@ -89,6 +89,9 @@
                             </fragment>
                         </attributedString>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="actionSignIn:" destination="-1" eventType="touchUpInside" id="lG0-ad-yWx"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGL-JC-1Li">
                     <rect key="frame" x="20" y="697.5" width="374" height="17.5"/>

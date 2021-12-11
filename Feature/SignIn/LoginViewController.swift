@@ -56,6 +56,8 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func actionBtnSignUp(_ sender: Any) {
+        let registerVC = RegisterViewController()
+        self.navigationController?.pushViewController(registerVC, animated: false)
     }
     @IBAction func actionBtnLogin(_ sender: Any) {
         guard let email = emailTxtField.text, email != "" else {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: BaseViewController {
+class RegisterViewController: UIViewController {
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var confirmationTxtField: UITextField!
@@ -169,14 +169,13 @@ class RegisterViewController: BaseViewController {
         }
     }
     func btnShowPassword() {
-        passwordTxtField.isSecureTextEntry = true
-        confirmationTxtField.isSecureTextEntry = true
         button.setImage(UIImage(named: "offEye"), for: .normal)
         button.setImage(UIImage(named: "onEye"), for: .selected)
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -12, bottom: 0, right: 0)
         button.addTarget(self, action: #selector(togglePasswordView), for: .touchUpInside)
         passwordTxtField.rightView = button
         passwordTxtField.rightViewMode = .always
+        passwordTxtField.textContentType = .newPassword
         button.alpha = 0.4
         
         buttonConfirmation.setImage(UIImage(named: "offEye"), for: .normal)
@@ -185,7 +184,12 @@ class RegisterViewController: BaseViewController {
         buttonConfirmation.addTarget(self, action: #selector(togglePasswordViewConfirmation), for: .touchUpInside)
         confirmationTxtField.rightView = buttonConfirmation
         confirmationTxtField.rightViewMode = .always
+        confirmationTxtField.textContentType = .newPassword
         buttonConfirmation.alpha = 0.4
+    }
+    @IBAction func actionSignIn(_ sender: Any) {
+        let loginVC = LoginViewController()
+        self.navigationController?.pushViewController(loginVC, animated: false)
     }
     @objc func togglePasswordView(_ sender: Any) {
         passwordTxtField.isSecureTextEntry.toggle()

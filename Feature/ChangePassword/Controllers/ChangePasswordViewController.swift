@@ -70,7 +70,7 @@ class ChangePasswordViewController: UIViewController {
         confirmPasswordTextField.textField.attributedPlaceholder = NSAttributedString(string: "Confirm Password", attributes: [NSAttributedString.Key.font: UIFontMetrics(forTextStyle: .body).scaledFont(for: placeholderFont)])
         
         // Keyboard Control
-        oldPasswordTextField.textField.becomeFirstResponder()
+        /* oldPasswordTextField.textField.becomeFirstResponder() */ // Commented until further decision
         
         // Tap Gesture Recognizer for dismissing keyboard on tap
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ChangePasswordViewController.tap(_:)))

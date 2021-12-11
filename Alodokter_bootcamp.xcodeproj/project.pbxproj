@@ -349,9 +349,9 @@
 			isa = PBXGroup;
 			children = (
 				4E97F20227488BAA00C2366D /* SplashScreen */,
-				2C68A3FB27621BC1002B8997 /* ChangePassword */,
 				4E97F20527488BAA00C2366D /* MainView */,
 				2C68A3BD275F5985002B8997 /* ProfileView */,
+				2C68A3FB27621BC1002B8997 /* ChangePassword */,
 			);
 			path = Feature;
 			sourceTree = SOURCE_ROOT;

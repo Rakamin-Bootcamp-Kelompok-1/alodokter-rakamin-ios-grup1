@@ -81,6 +81,7 @@ class ProfileViewController: UIViewController {
             
             profileCardView1.profileCardRow2.iconImageView.image = UIImage(systemName: "lock.fill")
             profileCardView1.profileCardRow2.titleLabel.text = "Change Password"
+            profileCardView1.profileCardRow2.buttonOutlet.addTarget(self, action: #selector(pushToChangePasswordView), for: .touchUpInside)
             
             
             // Profile Card 2
@@ -129,6 +130,15 @@ class ProfileViewController: UIViewController {
         } else {
             // Fallback on earlier versions
         }
+    }
+    
+    
+    // MARK: - Button Methods
+    
+    @objc
+    func pushToChangePasswordView(button: UIButton) {
+        let vc = ChangePasswordViewController(nibName: "ChangePasswordViewController", bundle: nil)
+        self.navigationController!.pushViewController(vc, animated: true)
     }
     
 

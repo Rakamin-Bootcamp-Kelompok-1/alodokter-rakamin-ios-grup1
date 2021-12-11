@@ -16,6 +16,7 @@ class ProfileCardRow: UIView {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var chevronImageView: UIImageView!
+    @IBOutlet weak var buttonOutlet: UIButton!
     
     
     // MARK: - View Methods
@@ -38,6 +39,8 @@ class ProfileCardRow: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        buttonOutlet.setTitle("", for: .normal)
     }
 
 }

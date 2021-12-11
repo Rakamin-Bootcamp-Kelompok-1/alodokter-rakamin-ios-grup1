@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileCardRow" customModule="Alodokter_bootcamp" customModuleProvider="target">
             <connections>
+                <outlet property="buttonOutlet" destination="8lg-c9-fEI" id="n4N-6i-vCg"/>
                 <outlet property="chevronImageView" destination="7fm-aI-LO4" id="nCy-ZG-3XW"/>
                 <outlet property="contentView" destination="woS-CQ-jKv" id="JQO-ui-X3R"/>
                 <outlet property="iconImageView" destination="qaW-oM-pbg" id="Ulw-eE-919"/>
@@ -50,14 +51,23 @@
                     </constraints>
                     <imageReference key="image" image="chevron.right" catalog="system" symbolScale="default"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lg-c9-fEI">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="JqP-6g-7Ax"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="JqP-6g-7Ax" firstAttribute="trailing" secondItem="7fm-aI-LO4" secondAttribute="trailing" constant="16" id="0RW-GY-7YS"/>
+                <constraint firstItem="JqP-6g-7Ax" firstAttribute="trailing" secondItem="8lg-c9-fEI" secondAttribute="trailing" id="8ym-Sd-BWo"/>
                 <constraint firstItem="qaW-oM-pbg" firstAttribute="leading" secondItem="JqP-6g-7Ax" secondAttribute="leading" constant="16" id="JjR-AM-hd8"/>
+                <constraint firstItem="JqP-6g-7Ax" firstAttribute="bottom" secondItem="8lg-c9-fEI" secondAttribute="bottom" id="T2b-Nv-ie5"/>
+                <constraint firstItem="8lg-c9-fEI" firstAttribute="top" secondItem="JqP-6g-7Ax" secondAttribute="top" id="czC-fe-lt5"/>
                 <constraint firstItem="QmF-XK-v8S" firstAttribute="centerY" secondItem="qaW-oM-pbg" secondAttribute="centerY" id="dLW-o4-aEd"/>
                 <constraint firstItem="QmF-XK-v8S" firstAttribute="leading" secondItem="qaW-oM-pbg" secondAttribute="trailing" constant="16" id="mlZ-Gz-AmM"/>
+                <constraint firstItem="8lg-c9-fEI" firstAttribute="leading" secondItem="JqP-6g-7Ax" secondAttribute="leading" id="pZg-rx-AkW"/>
                 <constraint firstItem="qaW-oM-pbg" firstAttribute="centerY" secondItem="JqP-6g-7Ax" secondAttribute="centerY" id="rPX-KC-Pez"/>
                 <constraint firstItem="7fm-aI-LO4" firstAttribute="centerY" secondItem="QmF-XK-v8S" secondAttribute="centerY" id="u3a-N4-3eU"/>
             </constraints>

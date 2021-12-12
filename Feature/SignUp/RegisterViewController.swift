@@ -21,7 +21,6 @@ class RegisterViewController: UIViewController {
     let buttonConfirmation = UIButton(type: .custom)
     let genders = ["Female", "Male"]
     var pickerView = UIPickerView()
-    let colorBorder = UIColor(red: 170, green: 217, blue: 233, alpha: 1)
     let textfieldColorBorder: UIColor = UIColor.rgb(red: 170, green: 217, blue: 233)
     var activeTextField: UITextField!
     
@@ -34,6 +33,7 @@ class RegisterViewController: UIViewController {
         setTextfieldBorder()
         let dateImage = UIImage(named: "calender")
         addImageTextfield(txtField: dateTxtField, img: dateImage!)
+        btnSignIn.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         
     }
     @objc private func hideKeyboard(){

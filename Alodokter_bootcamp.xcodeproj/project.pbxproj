@@ -39,7 +39,6 @@
 		2C68A40527634E45002B8997 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68A40427634E45002B8997 /* LargeButton.swift */; };
 		2C68A40827635000002B8997 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68A40627635000002B8997 /* ChangePasswordViewController.swift */; };
 		2C68A40927635000002B8997 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A40727635000002B8997 /* ChangePasswordViewController.xib */; };
-		2CDE19AD2764545000D895B9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19AC2764544F00D895B9 /* UITextField.swift */; };
 		2CDE19B92765B68200D895B9 /* DetailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19AF2765B67F00D895B9 /* DetailHistoryViewController.swift */; };
 		2CDE19BA2765B68200D895B9 /* DetailHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE19B02765B67F00D895B9 /* DetailHistoryViewController.xib */; };
 		2CDE19BB2765B68200D895B9 /* DetailBookingHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19B12765B67F00D895B9 /* DetailBookingHistoryViewModel.swift */; };
@@ -68,6 +67,7 @@
 		2CDE19ED2765B6F000D895B9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19EB2765B6F000D895B9 /* ProfileView.swift */; };
 		2CDE19EE2765B6F000D895B9 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE19EC2765B6F000D895B9 /* ProfileView.xib */; };
 		2CDE19F02765B6FA00D895B9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19EF2765B6FA00D895B9 /* TabBarViewController.swift */; };
+		2F2D4DC42765CC4E006EB4E5 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2D4DC32765CC4E006EB4E5 /* UITextField.swift */; };
 		4E97F1CE2748858D00C2366D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CD2748858D00C2366D /* AppDelegate.swift */; };
 		4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CF2748858D00C2366D /* SceneDelegate.swift */; };
 		4E97F1D52748858D00C2366D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E97F1D32748858D00C2366D /* Main.storyboard */; };
@@ -149,7 +149,6 @@
 		2C68A40427634E45002B8997 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
 		2C68A40627635000002B8997 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		2C68A40727635000002B8997 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
-		2CDE19AC2764544F00D895B9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UITextField.swift; path = ../../../../UITextField.swift; sourceTree = "<group>"; };
 		2CDE19AF2765B67F00D895B9 /* DetailHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailHistoryViewController.swift; sourceTree = "<group>"; };
 		2CDE19B02765B67F00D895B9 /* DetailHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailHistoryViewController.xib; sourceTree = "<group>"; };
 		2CDE19B12765B67F00D895B9 /* DetailBookingHistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBookingHistoryViewModel.swift; sourceTree = "<group>"; };
@@ -184,6 +183,7 @@
 		2CDE1A0F2765B89600D895B9 /* ArticleDetailViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleDetailViewCell.xib; sourceTree = "<group>"; };
 		2CDE1A102765B89800D895B9 /* PasswordResetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordResetView.xib; sourceTree = "<group>"; };
 		2CDE1A112765B89A00D895B9 /* ArticleDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleDetailView.xib; sourceTree = "<group>"; };
+		2F2D4DC32765CC4E006EB4E5 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		381744D040FF8C533B3155AB /* Pods_Alodokter_bootcampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcampTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D1D72584417F3B8420172F /* Pods-Alodokter_bootcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp.debug.xcconfig"; sourceTree = "<group>"; };
 		4E97F1CA2748858D00C2366D /* Alodokter_bootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alodokter_bootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -520,9 +520,9 @@
 			isa = PBXGroup;
 			children = (
 				4E97F1FE27488BAA00C2366D /* UIColor.swift */,
-				2CDE19AC2764544F00D895B9 /* UITextField.swift */,
 				4E97F1FF27488BAA00C2366D /* DeviceHelper.swift */,
 				4E97F20027488BAA00C2366D /* Utiliy.swift */,
+				2F2D4DC32765CC4E006EB4E5 /* UITextField.swift */,
 			);
 			path = Helper;
 			sourceTree = SOURCE_ROOT;
@@ -903,11 +903,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E97F21F27488BAB00C2366D /* BaseViewController.swift in Sources */,
-				2CDE19AD2764545000D895B9 /* UITextField.swift in Sources */,
 				4E97F21D27488BAB00C2366D /* DummyAlbumsModel.swift in Sources */,
 				2CDE19E92765B6D800D895B9 /* ArticleService.swift in Sources */,
 				2CDE19E12765B6B400D895B9 /* ArticleListViewController.swift in Sources */,
 				2C68A3C9275F7C95002B8997 /* ProfileCardRow.swift in Sources */,
+				2F2D4DC42765CC4E006EB4E5 /* UITextField.swift in Sources */,
 				4E97F21327488BAB00C2366D /* UIColor.swift in Sources */,
 				2CDE19CA2765B69F00D895B9 /* LoginViewController.swift in Sources */,
 				2CDE19DB2765B6B400D895B9 /* ArticleAllListTableViewCell.swift in Sources */,

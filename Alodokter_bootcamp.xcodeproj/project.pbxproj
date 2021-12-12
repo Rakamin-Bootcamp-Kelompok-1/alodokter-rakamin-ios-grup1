@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49669A6A2761024100D8782A /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49669A682761024100D8782A /* HistoryViewController.swift */; };
-		49669A6B2761024100D8782A /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49669A692761024100D8782A /* HistoryViewController.xib */; };
-		49669A912761435E00D8782A /* HistoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49669A8F2761435E00D8782A /* HistoryItemCell.swift */; };
-		49669A922761435E00D8782A /* HistoryItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49669A902761435E00D8782A /* HistoryItemCell.xib */; };
-		49669ABC2761D77B00D8782A /* DetailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49669ABA2761D77B00D8782A /* DetailHistoryViewController.swift */; };
-		49669ABD2761D77B00D8782A /* DetailHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49669ABB2761D77B00D8782A /* DetailHistoryViewController.xib */; };
-		49AA047E2763BE3F00B05A1A /* HistoryBookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AA047D2763BE3F00B05A1A /* HistoryBookingViewModel.swift */; };
-		49AA04802763C22A00B05A1A /* DetailBookingHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AA047F2763C22A00B05A1A /* DetailBookingHistoryViewModel.swift */; };
 		2C68A3BF275F5E71002B8997 /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3BE275F5E71002B8997 /* ProfileHeader.xib */; };
 		2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68A3C0275F623D002B8997 /* ProfileHeader.swift */; };
 		2C68A3C3275F73C9002B8997 /* ProfileCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3C2275F73C9002B8997 /* ProfileCard.xib */; };
@@ -132,30 +124,6 @@
 		2CDE19AC2764544F00D895B9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UITextField.swift; path = ../../../../UITextField.swift; sourceTree = "<group>"; };
 		381744D040FF8C533B3155AB /* Pods_Alodokter_bootcampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcampTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D1D72584417F3B8420172F /* Pods-Alodokter_bootcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp.debug.xcconfig"; sourceTree = "<group>"; };
-		49669A682761024100D8782A /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		49669A692761024100D8782A /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
-		49669A6E27613FD900D8782A /* Nunito-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BlackItalic.ttf"; sourceTree = "<group>"; };
-		49669A6F27613FD900D8782A /* Nunito-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
-		49669A7027613FD900D8782A /* Nunito-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-MediumItalic.ttf"; sourceTree = "<group>"; };
-		49669A7127613FD900D8782A /* Nunito-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Light.ttf"; sourceTree = "<group>"; };
-		49669A7227613FD900D8782A /* Nunito-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		49669A7327613FD900D8782A /* Nunito-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Italic.ttf"; sourceTree = "<group>"; };
-		49669A7427613FDA00D8782A /* Nunito-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BoldItalic.ttf"; sourceTree = "<group>"; };
-		49669A7527613FDA00D8782A /* Nunito-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Black.ttf"; sourceTree = "<group>"; };
-		49669A7627613FDA00D8782A /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
-		49669A7727613FDA00D8782A /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
-		49669A7827613FDA00D8782A /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
-		49669A7927613FDA00D8782A /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
-		49669A7A27613FDA00D8782A /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		49669A7B27613FDA00D8782A /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
-		49669A7C27613FDA00D8782A /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
-		49669A7D27613FDA00D8782A /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		49669A8F2761435E00D8782A /* HistoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemCell.swift; sourceTree = "<group>"; };
-		49669A902761435E00D8782A /* HistoryItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryItemCell.xib; sourceTree = "<group>"; };
-		49669ABA2761D77B00D8782A /* DetailHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHistoryViewController.swift; sourceTree = "<group>"; };
-		49669ABB2761D77B00D8782A /* DetailHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailHistoryViewController.xib; sourceTree = "<group>"; };
-		49AA047D2763BE3F00B05A1A /* HistoryBookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBookingViewModel.swift; sourceTree = "<group>"; };
-		49AA047F2763C22A00B05A1A /* DetailBookingHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBookingHistoryViewModel.swift; sourceTree = "<group>"; };
 		4E97F1CA2748858D00C2366D /* Alodokter_bootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alodokter_bootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E97F1CD2748858D00C2366D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E97F1CF2748858D00C2366D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,17 +183,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		49669A672761022500D8782A /* History */ = {
-			isa = PBXGroup;
-			children = (
-				49669A8E2761431600D8782A /* HistoryCell */,
-				49669A682761024100D8782A /* HistoryViewController.swift */,
-				49669A692761024100D8782A /* HistoryViewController.xib */,
-				49AA047D2763BE3F00B05A1A /* HistoryBookingViewModel.swift */,
-			);
-			path = History;
-			sourceTree = "<group>";
-		};
 		2C68A3BD275F5985002B8997 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,23 +223,6 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
-		49669A8E2761431600D8782A /* HistoryCell */ = {
-			isa = PBXGroup;
-			children = (
-				49669A8F2761435E00D8782A /* HistoryItemCell.swift */,
-				49669A902761435E00D8782A /* HistoryItemCell.xib */,
-			);
-			path = HistoryCell;
-			sourceTree = "<group>";
-		};
-		49669AB92761D6DF00D8782A /* DetailHistory */ = {
-			isa = PBXGroup;
-			children = (
-				49669ABA2761D77B00D8782A /* DetailHistoryViewController.swift */,
-				49669ABB2761D77B00D8782A /* DetailHistoryViewController.xib */,
-				49AA047F2763C22A00B05A1A /* DetailBookingHistoryViewModel.swift */,
-			);
-			path = DetailHistory;
 		2C68A3F427613D16002B8997 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,8 +348,6 @@
 		4E97F20127488BAA00C2366D /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				49669AB92761D6DF00D8782A /* DetailHistory */,
-				49669A672761022500D8782A /* History */,
 				4E97F20227488BAA00C2366D /* SplashScreen */,
 				4E97F20527488BAA00C2366D /* MainView */,
 				2C68A3BD275F5985002B8997 /* ProfileView */,
@@ -625,12 +563,9 @@
 				2C68A3F027612D96002B8997 /* Nunito-Light.ttf in Resources */,
 				2C68A3EB27612D96002B8997 /* Nunito-BoldItalic.ttf in Resources */,
 				4E97F21B27488BAB00C2366D /* AlbumsCell.xib in Resources */,
-				4E97F1D72748858F00C2366D /* Assets.xcassets in Resources */,
-				49669A922761435E00D8782A /* HistoryItemCell.xib in Resources */,
-				49669A6B2761024100D8782A /* HistoryViewController.xib in Resources */,
-				49669ABD2761D77B00D8782A /* DetailHistoryViewController.xib in Resources */,
 				2C68A3CF275FF2AB002B8997 /* SignOutButton.xib in Resources */,
 				2C68A40927635000002B8997 /* ChangePasswordViewController.xib in Resources */,
+				4E97F1D72748858F00C2366D /* Assets.xcassets in Resources */,
 				2C68A3CD275F7E52002B8997 /* ProfileViewController.xib in Resources */,
 				4E97F1D52748858D00C2366D /* Main.storyboard in Resources */,
 				2C68A3F127612D96002B8997 /* Nunito-ExtraBoldItalic.ttf in Resources */,
@@ -764,8 +699,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49AA047E2763BE3F00B05A1A /* HistoryBookingViewModel.swift in Sources */,
-				49669ABC2761D77B00D8782A /* DetailHistoryViewController.swift in Sources */,
 				4E97F21F27488BAB00C2366D /* BaseViewController.swift in Sources */,
 				2CDE19AD2764545000D895B9 /* UITextField.swift in Sources */,
 				4E97F21D27488BAB00C2366D /* DummyAlbumsModel.swift in Sources */,
@@ -773,7 +706,6 @@
 				4E97F21327488BAB00C2366D /* UIColor.swift in Sources */,
 				4E97F22027488BAB00C2366D /* BaseService.swift in Sources */,
 				4E97F21727488BAB00C2366D /* SplashScreenViewController.swift in Sources */,
-				49669A6A2761024100D8782A /* HistoryViewController.swift in Sources */,
 				2C68A40827635000002B8997 /* ChangePasswordViewController.swift in Sources */,
 				2C68A3C5275F79B2002B8997 /* ProfileCard.swift in Sources */,
 				2C68A3CB275F7E10002B8997 /* ProfileViewController.swift in Sources */,
@@ -787,8 +719,6 @@
 				4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */,
 				2C68A40327634E3C002B8997 /* SecuredTextField.swift in Sources */,
 				4E97F21527488BAB00C2366D /* Utiliy.swift in Sources */,
-				49AA04802763C22A00B05A1A /* DetailBookingHistoryViewModel.swift in Sources */,
-				49669A912761435E00D8782A /* HistoryItemCell.swift in Sources */,
 				4E97F21927488BAB00C2366D /* MainViewController.swift in Sources */,
 				4E97F21A27488BAB00C2366D /* MainViewModel.swift in Sources */,
 			);

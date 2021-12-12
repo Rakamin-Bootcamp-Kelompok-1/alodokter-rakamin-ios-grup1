@@ -4,8 +4,22 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Nunito-Regular.tff</string>
-		<string>Nunito-Bold.tff</string>
+		<string>Nunito-Black</string>
+		<string>Nunito-BlackItalic</string>
+		<string>Nunito-Bold</string>
+		<string>Nunito-BoldItalic</string>
+		<string>Nunito-ExtraBold</string>
+		<string>Nunito-ExtraBoldItalic</string>
+		<string>Nunito-ExtraLight</string>
+		<string>Nunito-ExtraLightItalic</string>
+		<string>Nunito-Italic</string>
+		<string>Nunito-Light</string>
+		<string>Nunito-LightItalic</string>
+		<string>Nunito-Medium</string>
+		<string>Nunito-MediumItalic</string>
+		<string>Nunito-Regular</string>
+		<string>Nunito-SemiBold</string>
+		<string>Nunito-SemiBoldItalic</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

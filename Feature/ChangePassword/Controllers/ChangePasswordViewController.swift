@@ -41,9 +41,9 @@ class ChangePasswordViewController: UIViewController {
         confirmPasswordTextField.textField.delegate = self
         
         // Bottom Border/Underline
-        oldPasswordTextField.textField.addBottomBorder(color: UIColor(hex: "BCBCBC", alpha: 1.0))
-        newPasswordTextField.textField.addBottomBorder(color: UIColor(hex: "BCBCBC", alpha: 1.0))
-        confirmPasswordTextField.textField.addBottomBorder(color: UIColor(hex: "BCBCBC", alpha: 1.0))
+        oldPasswordTextField.textField.addBottomBorder(color: UIColor(named: "NonActive Text")!)
+        newPasswordTextField.textField.addBottomBorder(color: UIColor(named: "NonActive Text")!)
+        confirmPasswordTextField.textField.addBottomBorder(color: UIColor(named: "NonActive Text")!)
         
         // Secured Text Field Placeholder Attributed String
         guard let placeholderFont = UIFont(name: "Nunito-Regular", size: 16) else {
@@ -87,7 +87,7 @@ class ChangePasswordViewController: UIViewController {
         
         if oldPasswordTextField.textField.text!.isEmpty && newPasswordTextField.textField.text!.isEmpty && confirmPasswordTextField.textField.text!.isEmpty {
             updatePasswordButton.buttonOutlet.isUserInteractionEnabled = false
-            updatePasswordButton.buttonOutlet.backgroundColor = UIColor(hex: "C4C4C4", alpha: 1.0)
+            updatePasswordButton.buttonOutlet.backgroundColor = UIColor(named: "Disabled Button")!
         }
         
     }
@@ -113,11 +113,11 @@ extension ChangePasswordViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == oldPasswordTextField.textField {
             newPasswordTextField.textField.becomeFirstResponder()
-            newPasswordTextField.textField.addBottomBorder(color: UIColor.init(hex: "46A3F9", alpha: 1.0))
+            newPasswordTextField.textField.addBottomBorder(color: UIColor(named: "Button Blue")!)
         }
         if textField == newPasswordTextField.textField {
             confirmPasswordTextField.textField.becomeFirstResponder()
-            confirmPasswordTextField.textField.addBottomBorder(color: UIColor.init(hex: "46A3F9", alpha: 1.0))
+            confirmPasswordTextField.textField.addBottomBorder(color: UIColor(named: "Button Blue")!)
         }
         if textField == confirmPasswordTextField.textField {
             confirmPasswordTextField.textField.resignFirstResponder()
@@ -127,21 +127,21 @@ extension ChangePasswordViewController: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.addBottomBorder(color: UIColor.init(hex: "46A3F9", alpha: 1.0))
+        textField.addBottomBorder(color: UIColor(named: "Button Blue")!)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.addBottomBorder(color: UIColor(hex: "BCBCBC", alpha: 1.0))
+        textField.addBottomBorder(color: UIColor(named: "NonActive Text")!)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
         if oldPasswordTextField.textField.text!.isEmpty || newPasswordTextField.textField.text!.isEmpty || confirmPasswordTextField.textField.text!.isEmpty {
             updatePasswordButton.buttonOutlet.isUserInteractionEnabled = false
-            updatePasswordButton.buttonOutlet.backgroundColor = UIColor(hex: "C4C4C4", alpha: 1.0)
+            updatePasswordButton.buttonOutlet.backgroundColor = UIColor(named: "Disabled Button")!
         } else {
             updatePasswordButton.buttonOutlet.isUserInteractionEnabled = true
-            updatePasswordButton.buttonOutlet.backgroundColor = UIColor(hex: "46A3F9", alpha: 1.0)
+            updatePasswordButton.buttonOutlet.backgroundColor = UIColor(named: "Button Blue")!
         }
 
         return true

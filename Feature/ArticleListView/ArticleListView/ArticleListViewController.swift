@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ArticleListViewController: BaseViewController {
+class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var highlightArticleImageView: UIImageView!
     @IBOutlet weak var highlightArticleLabel: UILabel!

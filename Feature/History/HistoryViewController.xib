@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+        <array key="Nunito-SemiBold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
+            <connections>
+                <outlet property="doctorCollectionView" destination="lmP-6o-SLC" id="FvB-7q-QUE"/>
+                <outlet property="userImg" destination="t2G-hv-585" id="tmv-dt-hEz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History Booking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v73-Ez-OZ7">
+                    <rect key="frame" x="46" y="123" width="322" height="25"/>
+                    <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="knF-59-U52">
+                    <rect key="frame" x="46" y="58" width="322" height="46"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Djy-8Z-LCn" userLabel="UserInfo">
+                            <rect key="frame" x="0.0" y="0.0" width="226" height="46"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fS-fx-W6c">
+                                    <rect key="frame" x="0.0" y="0.0" width="226" height="19.5"/>
+                                    <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Russi Hersiano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65N-ZM-bFe">
+                                    <rect key="frame" x="0.0" y="19.5" width="226" height="26.5"/>
+                                    <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t2G-hv-585">
+                            <rect key="frame" x="276" y="1.5" width="46" height="43"/>
+                            <color key="backgroundColor" red="0.94333755969999999" green="0.68974055300000003" blue="0.057236380169999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="46" id="Knr-TX-Ik6"/>
+                                <constraint firstAttribute="width" constant="46" id="Tut-97-rUH"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="322" id="9k6-fW-wtH"/>
+                        <constraint firstAttribute="height" constant="46" id="KJG-El-eTf"/>
+                    </constraints>
+                </stackView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lmP-6o-SLC">
+                    <rect key="frame" x="7" y="172" width="400" height="668"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="jDK-j6-4Q2">
+                        <size key="itemSize" width="300" height="95"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="lmP-6o-SLC" firstAttribute="top" secondItem="v73-Ez-OZ7" secondAttribute="bottom" constant="24" id="4eM-fF-BNV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lmP-6o-SLC" secondAttribute="bottom" constant="22" id="Ggc-Sm-1zJ"/>
+                <constraint firstItem="knF-59-U52" firstAttribute="leading" secondItem="lmP-6o-SLC" secondAttribute="leading" constant="39" id="TIb-9g-MBv"/>
+                <constraint firstItem="knF-59-U52" firstAttribute="trailing" secondItem="lmP-6o-SLC" secondAttribute="trailing" constant="-39" id="WNR-Xm-YPb"/>
+                <constraint firstItem="knF-59-U52" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="14" id="Ylr-Wm-hV3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v73-Ez-OZ7" secondAttribute="trailing" constant="46" id="ffF-7X-LsG"/>
+                <constraint firstItem="v73-Ez-OZ7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="fmQ-ru-m25"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lmP-6o-SLC" secondAttribute="trailing" constant="7" id="hHg-Bs-16I"/>
+                <constraint firstItem="v73-Ez-OZ7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="79" id="hZw-b7-lBs"/>
+                <constraint firstItem="lmP-6o-SLC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="7" id="yI0-z6-V5h"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="105.80357142857143"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

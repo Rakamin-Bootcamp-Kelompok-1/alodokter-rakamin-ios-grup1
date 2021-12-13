@@ -9,7 +9,11 @@ import Foundation
 
 class UserService: BaseService {
     
-    var url: String = ""
+    let url: String = "https://medikuy.herokuapp.com/token_authenticate"
+    let headers: [String : String] = [
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZF91c2VyIjozM30.XInUMgK0Uvn-Fbui96zHoTI_ZMwV2M2zW6sdkdpAPvY",
+        "Content-Type": "application/json"
+    ]
     
     typealias ResponseType = UserModel
     
@@ -22,7 +26,7 @@ class UserService: BaseService {
     }
     
     func query() -> Network.QueryType {
-        return .normal
+        return .json
     }
     
     func setParameters() -> [String : Any]? {
@@ -30,7 +34,7 @@ class UserService: BaseService {
     }
     
     func setHeaders() -> [String : String] {
-        return Utility().getBaseHeader()
+        return headers
     }
     
     func timeout() -> TimeInterval {
@@ -38,7 +42,7 @@ class UserService: BaseService {
     }
     
     func cachePolicy() -> NSURLRequest.CachePolicy {
-        return .reloadIgnoringLocalAndRemoteCacheData
+        return .reloadRevalidatingCacheData
     }
     
     func signature() -> Network.SignatureType {

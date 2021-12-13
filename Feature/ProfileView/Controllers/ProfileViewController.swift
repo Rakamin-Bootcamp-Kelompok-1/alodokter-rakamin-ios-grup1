@@ -18,6 +18,11 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var signOutButton: SignOutButton!
     
     
+    // MARK: - Variables
+    
+    var viewModel = ProfileViewModel()
+    
+    
     // MARK: - View Life Cycle Methods
     
     override func viewDidLoad() {
@@ -25,6 +30,12 @@ class ProfileViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         prepareUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        requestData()
     }
     
     
@@ -47,8 +58,8 @@ class ProfileViewController: UIViewController {
             profileHeaderView.layer.shadowRadius = 4
             
             profileHeaderView.profileImageView.image = UIImage(systemName: "person.crop.circle.fill")
-            profileHeaderView.profileNameLabel.text = "Russi Hersiano"
-            profileHeaderView.profilePhoneNumberLabel.text = "0813-7545-3367"
+            profileHeaderView.profileNameLabel.text = viewModel.userData?.fullname ?? "Russi Hersiano"
+            profileHeaderView.profilePhoneNumberLabel.text = viewModel.userData?.phoneNumber ?? "0811112233"
             
             
             // Profile Card 1
@@ -143,4 +154,30 @@ class ProfileViewController: UIViewController {
     }
     */
 
+}
+
+
+// MARK: - Profile View Model Delegate
+
+// Commented until further optimization
+/*
+extension ProfileViewController: profileViewModelDelegate {
+    func onSuccessRequest() {
+        self.removeSpinner()
+    }
+
+    func onErrorRequest() {
+        self.removeSpinner()
+    }
+}
+*/
+
+
+// MARK: - Methods
+
+extension ProfileViewController {
+    func requestData() {
+//        self.showParentSpinner()
+        viewModel.getUser()
+    }
 }

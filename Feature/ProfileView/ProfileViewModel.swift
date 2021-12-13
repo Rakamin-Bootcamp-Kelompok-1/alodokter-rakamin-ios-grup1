@@ -18,26 +18,32 @@ class ProfileViewModel {
     var delegate: profileViewModelDelegate?
     
     func getUser() {
-        Network.request(req: userService) { (result) in
+        Network.requestNoBody(req: userService) { result in
             switch result {
             case.success(let successGetData):
-                self.userData?.id = successGetData.id
-                self.userData?.fullname = successGetData.fullname
-                self.userData?.password = successGetData.password
-                self.userData?.age = successGetData.age
-                self.userData?.email = successGetData.email
-                self.userData?.gender = successGetData.gender
-                self.userData?.birthDate = successGetData.birthDate
-                self.userData?.phoneNumber = successGetData.phoneNumber
-                self.userData?.imagePath = successGetData.imagePath
-                self.userData?.isAdmin = successGetData.isAdmin
-                self.userData?.isActive = successGetData.isActive
-                self.userData?.createdAt = successGetData.createdAt
-                self.userData?.updatedAt = successGetData.updatedAt
+//                self.userData?.id = successGetData.id
+//                self.userData?.fullname = successGetData.fullname
+//                self.userData?.password = successGetData.password
+//                self.userData?.age = successGetData.age
+//                self.userData?.email = successGetData.email
+//                self.userData?.gender = successGetData.gender
+//                self.userData?.birthDate = successGetData.birthDate
+//                self.userData?.phoneNumber = successGetData.phoneNumber
+//                self.userData?.imagePath = successGetData.imagePath
+//                self.userData?.isAdmin = successGetData.isAdmin
+//                self.userData?.isActive = successGetData.isActive
+//                self.userData?.createdAt = successGetData.createdAt
+//                self.userData?.updatedAt = successGetData.updatedAt
                 
-                self.delegate?.onSuccessRequest()
+                DispatchQueue.main.async {
+                    self.userData = successGetData
+                    self.delegate?.onSuccessRequest()
+                }
+                
             case .failure(let error):
-                self.delegate?.onErrorRequest()
+                DispatchQueue.main.async {
+                    self.delegate?.onErrorRequest()
+                }
             }
         }
     }

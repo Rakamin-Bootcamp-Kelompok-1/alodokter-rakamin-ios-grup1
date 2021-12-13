@@ -53,11 +53,78 @@ class Network {
         case withSignature, emptySignature
     }
     
+    func performGenericFetchRequest<T: Decodable>(urlString: String, token: String,
+                                             errorMsg: @escaping (()-> Void),
+                                             completion: @escaping ((T) -> ())) {
+        if let url = URL(string: urlString) {
+            let session = URLSession(configuration: .default)
+            var request = URLRequest(url: url)
+            request.allHTTPHeaderFields = [
+                "Authorization": "Bearer " + token,
+                "Content-Type": "application/json"
+            ]
+            
+            let task = session.dataTask(with: request) { (data, response, error) in
+                if error != nil {
+                    errorMsg()
+                    return
+                }
+                
+                guard let data = data else { return }
+                
+                if let httpResponse = response as? HTTPURLResponse {
+                    print(httpResponse.statusCode)
+                } else {
+                    assertionFailure("unexpected response")
+                }
+                
+                do {
+                    let obj = try JSONDecoder().decode(T.self, from: data)
+                    completion(obj)
+                } catch let error {
+                    print("failed to decode json:", error)
+                    print(error.localizedDescription)
+                }
+            }
+            task.resume()
+        }
+    }
+    
     @discardableResult
     static func request<T: BaseService>(req: T, completionHandler: @escaping (NetworkResult<T.ResponseType>) -> Void) -> DataRequest? {
         
         let url = req.setUrl()
         let request = prepareRequest(for: url, req: req)
+        
+        return Alamofire.request(request).responseJSON { (response) in
+            if let json = response.result.value {
+                print("JSON: \(JSON(json)) ")
+            }
+            
+            if let err = response.error {
+                completionHandler(NetworkResult.failure(err.localizedDescription))
+                return
+            }
+            
+            if let responseCode = response.response {
+                if let data = response.data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let object = try decoder.decode(T.ResponseType.self, from: data)
+                        completionHandler(NetworkResult.success(object))
+                    } catch let error {
+                        completionHandler(NetworkResult.failure(error.localizedDescription, responseCode.statusCode))
+                    }
+                }
+            }
+        }
+    }
+    
+    @discardableResult
+    static func requestNoBody<T: BaseService>(req: T, completionHandler: @escaping (NetworkResult<T.ResponseType>) -> Void) -> DataRequest? {
+        
+        let url = req.setUrl()
+        let request = prepareRequestNoBody(for: url, req: req)
         
         return Alamofire.request(request).responseJSON { (response) in
             if let json = response.result.value {
@@ -179,6 +246,32 @@ extension Network {
                 let serialization = try JSONSerialization.data(withJSONObject: req.setParameters()!, options: JSONSerialization.WritingOptions(rawValue: 0))
                 jsonString = String(data: serialization, encoding: .utf8)!
                 request!.httpBody = serialization
+                
+            } catch {
+                assertionFailure("Error : while attemping to serialize the data for preparing httpBody \(error)")
+            }
+        case .normal:
+            request = URLRequest(url: url, cachePolicy: req.cachePolicy(), timeoutInterval: req.timeout())
+        }
+        request!.allHTTPHeaderFields = header
+        request!.httpMethod = req.method().rawValue
+        
+        return request!
+    }
+    
+    private static func prepareRequestNoBody<T: BaseService>(for url: URL, req: T) -> URLRequest {
+        
+        var request : URLRequest? = nil
+        var jsonString: String = ""
+        var header = req.setHeaders()
+        
+        switch req.query() {
+        case .json:
+            request = URLRequest(url: url, cachePolicy: req.cachePolicy(),
+                                 timeoutInterval: req.timeout())
+            do {
+                let serialization = try JSONSerialization.data(withJSONObject: req.setParameters()!, options: JSONSerialization.WritingOptions(rawValue: 0))
+                jsonString = String(data: serialization, encoding: .utf8)!
                 
             } catch {
                 assertionFailure("Error : while attemping to serialize the data for preparing httpBody \(error)")

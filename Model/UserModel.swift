@@ -14,21 +14,23 @@ struct UserModel: Identifiable, Codable {
     var age: Int?
     var email: String?
     var gender: String?
-    var birthDate: Date?
+    var birthDate: String?
     var phoneNumber: String?
     var imagePath: String?
     var isAdmin: Bool?
     var isActive: Bool?
-    var createdAt: Date?
-    var updatedAt: Date?
+    var createdAt: String?
+    var updatedAt: String?
+    var resetPasswordToken: String?
+    var resetPasswordSentAt: Date?
     
     enum CodingKeys: String, CodingKey {
-        case id
+        case id = "id"
         case fullname = "full_name"
         case password = "password_digest"
-        case age
-        case email
-        case gender
+        case age = "age"
+        case email = "email"
+        case gender = "gender"
         case birthDate = "birth_date"
         case phoneNumber = "phone_number"
         case imagePath = "image_path"
@@ -36,6 +38,8 @@ struct UserModel: Identifiable, Codable {
         case isActive = "is_active"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case resetPasswordToken = "reset_password_token"
+        case resetPasswordSentAt = "reset_password_sent_at"
     }
     
     init(from decoder: Decoder) throws {
@@ -46,12 +50,14 @@ struct UserModel: Identifiable, Codable {
         age = try values.decodeIfPresent(Int.self, forKey: .age)
         email = try values.decodeIfPresent(String.self, forKey: .email)
         gender = try values.decodeIfPresent(String.self, forKey: .gender)
-        birthDate = try values.decodeIfPresent(Date.self, forKey: .birthDate)
+        birthDate = try values.decodeIfPresent(String.self, forKey: .birthDate)
         phoneNumber = try values.decodeIfPresent(String.self, forKey: .phoneNumber)
         imagePath = try values.decodeIfPresent(String.self, forKey: .imagePath)
         isAdmin = try values.decodeIfPresent(Bool.self, forKey: .isAdmin)
         isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive)
-        createdAt = try values.decodeIfPresent(Date.self, forKey: .createdAt)
-        updatedAt = try values.decodeIfPresent(Date.self, forKey: .updatedAt)
+        createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt)
+        updatedAt = try values.decodeIfPresent(String.self, forKey: .updatedAt)
+        resetPasswordToken = try values.decodeIfPresent(String.self, forKey: .resetPasswordToken)
+        resetPasswordSentAt = try values.decodeIfPresent(Date.self, forKey: .resetPasswordSentAt)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4022922765E17500149B5D /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4022912765E17500149B5D /* UITextField.swift */; };
 		2C68A3BF275F5E71002B8997 /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3BE275F5E71002B8997 /* ProfileHeader.xib */; };
 		2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68A3C0275F623D002B8997 /* ProfileHeader.swift */; };
 		2C68A3C3275F73C9002B8997 /* ProfileCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3C2275F73C9002B8997 /* ProfileCard.xib */; };
@@ -117,6 +118,7 @@
 		1598CDD2261946A8F0BF702D /* Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1AD78B1351395AD1E988703A /* Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.release.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.release.xcconfig"; sourceTree = "<group>"; };
 		28344C9029D69F7FA96C2C4F /* Pods-Alodokter_bootcamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp.release.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp.release.xcconfig"; sourceTree = "<group>"; };
+		2C4022912765E17500149B5D /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		2C68A3BE275F5E71002B8997 /* ProfileHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
 		2C68A3C0275F623D002B8997 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		2C68A3C2275F73C9002B8997 /* ProfileCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCard.xib; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				4E97F1FE27488BAA00C2366D /* UIColor.swift */,
+				2C4022912765E17500149B5D /* UITextField.swift */,
 				4E97F1FF27488BAA00C2366D /* DeviceHelper.swift */,
 				4E97F20027488BAA00C2366D /* Utiliy.swift */,
 				2F2D4DC32765CC4E006EB4E5 /* UITextField.swift */,
@@ -908,6 +911,7 @@
 				2CDE19E12765B6B400D895B9 /* ArticleListViewController.swift in Sources */,
 				2C68A3C9275F7C95002B8997 /* ProfileCardRow.swift in Sources */,
 				2F2D4DC42765CC4E006EB4E5 /* UITextField.swift in Sources */,
+				2C4022922765E17500149B5D /* UITextField.swift in Sources */,
 				4E97F21327488BAB00C2366D /* UIColor.swift in Sources */,
 				2CDE19CA2765B69F00D895B9 /* LoginViewController.swift in Sources */,
 				2CDE19DB2765B6B400D895B9 /* ArticleAllListTableViewCell.swift in Sources */,

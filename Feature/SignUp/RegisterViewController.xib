@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,12 +12,12 @@
             <connections>
                 <outlet property="btnRegister" destination="kZt-cb-Pah" id="a2e-jE-Ncb"/>
                 <outlet property="btnSignIn" destination="Yh3-kU-8ZC" id="vNG-2L-WEQ"/>
-                <outlet property="confirmationTxtField" destination="s4N-V3-Qgv" id="mVQ-uy-bDX"/>
+                <outlet property="confirmationTxtField" destination="8ma-ke-3Gn" id="evZ-uc-628"/>
                 <outlet property="dateTxtField" destination="ytg-Xw-ZTH" id="ZHy-2X-3vn"/>
                 <outlet property="emailTxtField" destination="KRZ-OW-IoQ" id="5Kf-B9-gx6"/>
                 <outlet property="genderTxtField" destination="AX1-Cp-w1v" id="yE7-0f-mYf"/>
                 <outlet property="nameTxtField" destination="88f-5n-3NF" id="NuA-Rk-W5M"/>
-                <outlet property="passwordTxtField" destination="Zul-ey-EuA" id="iif-J9-kwi"/>
+                <outlet property="passwordTxtField" destination="O8f-7a-Jkn" id="ift-fW-M2u"/>
                 <outlet property="phoneTxtField" destination="cIU-nQ-JSL" id="fzV-jA-c5a"/>
                 <outlet property="view" destination="dmA-9n-WAj" id="5Bg-b0-Eg6"/>
             </connections>
@@ -31,43 +30,43 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Pwa-aJ-BQE">
                     <rect key="frame" x="20" y="157.5" width="374" height="391"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="88f-5n-3NF">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="88f-5n-3NF">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="43" id="cur-Zs-SFG"/>
                             </constraints>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits" textContentType="name"/>
+                            <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KRZ-OW-IoQ">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KRZ-OW-IoQ">
                             <rect key="frame" x="0.0" y="58" width="374" height="43"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits" textContentType="email"/>
+                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="one-time-code"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Date of Birth" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ytg-Xw-ZTH">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Date of Birth" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ytg-Xw-ZTH">
                             <rect key="frame" x="0.0" y="116" width="374" height="43"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIU-nQ-JSL">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cIU-nQ-JSL">
                             <rect key="frame" x="0.0" y="174" width="374" height="43"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="one-time-code"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Gender" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AX1-Cp-w1v">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Gender" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AX1-Cp-w1v">
                             <rect key="frame" x="0.0" y="232" width="374" height="43"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zul-ey-EuA">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O8f-7a-Jkn">
                             <rect key="frame" x="0.0" y="290" width="374" height="43"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Confirmation Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s4N-V3-Qgv">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Confirmation Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ma-ke-3Gn">
                             <rect key="frame" x="0.0" y="348" width="374" height="43"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
                         </textField>
                     </subviews>
                 </stackView>
@@ -127,7 +126,7 @@ Account</string>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZt-cb-Pah">
                     <rect key="frame" x="20" y="563.5" width="374" height="43"/>
-                    <color key="backgroundColor" red="0.44705882352941173" green="0.72549019607843135" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.27450980392156865" green="0.63921568627450975" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="43" id="1qN-5w-QQh"/>
                     </constraints>
@@ -136,12 +135,12 @@ Account</string>
                         <attributedString key="attributedTitle">
                             <fragment content="Sign Up">
                                 <attributes>
-                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <font key="NSFont" size="16" name="Poppins-Bold"/>
+                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="18" name="Nunito-Bold"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
-                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </buttonConfiguration>
                     <connections>
                         <action selector="actionBtnSignUp:" destination="-1" eventType="touchUpInside" id="lGx-Sz-AA3"/>
@@ -166,9 +165,4 @@ Account</string>
             <point key="canvasLocation" x="-176.80000000000001" y="67.016491754122939"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

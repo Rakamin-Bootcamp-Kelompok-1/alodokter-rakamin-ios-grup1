@@ -18,8 +18,7 @@ class LoginViewController: UIViewController {
     var iconClick = false
     let imageIcon = UIImageView()
     let button = UIButton(type: .custom)
-    let textfieldColorBorder: UIColor = UIColor.rgb(red: 170, green: 217, blue: 233)
-
+    let textfieldColorBorder: UIColor = UIColor.rgb(red: 70, green: 163, blue: 249)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,16 +42,17 @@ class LoginViewController: UIViewController {
         button.alpha = 0.4
     }
     func setTextFieldBorder() {
-        passwordTxtField.layer.borderColor = textfieldColorBorder.cgColor
-        passwordTxtField.layer.masksToBounds = true
-        passwordTxtField.layer.borderWidth = 2
-        passwordTxtField.layer.cornerRadius = 10
+        let bottomLineEmail = CALayer()
+        bottomLineEmail.frame = CGRect(x: 0, y: self.emailTxtField.frame.size.height - 1, width: self.emailTxtField.frame.size.width, height: 1)
+        bottomLineEmail.backgroundColor = textfieldColorBorder.cgColor
+        emailTxtField.borderStyle = .none
+        emailTxtField.layer.addSublayer(bottomLineEmail)
         
-        emailTxtField.layer.borderColor = textfieldColorBorder.cgColor
-        emailTxtField.layer.masksToBounds = true
-        emailTxtField.layer.borderWidth = 2
-        emailTxtField.layer.cornerRadius = 10
-        
+        let bottomLinePassword = CALayer()
+        bottomLinePassword.frame = CGRect(x: 0, y: self.passwordTxtField.frame.size.height - 1, width: self.passwordTxtField.frame.size.width, height: 1)
+        bottomLinePassword.backgroundColor = textfieldColorBorder.cgColor
+        passwordTxtField.borderStyle = .none
+        passwordTxtField.layer.addSublayer(bottomLinePassword)
     }
 
     @IBAction func actionBtnSignUp(_ sender: Any) {
@@ -84,9 +84,6 @@ class LoginViewController: UIViewController {
         if let passwordUser = userDefaults.value(forKey: "password") as? String {
             print("Password: \(passwordUser)")
         }
-
-
-
 
     }
     @IBAction func actionBtnForgot(_ sender: Any) {

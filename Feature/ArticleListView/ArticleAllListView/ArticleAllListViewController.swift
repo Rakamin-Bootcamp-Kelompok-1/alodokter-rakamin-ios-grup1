@@ -7,23 +7,19 @@
 
 import UIKit
 
-struct ArticleModelDummy {
-    var title: String
-    var description: String
-    var image: String
-}
-
 class ArticleAllListViewController: BaseViewController {
     @IBOutlet weak var kategoriCollectionView: UICollectionView!
     @IBOutlet weak var articleTableView: UITableView!
     @IBOutlet weak var articleSearchBar: UISearchBar!
     
     let category = ["Keluarga", "Nutrisi", "Bayi", "Kehamilan", "Kecantikan", "Diabetes"]
-    let articles: [ArticleModelDummy] = [ArticleModelDummy(title: "4 Manfaat Daun Sambiloto untuk Kulit yang Sayang Dilewatkan", description: "Tak hanya baik untuk kesehatan tubuh, manfaat daun sambiloto untuk kesehatan kulit pun begitu beragam. Berbagai kandungan nutrisi di dalamnya dipercaya baik", image: "article_pic_example1"), ArticleModelDummy(title: "Mengenal COVID-19 Varian Omicron", description: "Varian Omicron (B.1.1.529) merupakan salah satu hasil mutasi virus Corona. Berdasarkan bukti yang ada sejauh ini, varian Omicron memiliki tingkat mutasi yang tinggi", image: "article_pic_example2"), ArticleModelDummy(title: "4 Manfaat Daun Sambiloto untuk Kulit yang Sayang Dilewatkan", description: "Tak hanya baik untuk kesehatan tubuh, manfaat daun sambiloto untuk kesehatan kulit pun begitu beragam. Berbagai kandungan nutrisi di dalamnya dipercaya baik", image: "article_pic_example1")]
-    
+    var articles: [ArticleModel] = []
+    var articlePages = 1
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
+        getArticleData(page: articlePages)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,17 +31,34 @@ class ArticleAllListViewController: BaseViewController {
         kategoriCollectionView.delegate = self
         kategoriCollectionView.dataSource = self
         kategoriCollectionView.register(UINib(nibName: "ArticleAllListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ArticleAllListCell")
-        
         articleTableView.delegate = self
         articleTableView.dataSource = self
         articleTableView.register(UINib(nibName: "ArticleAllListTableViewCell", bundle: nil), forCellReuseIdentifier: "ArticleAllListCell")
         articleTableView.rowHeight = UITableView.automaticDimension
-        
         articleSearchBar.backgroundImage = UIImage()
-        
         self.navigationItem.title = "Medikuy Artikel"
-        navigationController?.navigationBar.prefersLargeTitles = false
-//        navigationController?.navigationBar.backgroundColor = UIColor(named: "blue something")
+    }
+    
+    func getArticleData(page: Int) {
+        self.showParentSpinner()
+        URLSession.shared.dataTask(with: URL(string: "https://medikuy.herokuapp.com/articles?page=\(page)")!) { data, respone, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            if let data = data {
+                let articles = try? JSONDecoder().decode(ArticleData.self, from: data)
+                self.articles.append(contentsOf: articles!.data)
+            }
+            
+            DispatchQueue.main.async {
+                self.articleTableView.reloadData()
+                self.removeSpinner()
+            }
+            
+        } .resume()
+        
+       
     }
 }
 
@@ -65,14 +78,23 @@ extension ArticleAllListViewController: UICollectionViewDelegate, UICollectionVi
 
 extension ArticleAllListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        articles.count
+        return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = articleTableView.dequeueReusableCell(withIdentifier: "ArticleAllListCell", for: indexPath) as! ArticleAllListTableViewCell
-        cell.titleLabel.text = articles[indexPath.row].title
-        cell.descriptionLabel.text = articles[indexPath.row].description
-        cell.articleImageView.image = UIImage(named: articles[indexPath.row].image)
+        cell.titleLabel.text = articles[indexPath.row].article_title
+        cell.descriptionLabel.text = articles[indexPath.row].content_desc
+        cell.articleImageView.sd_setImage(with: URL(string: articles[indexPath.row].image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == articles.count {
+            if articlePages < 2 {
+                articlePages += 1
+                getArticleData(page: articlePages)
+            }
+        }
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: BaseViewController {
 
     
     // MARK: - IBOutlets
@@ -44,6 +44,7 @@ class ProfileViewController: UIViewController {
     func prepareUI() {
         if #available(iOS 13.0, *) {
             // Navigation Bar Title
+            self.isNavigationBarHidden = false
             self.title = "My Profile"
             
             
@@ -158,7 +159,7 @@ class ProfileViewController: UIViewController {
 // MARK: - Profile View Model Delegate
 
 // Commented until further optimization
-/*
+
 extension ProfileViewController: profileViewModelDelegate {
     func onSuccessRequest() {
         self.removeSpinner()
@@ -168,7 +169,7 @@ extension ProfileViewController: profileViewModelDelegate {
         self.removeSpinner()
     }
 }
-*/
+
 
 
 // MARK: - Methods

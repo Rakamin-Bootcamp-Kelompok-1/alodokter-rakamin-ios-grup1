@@ -69,7 +69,6 @@ class ProfileViewController: UIViewController {
             profileCardView1.containerView.layer.cornerRadius = 5
             
             // Profile Card 1 Shadow
-//            profileCardView1.containerView.layer.shadowPath = UIBezierPath(rect: profileCardView1.containerView.bounds).cgPath
             profileCardView1.containerView.layer.shadowColor = UIColor.black.cgColor
             profileCardView1.containerView.layer.shadowOpacity = 0.25
             profileCardView1.containerView.layer.shadowOffset = .zero
@@ -91,7 +90,6 @@ class ProfileViewController: UIViewController {
             profileCardView2.containerView.layer.cornerRadius = 5
             
             // Profile Card 2 Shadow
-//            profileCardView2.containerView.layer.shadowPath = UIBezierPath(rect: profileCardView2.containerView.bounds).cgPath
             profileCardView2.containerView.layer.shadowColor = UIColor.black.cgColor
             profileCardView2.containerView.layer.shadowOpacity = 0.25
             profileCardView2.containerView.layer.shadowOffset = .zero

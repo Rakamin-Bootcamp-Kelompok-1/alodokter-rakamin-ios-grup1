@@ -53,43 +53,6 @@ class Network {
         case withSignature, emptySignature
     }
     
-    func performGenericFetchRequest<T: Decodable>(urlString: String, token: String,
-                                             errorMsg: @escaping (()-> Void),
-                                             completion: @escaping ((T) -> ())) {
-        if let url = URL(string: urlString) {
-            let session = URLSession(configuration: .default)
-            var request = URLRequest(url: url)
-            request.allHTTPHeaderFields = [
-                "Authorization": "Bearer " + token,
-                "Content-Type": "application/json"
-            ]
-            
-            let task = session.dataTask(with: request) { (data, response, error) in
-                if error != nil {
-                    errorMsg()
-                    return
-                }
-                
-                guard let data = data else { return }
-                
-                if let httpResponse = response as? HTTPURLResponse {
-                    print(httpResponse.statusCode)
-                } else {
-                    assertionFailure("unexpected response")
-                }
-                
-                do {
-                    let obj = try JSONDecoder().decode(T.self, from: data)
-                    completion(obj)
-                } catch let error {
-                    print("failed to decode json:", error)
-                    print(error.localizedDescription)
-                }
-            }
-            task.resume()
-        }
-    }
-    
     @discardableResult
     static func request<T: BaseService>(req: T, completionHandler: @escaping (NetworkResult<T.ResponseType>) -> Void) -> DataRequest? {
         

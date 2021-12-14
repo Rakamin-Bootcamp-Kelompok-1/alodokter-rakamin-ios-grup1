@@ -29,7 +29,7 @@ class SplashScreenViewController: BaseViewController {
         
         // Splash Screen Delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            let mainView: UINavigationController = UINavigationController(rootViewController: ProfileViewController())
+            let mainView: UINavigationController = UINavigationController(rootViewController: TabBarViewController())
             UIApplication.setRootView(mainView, options: .transitionCrossDissolve)
         }
     }

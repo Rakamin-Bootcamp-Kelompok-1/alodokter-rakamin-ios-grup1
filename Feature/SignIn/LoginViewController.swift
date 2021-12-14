@@ -94,7 +94,7 @@ class LoginViewController: UIViewController {
             
             do{
                 let decoder = JSONDecoder()
-                let dataUser = try decoder.decode(UserModel.self, from: responseJson.data!)
+                let dataUser = try decoder.decode(UserAccountModel.self, from: responseJson.data!)
                 DispatchQueue.main.async {
                     self.activityIndicator.isHidden = true
                     self.userDefaults.setValue(dataUser.user.email, forKey: "email")
@@ -125,6 +125,6 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-    
+    }
 
 }

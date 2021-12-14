@@ -7,7 +7,22 @@
 
 import Foundation
 
-struct UserModel: Identifiable, Codable {
+struct UserModel: Codable {
+    let user: User?
+    let token: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case user, token
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        user = try values.decodeIfPresent(User.self, forKey: .user)
+        token = try values.decodeIfPresent(String.self, forKey: .token)
+    }
+}
+
+struct User: Identifiable, Codable {
     var id: Int?
     var fullname: String?
     var password: String?
@@ -25,12 +40,10 @@ struct UserModel: Identifiable, Codable {
     var resetPasswordSentAt: Date?
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
+        case id
         case fullname = "full_name"
         case password = "password_digest"
-        case age = "age"
-        case email = "email"
-        case gender = "gender"
+        case age, email, gender
         case birthDate = "birth_date"
         case phoneNumber = "phone_number"
         case imagePath = "image_path"

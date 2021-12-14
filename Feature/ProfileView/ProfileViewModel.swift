@@ -14,7 +14,7 @@ protocol profileViewModelDelegate {
 
 class ProfileViewModel {
     var userService = UserService()
-    var userData: UserModel?
+    var userData: User?
     var delegate: profileViewModelDelegate?
     
     func getUser() {

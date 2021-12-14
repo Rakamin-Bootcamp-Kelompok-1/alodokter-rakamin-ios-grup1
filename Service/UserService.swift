@@ -15,7 +15,7 @@ class UserService: BaseService {
         "Content-Type": "application/json"
     ]
     
-    typealias ResponseType = UserModel
+    typealias ResponseType = User
     
     func method() -> Network.Method {
         return .get

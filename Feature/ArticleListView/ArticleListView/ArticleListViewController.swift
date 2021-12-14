@@ -35,6 +35,8 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         allArticleView.addGestureRecognizer(tapGesture)
         
         articleSearchBar.backgroundImage = UIImage()
+        
+        self.isNavigationBarHidden = true
     }
     
     func initArticleCollectionView() {

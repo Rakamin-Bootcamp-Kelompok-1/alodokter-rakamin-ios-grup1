@@ -2,7 +2,7 @@
 //  ArticleDetailViewModel.swift
 //  Alodokter_bootcamp
 //
-//  Created by Ricky Austin on 09/12/21.
+//  Created by Ricky Austin on 13/12/21.
 //
 
 import Foundation

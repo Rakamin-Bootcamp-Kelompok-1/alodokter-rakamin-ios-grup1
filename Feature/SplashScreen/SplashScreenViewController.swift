@@ -11,7 +11,7 @@ class SplashScreenViewController: BaseViewController {
     
     override func viewDidLoad() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            let mainView : UINavigationController = UINavigationController(rootViewController: TabBarViewController())
+            let mainView : UINavigationController = UINavigationController(rootViewController: ArticleDetailViewController())
             UIApplication.setRootView(mainView,options: .transitionCrossDissolve)
         }
     }

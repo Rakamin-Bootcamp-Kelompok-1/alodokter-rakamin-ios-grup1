@@ -14,7 +14,7 @@ protocol ArticleViewModelDelegate {
 
 class ArticleViewModel {
     var articleService = ArticleService()
-    var articleListData = [ArticleModel]()
+    var articleListData = [ArticleData]()
     var delegate: ArticleViewModelDelegate?
     
     func getArticleListData(){

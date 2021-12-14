@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate {
     
@@ -16,11 +17,13 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
     @IBOutlet weak var allArticleView: UIView!
     @IBOutlet weak var articleSearchBar: UISearchBar!
     
+    var viewModel = ArticleViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initArticleCollectionView()
         viewSetup()
-        
+        requestData()
     }
     
     func viewSetup() {
@@ -29,12 +32,11 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         doctorView.layer.shadowOpacity = 0.5
         doctorView.layer.shadowRadius = 2
         doctorView.layer.cornerRadius = 20
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewAllArticle(_:)))
         tapGesture.delegate = self
         allArticleView.addGestureRecognizer(tapGesture)
-        
         articleSearchBar.backgroundImage = UIImage()
+        viewModel.delegate = self
     }
     
     func initArticleCollectionView() {
@@ -42,6 +44,11 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         articleCollectionView.dataSource = self
         articleCollectionView.register(UINib(nibName: "ArticleListCell", bundle: nil), forCellWithReuseIdentifier: "ArticleListCell")
         
+    }
+    
+    func requestData(){
+        self.showParentSpinner()
+        viewModel.getArticleListData()
     }
     
     @objc func viewAllArticle(_ sender: UIView) {
@@ -53,13 +60,30 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
 
 extension ArticleListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if viewModel.articleListData.count != 0 {
+            return viewModel.articleListData[0].data.count
+        }
+        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = articleCollectionView.dequeueReusableCell(withReuseIdentifier: "ArticleListCell", for: indexPath) as! ArticleListCell
-        cell.nameLabel.text = "Article"
-        cell.articleImageView.image = UIImage(named: "article_pic_example")
+        cell.nameLabel.text = viewModel.articleListData[0].data[indexPath.row].article_title
+        cell.articleImageView.sd_setImage(with: URL(string: viewModel.articleListData[0].data[indexPath.row].image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))
         return cell
+    }
+}
+
+extension ArticleListViewController: ArticleViewModelDelegate {
+    func onSuccessRequest() {
+        self.removeSpinner()
+        highlightArticleImageView.sd_setImage(with: URL(string: viewModel.articleListData[0].data[0].image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))
+        highlightArticleLabel.text = viewModel.articleListData[0].data[0].article_title
+        articleCollectionView.reloadData()
+    }
+    
+    func onErrorRequest() {
+        self.removeSpinner()
     }
 }

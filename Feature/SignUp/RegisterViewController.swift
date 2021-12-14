@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterViewController: UIViewController {
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var passwordTxtField: UITextField!
@@ -164,15 +166,61 @@ class RegisterViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             return
         }
-        if passwordTxtField.text! != confirmationTxtField.text! {
-            let alertController = UIAlertController(title: "Error" , message: "Password are not the same", preferredStyle: .alert)
+        
+        if nameTxtField.text!.count < 8 {
+            let alertController = UIAlertController(title: "Error" , message: "Minimum of 8 characters for Full Name", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else if emailTxtField.text!.count < 8 {
+            let alertController = UIAlertController(title: "Error" , message: "Minimum of 8 characters for Email", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else if phoneTxtField.text!.count < 11 {
+            let alertController = UIAlertController(title: "Error" , message: "Minimum of 11 digit for Phone Number", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else if passwordTxtField.text! != confirmationTxtField.text! {
+            let alertController = UIAlertController(title: "Error" , message: "The password does not match", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
             alertController.addAction(alertAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
             print("Register")
+            self.registerAF(email: emailTxtField.text!, password: passwordTxtField.text!, name: nameTxtField.text!, birthdate: dateTxtField.text!, phone: phoneTxtField.text!, gender: genderTxtField.text!)
         }
     }
+    func registerAF(email: String, password: String, name: String, birthdate:String, phone:String, gender:String){
+        self.activityView.isHidden = false
+        Alamofire.request("https://medikuy.herokuapp.com/user/add", method: .post, parameters: ["full_name": "\(name)", "password": "\(password)", "email": "\(email)", "gender": "\(gender)", "birth_date": "\(birthdate)", "phone_number": "\(phone)"]).validate().responseJSON { response in
+            switch response.result {
+            case .success:
+                let alertController = UIAlertController(title: "Success" , message: "Account has been registered", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+                alertController.addAction(alertAction)
+                self.present(alertController, animated: true, completion: nil)
+                self.activityView.isHidden = true
+                self.nameTxtField.text = ""
+                self.emailTxtField.text = ""
+                self.dateTxtField.text = ""
+                self.phoneTxtField.text = ""
+                self.genderTxtField.text = ""
+                self.passwordTxtField.text = ""
+                self.confirmationTxtField.text = ""
+            case .failure(let error):
+                print(error)
+                self.activityView.isHidden = true
+                let alertController = UIAlertController(title: "Error" , message: "Invalid Username or Password", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+                alertController.addAction(alertAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
+        }
+    }
+
     func btnShowPassword() {
         button.setImage(UIImage(named: "offEye"), for: .normal)
         button.setImage(UIImage(named: "onEye"), for: .selected)

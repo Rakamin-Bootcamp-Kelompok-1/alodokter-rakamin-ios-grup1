@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var btnForgot: UIButton!
     @IBOutlet weak var btnSignUp: UIButton!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
+
     let userDefaults = UserDefaults()
     var iconClick = false
     let imageIcon = UIImageView()
@@ -22,10 +26,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        activityIndicator.isHidden = true
         btnLogin.layer.cornerRadius = 10
         btnShowPassword()
         setTextFieldBorder()
+
     }
     
     @objc func togglePasswordView(_ sender: Any) {
@@ -60,11 +65,13 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(registerVC, animated: false)
     }
     @IBAction func actionBtnLogin(_ sender: Any) {
+        self.activityIndicator.isHidden = false
         guard let email = emailTxtField.text, email != "" else {
             let alertController = UIAlertController(title: "Error" , message: "Email is Require", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
             alertController.addAction(alertAction)
             self.present(alertController, animated: true, completion: nil)
+            activityIndicator.isHidden = true
             return
         }
         guard let password = passwordTxtField.text, password != "" else {
@@ -72,21 +79,53 @@ class LoginViewController: UIViewController {
             let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
             alertController.addAction(alertAction)
             self.present(alertController, animated: true, completion: nil)
+            activityIndicator.isHidden = true
             return
         }
         
-        userDefaults.setValue(emailTxtField.text, forKey: "email")
-        userDefaults.setValue(passwordTxtField.text, forKey: "password")
-        
-        if let emailUser = userDefaults.value(forKey: "email") as? String {
-            print("Email: \(emailUser)")
-        }
-        if let passwordUser = userDefaults.value(forKey: "password") as? String {
-            print("Password: \(passwordUser)")
-        }
-
+        loginApiAF(email: emailTxtField.text!, password: passwordTxtField.text!)
     }
     @IBAction func actionBtnForgot(_ sender: Any) {
+    }
+
+    func loginApiAF(email: String, password: String) {
+        activityIndicator.isHidden = false
+        btnLogin.isHidden = true
+        Alamofire.request("https://medikuy.herokuapp.com/login", method: .post, parameters: ["email":"\(email)", "password":"\(password)"]).responseJSON { (responseJson) in
+            
+            do{
+                let decoder = JSONDecoder()
+                let dataUser = try decoder.decode(UserModel.self, from: responseJson.data!)
+                DispatchQueue.main.async {
+                    self.activityIndicator.isHidden = true
+                    self.userDefaults.setValue(dataUser.user.email, forKey: "email")
+                    self.userDefaults.setValue(dataUser.user.birthDate, forKey: "birthdate")
+                    self.userDefaults.setValue(dataUser.token, forKey: "token")
+                    self.userDefaults.setValue(dataUser.user.passwordDigest, forKey: "passwordDigest")
+                    self.userDefaults.setValue(dataUser.user.gender, forKey: "gender")
+                    self.userDefaults.setValue(dataUser.user.phoneNumber, forKey: "phoneNumber")
+                    self.userDefaults.setValue(dataUser.user.fullName, forKey: "fullName")
+                    self.btnLogin.isHidden = false
+
+                    if let emailUser = self.userDefaults.value(forKey: "email") as? String {
+                        print("Email: \(emailUser)")
+                    }
+                    if let birthdateUser = self.userDefaults.value(forKey: "birthdate") as? String {
+                        print("Date: \(birthdateUser)")
+                    }
+                }
+                
+            } catch {
+                DispatchQueue.main.async {
+                    self.activityIndicator.isHidden = true
+                    self.btnLogin.isHidden = false
+                    let alertController = UIAlertController(title: "Error" , message: "Register Failed", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
 

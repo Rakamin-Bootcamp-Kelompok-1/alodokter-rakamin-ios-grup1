@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
             <connections>
+                <outlet property="activityView" destination="lXj-wl-XDa" id="5h0-kH-AvC"/>
                 <outlet property="btnRegister" destination="kZt-cb-Pah" id="a2e-jE-Ncb"/>
                 <outlet property="btnSignIn" destination="Yh3-kU-8ZC" id="vNG-2L-WEQ"/>
                 <outlet property="confirmationTxtField" destination="8ma-ke-3Gn" id="evZ-uc-628"/>
@@ -36,12 +37,12 @@
                                 <constraint firstAttribute="height" constant="43" id="cur-Zs-SFG"/>
                             </constraints>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="one-time-code"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KRZ-OW-IoQ">
                             <rect key="frame" x="0.0" y="58" width="374" height="43"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="one-time-code"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="one-time-code"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Date of Birth" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ytg-Xw-ZTH">
                             <rect key="frame" x="0.0" y="116" width="374" height="43"/>
@@ -61,13 +62,16 @@
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O8f-7a-Jkn">
                             <rect key="frame" x="0.0" y="290" width="374" height="43"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="one-time-code"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Confirmation Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ma-ke-3Gn">
                             <rect key="frame" x="0.0" y="348" width="374" height="43"/>
                             <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="one-time-code"/>
                         </textField>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="lXj-wl-XDa">
+                            <rect key="frame" x="0.0" y="391" width="374" height="0.0"/>
+                        </activityIndicatorView>
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ZhG-FY-NvJ">

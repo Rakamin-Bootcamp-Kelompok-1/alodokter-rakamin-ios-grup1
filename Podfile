@@ -19,5 +19,6 @@ target 'Alodokter_bootcamp' do
   pod 'Alamofire', '~> 4.9.1'
   pod 'SwiftyJSON'
   pod 'SDWebImage', '~> 5.0'
+  pod 'IQKeyboardManager'
 
 end

@@ -9,7 +9,7 @@ import UIKit
 
 class ProfileView: UIView {
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userImageButton: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var greetLabel: UILabel!
     
@@ -28,5 +28,10 @@ class ProfileView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        userImageButton.setTitle("", for: .normal)
+    }
+    
+    @IBAction func profileButton(_ sender: Any) {
+        
     }
 }

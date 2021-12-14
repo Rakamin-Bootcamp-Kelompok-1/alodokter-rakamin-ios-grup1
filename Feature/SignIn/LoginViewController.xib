@@ -10,11 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="9ce-Rc-VG2" id="Ur8-E6-9ax"/>
                 <outlet property="btnForgot" destination="kcD-Gx-dEx" id="77j-um-ueq"/>
                 <outlet property="btnLogin" destination="Eza-Fs-WQw" id="9kT-Nt-vGh"/>
                 <outlet property="btnSignUp" destination="kdK-yS-9na" id="ogN-Oz-SnC"/>
                 <outlet property="emailTxtField" destination="zdx-X1-g5p" id="4oz-ET-0DZ"/>
-                <outlet property="passwordTxtField" destination="v7b-jL-9ZO" id="oJu-fX-02S"/>
+                <outlet property="passwordTxtField" destination="v7b-jL-9ZO" id="bPh-C8-Q4j"/>
                 <outlet property="view" destination="Lki-6n-ccU" id="Aql-r6-iMw"/>
             </connections>
         </placeholder>
@@ -37,7 +38,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="95h-Qn-4sw">
                     <rect key="frame" x="20" y="256" width="374" height="175"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-X1-g5p">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-X1-g5p">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="0RW-nK-Qj2"/>
@@ -45,7 +46,7 @@
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7b-jL-9ZO">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7b-jL-9ZO">
                             <rect key="frame" x="0.0" y="65" width="374" height="45"/>
                             <attributedString key="attributedText"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -59,7 +60,7 @@
                                     <fragment content="Sign In">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="Nunito-Bold"/>
+                                            <font key="NSFont" size="18" name="Nunito-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -133,12 +134,20 @@
                         <action selector="actionBtnForgot:" destination="-1" eventType="touchUpInside" id="6eh-AJ-Ko6"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="9ce-Rc-VG2">
+                    <rect key="frame" x="184.5" y="492" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="2ht-8G-NBW"/>
+                        <constraint firstAttribute="width" constant="45" id="3l0-AB-UGQ"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="uUZ-Qi-izC"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="kcD-Gx-dEx" firstAttribute="centerX" secondItem="Lki-6n-ccU" secondAttribute="centerX" id="5M9-B3-YgB"/>
                 <constraint firstItem="95h-Qn-4sw" firstAttribute="leading" secondItem="uUZ-Qi-izC" secondAttribute="leading" constant="20" id="9lB-I4-Ppc"/>
+                <constraint firstItem="kcD-Gx-dEx" firstAttribute="centerX" secondItem="Lki-6n-ccU" secondAttribute="centerX" id="EUc-C7-Lv4"/>
+                <constraint firstItem="9ce-Rc-VG2" firstAttribute="centerX" secondItem="Lki-6n-ccU" secondAttribute="centerX" id="EYo-oj-IRt"/>
                 <constraint firstItem="95h-Qn-4sw" firstAttribute="top" secondItem="JaE-PX-PXU" secondAttribute="bottom" constant="80" id="Fsk-4K-ufO"/>
                 <constraint firstAttribute="bottom" secondItem="kdK-yS-9na" secondAttribute="bottom" constant="20" id="Sh6-ha-Tby"/>
                 <constraint firstItem="x8m-AZ-6hy" firstAttribute="centerX" secondItem="Lki-6n-ccU" secondAttribute="centerX" id="TMl-LT-jhV"/>
@@ -148,6 +157,7 @@
                 <constraint firstItem="kdK-yS-9na" firstAttribute="top" secondItem="x8m-AZ-6hy" secondAttribute="bottom" constant="5" id="l3f-2h-MOI"/>
                 <constraint firstItem="uUZ-Qi-izC" firstAttribute="trailing" secondItem="JaE-PX-PXU" secondAttribute="trailing" constant="20" id="lgj-Kt-Fx6"/>
                 <constraint firstItem="kdK-yS-9na" firstAttribute="centerX" secondItem="Lki-6n-ccU" secondAttribute="centerX" id="nzG-Lk-bD4"/>
+                <constraint firstItem="9ce-Rc-VG2" firstAttribute="top" secondItem="kcD-Gx-dEx" secondAttribute="bottom" constant="15" id="qp7-A3-tja"/>
                 <constraint firstItem="JaE-PX-PXU" firstAttribute="leading" secondItem="uUZ-Qi-izC" secondAttribute="leading" constant="20" id="vSq-bN-Uuf"/>
             </constraints>
             <point key="canvasLocation" x="218.84057971014494" y="117.85714285714285"/>

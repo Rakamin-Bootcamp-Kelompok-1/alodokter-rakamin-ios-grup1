@@ -91,7 +91,6 @@ class RegisterViewController: UIViewController {
         bottomLineName.backgroundColor = textfieldColorBorder.cgColor
         nameTxtField.borderStyle = .none
         nameTxtField.layer.addSublayer(bottomLineName)
-
     }
   
     
@@ -166,7 +165,6 @@ class RegisterViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             return
         }
-        
         if nameTxtField.text!.count < 8 {
             let alertController = UIAlertController(title: "Error" , message: "Minimum of 8 characters for Full Name", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
@@ -229,6 +227,7 @@ class RegisterViewController: UIViewController {
         passwordTxtField.rightView = button
         passwordTxtField.rightViewMode = .always
         passwordTxtField.autocorrectionType = .no
+        passwordTxtField.textContentType = .newPassword
         button.alpha = 0.4
         
         buttonConfirmation.setImage(UIImage(named: "offEye"), for: .normal)
@@ -238,6 +237,7 @@ class RegisterViewController: UIViewController {
         confirmationTxtField.rightView = buttonConfirmation
         confirmationTxtField.rightViewMode = .always
         confirmationTxtField.autocorrectionType = .no
+        confirmationTxtField.textContentType = .newPassword
         buttonConfirmation.alpha = 0.4
     }
     @IBAction func actionSignIn(_ sender: Any) {

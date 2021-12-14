@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
-
+  
     let userDefaults = UserDefaults()
     var iconClick = false
     let imageIcon = UIImageView()
@@ -30,7 +30,6 @@ class LoginViewController: UIViewController {
         btnLogin.layer.cornerRadius = 10
         btnShowPassword()
         setTextFieldBorder()
-
     }
     
     @objc func togglePasswordView(_ sender: Any) {
@@ -126,7 +125,6 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-    }
     
 
 }

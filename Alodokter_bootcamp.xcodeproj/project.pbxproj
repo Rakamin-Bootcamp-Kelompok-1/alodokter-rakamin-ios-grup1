@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2C4022922765E17500149B5D /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4022912765E17500149B5D /* UITextField.swift */; };
+		2C402294276742D100149B5D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C402293276742D100149B5D /* UserModel.swift */; };
+		2C402296276750B900149B5D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C402295276750B900149B5D /* ProfileViewModel.swift */; };
+		2C40229A2767871700149B5D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4022992767871700149B5D /* UserService.swift */; };
 		2C68A3BF275F5E71002B8997 /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3BE275F5E71002B8997 /* ProfileHeader.xib */; };
 		2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68A3C0275F623D002B8997 /* ProfileHeader.swift */; };
 		2C68A3C3275F73C9002B8997 /* ProfileCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3C2275F73C9002B8997 /* ProfileCard.xib */; };
@@ -118,6 +121,9 @@
 		1AD78B1351395AD1E988703A /* Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.release.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests/Pods-Alodokter_bootcamp-Alodokter_bootcampUITests.release.xcconfig"; sourceTree = "<group>"; };
 		28344C9029D69F7FA96C2C4F /* Pods-Alodokter_bootcamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp.release.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp.release.xcconfig"; sourceTree = "<group>"; };
 		2C4022912765E17500149B5D /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		2C402293276742D100149B5D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		2C402295276750B900149B5D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		2C4022992767871700149B5D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2C68A3BE275F5E71002B8997 /* ProfileHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
 		2C68A3C0275F623D002B8997 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		2C68A3C2275F73C9002B8997 /* ProfileCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCard.xib; sourceTree = "<group>"; };
@@ -250,6 +256,7 @@
 			children = (
 				2C68A3F427613D16002B8997 /* Views */,
 				2C68A3F527613D37002B8997 /* Controllers */,
+				2C402295276750B900149B5D /* ProfileViewModel.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -578,6 +585,7 @@
 			children = (
 				2CDE19E62765B6CB00D895B9 /* ArticleModel.swift */,
 				4E97F20D27488BAA00C2366D /* DummyAlbumsModel.swift */,
+				2C402293276742D100149B5D /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = SOURCE_ROOT;
@@ -587,6 +595,7 @@
 			children = (
 				2CDE19E82765B6D800D895B9 /* ArticleService.swift */,
 				4E97F20F27488BAB00C2366D /* DummyAlbumsService.swift */,
+				2C4022992767871700149B5D /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = SOURCE_ROOT;
@@ -916,14 +925,17 @@
 				4E97F21727488BAB00C2366D /* SplashScreenViewController.swift in Sources */,
 				2CDE19E72765B6CC00D895B9 /* ArticleModel.swift in Sources */,
 				2CDE19E02765B6B400D895B9 /* ArticleAllListViewController.swift in Sources */,
+				2C40229A2767871700149B5D /* UserService.swift in Sources */,
 				2C68A40827635000002B8997 /* ChangePasswordViewController.swift in Sources */,
 				2CDE19BB2765B68200D895B9 /* DetailBookingHistoryViewModel.swift in Sources */,
 				2C68A3C5275F79B2002B8997 /* ProfileCard.swift in Sources */,
 				2CDE19ED2765B6F000D895B9 /* ProfileView.swift in Sources */,
+				2C402294276742D100149B5D /* UserModel.swift in Sources */,
 				2C68A3CB275F7E10002B8997 /* ProfileViewController.swift in Sources */,
 				4E97F21E27488BAB00C2366D /* DummyAlbumsService.swift in Sources */,
 				2C68A3D1275FF3BF002B8997 /* SignOutButton.swift in Sources */,
 				4E97F21427488BAB00C2366D /* DeviceHelper.swift in Sources */,
+				2C402296276750B900149B5D /* ProfileViewModel.swift in Sources */,
 				2CDE19C02765B68200D895B9 /* HistoryBookingViewModel.swift in Sources */,
 				2C68A40527634E45002B8997 /* LargeButton.swift in Sources */,
 				2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */,

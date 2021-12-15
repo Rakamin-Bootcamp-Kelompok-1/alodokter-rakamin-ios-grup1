@@ -17,8 +17,22 @@ class ArticleViewModel {
     var articleListData = [ArticleData]()
     var delegate: ArticleViewModelDelegate?
     
-    func getArticleListData(){
+    func getArticleListData() {
         Network.request(req: articleService) { (result) in
+            switch result{
+            case.success(let successGetData):
+                self.articleListData.append(successGetData)
+                self.articleListData.append(successGetData)
+                self.articleListData.append(successGetData)
+                self.delegate?.onSuccessRequest()
+            case .failure(let error):
+                self.delegate?.onErrorRequest()
+            }
+        }
+    }
+    
+    func getArticleListDataWithUrl(customUrl: URL){
+        Network.requestWithURL(req: articleService, costumURL: customUrl) { (result) in
             switch result{
             case.success(let successGetData):
                 self.articleListData.append(successGetData)

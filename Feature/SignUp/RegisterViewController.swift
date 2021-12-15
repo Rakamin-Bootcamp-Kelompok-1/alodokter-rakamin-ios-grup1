@@ -38,6 +38,7 @@ class RegisterViewController: UIViewController {
         btnSignIn.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         
     }
+    
     @objc private func hideKeyboard(){
         
     }
@@ -190,6 +191,7 @@ class RegisterViewController: UIViewController {
             self.registerAF(email: emailTxtField.text!, password: passwordTxtField.text!, name: nameTxtField.text!, birthdate: dateTxtField.text!, phone: phoneTxtField.text!, gender: genderTxtField.text!)
         }
     }
+    
     func registerAF(email: String, password: String, name: String, birthdate:String, phone:String, gender:String){
         self.activityView.isHidden = false
         Alamofire.request("https://medikuy.herokuapp.com/user/add", method: .post, parameters: ["full_name": "\(name)", "password": "\(password)", "email": "\(email)", "gender": "\(gender)", "birth_date": "\(birthdate)", "phone_number": "\(phone)"]).validate().responseJSON { response in

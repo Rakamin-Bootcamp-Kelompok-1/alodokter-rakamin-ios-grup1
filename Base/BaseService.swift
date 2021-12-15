@@ -84,6 +84,36 @@ class Network {
     }
     
     @discardableResult
+    static func requestWithURL<T: BaseService>(req: T, costumURL: URL, completionHandler: @escaping (NetworkResult<T.ResponseType>) -> Void) -> DataRequest? {
+        
+        let url = costumURL
+        let request = prepareRequest(for: url, req: req)
+        
+        return Alamofire.request(request).responseJSON { (response) in
+            if let json = response.result.value {
+                
+            }
+            
+            if let err = response.error {
+                completionHandler(NetworkResult.failure(err.localizedDescription))
+                return
+            }
+            
+            if let responseCode = response.response {
+                if let data = response.data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let object = try decoder.decode(T.ResponseType.self, from: data)
+                        completionHandler(NetworkResult.success(object))
+                    } catch let error {
+                        completionHandler(NetworkResult.failure(error.localizedDescription, responseCode.statusCode))
+                    }
+                }
+            }
+        }
+    }
+    
+    @discardableResult
     static func requestNoBody<T: BaseService>(req: T, completionHandler: @escaping (NetworkResult<T.ResponseType>) -> Void) -> DataRequest? {
         
         let url = req.setUrl()

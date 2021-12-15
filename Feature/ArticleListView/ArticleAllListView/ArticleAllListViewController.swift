@@ -12,6 +12,7 @@ class ArticleAllListViewController: BaseViewController {
     @IBOutlet weak var articleTableView: UITableView!
     @IBOutlet weak var articleSearchBar: UISearchBar!
     
+    let viewModel = ArticleViewModel()
     let category = ["Keluarga", "Nutrisi", "Bayi", "Kehamilan", "Kecantikan", "Diabetes"]
     var articles: [ArticleModel] = []
     var articlePages = 1
@@ -37,29 +38,27 @@ class ArticleAllListViewController: BaseViewController {
         articleTableView.rowHeight = UITableView.automaticDimension
         articleSearchBar.backgroundImage = UIImage()
         self.navigationItem.title = "Medikuy Artikel"
+        viewModel.delegate = self
     }
     
     func getArticleData(page: Int) {
         self.showParentSpinner()
-        URLSession.shared.dataTask(with: URL(string: "https://medikuy.herokuapp.com/articles?page=\(page)")!) { data, respone, error in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            
-            if let data = data {
-                let articles = try? JSONDecoder().decode(ArticleData.self, from: data)
-                self.articles.append(contentsOf: articles!.data)
-            }
-            
-            DispatchQueue.main.async {
-                self.articleTableView.reloadData()
-                self.removeSpinner()
-            }
-            
-        } .resume()
-        
-       
+        viewModel.getArticleListDataWithUrl(customUrl: URL(string: "https://medikuy.herokuapp.com/articles?page=\(page)")!)
     }
+}
+
+extension ArticleAllListViewController: ArticleViewModelDelegate {
+    func onSuccessRequest() {
+        self.articles.append(contentsOf: viewModel.articleListData[0].data)
+        self.articleTableView.reloadData()
+        self.removeSpinner()
+    }
+    
+    func onErrorRequest() {
+        self.removeSpinner()
+    }
+    
+    
 }
 
 extension ArticleAllListViewController: UICollectionViewDelegate, UICollectionViewDataSource {

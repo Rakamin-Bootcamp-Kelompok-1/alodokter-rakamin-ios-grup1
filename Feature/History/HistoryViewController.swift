@@ -9,7 +9,7 @@ import UIKit
 
 class HistoryViewController: UIViewController {
 
-    @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var profileView: ProfileView!
     @IBOutlet weak var doctorCollectionView: UICollectionView!
     //    @IBOutlet weak var historyTableView: UITableView!
     override func viewDidLoad() {
@@ -23,17 +23,22 @@ class HistoryViewController: UIViewController {
 //        historyTableView.register(UINib(nibName: HistoryItemCell.identifier, bundle: nil), forCellReuseIdentifier: HistoryItemCell.identifier)
 //        historyTableView.delegate = self
 //        historyTableView.dataSource = self
-        userImg.layer.cornerRadius = userImg.frame.width / 2
-        userImg.layer.masksToBounds = true
         doctorCollectionView.delegate = self
         doctorCollectionView.dataSource = self
         doctorCollectionView.register(UINib(nibName: HistoryItemCell.identifier, bundle: nil), forCellWithReuseIdentifier: HistoryItemCell.identifier)
+        profileView.userImageButton.addTarget(self, action: #selector(presentToProfileViewController), for: .touchUpInside)
         self.view.layer.backgroundColor = UIColor.white.cgColor
         navigationItem.title = ""
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barTintColor = .white
     }
     
+    @objc func presentToProfileViewController(button: UIButton) {
+        let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = .fullScreen
+        self.present(navController, animated: true, completion: nil)
+    }
     
 }
 

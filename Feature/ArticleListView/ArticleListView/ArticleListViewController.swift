@@ -36,6 +36,9 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         tapGesture.delegate = self
         allArticleView.addGestureRecognizer(tapGesture)
         articleSearchBar.backgroundImage = UIImage()
+        
+        self.isNavigationBarHidden = true
+      
         viewModel.delegate = self
     }
     

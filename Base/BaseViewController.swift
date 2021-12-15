@@ -14,12 +14,13 @@ class BaseViewController : UIViewController {
     var spinnerContainer: UIView!
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var labelledButton : UIButton = UIButton()
+    var isNavigationBarHidden: Bool = false
     var titleTexts = ""
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //self.tabBarController?.setTabBar(hidden: true)
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = isNavigationBarHidden
     }
     
     func onBackPressed() {

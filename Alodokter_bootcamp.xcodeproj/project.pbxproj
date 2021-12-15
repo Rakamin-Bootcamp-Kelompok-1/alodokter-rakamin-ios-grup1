@@ -69,6 +69,9 @@
 		2CDE19EE2765B6F000D895B9 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE19EC2765B6F000D895B9 /* ProfileView.xib */; };
 		2CDE19F02765B6FA00D895B9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19EF2765B6FA00D895B9 /* TabBarViewController.swift */; };
 		2F2D4DC42765CC4E006EB4E5 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2D4DC32765CC4E006EB4E5 /* UITextField.swift */; };
+		2F2DFB8D2769BD8800122AF1 /* PasswordForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2DFB8B2769BD8800122AF1 /* PasswordForgotViewController.swift */; };
+		2F2DFB8E2769BD8800122AF1 /* PasswordForgotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F2DFB8C2769BD8800122AF1 /* PasswordForgotViewController.xib */; };
+		2F2DFB912769CF4B00122AF1 /* PasswordForgotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2DFB902769CF4B00122AF1 /* PasswordForgotViewModel.swift */; };
 		2F3BEA6B27678158004DB446 /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEA6A27678158004DB446 /* ArticleDetailViewModel.swift */; };
 		2F3BEA742767895F004DB446 /* ArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3BEA722767895F004DB446 /* ArticleDetailViewController.xib */; };
 		2F3E230C2768DE6F00A003FD /* ArticleDetailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E230A2768DE6F00A003FD /* ArticleDetailCollectionCell.swift */; };
@@ -185,6 +188,9 @@
 		2CDE19EC2765B6F000D895B9 /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		2CDE19EF2765B6FA00D895B9 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		2F2D4DC32765CC4E006EB4E5 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		2F2DFB8B2769BD8800122AF1 /* PasswordForgotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordForgotViewController.swift; sourceTree = "<group>"; };
+		2F2DFB8C2769BD8800122AF1 /* PasswordForgotViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordForgotViewController.xib; sourceTree = "<group>"; };
+		2F2DFB902769CF4B00122AF1 /* PasswordForgotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordForgotViewModel.swift; sourceTree = "<group>"; };
 		2F3BEA6A27678158004DB446 /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
 		2F3BEA722767895F004DB446 /* ArticleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleDetailViewController.xib; sourceTree = "<group>"; };
 		2F3E230A2768DE6F00A003FD /* ArticleDetailCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailCollectionCell.swift; sourceTree = "<group>"; };
@@ -452,21 +458,24 @@
 			path = ProfileView;
 			sourceTree = "<group>";
 		};
-		2CDE1A0B2765B89000D895B9 /* PasswordSetting */ = {
+		2CDE1A0B2765B89000D895B9 /* PasswordForgot */ = {
 			isa = PBXGroup;
 			children = (
+				2F2DFB8C2769BD8800122AF1 /* PasswordForgotViewController.xib */,
+				2F2DFB8B2769BD8800122AF1 /* PasswordForgotViewController.swift */,
+				2F2DFB902769CF4B00122AF1 /* PasswordForgotViewModel.swift */,
 			);
-			path = PasswordSetting;
+			path = PasswordForgot;
 			sourceTree = "<group>";
 		};
 		2F3BEA6E27678814004DB446 /* ArticleDetail */ = {
 			isa = PBXGroup;
 			children = (
-				2F3BEA6A27678158004DB446 /* ArticleDetailViewModel.swift */,
 				2F3BEA722767895F004DB446 /* ArticleDetailViewController.xib */,
-				2F3E230A2768DE6F00A003FD /* ArticleDetailCollectionCell.swift */,
 				2F3E230B2768DE6F00A003FD /* ArticleDetailCollectionCell.xib */,
 				2F3E23162768EA9000A003FD /* ArticleDetailViewController.swift */,
+				2F3E230A2768DE6F00A003FD /* ArticleDetailCollectionCell.swift */,
+				2F3BEA6A27678158004DB446 /* ArticleDetailViewModel.swift */,
 			);
 			path = ArticleDetail;
 			sourceTree = "<group>";
@@ -549,7 +558,7 @@
 				2CDE19C12765B69D00D895B9 /* SignUp */,
 				4E97F20527488BAA00C2366D /* MainView */,
 				2CDE19CB2765B6B400D895B9 /* ArticleListView */,
-				2CDE1A0B2765B89000D895B9 /* PasswordSetting */,
+				2CDE1A0B2765B89000D895B9 /* PasswordForgot */,
 				2CDE19B22765B68100D895B9 /* History */,
 				2CDE19AE2765B67F00D895B9 /* DetailHistory */,
 				2C68A3BD275F5985002B8997 /* ProfileView */,
@@ -768,6 +777,7 @@
 				2C68A3C7275F7B37002B8997 /* ProfileCardRow.xib in Resources */,
 				2C68A3F227612D96002B8997 /* Nunito-LightItalic.ttf in Resources */,
 				4E97F21827488BAB00C2366D /* MainViewController.xib in Resources */,
+				2F2DFB8E2769BD8800122AF1 /* PasswordForgotViewController.xib in Resources */,
 				2CDE19E22765B6B400D895B9 /* ArticleListViewController.xib in Resources */,
 				2CDE19C72765B69F00D895B9 /* RegisterViewController.xib in Resources */,
 				2F3E230D2768DE6F00A003FD /* ArticleDetailCollectionCell.xib in Resources */,
@@ -932,6 +942,7 @@
 				2CDE19F02765B6FA00D895B9 /* TabBarViewController.swift in Sources */,
 				4E97F21727488BAB00C2366D /* SplashScreenViewController.swift in Sources */,
 				2CDE19E72765B6CC00D895B9 /* ArticleModel.swift in Sources */,
+				2F2DFB912769CF4B00122AF1 /* PasswordForgotViewModel.swift in Sources */,
 				2CDE19E02765B6B400D895B9 /* ArticleAllListViewController.swift in Sources */,
 				2C68A40827635000002B8997 /* ChangePasswordViewController.swift in Sources */,
 				2F3E230C2768DE6F00A003FD /* ArticleDetailCollectionCell.swift in Sources */,
@@ -946,6 +957,7 @@
 				2C68A40527634E45002B8997 /* LargeButton.swift in Sources */,
 				2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */,
 				4E97F1CE2748858D00C2366D /* AppDelegate.swift in Sources */,
+				2F2DFB8D2769BD8800122AF1 /* PasswordForgotViewController.swift in Sources */,
 				2CDE19BF2765B68200D895B9 /* HistoryViewController.swift in Sources */,
 				2F3E23172768EA9000A003FD /* ArticleDetailViewController.swift in Sources */,
 				2CDE19BC2765B68200D895B9 /* HistoryItemCell.swift in Sources */,

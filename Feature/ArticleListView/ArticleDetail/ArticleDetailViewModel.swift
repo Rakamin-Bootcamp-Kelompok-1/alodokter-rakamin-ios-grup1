@@ -36,7 +36,9 @@ class ArticleDetailViewModel{
     }
     
     private func retriveData(){
-        delegate?.displayContent(title: "Contoh Judul", desc: "Contoh isi aja", thumb: nil)
+        let title = "4 Manfaat Daun Sambiloto untuk Kulit yang Sayang Dilewatkan"
+        let desc = "Tak hanya baik untuk kesehatan tubuh, manfaat daun sambiloto untuk kesehatan kulit pun begitu beragam. Berbagai kandungan nutrisi di dalamnya dipercaya baik untuk mencegah infeksi pada kulit dan melindungi kulit dari bahaya radikal bebas. \nDaun sambiloto (Andrographis paniculata) adalah salah satu tanaman obat tradisional yang banyak dibudidayakan di berbagai negara Asia, termasuk Indonesia. Daun ini dipercaya dapat mengatasi berbagai masalah kesehatan, seperti gangguan fungsi hati, penyakit jantung, alergi, hingga infeksi."
+        delegate?.displayContent(title: title, desc: desc, thumb: nil)
     }
     
     private func retriveCollection(){

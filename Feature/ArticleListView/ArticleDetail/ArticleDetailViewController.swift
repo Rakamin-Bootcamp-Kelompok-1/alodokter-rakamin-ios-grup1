@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ArticleDetailViewController: UIViewController {
     
@@ -39,6 +40,7 @@ class ArticleDetailViewController: UIViewController {
         adPostCollection.delegate = self
         adPostCollection.dataSource = self
         adPostCollection.register(UINib(nibName: "ArticleDetailCollectionCell", bundle: nil), forCellWithReuseIdentifier: "ArticleDetailCollectionCell")
+        adPageControl.numberOfPages = 4
     }
     
     func setClickableTargets(){
@@ -79,7 +81,7 @@ extension ArticleDetailViewController: ArticleDetailProtocol{
     func displayContent(title: String, desc: String, thumb: URL?) {
         self.adTitleLabel.text = title
         self.adDescLabel.text = desc
-        adThumbImage.image = UIImage(named: "")
+        adThumbImage.sd_setImage(with: thumb, placeholderImage: UIImage(named: "article_pic_example"))
     }
     
     func displayWeb(url: URL?) {
@@ -97,7 +99,7 @@ extension ArticleDetailViewController: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
+        4
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -106,7 +108,8 @@ extension ArticleDetailViewController: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArticleDetailCollectionCell", for: indexPath) as! ArticleDetailCollectionCell
-        cell.adCellTitleLabel.text = "kskladjklasd"
+        cell.adCellTitleLabel.text = "Gambar \(indexPath.row)"
+        cell.adCellThumbImage.sd_setImage(with: nil, placeholderImage: UIImage(named: "article_pic_example"))
         return cell
     }
 }

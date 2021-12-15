@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,7 +11,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="idp-jU-36w"/>
                 <outlet property="greetLabel" destination="uGH-Pg-0UM" id="KRZ-1o-dLH"/>
-                <outlet property="userImageView" destination="DsC-yU-Ext" id="9eh-iK-Rtv"/>
+                <outlet property="userImageButton" destination="2IT-Ot-Bu4" id="WPL-Sf-hPw"/>
                 <outlet property="userNameLabel" destination="Jsv-5R-WhF" id="Toz-um-R5R"/>
             </connections>
         </placeholder>
@@ -21,28 +20,33 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_pic_example" translatesAutoresizingMaskIntoConstraints="NO" id="DsC-yU-Ext">
-                    <rect key="frame" x="348" y="54" width="46" height="46"/>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jeremy Endratno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsv-5R-WhF">
                     <rect key="frame" x="20" y="78.5" width="140.5" height="21.5"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGH-Pg-0UM">
                     <rect key="frame" x="20" y="60.5" width="34.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IT-Ot-Bu4">
+                    <rect key="frame" x="334" y="50" width="70" height="60"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="user_pic_example"/>
+                    <connections>
+                        <action selector="profileButton:" destination="-1" eventType="touchUpInside" id="kLJ-qB-kTk"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" name="blue something"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="2IT-Ot-Bu4" secondAttribute="trailing" constant="10" id="78R-4M-hV4"/>
                 <constraint firstItem="uGH-Pg-0UM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Nnw-BP-Peb"/>
+                <constraint firstAttribute="bottom" secondItem="2IT-Ot-Bu4" secondAttribute="bottom" constant="10" id="ObC-vF-rWF"/>
                 <constraint firstItem="Jsv-5R-WhF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="VZx-iB-ekF"/>
-                <constraint firstAttribute="bottom" secondItem="DsC-yU-Ext" secondAttribute="bottom" constant="20" id="WwV-02-ZTV"/>
-                <constraint firstAttribute="trailing" secondItem="DsC-yU-Ext" secondAttribute="trailing" constant="20" id="cmb-rt-fLp"/>
                 <constraint firstAttribute="bottom" secondItem="Jsv-5R-WhF" secondAttribute="bottom" constant="20" id="k5r-0S-Ncg"/>
                 <constraint firstItem="Jsv-5R-WhF" firstAttribute="top" secondItem="uGH-Pg-0UM" secondAttribute="bottom" id="lcP-jA-vna"/>
             </constraints>
@@ -52,8 +56,5 @@
     </objects>
     <resources>
         <image name="user_pic_example" width="46" height="46"/>
-        <namedColor name="blue something">
-            <color red="0.27450980392156865" green="0.63921568627450975" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

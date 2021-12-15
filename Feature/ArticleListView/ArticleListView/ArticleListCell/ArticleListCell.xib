@@ -25,18 +25,19 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63M-zh-8ZJ">
-                        <rect key="frame" x="10" y="109" width="52.5" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63M-zh-8ZJ">
+                        <rect key="frame" x="10" y="122.5" width="105" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="63M-zh-8ZJ" secondAttribute="bottom" constant="20" id="Hkk-nl-tlB"/>
+                    <constraint firstAttribute="bottom" secondItem="63M-zh-8ZJ" secondAttribute="bottom" constant="10" id="Hkk-nl-tlB"/>
                     <constraint firstItem="63M-zh-8ZJ" firstAttribute="leading" secondItem="uFY-eV-0Gb" secondAttribute="leading" constant="10" id="IQb-MU-mrC"/>
                     <constraint firstItem="zaw-hO-eF0" firstAttribute="leading" secondItem="uFY-eV-0Gb" secondAttribute="leading" id="Llu-p3-Eos"/>
+                    <constraint firstAttribute="trailing" secondItem="63M-zh-8ZJ" secondAttribute="trailing" constant="10" id="PCz-fq-xq3"/>
                     <constraint firstAttribute="bottom" secondItem="zaw-hO-eF0" secondAttribute="bottom" id="hrz-GQ-3Z2"/>
                     <constraint firstItem="zaw-hO-eF0" firstAttribute="top" secondItem="uFY-eV-0Gb" secondAttribute="top" id="p7g-D1-VQ4"/>
                     <constraint firstAttribute="trailing" secondItem="zaw-hO-eF0" secondAttribute="trailing" id="vH6-qw-TM7"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: BaseViewController {
 
     
     // MARK: - IBOutlets
@@ -16,6 +16,11 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profileCardView1: ProfileCard!
     @IBOutlet weak var profileCardView2: ProfileCard!
     @IBOutlet weak var signOutButton: SignOutButton!
+    
+    
+    // MARK: - Variables
+    
+    var viewModel = ProfileViewModel()
     
     
     // MARK: - View Life Cycle Methods
@@ -27,12 +32,19 @@ class ProfileViewController: UIViewController {
         prepareUI()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        requestData()
+    }
+    
     
     // MARK: - Prepare UI Method
     
     func prepareUI() {
         if #available(iOS 13.0, *) {
             // Navigation Bar Title
+            self.isNavigationBarHidden = false
             self.title = "My Profile"
             
             
@@ -47,8 +59,8 @@ class ProfileViewController: UIViewController {
             profileHeaderView.layer.shadowRadius = 4
             
             profileHeaderView.profileImageView.image = UIImage(systemName: "person.crop.circle.fill")
-            profileHeaderView.profileNameLabel.text = "Russi Hersiano"
-            profileHeaderView.profilePhoneNumberLabel.text = "0813-7545-3367"
+            profileHeaderView.profileNameLabel.text = viewModel.userData?.fullname ?? "Russi Hersiano"
+            profileHeaderView.profilePhoneNumberLabel.text = viewModel.userData?.phoneNumber ?? "0811112233"
             
             
             // Profile Card 1
@@ -58,7 +70,6 @@ class ProfileViewController: UIViewController {
             profileCardView1.containerView.layer.cornerRadius = 5
             
             // Profile Card 1 Shadow
-//            profileCardView1.containerView.layer.shadowPath = UIBezierPath(rect: profileCardView1.containerView.bounds).cgPath
             profileCardView1.containerView.layer.shadowColor = UIColor.black.cgColor
             profileCardView1.containerView.layer.shadowOpacity = 0.25
             profileCardView1.containerView.layer.shadowOffset = .zero
@@ -80,7 +91,6 @@ class ProfileViewController: UIViewController {
             profileCardView2.containerView.layer.cornerRadius = 5
             
             // Profile Card 2 Shadow
-//            profileCardView2.containerView.layer.shadowPath = UIBezierPath(rect: profileCardView2.containerView.bounds).cgPath
             profileCardView2.containerView.layer.shadowColor = UIColor.black.cgColor
             profileCardView2.containerView.layer.shadowOpacity = 0.25
             profileCardView2.containerView.layer.shadowOffset = .zero
@@ -143,4 +153,30 @@ class ProfileViewController: UIViewController {
     }
     */
 
+}
+
+
+// MARK: - Profile View Model Delegate
+
+// Commented until further optimization
+
+extension ProfileViewController: profileViewModelDelegate {
+    func onSuccessRequest() {
+        self.removeSpinner()
+    }
+
+    func onErrorRequest() {
+        self.removeSpinner()
+    }
+}
+
+
+
+// MARK: - Methods
+
+extension ProfileViewController {
+    func requestData() {
+//        self.showParentSpinner()
+        viewModel.getUser()
+    }
 }

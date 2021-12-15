@@ -94,23 +94,23 @@ class LoginViewController: UIViewController {
             
             do{
                 let decoder = JSONDecoder()
-                let dataUser = try decoder.decode(UserModel.self, from: responseJson.data!)
+                let dataUser = try decoder.decode(UserAccountModel.self, from: responseJson.data!)
                 DispatchQueue.main.async {
                     self.activityIndicator.isHidden = true
                     self.userDefaults.setValue(dataUser.user.email, forKey: "email")
                     self.userDefaults.setValue(dataUser.user.birthDate, forKey: "birthdate")
                     self.userDefaults.setValue(dataUser.token, forKey: "token")
-                    self.userDefaults.setValue(dataUser.user.passwordDigest, forKey: "passwordDigest")
+                    self.userDefaults.setValue(dataUser.user.password, forKey: "password")
                     self.userDefaults.setValue(dataUser.user.gender, forKey: "gender")
                     self.userDefaults.setValue(dataUser.user.phoneNumber, forKey: "phoneNumber")
-                    self.userDefaults.setValue(dataUser.user.fullName, forKey: "fullName")
+                    self.userDefaults.setValue(dataUser.user.fullname, forKey: "fullName")
                     self.btnLogin.isHidden = false
 
                     if let emailUser = self.userDefaults.value(forKey: "email") as? String {
                         print("Email: \(emailUser)")
                     }
-                    if let birthdateUser = self.userDefaults.value(forKey: "birthdate") as? String {
-                        print("Date: \(birthdateUser)")
+                    if let token = self.userDefaults.value(forKey: "token") as? String {
+                        print("Token: \(token)")
                     }
                 }
                 
@@ -125,6 +125,6 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-    
+    }
 
 }

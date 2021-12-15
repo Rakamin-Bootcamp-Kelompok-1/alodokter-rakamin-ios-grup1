@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterViewController: UIViewController {
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
-    @IBOutlet weak var confirmationTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
+    @IBOutlet weak var confirmationTxtField: UITextField!
     @IBOutlet weak var genderTxtField: UITextField!
     @IBOutlet weak var phoneTxtField: UITextField!
     @IBOutlet weak var dateTxtField: UITextField!
@@ -21,8 +23,7 @@ class RegisterViewController: UIViewController {
     let buttonConfirmation = UIButton(type: .custom)
     let genders = ["Female", "Male"]
     var pickerView = UIPickerView()
-    let colorBorder = UIColor(red: 170, green: 217, blue: 233, alpha: 1)
-    let textfieldColorBorder: UIColor = UIColor.rgb(red: 170, green: 217, blue: 233)
+    let textfieldColorBorder: UIColor = UIColor.rgb(red: 70, green: 163, blue: 249)
     var activeTextField: UITextField!
     
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ class RegisterViewController: UIViewController {
         setTextfieldBorder()
         let dateImage = UIImage(named: "calender")
         addImageTextfield(txtField: dateTxtField, img: dateImage!)
+        btnSignIn.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         
     }
     @objc private func hideKeyboard(){
@@ -48,43 +50,47 @@ class RegisterViewController: UIViewController {
     }
 
     func setTextfieldBorder() {
-        genderTxtField.layer.borderColor = textfieldColorBorder.cgColor
-        genderTxtField.layer.masksToBounds = true
-        genderTxtField.layer.borderWidth = 2
-        genderTxtField.layer.cornerRadius = 10
+        let bottomLineGender = CALayer()
+        bottomLineGender.frame = CGRect(x: 0, y: self.nameTxtField.frame.size.height - 1, width: self.nameTxtField.frame.size.width, height: 1)
+        bottomLineGender.backgroundColor = textfieldColorBorder.cgColor
+        genderTxtField.borderStyle = .none
+        genderTxtField.layer.addSublayer(bottomLineGender)
         
+        let bottomLineConfirmation = CALayer()
+        bottomLineConfirmation.frame = CGRect(x: 0, y: self.nameTxtField.frame.size.height - 1, width: self.nameTxtField.frame.size.width, height: 1)
+        bottomLineConfirmation.backgroundColor = textfieldColorBorder.cgColor
+        confirmationTxtField.borderStyle = .none
+        confirmationTxtField.layer.addSublayer(bottomLineConfirmation)
         
-        confirmationTxtField.layer.borderColor = textfieldColorBorder.cgColor
-        confirmationTxtField.layer.masksToBounds = true
-        confirmationTxtField.layer.borderWidth = 2
-        confirmationTxtField.layer.cornerRadius = 10
+        let bottomLinePassword = CALayer()
+        bottomLinePassword.frame = CGRect(x: 0, y: self.nameTxtField.frame.size.height - 1, width: self.nameTxtField.frame.size.width, height: 1)
+        bottomLinePassword.backgroundColor = textfieldColorBorder.cgColor
+        passwordTxtField.borderStyle = .none
+        passwordTxtField.layer.addSublayer(bottomLinePassword)
         
-        passwordTxtField.layer.borderColor = textfieldColorBorder.cgColor
-        passwordTxtField.layer.masksToBounds = true
-        passwordTxtField.layer.borderWidth = 2
-        passwordTxtField.layer.cornerRadius = 10
+        let bottomLinePhone = CALayer()
+        bottomLinePhone.frame = CGRect(x: 0, y: self.nameTxtField.frame.size.height - 1, width: self.nameTxtField.frame.size.width, height: 1)
+        bottomLinePhone.backgroundColor = textfieldColorBorder.cgColor
+        phoneTxtField.borderStyle = .none
+        phoneTxtField.layer.addSublayer(bottomLinePhone)
         
-        phoneTxtField.layer.borderColor = textfieldColorBorder.cgColor
-        phoneTxtField.layer.masksToBounds = true
-        phoneTxtField.layer.borderWidth = 2
-        phoneTxtField.layer.cornerRadius = 10
+        let bottomLineDate = CALayer()
+        bottomLineDate.frame = CGRect(x: 0, y: self.nameTxtField.frame.size.height - 1, width: self.nameTxtField.frame.size.width, height: 1)
+        bottomLineDate.backgroundColor = textfieldColorBorder.cgColor
+        dateTxtField.borderStyle = .none
+        dateTxtField.layer.addSublayer(bottomLineDate)
         
-        dateTxtField.layer.borderColor = textfieldColorBorder.cgColor
-        dateTxtField.layer.masksToBounds = true
-        dateTxtField.layer.borderWidth = 2
-        dateTxtField.layer.cornerRadius = 10
+        let bottomLineEmail = CALayer()
+        bottomLineEmail.frame = CGRect(x: 0, y: self.nameTxtField.frame.size.height - 1, width: self.nameTxtField.frame.size.width, height: 1)
+        bottomLineEmail.backgroundColor = textfieldColorBorder.cgColor
+        emailTxtField.borderStyle = .none
+        emailTxtField.layer.addSublayer(bottomLineEmail)
         
-        
-        emailTxtField.layer.borderColor = textfieldColorBorder.cgColor
-        emailTxtField.layer.masksToBounds = true
-        emailTxtField.layer.borderWidth = 2
-        emailTxtField.layer.cornerRadius = 10
-        
-        nameTxtField.layer.borderColor = textfieldColorBorder.cgColor
-        nameTxtField.layer.masksToBounds = true
-        nameTxtField.layer.borderWidth = 2
-        nameTxtField.layer.cornerRadius = 10
-
+        let bottomLineName = CALayer()
+        bottomLineName.frame = CGRect(x: 0, y: self.nameTxtField.frame.size.height - 1, width: self.nameTxtField.frame.size.width, height: 1)
+        bottomLineName.backgroundColor = textfieldColorBorder.cgColor
+        nameTxtField.borderStyle = .none
+        nameTxtField.layer.addSublayer(bottomLineName)
     }
   
     
@@ -159,15 +165,60 @@ class RegisterViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             return
         }
-        if passwordTxtField.text! != confirmationTxtField.text! {
-            let alertController = UIAlertController(title: "Error" , message: "Password are not the same", preferredStyle: .alert)
+        if nameTxtField.text!.count < 8 {
+            let alertController = UIAlertController(title: "Error" , message: "Minimum of 8 characters for Full Name", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else if emailTxtField.text!.count < 8 {
+            let alertController = UIAlertController(title: "Error" , message: "Minimum of 8 characters for Email", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else if phoneTxtField.text!.count < 11 {
+            let alertController = UIAlertController(title: "Error" , message: "Minimum of 11 digit for Phone Number", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else if passwordTxtField.text! != confirmationTxtField.text! {
+            let alertController = UIAlertController(title: "Error" , message: "The password does not match", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
             alertController.addAction(alertAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
             print("Register")
+            self.registerAF(email: emailTxtField.text!, password: passwordTxtField.text!, name: nameTxtField.text!, birthdate: dateTxtField.text!, phone: phoneTxtField.text!, gender: genderTxtField.text!)
         }
     }
+    func registerAF(email: String, password: String, name: String, birthdate:String, phone:String, gender:String){
+        self.activityView.isHidden = false
+        Alamofire.request("https://medikuy.herokuapp.com/user/add", method: .post, parameters: ["full_name": "\(name)", "password": "\(password)", "email": "\(email)", "gender": "\(gender)", "birth_date": "\(birthdate)", "phone_number": "\(phone)"]).validate().responseJSON { response in
+            switch response.result {
+            case .success:
+                let alertController = UIAlertController(title: "Success" , message: "Account has been registered", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+                alertController.addAction(alertAction)
+                self.present(alertController, animated: true, completion: nil)
+                self.activityView.isHidden = true
+                self.nameTxtField.text = ""
+                self.emailTxtField.text = ""
+                self.dateTxtField.text = ""
+                self.phoneTxtField.text = ""
+                self.genderTxtField.text = ""
+                self.passwordTxtField.text = ""
+                self.confirmationTxtField.text = ""
+            case .failure(let error):
+                print(error)
+                self.activityView.isHidden = true
+                let alertController = UIAlertController(title: "Error" , message: "Invalid Username or Password", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+                alertController.addAction(alertAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
+        }
+    }
+
     func btnShowPassword() {
         button.setImage(UIImage(named: "offEye"), for: .normal)
         button.setImage(UIImage(named: "onEye"), for: .selected)
@@ -175,6 +226,7 @@ class RegisterViewController: UIViewController {
         button.addTarget(self, action: #selector(togglePasswordView), for: .touchUpInside)
         passwordTxtField.rightView = button
         passwordTxtField.rightViewMode = .always
+        passwordTxtField.autocorrectionType = .no
         passwordTxtField.textContentType = .newPassword
         button.alpha = 0.4
         
@@ -184,6 +236,7 @@ class RegisterViewController: UIViewController {
         buttonConfirmation.addTarget(self, action: #selector(togglePasswordViewConfirmation), for: .touchUpInside)
         confirmationTxtField.rightView = buttonConfirmation
         confirmationTxtField.rightViewMode = .always
+        confirmationTxtField.autocorrectionType = .no
         confirmationTxtField.textContentType = .newPassword
         buttonConfirmation.alpha = 0.4
     }

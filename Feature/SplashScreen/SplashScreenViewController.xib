@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+        <array key="Nunito-Light.ttf">
+            <string>Nunito-Light</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashScreenViewController" customModule="Bootcamp_ios" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashScreenViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
             <connections>
+                <outlet property="medikuyLabel" destination="KxR-9D-dgV" id="0N1-dz-deN"/>
                 <outlet property="view" destination="iN0-l3-epB" id="s9Q-9e-4vp"/>
             </connections>
         </placeholder>
@@ -19,6 +28,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MediKuy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxR-9D-dgV">
+                    <rect key="frame" x="106.5" y="304.5" width="201.5" height="68.5"/>
+                    <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="50"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AloBanner" translatesAutoresizingMaskIntoConstraints="NO" id="JOK-tL-QGY">
                     <rect key="frame" x="87" y="389" width="240" height="128"/>
                     <constraints>
@@ -26,12 +41,22 @@
                         <constraint firstAttribute="height" constant="128" id="eeO-Bj-gTA"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Personal Healthcare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hl-MH-kSc">
+                    <rect key="frame" x="123.5" y="533" width="167.5" height="20.5"/>
+                    <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="KxR-9D-dgV" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="OEM-zN-JlY"/>
+                <constraint firstItem="5Hl-MH-kSc" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Ovd-Tz-IPc"/>
+                <constraint firstItem="5Hl-MH-kSc" firstAttribute="top" secondItem="JOK-tL-QGY" secondAttribute="bottom" constant="16" id="YK0-kb-fiq"/>
                 <constraint firstItem="JOK-tL-QGY" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="fVf-Dy-DmR"/>
                 <constraint firstItem="JOK-tL-QGY" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="gIW-Po-5tZ"/>
+                <constraint firstItem="JOK-tL-QGY" firstAttribute="top" secondItem="KxR-9D-dgV" secondAttribute="bottom" constant="16" id="zOu-uH-SaC"/>
             </constraints>
             <point key="canvasLocation" x="139" y="153"/>
         </view>

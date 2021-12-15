@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                self.window = UIWindow(frame: UIScreen.main.bounds)
                self.window?.rootViewController = initialView
                self.window?.makeKeyAndVisible()
+      
+        IQKeyboardManager.shared().isEnabled = true
         
         // Custom Font for Navigation Bar
         guard let navBarTitleFont = UIFont(name: "Nunito-SemiBold", size: 17) else {
@@ -35,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes(navBarTitleAttributes, for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(navBarTitleAttributes, for: .highlighted)
         UIBarButtonItem.appearance().setTitleTextAttributes(navBarTitleAttributes, for: .focused)
-        
+
         return true
     }
 

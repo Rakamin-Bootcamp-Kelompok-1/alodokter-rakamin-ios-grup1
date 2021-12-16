@@ -92,6 +92,13 @@
 		497C282C276B272900CA01DE /* ConsulDoctorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C282B276B272900CA01DE /* ConsulDoctorViewModel.swift */; };
 		497C2830276B7F8A00CA01DE /* DetailConsulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C282E276B7F8A00CA01DE /* DetailConsulViewController.swift */; };
 		497C2831276B7F8A00CA01DE /* DetailConsulViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497C282F276B7F8A00CA01DE /* DetailConsulViewController.xib */; };
+		497C2857276BBE4E00CA01DE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2856276BBE4E00CA01DE /* UIView+Extension.swift */; };
+		497C287A276BC09900CA01DE /* DetailConsultDoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2878276BC09900CA01DE /* DetailConsultDoctorViewController.swift */; };
+		497C287B276BC09900CA01DE /* DetailConsultDoctorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497C2879276BC09900CA01DE /* DetailConsultDoctorViewController.xib */; };
+		497C287D276BC61600CA01DE /* ExtensionUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C287C276BC61600CA01DE /* ExtensionUILabel.swift */; };
+		497C287F276BC64500CA01DE /* Extension+UITapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C287E276BC64500CA01DE /* Extension+UITapGesture.swift */; };
+		497C2883276BD60E00CA01DE /* EducationDocCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2881276BD60D00CA01DE /* EducationDocCollectionViewCell.swift */; };
+		497C2884276BD60E00CA01DE /* EducationDocCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497C2882276BD60D00CA01DE /* EducationDocCollectionViewCell.xib */; };
 		4E97F1CE2748858D00C2366D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CD2748858D00C2366D /* AppDelegate.swift */; };
 		4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CF2748858D00C2366D /* SceneDelegate.swift */; };
 		4E97F1D52748858D00C2366D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E97F1D32748858D00C2366D /* Main.storyboard */; };
@@ -236,6 +243,13 @@
 		497C282B276B272900CA01DE /* ConsulDoctorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsulDoctorViewModel.swift; sourceTree = "<group>"; };
 		497C282E276B7F8A00CA01DE /* DetailConsulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConsulViewController.swift; sourceTree = "<group>"; };
 		497C282F276B7F8A00CA01DE /* DetailConsulViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailConsulViewController.xib; sourceTree = "<group>"; };
+		497C2856276BBE4E00CA01DE /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		497C2878276BC09900CA01DE /* DetailConsultDoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConsultDoctorViewController.swift; sourceTree = "<group>"; };
+		497C2879276BC09900CA01DE /* DetailConsultDoctorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailConsultDoctorViewController.xib; sourceTree = "<group>"; };
+		497C287C276BC61600CA01DE /* ExtensionUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUILabel.swift; sourceTree = "<group>"; };
+		497C287E276BC64500CA01DE /* Extension+UITapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITapGesture.swift"; sourceTree = "<group>"; };
+		497C2881276BD60D00CA01DE /* EducationDocCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDocCollectionViewCell.swift; sourceTree = "<group>"; };
+		497C2882276BD60D00CA01DE /* EducationDocCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationDocCollectionViewCell.xib; sourceTree = "<group>"; };
 		4E97F1CA2748858D00C2366D /* Alodokter_bootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alodokter_bootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E97F1CD2748858D00C2366D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E97F1CF2748858D00C2366D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -557,10 +571,22 @@
 		497C282D276B7F6800CA01DE /* DetailConsul */ = {
 			isa = PBXGroup;
 			children = (
+				497C2880276BD5E800CA01DE /* EducationDoctor */,
 				497C282E276B7F8A00CA01DE /* DetailConsulViewController.swift */,
 				497C282F276B7F8A00CA01DE /* DetailConsulViewController.xib */,
+				497C2878276BC09900CA01DE /* DetailConsultDoctorViewController.swift */,
+				497C2879276BC09900CA01DE /* DetailConsultDoctorViewController.xib */,
 			);
 			path = DetailConsul;
+			sourceTree = "<group>";
+		};
+		497C2880276BD5E800CA01DE /* EducationDoctor */ = {
+			isa = PBXGroup;
+			children = (
+				497C2881276BD60D00CA01DE /* EducationDocCollectionViewCell.swift */,
+				497C2882276BD60D00CA01DE /* EducationDocCollectionViewCell.xib */,
+			);
+			path = EducationDoctor;
 			sourceTree = "<group>";
 		};
 		4E97F1C12748858D00C2366D = {
@@ -629,6 +655,9 @@
 				4E97F1FF27488BAA00C2366D /* DeviceHelper.swift */,
 				4E97F20027488BAA00C2366D /* Utiliy.swift */,
 				2F2D4DC32765CC4E006EB4E5 /* UITextField.swift */,
+				497C2856276BBE4E00CA01DE /* UIView+Extension.swift */,
+				497C287C276BC61600CA01DE /* ExtensionUILabel.swift */,
+				497C287E276BC64500CA01DE /* Extension+UITapGesture.swift */,
 			);
 			path = Helper;
 			sourceTree = SOURCE_ROOT;
@@ -886,6 +915,7 @@
 				2CDE19BD2765B68200D895B9 /* HistoryItemCell.xib in Resources */,
 				2C68A3FF27634D5F002B8997 /* SecuredTextField.xib in Resources */,
 				2CDE19DD2765B6B400D895B9 /* ArticleAllListCollectionViewCell.xib in Resources */,
+				497C287B276BC09900CA01DE /* DetailConsultDoctorViewController.xib in Resources */,
 				2C68A3EC27612D96002B8997 /* Nunito-Medium.ttf in Resources */,
 				497C2826276B154300CA01DE /* DoctorCollectionViewCell.xib in Resources */,
 				2C68A3EA27612D96002B8997 /* Nunito-Bold.ttf in Resources */,
@@ -910,6 +940,7 @@
 				4E97F21B27488BAB00C2366D /* AlbumsCell.xib in Resources */,
 				2C68A3CF275FF2AB002B8997 /* SignOutButton.xib in Resources */,
 				2C68A40927635000002B8997 /* ChangePasswordViewController.xib in Resources */,
+				497C2884276BD60E00CA01DE /* EducationDocCollectionViewCell.xib in Resources */,
 				4E97F1D72748858F00C2366D /* Assets.xcassets in Resources */,
 				2C68A3CD275F7E52002B8997 /* ProfileViewController.xib in Resources */,
 				497C2822276B101600CA01DE /* SpecialistCollectionViewCell.xib in Resources */,
@@ -1048,10 +1079,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E97F21F27488BAB00C2366D /* BaseViewController.swift in Sources */,
+				497C287F276BC64500CA01DE /* Extension+UITapGesture.swift in Sources */,
 				4E97F21D27488BAB00C2366D /* DummyAlbumsModel.swift in Sources */,
 				2CDE19E92765B6D800D895B9 /* ArticleService.swift in Sources */,
 				2CDE19E12765B6B400D895B9 /* ArticleListViewController.swift in Sources */,
 				2C68A3C9275F7C95002B8997 /* ProfileCardRow.swift in Sources */,
+				497C287D276BC61600CA01DE /* ExtensionUILabel.swift in Sources */,
 				2F2D4DC42765CC4E006EB4E5 /* UITextField.swift in Sources */,
 				2C4022922765E17500149B5D /* UITextField.swift in Sources */,
 				4E97F21327488BAB00C2366D /* UIColor.swift in Sources */,
@@ -1086,8 +1119,10 @@
 				497C2813276B025200CA01DE /* HistoryBookingService.swift in Sources */,
 				2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */,
 				4E97F1CE2748858D00C2366D /* AppDelegate.swift in Sources */,
+				497C2857276BBE4E00CA01DE /* UIView+Extension.swift in Sources */,
 				2F2DFB8D2769BD8800122AF1 /* PasswordForgotViewController.swift in Sources */,
 				2CDE19BF2765B68200D895B9 /* HistoryViewController.swift in Sources */,
+				497C2883276BD60E00CA01DE /* EducationDocCollectionViewCell.swift in Sources */,
 				2F3E23172768EA9000A003FD /* ArticleDetailViewController.swift in Sources */,
 				497C2821276B101600CA01DE /* SpecialistCollectionViewCell.swift in Sources */,
 				2CDE19BC2765B68200D895B9 /* HistoryItemCell.swift in Sources */,
@@ -1097,6 +1132,7 @@
 				2F3BEA6B27678158004DB446 /* ArticleDetailViewModel.swift in Sources */,
 				2CDE19DC2765B6B400D895B9 /* ArticleAllListCollectionViewCell.swift in Sources */,
 				497C2815276B027B00CA01DE /* HistoryBookingModel.swift in Sources */,
+				497C287A276BC09900CA01DE /* DetailConsultDoctorViewController.swift in Sources */,
 				4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */,
 				2C68A40327634E3C002B8997 /* SecuredTextField.swift in Sources */,
 				4E97F21527488BAB00C2366D /* Utiliy.swift in Sources */,

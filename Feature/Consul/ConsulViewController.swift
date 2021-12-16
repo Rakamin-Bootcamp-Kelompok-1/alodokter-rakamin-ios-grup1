@@ -70,6 +70,12 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
             return UICollectionViewCell()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = DetailConsulViewController(nibName: DetailConsulViewController.identifier, bundle: nil)
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 extension ConsulViewController: ConsulDoctorProtocol {

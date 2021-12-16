@@ -22,7 +22,8 @@ class ConsulDoctorViewModel {
             switch result {
                 
             case .success(let data):
-                self?.doctorList = data.data ?? []
+                self?.doctorList += data.data ?? []
+//                self?.doctorList.append(contentsOf: data.data ?? [])
                 self?.delegate?.onSuccessDoctor()
             case .failure(let error):
                 print("error = \(error)")

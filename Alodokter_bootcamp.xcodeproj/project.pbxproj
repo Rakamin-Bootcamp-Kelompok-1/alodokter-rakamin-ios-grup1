@@ -90,6 +90,8 @@
 		497C2828276B24A700CA01DE /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2827276B24A700CA01DE /* DoctorModel.swift */; };
 		497C282A276B250D00CA01DE /* DoctorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2829276B250D00CA01DE /* DoctorService.swift */; };
 		497C282C276B272900CA01DE /* ConsulDoctorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C282B276B272900CA01DE /* ConsulDoctorViewModel.swift */; };
+		497C2830276B7F8A00CA01DE /* DetailConsulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C282E276B7F8A00CA01DE /* DetailConsulViewController.swift */; };
+		497C2831276B7F8A00CA01DE /* DetailConsulViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497C282F276B7F8A00CA01DE /* DetailConsulViewController.xib */; };
 		4E97F1CE2748858D00C2366D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CD2748858D00C2366D /* AppDelegate.swift */; };
 		4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CF2748858D00C2366D /* SceneDelegate.swift */; };
 		4E97F1D52748858D00C2366D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E97F1D32748858D00C2366D /* Main.storyboard */; };
@@ -232,6 +234,8 @@
 		497C2827276B24A700CA01DE /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
 		497C2829276B250D00CA01DE /* DoctorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorService.swift; sourceTree = "<group>"; };
 		497C282B276B272900CA01DE /* ConsulDoctorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsulDoctorViewModel.swift; sourceTree = "<group>"; };
+		497C282E276B7F8A00CA01DE /* DetailConsulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConsulViewController.swift; sourceTree = "<group>"; };
+		497C282F276B7F8A00CA01DE /* DetailConsulViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailConsulViewController.xib; sourceTree = "<group>"; };
 		4E97F1CA2748858D00C2366D /* Alodokter_bootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alodokter_bootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E97F1CD2748858D00C2366D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E97F1CF2748858D00C2366D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -550,6 +554,15 @@
 			path = DoctorCell;
 			sourceTree = "<group>";
 		};
+		497C282D276B7F6800CA01DE /* DetailConsul */ = {
+			isa = PBXGroup;
+			children = (
+				497C282E276B7F8A00CA01DE /* DetailConsulViewController.swift */,
+				497C282F276B7F8A00CA01DE /* DetailConsulViewController.xib */,
+			);
+			path = DetailConsul;
+			sourceTree = "<group>";
+		};
 		4E97F1C12748858D00C2366D = {
 			isa = PBXGroup;
 			children = (
@@ -623,6 +636,7 @@
 		4E97F20127488BAA00C2366D /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				497C282D276B7F6800CA01DE /* DetailConsul */,
 				497C2818276B0BD000CA01DE /* Consul */,
 				80BC4A49275F640200E7E8FF /* SignIn */,
 				80613360275BCE370065B62E /* SignUp */,
@@ -868,6 +882,7 @@
 				2CDE19DF2765B6B400D895B9 /* ArticleAllListViewController.xib in Resources */,
 				2CDE19EE2765B6F000D895B9 /* ProfileView.xib in Resources */,
 				2CDE19BE2765B68200D895B9 /* HistoryViewController.xib in Resources */,
+				497C2831276B7F8A00CA01DE /* DetailConsulViewController.xib in Resources */,
 				2CDE19BD2765B68200D895B9 /* HistoryItemCell.xib in Resources */,
 				2C68A3FF27634D5F002B8997 /* SecuredTextField.xib in Resources */,
 				2CDE19DD2765B6B400D895B9 /* ArticleAllListCollectionViewCell.xib in Resources */,
@@ -1066,6 +1081,7 @@
 				2C402296276750B900149B5D /* ProfileViewModel.swift in Sources */,
 				497C282A276B250D00CA01DE /* DoctorService.swift in Sources */,
 				2CDE19C02765B68200D895B9 /* HistoryBookingViewModel.swift in Sources */,
+				497C2830276B7F8A00CA01DE /* DetailConsulViewController.swift in Sources */,
 				2C68A40527634E45002B8997 /* LargeButton.swift in Sources */,
 				497C2813276B025200CA01DE /* HistoryBookingService.swift in Sources */,
 				2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */,

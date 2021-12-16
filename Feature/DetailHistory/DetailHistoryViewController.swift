@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailHistoryViewController: UIViewController {
+class DetailHistoryViewController: BaseViewController {
 
     @IBOutlet weak var informationBookView: UIView!
     @IBOutlet weak var messageView: UIView!

@@ -81,6 +81,7 @@ class ProfileViewController: BaseViewController {
             // Profile Card 1 Row
             profileCardView1.profileCardRow1.iconImageView.image = UIImage(systemName: "person.circle")
             profileCardView1.profileCardRow1.titleLabel.text = "Edit Profile"
+            profileCardView1.profileCardRow1.buttonOutlet.addTarget(self, action: #selector(pushToEditProfileView), for: .touchUpInside)
             
             profileCardView1.profileCardRow2.iconImageView.image = UIImage(systemName: "lock.fill")
             profileCardView1.profileCardRow2.titleLabel.text = "Change Password"
@@ -138,6 +139,11 @@ class ProfileViewController: BaseViewController {
     
     
     // MARK: - Button Methods
+    
+    @objc func pushToEditProfileView(button: UIButton) {
+        let vc = EditProfileViewController(nibName: "EditProfileViewController", bundle: nil)
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
     
     @objc func pushToChangePasswordView(button: UIButton) {
         let vc = ChangePasswordViewController(nibName: "ChangePasswordViewController", bundle: nil)

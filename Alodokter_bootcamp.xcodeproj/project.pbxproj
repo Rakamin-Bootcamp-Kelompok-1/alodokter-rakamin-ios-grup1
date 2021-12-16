@@ -12,6 +12,11 @@
 		2C402296276750B900149B5D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C402295276750B900149B5D /* ProfileViewModel.swift */; };
 		2C40229A2767871700149B5D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4022992767871700149B5D /* UserService.swift */; };
 		2C57FFC4276A27510025AF06 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C57FFC3276A27510025AF06 /* RegisterViewController.xib */; };
+		2C57FFC7276B1A560025AF06 /* NormalTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C57FFC6276B1A560025AF06 /* NormalTextField.xib */; };
+		2C57FFCB276B1AF30025AF06 /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57FFCA276B1AF30025AF06 /* NormalTextField.swift */; };
+		2C57FFCD276B1BAB0025AF06 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C57FFCC276B1BAB0025AF06 /* EditProfileViewController.xib */; };
+		2C57FFCF276B54D50025AF06 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57FFCE276B54D50025AF06 /* EditProfileViewController.swift */; };
+		2C57FFD1276BCF3F0025AF06 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57FFD0276BCF3F0025AF06 /* ImagePicker.swift */; };
 		2C68A3BF275F5E71002B8997 /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3BE275F5E71002B8997 /* ProfileHeader.xib */; };
 		2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68A3C0275F623D002B8997 /* ProfileHeader.swift */; };
 		2C68A3C3275F73C9002B8997 /* ProfileCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3C2275F73C9002B8997 /* ProfileCard.xib */; };
@@ -137,6 +142,11 @@
 		2C402295276750B900149B5D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		2C4022992767871700149B5D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2C57FFC3276A27510025AF06 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		2C57FFC6276B1A560025AF06 /* NormalTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalTextField.xib; sourceTree = "<group>"; };
+		2C57FFCA276B1AF30025AF06 /* NormalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
+		2C57FFCC276B1BAB0025AF06 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EditProfileViewController.xib; path = ../../../../../../EditProfileViewController.xib; sourceTree = "<group>"; };
+		2C57FFCE276B54D50025AF06 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		2C57FFD0276BCF3F0025AF06 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2C68A3BE275F5E71002B8997 /* ProfileHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
 		2C68A3C0275F623D002B8997 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		2C68A3C2275F73C9002B8997 /* ProfileCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCard.xib; sourceTree = "<group>"; };
@@ -272,6 +282,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C57FFC5276B19D70025AF06 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				2C57FFC8276B1AD50025AF06 /* Views */,
+				2C57FFC9276B1AD90025AF06 /* Controllers */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		2C57FFC8276B1AD50025AF06 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C57FFCC276B1BAB0025AF06 /* EditProfileViewController.xib */,
+				2C57FFC6276B1A560025AF06 /* NormalTextField.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C57FFC9276B1AD90025AF06 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C57FFCE276B54D50025AF06 /* EditProfileViewController.swift */,
+				2C57FFCA276B1AF30025AF06 /* NormalTextField.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		2C68A3BD275F5985002B8997 /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
@@ -562,6 +599,7 @@
 				4E97F1FF27488BAA00C2366D /* DeviceHelper.swift */,
 				4E97F20027488BAA00C2366D /* Utiliy.swift */,
 				2F2D4DC32765CC4E006EB4E5 /* UITextField.swift */,
+				2C57FFD0276BCF3F0025AF06 /* ImagePicker.swift */,
 			);
 			path = Helper;
 			sourceTree = SOURCE_ROOT;
@@ -580,6 +618,7 @@
 				2CDE19B22765B68100D895B9 /* History */,
 				2CDE19AE2765B67F00D895B9 /* DetailHistory */,
 				2C68A3BD275F5985002B8997 /* ProfileView */,
+				2C57FFC5276B19D70025AF06 /* EditProfile */,
 				2C68A3FB27621BC1002B8997 /* ChangePassword */,
 			);
 			path = Feature;
@@ -801,6 +840,7 @@
 				2C68A3E727612D96002B8997 /* Nunito-Regular.ttf in Resources */,
 				2C68A3F327612D96002B8997 /* Nunito-BlackItalic.ttf in Resources */,
 				2C68A3E427612D96002B8997 /* Nunito-SemiBold.ttf in Resources */,
+				2C57FFC7276B1A560025AF06 /* NormalTextField.xib in Resources */,
 				4E97F1DA2748858F00C2366D /* LaunchScreen.storyboard in Resources */,
 				2CDE19E32765B6B400D895B9 /* ArticleListCell.xib in Resources */,
 				4E97F21627488BAB00C2366D /* SplashScreenViewController.xib in Resources */,
@@ -828,6 +868,7 @@
 				2C68A3BF275F5E71002B8997 /* ProfileHeader.xib in Resources */,
 				2C68A3E627612D96002B8997 /* Nunito-ExtraLightItalic.ttf in Resources */,
 				2F3BEA742767895F004DB446 /* ArticleDetailViewController.xib in Resources */,
+				2C57FFCD276B1BAB0025AF06 /* EditProfileViewController.xib in Resources */,
 				2C68A3F027612D96002B8997 /* Nunito-Light.ttf in Resources */,
 				2C68A3EB27612D96002B8997 /* Nunito-BoldItalic.ttf in Resources */,
 				4E97F21B27488BAB00C2366D /* AlbumsCell.xib in Resources */,
@@ -969,6 +1010,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C57FFCF276B54D50025AF06 /* EditProfileViewController.swift in Sources */,
 				4E97F21F27488BAB00C2366D /* BaseViewController.swift in Sources */,
 				4E97F21D27488BAB00C2366D /* DummyAlbumsModel.swift in Sources */,
 				2CDE19E92765B6D800D895B9 /* ArticleService.swift in Sources */,
@@ -979,6 +1021,7 @@
 				4E97F21327488BAB00C2366D /* UIColor.swift in Sources */,
 				80BC4A4B275F642400E7E8FF /* LoginViewController.swift in Sources */,
 				2CDE19DB2765B6B400D895B9 /* ArticleAllListTableViewCell.swift in Sources */,
+				2C57FFCB276B1AF30025AF06 /* NormalTextField.swift in Sources */,
 				4E97F22027488BAB00C2366D /* BaseService.swift in Sources */,
 				2CDE19F02765B6FA00D895B9 /* TabBarViewController.swift in Sources */,
 				4E97F21727488BAB00C2366D /* SplashScreenViewController.swift in Sources */,
@@ -1018,6 +1061,7 @@
 				4E97F21927488BAB00C2366D /* MainViewController.swift in Sources */,
 				2CDE19E42765B6B400D895B9 /* ArticleListCell.swift in Sources */,
 				2CDE19E52765B6B400D895B9 /* ArticleViewModel.swift in Sources */,
+				2C57FFD1276BCF3F0025AF06 /* ImagePicker.swift in Sources */,
 				4E97F21A27488BAB00C2366D /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

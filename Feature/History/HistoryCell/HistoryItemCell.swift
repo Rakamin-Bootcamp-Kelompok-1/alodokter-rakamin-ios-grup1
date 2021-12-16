@@ -18,6 +18,10 @@ class HistoryItemCell: UICollectionViewCell {
     @IBOutlet weak var ratingLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var doctorImg: UIImageView!
+    
+    func setup(history: HistoryBookingResource) {
+        
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +41,8 @@ class HistoryItemCell: UICollectionViewCell {
 //            self.layer.masksToBounds = false
         
     }
+    
+    
     
     
 

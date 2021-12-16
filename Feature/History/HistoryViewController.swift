@@ -11,12 +11,15 @@ class HistoryViewController: UIViewController {
 
     @IBOutlet weak var profileView: ProfileView!
     @IBOutlet weak var doctorCollectionView: UICollectionView!
+    var viewModel = HistoryBookingViewModel()
     //    @IBOutlet weak var historyTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setupView()
+        viewModel.delegate = self
+        viewModel.getHistory()
     }
 
     func setupView() {
@@ -44,7 +47,7 @@ class HistoryViewController: UIViewController {
 
 extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        12
+        return viewModel.historyData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,6 +71,19 @@ extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     
+    
+    
+}
+
+extension HistoryViewController: HistoryBookingProtocol {
+    func onSuccessHistory() {
+        self.doctorCollectionView.reloadData()
+        print("sukses")
+    }
+    
+    func onFailureHistory() {
+        print("failure")
+    }
     
     
 }

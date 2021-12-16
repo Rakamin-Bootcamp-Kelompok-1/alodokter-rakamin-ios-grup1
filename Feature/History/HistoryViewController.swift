@@ -51,7 +51,8 @@ extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryItemCell.identifier, for: indexPath)
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryItemCell.identifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryItemCell.identifier, for: indexPath) as? HistoryItemCell else { return UICollectionViewCell() }
         cell.backgroundColor = .clear // very important
         cell.layer.masksToBounds = false
         cell.layer.shadowOpacity = 0.2
@@ -59,6 +60,7 @@ extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.contentView.layer.masksToBounds = true
+        cell.setup(history: viewModel.historyData[indexPath.row])
 //             add corner radius on `contentView`
         collectionView.backgroundColor = .white
         collectionView.layer.cornerRadius = 5

@@ -10,8 +10,6 @@ import Foundation
 
 class HistoryBookingService: BaseService {
     
-    let baseUrl: String = "https://medikuy.herokuapp.com/booking/history?page=1"
-    
     
     let headers: [String : String] = [
         "Content-Type": "application/json"
@@ -22,7 +20,7 @@ class HistoryBookingService: BaseService {
     }
     
     func setUrl() -> URL {
-        return URL(string: baseUrl)!
+        return URL(string: Route.baseUrl + Route.historyBooking.description)!
     }
     
     func query() -> Network.QueryType {

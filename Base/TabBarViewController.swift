@@ -21,7 +21,7 @@ class TabBarViewController: UITabBarController {
     func tabBarSetup() {
         viewControllers = [
         createTabBatItem(for: ArticleListViewController(), title: NSLocalizedString("Home", comment: ""), image: UIImage(named: "HomeIcon")!),
-        createTabBatItem(for: ArticleListViewController(), title: NSLocalizedString("Consultation", comment: ""), image: UIImage(named: "DoctorIcon")!),
+        createTabBatItem(for: ConsulViewController(), title: NSLocalizedString("Consultation", comment: ""), image: UIImage(named: "DoctorIcon")!),
         createTabBatItem(for: HistoryViewController(), title: NSLocalizedString("History", comment: ""), image: UIImage(named: "HistoryIcon")!)
         ]
     }

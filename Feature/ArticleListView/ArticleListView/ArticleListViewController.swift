@@ -10,6 +10,7 @@ import SDWebImage
 
 class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate {
     
+    @IBOutlet weak var profileView: ProfileView!
     @IBOutlet weak var highlightArticleImageView: UIImageView!
     @IBOutlet weak var highlightArticleLabel: UILabel!
     @IBOutlet weak var articleCollectionView: UICollectionView!
@@ -37,6 +38,8 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         allArticleView.addGestureRecognizer(tapGesture)
         articleSearchBar.backgroundImage = UIImage()
         
+        profileView.userImageButton.addTarget(self, action: #selector(presentToProfileViewController), for: .touchUpInside)
+        
         self.isNavigationBarHidden = true
       
         viewModel.delegate = self
@@ -52,6 +55,13 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
     func requestData(){
         self.showParentSpinner()
         viewModel.getArticleListData()
+    }
+    
+    @objc func presentToProfileViewController(button: UIButton) {
+        let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = .fullScreen
+        self.present(navController, animated: true, completion: nil)
     }
     
     @objc func viewAllArticle(_ sender: UIView) {

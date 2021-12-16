@@ -29,6 +29,8 @@ class ProfileViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // View Model Delegate
+        viewModel.delegate = self
         prepareUI()
     }
     
@@ -43,9 +45,10 @@ class ProfileViewController: BaseViewController {
     
     func prepareUI() {
         if #available(iOS 13.0, *) {
-            // Navigation Bar Title
+            // Navigation Bar
             self.isNavigationBarHidden = false
             self.title = "My Profile"
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(dismissView))
             
             
             // Profile Header
@@ -59,8 +62,8 @@ class ProfileViewController: BaseViewController {
             profileHeaderView.layer.shadowRadius = 4
             
             profileHeaderView.profileImageView.image = UIImage(systemName: "person.crop.circle.fill")
-            profileHeaderView.profileNameLabel.text = viewModel.userData?.fullname ?? "Russi Hersiano"
-            profileHeaderView.profilePhoneNumberLabel.text = viewModel.userData?.phoneNumber ?? "0811112233"
+            profileHeaderView.profileNameLabel.text = viewModel.userData?.fullname ?? "Your Name"
+            profileHeaderView.profilePhoneNumberLabel.text = viewModel.userData?.phoneNumber ?? "08xxxxxxxxxx"
             
             
             // Profile Card 1
@@ -136,10 +139,13 @@ class ProfileViewController: BaseViewController {
     
     // MARK: - Button Methods
     
-    @objc
-    func pushToChangePasswordView(button: UIButton) {
+    @objc func pushToChangePasswordView(button: UIButton) {
         let vc = ChangePasswordViewController(nibName: "ChangePasswordViewController", bundle: nil)
         self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
+    @objc func dismissView(button: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
 
@@ -163,6 +169,8 @@ class ProfileViewController: BaseViewController {
 extension ProfileViewController: profileViewModelDelegate {
     func onSuccessRequest() {
         self.removeSpinner()
+        profileHeaderView.profileNameLabel.text = viewModel.userData?.fullname
+        profileHeaderView.profilePhoneNumberLabel.text = viewModel.userData?.phoneNumber
     }
 
     func onErrorRequest() {
@@ -176,7 +184,7 @@ extension ProfileViewController: profileViewModelDelegate {
 
 extension ProfileViewController {
     func requestData() {
-//        self.showParentSpinner()
+        self.showParentSpinner()
         viewModel.getUser()
     }
 }

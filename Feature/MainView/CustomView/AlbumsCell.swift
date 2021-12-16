@@ -12,4 +12,6 @@ class AlbumsCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var albumsImageView: UIImageView!
     
+    
+    
 }

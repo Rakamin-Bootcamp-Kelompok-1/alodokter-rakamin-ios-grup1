@@ -9,37 +9,45 @@ import UIKit
 
 class HistoryViewController: UIViewController {
 
-    @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var profileView: ProfileView!
     @IBOutlet weak var doctorCollectionView: UICollectionView!
+    var viewModel = HistoryBookingViewModel()
     //    @IBOutlet weak var historyTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setupView()
+        viewModel.delegate = self
+        viewModel.getHistory()
     }
 
     func setupView() {
 //        historyTableView.register(UINib(nibName: HistoryItemCell.identifier, bundle: nil), forCellReuseIdentifier: HistoryItemCell.identifier)
 //        historyTableView.delegate = self
 //        historyTableView.dataSource = self
-        userImg.layer.cornerRadius = userImg.frame.width / 2
-        userImg.layer.masksToBounds = true
         doctorCollectionView.delegate = self
         doctorCollectionView.dataSource = self
         doctorCollectionView.register(UINib(nibName: HistoryItemCell.identifier, bundle: nil), forCellWithReuseIdentifier: HistoryItemCell.identifier)
+        profileView.userImageButton.addTarget(self, action: #selector(presentToProfileViewController), for: .touchUpInside)
         self.view.layer.backgroundColor = UIColor.white.cgColor
         navigationItem.title = ""
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barTintColor = .white
     }
     
+    @objc func presentToProfileViewController(button: UIButton) {
+        let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = .fullScreen
+        self.present(navController, animated: true, completion: nil)
+    }
     
 }
 
 extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        12
+        return viewModel.historyData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -63,6 +71,19 @@ extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     
+    
+    
+}
+
+extension HistoryViewController: HistoryBookingProtocol {
+    func onSuccessHistory() {
+        self.doctorCollectionView.reloadData()
+        print("sukses")
+    }
+    
+    func onFailureHistory() {
+        print("failure")
+    }
     
     
 }

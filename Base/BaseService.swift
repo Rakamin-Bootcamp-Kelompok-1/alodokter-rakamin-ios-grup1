@@ -61,7 +61,7 @@ class Network {
         
         return Alamofire.request(request).responseJSON { (response) in
             if let json = response.result.value {
-//                print("JSON: \(JSON(json)) ")
+                print("JSON: \(JSON(json)) ")
             }
             
             if let err = response.error {

@@ -16,6 +16,7 @@
                 <outlet property="doctorView" destination="ODE-A3-tIH" id="uTF-Hn-yp3"/>
                 <outlet property="highlightArticleImageView" destination="QbI-jU-4qG" id="Wwx-tH-jMw"/>
                 <outlet property="highlightArticleLabel" destination="u9M-iK-36E" id="h0d-zV-M1T"/>
+                <outlet property="profileView" destination="Yvd-PT-NcW" id="9dn-lH-KrB"/>
                 <outlet property="view" destination="eu6-Yd-GwV" id="uJi-D2-JGL"/>
             </connections>
         </placeholder>

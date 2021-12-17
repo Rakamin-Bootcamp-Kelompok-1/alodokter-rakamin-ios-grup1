@@ -43,6 +43,8 @@ class HistoryViewController: UIViewController {
         self.present(navController, animated: true, completion: nil)
     }
     
+    
+    
 }
 
 extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -64,14 +66,20 @@ extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataS
 //             add corner radius on `contentView`
         collectionView.backgroundColor = .white
         collectionView.layer.cornerRadius = 5
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = DetailHistoryViewController(nibName: DetailHistoryViewController.identifier, bundle: nil)
+        controller.dataHistory = viewModel.historyData[indexPath.row]
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.width / 1, height: 95)
+//    }
     
     
     

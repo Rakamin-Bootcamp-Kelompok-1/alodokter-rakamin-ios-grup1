@@ -9,6 +9,7 @@ import UIKit
 
 class ConsulViewController: UIViewController {
 
+    @IBOutlet weak var searchDoctor: UISearchBar!
     @IBOutlet weak var doctorCollectionvView: UICollectionView!
     @IBOutlet weak var specialistCollectionView: UICollectionView!
     var viewModel = ConsulDoctorViewModel()
@@ -22,6 +23,9 @@ class ConsulViewController: UIViewController {
         doctorCollectionvView.dataSource = self
         viewModel.delegate = self
         viewModel.getDoctorList()
+        searchDoctor.delegate = self
+//        self.definesPresentationContext = true
+        searchDoctor.showsCancelButton = true
         registerCell()
         navigationItem.title = ""
         navigationController?.navigationBar.isHidden = true
@@ -35,13 +39,17 @@ class ConsulViewController: UIViewController {
 
 }
 
-extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
             case specialistCollectionView:
                 return 5
             case doctorCollectionvView:
-                return viewModel.doctorList.count
+                if viewModel.searchDoctorList.count != 0 {
+                    return viewModel.searchDoctorList.count
+                }else {
+                    return viewModel.doctorList.count
+                }
             default:
                 return 0
         }
@@ -61,8 +69,9 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.layer.shadowOffset = CGSize(width: 0, height: 0)
             cell.layer.shadowColor = UIColor.black.cgColor
             cell.contentView.layer.masksToBounds = true
-            cell.setup(doctor: viewModel.doctorList[indexPath.row])
+//            cell.setup(doctor: viewModel.doctorList[indexPath.row])
     //             add corner radius on `contentView`
+            cell.setup(doctor: viewModel.searchDoctorList.count != 0 ? viewModel.searchDoctorList[indexPath.row] : viewModel.doctorList[indexPath.row])
             collectionView.backgroundColor = .white
             collectionView.layer.cornerRadius = 5
             return cell
@@ -73,12 +82,36 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = DetailConsultDoctorViewController(nibName: DetailConsultDoctorViewController.identifier, bundle: nil)
+        controller.doctorResource = viewModel.doctorList[indexPath.row]
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        <#code#>
+//    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar.text != "" {
+            viewModel.searchDoctor(name: searchBar.text!)
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("masuk cancel")
+        viewModel.resetSearch()
     }
 }
 
 extension ConsulViewController: ConsulDoctorProtocol {
+    func onSuccessSearchDoctor() {
+        self.doctorCollectionvView.reloadData()
+    }
+    
+    func onFailureSearchDoctor() {
+        print("error")
+    }
+    
     func onSuccessDoctor() {
         self.doctorCollectionvView.reloadData()
     }

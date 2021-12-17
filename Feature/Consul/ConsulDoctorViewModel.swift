@@ -10,12 +10,16 @@ import Foundation
 protocol ConsulDoctorProtocol {
     func onSuccessDoctor()
     func onFailureDoctor()
+    func onSuccessSearchDoctor()
+    func onFailureSearchDoctor()
 }
 
 class ConsulDoctorViewModel {
     var delegate: ConsulDoctorProtocol?
     var service = DoctorService()
+    var searchService = SearchDoctorService()
     var doctorList = [DoctorResource]()
+    var searchDoctorList = [DoctorResource]()
     
     func getDoctorList() {
         Network.requestNoBody(req: service) {[weak self](result) in
@@ -29,5 +33,24 @@ class ConsulDoctorViewModel {
                 print("error = \(error)")
             }
         }
+    }
+    
+    func searchDoctor(name: String) {
+        searchService.doctorName = name
+        Network.request(req: searchService) { [weak self] (result) in
+            switch result {
+                
+            case .success(let data):
+                self?.searchDoctorList = data.data ?? []
+                self?.delegate?.onSuccessSearchDoctor()
+            case .failure(let error):
+                self?.delegate?.onFailureSearchDoctor()
+            }
+        }
+    }
+    
+    func resetSearch() {
+        self.searchDoctorList = []
+        self.delegate?.onSuccessDoctor()
     }
 }

@@ -31,6 +31,7 @@ class DoctorCollectionViewCell: UICollectionViewCell {
         self.doctorLbl.text = doctor.doctorName
         self.specialistLbl.text = doctor.speciality
         self.localtionLbl.text = doctor.locationPractice
+        
     }
 
 }

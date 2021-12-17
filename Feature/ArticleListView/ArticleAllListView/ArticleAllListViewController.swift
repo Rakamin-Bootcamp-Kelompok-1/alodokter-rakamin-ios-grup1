@@ -88,6 +88,13 @@ extension ArticleAllListViewController: UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = articles[indexPath.row].id ?? 1
+        let vc = ArticleDetailViewController()
+        vc.articleID = item
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row + 1 == articles.count {
             if articlePages < 2 {

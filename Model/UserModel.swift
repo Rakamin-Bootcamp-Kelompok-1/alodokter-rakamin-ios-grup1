@@ -8,7 +8,7 @@
 import Foundation
 
 struct UserModel: Codable {
-    let user: User?
+    var user: User?
     let token: String?
     
     enum CodingKeys: String, CodingKey {
@@ -31,7 +31,7 @@ struct User: Identifiable, Codable {
     var gender: String?
     var birthDate: String?
     var phoneNumber: String?
-    var imagePath: String?
+    var imageData: String?
     var isAdmin: Bool?
     var isActive: Bool?
     var createdAt: String?
@@ -46,7 +46,7 @@ struct User: Identifiable, Codable {
         case age, email, gender
         case birthDate = "birth_date"
         case phoneNumber = "phone_number"
-        case imagePath = "image_path"
+        case imageData = "image_data"
         case isAdmin = "is_admin"
         case isActive = "is_active"
         case createdAt = "created_at"
@@ -65,7 +65,7 @@ struct User: Identifiable, Codable {
         gender = try values.decodeIfPresent(String.self, forKey: .gender)
         birthDate = try values.decodeIfPresent(String.self, forKey: .birthDate)
         phoneNumber = try values.decodeIfPresent(String.self, forKey: .phoneNumber)
-        imagePath = try values.decodeIfPresent(String.self, forKey: .imagePath)
+        imageData = try values.decodeIfPresent(String.self, forKey: .imageData)
         isAdmin = try values.decodeIfPresent(Bool.self, forKey: .isAdmin)
         isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive)
         createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt)

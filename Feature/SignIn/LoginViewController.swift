@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
-  
+    var viewModel = LoginViewModel()
     let userDefaults = UserDefaults()
     var iconClick = false
     let imageIcon = UIImageView()
@@ -26,10 +26,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         activityIndicator.isHidden = true
         btnLogin.layer.cornerRadius = 10
         btnShowPassword()
         setTextFieldBorder()
+
     }
     
     @objc func togglePasswordView(_ sender: Any) {
@@ -81,50 +83,29 @@ class LoginViewController: UIViewController {
             activityIndicator.isHidden = true
             return
         }
-        
-        loginApiAF(email: emailTxtField.text!, password: passwordTxtField.text!)
+        viewModel.loginAPI(email: emailTxtField.text!, password: passwordTxtField.text!)
+
     }
     @IBAction func actionBtnForgot(_ sender: Any) {
     }
 
-    func loginApiAF(email: String, password: String) {
-        activityIndicator.isHidden = false
-        btnLogin.isHidden = true
-        Alamofire.request("https://medikuy.herokuapp.com/login", method: .post, parameters: ["email":"\(email)", "password":"\(password)"]).responseJSON { (responseJson) in
-            
-            do{
-                let decoder = JSONDecoder()
-                let dataUser = try decoder.decode(UserModel.self, from: responseJson.data!)
-                DispatchQueue.main.async {
-                    self.activityIndicator.isHidden = true
-                    self.userDefaults.setValue(dataUser.user?.email, forKey: "email")
-                    self.userDefaults.setValue(dataUser.user?.birthDate, forKey: "birthdate")
-                    self.userDefaults.setValue(dataUser.token, forKey: "token")
-                    self.userDefaults.setValue(dataUser.user?.password, forKey: "password")
-                    self.userDefaults.setValue(dataUser.user?.gender, forKey: "gender")
-                    self.userDefaults.setValue(dataUser.user?.phoneNumber, forKey: "phoneNumber")
-                    self.userDefaults.setValue(dataUser.user?.fullname, forKey: "fullName")
-                    self.btnLogin.isHidden = false
-
-                    if let emailUser = self.userDefaults.value(forKey: "email") as? String {
-                        print("Email: \(emailUser)")
-                    }
-                    if let token = self.userDefaults.value(forKey: "token") as? String {
-                        print("Token: \(token)")
-                    }
-                }
-                
-            } catch {
-                DispatchQueue.main.async {
-                    self.activityIndicator.isHidden = true
-                    self.btnLogin.isHidden = false
-                    let alertController = UIAlertController(title: "Error" , message: "Register Failed", preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
-                    alertController.addAction(alertAction)
-                    self.present(alertController, animated: true, completion: nil)
-                }
-            }
-        }
+}
+extension LoginViewController: LoginViewModelProtocol{
+    func onSuccess() {
+        self.emailTxtField.text = ""
+        self.passwordTxtField.text = ""
+        self.activityIndicator.isHidden = true
+        self.btnLogin.isHidden = false
+        print("Login Success: \(self.viewModel.emailU)")
     }
-
+    func onFailure() {
+        self.activityIndicator.isHidden = true
+        self.btnLogin.isHidden = false
+        let alertController = UIAlertController(title: "Login Failed" , message: "Email/Password is wrong", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
 }

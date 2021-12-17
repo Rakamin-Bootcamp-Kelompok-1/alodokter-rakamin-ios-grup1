@@ -128,6 +128,7 @@
 		80613364275BCE8C0065B62E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80613363275BCE8C0065B62E /* RegisterViewController.swift */; };
 		80BC4A4B275F642400E7E8FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BC4A4A275F642400E7E8FF /* LoginViewController.swift */; };
 		80BC4A4F275F647C00E7E8FF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80BC4A4E275F647C00E7E8FF /* LoginViewController.xib */; };
+		80D4FBEA276C6949001A8DD2 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D4FBE9276C6949001A8DD2 /* RegisterService.swift */; };
 		8A46F6E6C05003DC0F5BD809 /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8947D88ACBB42AFDC870192F /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework */; };
 		FAB7B29BC482E4895EAD1233 /* Pods_Alodokter_bootcamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1C8877C0AD54B5F4660C13 /* Pods_Alodokter_bootcamp.framework */; };
 /* End PBXBuildFile section */
@@ -283,6 +284,7 @@
 		80613363275BCE8C0065B62E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		80BC4A4A275F642400E7E8FF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		80BC4A4E275F647C00E7E8FF /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		80D4FBE9276C6949001A8DD2 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		8947D88ACBB42AFDC870192F /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1C8877C0AD54B5F4660C13 /* Pods_Alodokter_bootcamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E618D3DF91A64C2A1C5B95 /* Pods-Alodokter_bootcampTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcampTests.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcampTests/Pods-Alodokter_bootcampTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -744,6 +746,7 @@
 				2C4022992767871700149B5D /* UserService.swift */,
 				497C2812276B025200CA01DE /* HistoryBookingService.swift */,
 				497C2829276B250D00CA01DE /* DoctorService.swift */,
+				80D4FBE9276C6949001A8DD2 /* RegisterService.swift */,
 			);
 			path = Service;
 			sourceTree = SOURCE_ROOT;
@@ -1122,6 +1125,7 @@
 				8019CB8E2768EF5F00B3BD77 /* LoginViewModel.swift in Sources */,
 				8019CB8A2768D96600B3BD77 /* RegisterViewModel.swift in Sources */,
 				80613364275BCE8C0065B62E /* RegisterViewController.swift in Sources */,
+				80D4FBEA276C6949001A8DD2 /* RegisterService.swift in Sources */,
 				2C402296276750B900149B5D /* ProfileViewModel.swift in Sources */,
 				497C282A276B250D00CA01DE /* DoctorService.swift in Sources */,
 				2CDE19C02765B68200D895B9 /* HistoryBookingViewModel.swift in Sources */,

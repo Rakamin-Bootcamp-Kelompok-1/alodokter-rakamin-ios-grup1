@@ -4,7 +4,6 @@
 //
 //  Created by Putra on 17/12/21.
 //
-
 import Foundation
 
 enum Route {
@@ -12,6 +11,7 @@ enum Route {
     static let baseUrl = "https://medikuy.herokuapp.com"
     
     case historyBooking
+    case register
     
     
     var description: String {
@@ -19,6 +19,9 @@ enum Route {
         
         case .historyBooking:
             return "/booking/history"
+            
+        case .register:
+            return "/user/add"
         }
     }
     

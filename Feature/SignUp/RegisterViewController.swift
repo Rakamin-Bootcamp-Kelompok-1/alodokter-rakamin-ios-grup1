@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: BaseViewController {
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
@@ -25,10 +25,13 @@ class RegisterViewController: UIViewController {
     var pickerView = UIPickerView()
     let textfieldColorBorder: UIColor = UIColor.rgb(red: 70, green: 163, blue: 249)
     var activeTextField: UITextField!
+    var viewModel = RegisterViewModel()
+    var status: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         btnRegister.layer.cornerRadius = 10
+        viewModel.delegate = self
         btnShowPassword()
         setDateTextField()
         setGenderTextField()
@@ -36,10 +39,6 @@ class RegisterViewController: UIViewController {
         let dateImage = UIImage(named: "calender")
         addImageTextfield(txtField: dateTxtField, img: dateImage!)
         btnSignIn.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
-        
-    }
-    
-    @objc private func hideKeyboard(){
         
     }
 
@@ -187,37 +186,8 @@ class RegisterViewController: UIViewController {
             alertController.addAction(alertAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
-            print("Register")
-            self.registerAF(email: emailTxtField.text!, password: passwordTxtField.text!, name: nameTxtField.text!, birthdate: dateTxtField.text!, phone: phoneTxtField.text!, gender: genderTxtField.text!)
-        }
-    }
-    
-    func registerAF(email: String, password: String, name: String, birthdate:String, phone:String, gender:String){
-        self.activityView.isHidden = false
-        Alamofire.request("https://medikuy.herokuapp.com/user/add", method: .post, parameters: ["full_name": "\(name)", "password": "\(password)", "email": "\(email)", "gender": "\(gender)", "birth_date": "\(birthdate)", "phone_number": "\(phone)"]).validate().responseJSON { response in
-            switch response.result {
-            case .success:
-                let alertController = UIAlertController(title: "Success" , message: "Account has been registered", preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
-                alertController.addAction(alertAction)
-                self.present(alertController, animated: true, completion: nil)
-                self.activityView.isHidden = true
-                self.nameTxtField.text = ""
-                self.emailTxtField.text = ""
-                self.dateTxtField.text = ""
-                self.phoneTxtField.text = ""
-                self.genderTxtField.text = ""
-                self.passwordTxtField.text = ""
-                self.confirmationTxtField.text = ""
-            case .failure(let error):
-                print(error)
-                self.activityView.isHidden = true
-                let alertController = UIAlertController(title: "Error" , message: "Invalid Username or Password", preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
-                alertController.addAction(alertAction)
-                self.present(alertController, animated: true, completion: nil)
-            }
-            
+            viewModel.registerAPI(name: nameTxtField.text!, password: passwordTxtField.text!, email: emailTxtField.text!, gender: genderTxtField.text!, birtdate: dateTxtField.text!, phone: phoneTxtField.text!)
+            self.activityView.isHidden = false
         }
     }
 
@@ -254,6 +224,39 @@ class RegisterViewController: UIViewController {
         confirmationTxtField.isSecureTextEntry.toggle()
         buttonConfirmation.isSelected.toggle()
         }
+}
+
+extension RegisterViewController: RegisterViewModelProtocol {
+    func onRegistered() {
+        self.activityView.isHidden = true
+        let alertController = UIAlertController(title: "Error" , message: "Email has been registered", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func onSuccess() {
+        self.activityView.isHidden = true
+        let alertController = UIAlertController(title: "Success" , message: "Account has been registered", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+        self.activityView.isHidden = true
+        self.nameTxtField.text = ""
+        self.emailTxtField.text = ""
+        self.dateTxtField.text = ""
+        self.phoneTxtField.text = ""
+        self.genderTxtField.text = ""
+        self.passwordTxtField.text = ""
+        self.confirmationTxtField.text = ""
+    }
+    func onFailure() {
+        self.activityView.isHidden = true
+        let alertController = UIAlertController(title: "Error" , message: "Register Failed", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension RegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {

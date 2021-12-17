@@ -15,6 +15,11 @@ class SplashScreenViewController: BaseViewController {
     @IBOutlet weak var medikuyLabel: UILabel!
     
     
+    // MARK: - Variables
+    
+    var viewModel = ProfileViewModel()
+    
+    
     // MARK: - View Life Cycle Methods
     
     override func viewDidLoad() {
@@ -27,6 +32,9 @@ class SplashScreenViewController: BaseViewController {
         
         // Set Label Attribute
         medikuyLabel.attributedText = medikuyMutableString
+        
+        // Get User Data
+        viewModel.getUser()
         
         // Splash Screen Delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {

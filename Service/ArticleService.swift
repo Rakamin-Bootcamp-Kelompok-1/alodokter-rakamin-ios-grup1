@@ -39,7 +39,7 @@ class ArticleService: BaseService {
     }
     
     func cachePolicy() -> NSURLRequest.CachePolicy {
-        return .reloadIgnoringLocalAndRemoteCacheData
+        return .reloadRevalidatingCacheData
     }
     
     func signature() -> Network.SignatureType {

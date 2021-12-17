@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,14 +35,14 @@
                     <rect key="frame" x="0.0" y="120" width="414" height="776"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jA-W6-Hso">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="571"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="561"/>
                             <subviews>
                                 <searchBar contentMode="redraw" placeholder="Search Article" translatesAutoresizingMaskIntoConstraints="NO" id="buA-GL-1ud">
-                                    <rect key="frame" x="10" y="10" width="394" height="51"/>
+                                    <rect key="frame" x="10" y="0.0" width="394" height="51"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oim-ia-Mk3">
-                                    <rect key="frame" x="20" y="71" width="374" height="249.5"/>
+                                    <rect key="frame" x="20" y="61" width="374" height="249.5"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="article_pic_example" translatesAutoresizingMaskIntoConstraints="NO" id="QbI-jU-4qG">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="249.5"/>
@@ -71,13 +71,13 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artikel Kesehatan Terkini untuk Anda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gp6-8k-U81">
-                                    <rect key="frame" x="20" y="340.5" width="374" height="21"/>
+                                    <rect key="frame" x="20" y="330.5" width="374" height="21"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="qnK-To-Hpl">
-                                    <rect key="frame" x="0.0" y="371.5" width="414" height="149.5"/>
+                                    <rect key="frame" x="0.0" y="361.5" width="414" height="149.5"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="149.5" id="Hsb-Jj-kM3"/>
@@ -90,7 +90,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fw1-og-8fm">
-                                    <rect key="frame" x="20" y="531" width="374" height="20"/>
+                                    <rect key="frame" x="20" y="521" width="374" height="20"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lihat Semua Artikel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvo-hf-EK7">
                                             <rect key="frame" x="0.0" y="0.0" width="136.5" height="20"/>
@@ -132,7 +132,7 @@
                                 <constraint firstItem="Fw1-og-8fm" firstAttribute="top" secondItem="qnK-To-Hpl" secondAttribute="bottom" constant="10" id="tSB-MC-RFg"/>
                                 <constraint firstAttribute="trailing" secondItem="Fw1-og-8fm" secondAttribute="trailing" constant="20" id="wfb-49-Q3l"/>
                                 <constraint firstItem="buA-GL-1ud" firstAttribute="leading" secondItem="9jA-W6-Hso" secondAttribute="leading" constant="10" id="x0c-YC-XXV"/>
-                                <constraint firstItem="buA-GL-1ud" firstAttribute="top" secondItem="9jA-W6-Hso" secondAttribute="top" constant="10" id="xOc-3o-J9J"/>
+                                <constraint firstItem="buA-GL-1ud" firstAttribute="top" secondItem="9jA-W6-Hso" secondAttribute="top" id="xOc-3o-J9J"/>
                             </constraints>
                         </view>
                     </subviews>

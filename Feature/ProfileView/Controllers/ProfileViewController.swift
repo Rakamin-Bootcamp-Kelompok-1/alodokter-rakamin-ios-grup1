@@ -193,8 +193,6 @@ class ProfileViewController: BaseViewController {
 
 // MARK: - Profile View Model Delegate
 
-// Commented until further optimization
-
 extension ProfileViewController: profileViewModelDelegate {
     func onSuccessRequest() {
         self.removeSpinner()

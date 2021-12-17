@@ -1,24 +1,29 @@
 //
-//  UserService.swift
+//  ChangePasswordService.swift
 //  Alodokter_bootcamp
 //
-//  Created by Rayhan Faluda on 13/12/21.
+//  Created by Rayhan Faluda on 17/12/21.
 //
 
 import Foundation
 
-class UserService: BaseService {
+class ChangePasswordService: BaseService {
     
     let userDefaults = UserDefaults()
-    let url: String = "https://medikuy.herokuapp.com/token_authenticate"
+    var password: String?
+    
+    init(password: String) {
+        self.password = password
+    }
     
     typealias ResponseType = UserModel
     
     func method() -> Network.Method {
-        return .get
+        return .post
     }
     
     func setUrl() -> URL {
+        let url: String = "https://medikuy.herokuapp.com/user/update/\(userDefaults.value(forKey: "id") ?? "")"
         return URL(string: url)!
     }
     
@@ -27,7 +32,8 @@ class UserService: BaseService {
     }
     
     func setParameters() -> [String : Any]? {
-        return [:]
+        let parameters = ["email": userDefaults.value(forKey: "email"), "password": password]
+        return parameters as [String : Any]
     }
     
     func setHeaders() -> [String : String] {

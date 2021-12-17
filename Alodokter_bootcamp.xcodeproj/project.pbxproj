@@ -49,6 +49,8 @@
 		2C68A40527634E45002B8997 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68A40427634E45002B8997 /* LargeButton.swift */; };
 		2C68A40827635000002B8997 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68A40627635000002B8997 /* ChangePasswordViewController.swift */; };
 		2C68A40927635000002B8997 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A40727635000002B8997 /* ChangePasswordViewController.xib */; };
+		2C706FC4276C7397001229CE /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C706FC3276C7397001229CE /* ChangePasswordViewModel.swift */; };
+		2C706FC6276C7750001229CE /* ChangePasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C706FC5276C7750001229CE /* ChangePasswordService.swift */; };
 		2CDE19B92765B68200D895B9 /* DetailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19AF2765B67F00D895B9 /* DetailHistoryViewController.swift */; };
 		2CDE19BA2765B68200D895B9 /* DetailHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE19B02765B67F00D895B9 /* DetailHistoryViewController.xib */; };
 		2CDE19BB2765B68200D895B9 /* DetailBookingHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19B12765B67F00D895B9 /* DetailBookingHistoryViewModel.swift */; };
@@ -179,6 +181,8 @@
 		2C68A40427634E45002B8997 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
 		2C68A40627635000002B8997 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		2C68A40727635000002B8997 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		2C706FC3276C7397001229CE /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		2C706FC5276C7750001229CE /* ChangePasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordService.swift; sourceTree = "<group>"; };
 		2CDE19AF2765B67F00D895B9 /* DetailHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailHistoryViewController.swift; sourceTree = "<group>"; };
 		2CDE19B02765B67F00D895B9 /* DetailHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailHistoryViewController.xib; sourceTree = "<group>"; };
 		2CDE19B12765B67F00D895B9 /* DetailBookingHistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBookingHistoryViewModel.swift; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 			children = (
 				2C68A3FC27634D2B002B8997 /* Views */,
 				2C68A3FD27634D36002B8997 /* Controllers */,
+				2C706FC3276C7397001229CE /* ChangePasswordViewModel.swift */,
 			);
 			path = ChangePassword;
 			sourceTree = "<group>";
@@ -669,6 +674,7 @@
 				2CDE19E82765B6D800D895B9 /* ArticleService.swift */,
 				4E97F20F27488BAB00C2366D /* DummyAlbumsService.swift */,
 				2C4022992767871700149B5D /* UserService.swift */,
+				2C706FC5276C7750001229CE /* ChangePasswordService.swift */,
 			);
 			path = Service;
 			sourceTree = SOURCE_ROOT;
@@ -1039,8 +1045,10 @@
 				4E97F21E27488BAB00C2366D /* DummyAlbumsService.swift in Sources */,
 				2C68A3D1275FF3BF002B8997 /* SignOutButton.swift in Sources */,
 				4E97F21427488BAB00C2366D /* DeviceHelper.swift in Sources */,
+				2C706FC6276C7750001229CE /* ChangePasswordService.swift in Sources */,
 				8019CB8E2768EF5F00B3BD77 /* LoginViewModel.swift in Sources */,
 				8019CB8A2768D96600B3BD77 /* RegisterViewModel.swift in Sources */,
+				2C706FC4276C7397001229CE /* ChangePasswordViewModel.swift in Sources */,
 				80613364275BCE8C0065B62E /* RegisterViewController.swift in Sources */,
 				2C402296276750B900149B5D /* ProfileViewModel.swift in Sources */,
 				2CDE19C02765B68200D895B9 /* HistoryBookingViewModel.swift in Sources */,

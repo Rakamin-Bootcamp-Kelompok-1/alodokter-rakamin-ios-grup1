@@ -52,8 +52,8 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Article" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9M-iK-36E">
-                                            <rect key="frame" x="20" y="199.5" width="128" height="30"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9M-iK-36E">
+                                            <rect key="frame" x="20" y="229.5" width="334" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -64,6 +64,7 @@
                                         <constraint firstAttribute="bottom" secondItem="QbI-jU-4qG" secondAttribute="bottom" id="85J-2r-FCh"/>
                                         <constraint firstItem="QbI-jU-4qG" firstAttribute="leading" secondItem="oim-ia-Mk3" secondAttribute="leading" id="LOK-aq-WWD"/>
                                         <constraint firstAttribute="bottom" secondItem="u9M-iK-36E" secondAttribute="bottom" constant="20" id="S9b-U1-axZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="u9M-iK-36E" secondAttribute="trailing" constant="20" id="YBO-I8-sqq"/>
                                         <constraint firstItem="QbI-jU-4qG" firstAttribute="top" secondItem="oim-ia-Mk3" secondAttribute="top" id="afx-ze-I4Z"/>
                                         <constraint firstItem="u9M-iK-36E" firstAttribute="leading" secondItem="oim-ia-Mk3" secondAttribute="leading" constant="20" id="fkn-8c-aNb"/>
                                         <constraint firstAttribute="width" secondItem="oim-ia-Mk3" secondAttribute="height" multiplier="3:2" id="rmh-TB-8GW"/>

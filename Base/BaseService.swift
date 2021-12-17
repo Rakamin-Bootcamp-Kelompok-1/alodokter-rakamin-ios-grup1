@@ -91,7 +91,37 @@ class Network {
         
         return Alamofire.request(request).responseJSON { (response) in
             if let json = response.result.value {
-                
+//                print("JSON: \(JSON(json)) ")
+            }
+            
+            if let err = response.error {
+                completionHandler(NetworkResult.failure(err.localizedDescription))
+                return
+            }
+            
+            if let responseCode = response.response {
+                if let data = response.data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let object = try decoder.decode(T.ResponseType.self, from: data)
+                        completionHandler(NetworkResult.success(object))
+                    } catch let error {
+                        completionHandler(NetworkResult.failure(error.localizedDescription, responseCode.statusCode))
+                    }
+                }
+            }
+        }
+    }
+    
+    @discardableResult
+    static func requestWithURLandBody<T: BaseService>(req: T, costumURL: URL, body: [String: Any], completionHandler: @escaping (NetworkResult<T.ResponseType>) -> Void) -> DataRequest? {
+        
+        let url = costumURL
+        let request = prepareRequestWithCustomBody(for: url, req: req, body: body)
+        
+        return Alamofire.request(request).responseJSON { (response) in
+            if let json = response.result.value {
+//                print("JSON: \(JSON(json))")
             }
             
             if let err = response.error {
@@ -248,6 +278,28 @@ extension Network {
         }
         request!.allHTTPHeaderFields = header
         request!.httpMethod = req.method().rawValue
+        
+        return request!
+    }
+    
+    private static func prepareRequestWithCustomBody<T: BaseService>(for url: URL, req: T, body: [String: Any]) -> URLRequest {
+        
+        var request : URLRequest? = nil
+        var jsonString: String = ""
+        var header = req.setHeaders()
+        
+        request = URLRequest(url: url, cachePolicy: req.cachePolicy(), timeoutInterval: req.timeout())
+            do {
+                let serialization = try JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions(rawValue: 0))
+                jsonString = String(data: serialization, encoding: .utf8)!
+                request!.httpBody = serialization
+                
+            } catch {
+                assertionFailure("Error : while attemping to serialize the data for preparing httpBody \(error)")
+            }
+        
+        request!.allHTTPHeaderFields = header
+        request!.httpMethod = "POST"
         
         return request!
     }

@@ -49,6 +49,12 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         
     }
     
+    func highlightArticleSetup() {
+        let randomArticle = viewModel.articleListData[0].data.randomElement()
+        highlightArticleImageView.sd_setImage(with: URL(string: randomArticle!.image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))
+        highlightArticleLabel.text = randomArticle!.article_title
+    }
+    
     func requestData(){
         self.showParentSpinner()
         viewModel.getArticleListData()
@@ -81,8 +87,7 @@ extension ArticleListViewController: UICollectionViewDelegate, UICollectionViewD
 extension ArticleListViewController: ArticleViewModelDelegate {
     func onSuccessRequest() {
         self.removeSpinner()
-        highlightArticleImageView.sd_setImage(with: URL(string: viewModel.articleListData[0].data[0].image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))
-        highlightArticleLabel.text = viewModel.articleListData[0].data[0].article_title
+        highlightArticleSetup()
         articleCollectionView.reloadData()
     }
     

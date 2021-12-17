@@ -36,10 +36,9 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         tapGesture.delegate = self
         allArticleView.addGestureRecognizer(tapGesture)
         articleSearchBar.backgroundImage = UIImage()
-        
         self.isNavigationBarHidden = true
-      
         viewModel.delegate = self
+        articleSearchBar.delegate = self
     }
     
     func initArticleCollectionView() {
@@ -63,6 +62,19 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
     @objc func viewAllArticle(_ sender: UIView) {
         let vc = ArticleAllListViewController()
         vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension ArticleListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let vc = ArticleAllListViewController()
+        vc.hidesBottomBarWhenPushed = true
+        vc.isGotSearchByHome = true
+        vc.searchKeywordByHome = articleSearchBar.text ?? ""
+        articleSearchBar.text = ""
+        articleSearchBar.endEditing(true)
+    
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

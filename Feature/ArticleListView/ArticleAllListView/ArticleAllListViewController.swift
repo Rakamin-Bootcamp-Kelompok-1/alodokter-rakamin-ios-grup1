@@ -17,11 +17,21 @@ class ArticleAllListViewController: BaseViewController {
     var articles: [ArticleModel] = []
     var articlePages = 1
     var isSearhResult = false
+    var isGotSearchByHome = false
+    var searchKeywordByHome = ""
    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
-        getArticleData(page: articlePages)
+        print(isGotSearchByHome)
+        print(searchKeywordByHome)
+        
+        if isGotSearchByHome == true {
+            print("got here!")
+            getArticleDataBySearch(search: searchKeywordByHome)
+        } else {
+            getArticleData(page: articlePages)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +58,21 @@ class ArticleAllListViewController: BaseViewController {
         viewModel.articleListData.removeAll()
         viewModel.getArticleListDataWithUrl(customUrl: URL(string: "https://medikuy.herokuapp.com/articles?page=\(page)")!)
     }
+    
+    func getArticleDataBySearch(search: String) {
+        self.showParentSpinner()
+        articles.removeAll()
+        articleTableView.reloadData()
+        viewModel.articleListData.removeAll()
+        if search == "" {
+            isSearhResult = false
+            articlePages = 1
+            viewModel.getArticleListData()
+        } else {
+            isSearhResult = true
+            viewModel.getArticleListDataWithUrlandBody(customUrl: URL(string: "https://medikuy.herokuapp.com/article/search")!, body: ["article_title": search])
+        }
+    }
 }
 
 extension ArticleAllListViewController: ArticleViewModelDelegate {
@@ -65,18 +90,7 @@ extension ArticleAllListViewController: ArticleViewModelDelegate {
 
 extension ArticleAllListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.showParentSpinner()
-        articles.removeAll()
-        articleTableView.reloadData()
-        viewModel.articleListData.removeAll()
-        if articleSearchBar.text == "" {
-            isSearhResult = false
-            articlePages = 1
-            viewModel.getArticleListData()
-        } else {
-            isSearhResult = true
-            viewModel.getArticleListDataWithUrlandBody(customUrl: URL(string: "https://medikuy.herokuapp.com/article/search")!, body: ["article_title": articleSearchBar.text ?? ""])
-        }
+        getArticleDataBySearch(search: articleSearchBar.text ?? "")
     }
 }
 

@@ -9,11 +9,8 @@ import Foundation
 
 class UserService: BaseService {
     
+    let userDefaults = UserDefaults()
     let url: String = "https://medikuy.herokuapp.com/token_authenticate"
-    let headers: [String : String] = [
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZF91c2VyIjozM30.XInUMgK0Uvn-Fbui96zHoTI_ZMwV2M2zW6sdkdpAPvY",
-        "Content-Type": "application/json"
-    ]
     
     typealias ResponseType = User
     
@@ -34,6 +31,10 @@ class UserService: BaseService {
     }
     
     func setHeaders() -> [String : String] {
+        let headers: [String : String] = [
+            "Authorization": "Bearer \(userDefaults.value(forKey: "token") ?? "")",
+            "Content-Type": "application/json"
+        ]
         return headers
     }
     

@@ -20,6 +20,7 @@ class ProfileViewController: BaseViewController {
     
     // MARK: - Variables
     
+    let userDefaults = UserDefaults()
     var viewModel = ProfileViewModel()
     
     
@@ -37,7 +38,7 @@ class ProfileViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        requestData()
+//        requestData()
     }
     
     
@@ -62,8 +63,8 @@ class ProfileViewController: BaseViewController {
             profileHeaderView.layer.shadowRadius = 4
             
             profileHeaderView.profileImageView.image = UIImage(systemName: "person.crop.circle.fill")
-            profileHeaderView.profileNameLabel.text = viewModel.userData?.fullname ?? "Your Name"
-            profileHeaderView.profilePhoneNumberLabel.text = viewModel.userData?.phoneNumber ?? "08xxxxxxxxxx"
+            profileHeaderView.profileNameLabel.text = userDefaults.value(forKey: "fullName") as? String ?? "Your Name"
+            profileHeaderView.profilePhoneNumberLabel.text = userDefaults.value(forKey: "phoneNumber") as? String ?? "08xxxxxxxx"
             
             
             // Profile Card 1
@@ -132,6 +133,8 @@ class ProfileViewController: BaseViewController {
             signOutButton.buttonOutlet.setAttributedTitle(signOutButtonAttributes, for: .highlighted)
             signOutButton.buttonOutlet.setAttributedTitle(signOutButtonAttributes, for: .focused)
             
+            signOutButton.buttonOutlet.addTarget(self, action: #selector(signOut), for: .touchUpInside)
+            
         } else {
             // Fallback on earlier versions
         }
@@ -139,6 +142,10 @@ class ProfileViewController: BaseViewController {
     
     
     // MARK: - Button Methods
+    
+    @objc func dismissView(button: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @objc func pushToEditProfileView(button: UIButton) {
         let vc = EditProfileViewController(nibName: "EditProfileViewController", bundle: nil)
@@ -150,8 +157,24 @@ class ProfileViewController: BaseViewController {
         self.navigationController!.pushViewController(vc, animated: true)
     }
     
-    @objc func dismissView(button: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+    @objc func signOut(button: UIButton) {
+        userDefaults.removeObject(forKey: "token")
+        userDefaults.removeObject(forKey: "id")
+        userDefaults.removeObject(forKey: "fullName")
+        userDefaults.removeObject(forKey: "age")
+        userDefaults.removeObject(forKey: "email")
+        userDefaults.removeObject(forKey: "gender")
+        userDefaults.removeObject(forKey: "birthDate")
+        userDefaults.removeObject(forKey: "phoneNumber")
+        userDefaults.removeObject(forKey: "imagePath")
+        userDefaults.removeObject(forKey: "isAdmin")
+        userDefaults.removeObject(forKey: "isActive")
+        userDefaults.removeObject(forKey: "createdAt")
+        userDefaults.removeObject(forKey: "updateAt")
+        
+        self.requestData()
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
 
@@ -175,8 +198,8 @@ class ProfileViewController: BaseViewController {
 extension ProfileViewController: profileViewModelDelegate {
     func onSuccessRequest() {
         self.removeSpinner()
-        profileHeaderView.profileNameLabel.text = viewModel.userData?.fullname
-        profileHeaderView.profilePhoneNumberLabel.text = viewModel.userData?.phoneNumber
+        profileHeaderView.profileNameLabel.text = userDefaults.value(forKey: "fullName") as? String ?? "Your Name"
+        profileHeaderView.profilePhoneNumberLabel.text = userDefaults.value(forKey: "phoneNumber") as? String ?? "08xxxxxxxx"
     }
 
     func onErrorRequest() {

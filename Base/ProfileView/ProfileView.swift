@@ -13,6 +13,8 @@ class ProfileView: UIView {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var greetLabel: UILabel!
     
+    let userDefaults = UserDefaults()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -29,6 +31,7 @@ class ProfileView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         userImageButton.setTitle("", for: .normal)
+        userNameLabel.text = "\(userDefaults.value(forKey: "fullName") ?? "User") 👋"
     }
     
     @IBAction func profileButton(_ sender: Any) {

@@ -58,10 +58,10 @@ class Network {
         
         let url = req.setUrl()
         let request = prepareRequest(for: url, req: req)
-        
+        print("url \(url)")
         return Alamofire.request(request).responseJSON { (response) in
             if let json = response.result.value {
-//                print("JSON: \(JSON(json)) ")
+                print("JSON: \(JSON(json)) ")
             }
             
             if let err = response.error {
@@ -142,6 +142,36 @@ class Network {
             }
         }
     }
+    
+    @discardableResult
+    static func requestParameters<T:BaseService>(req: T, parameters:[String:Any]? = nil, completionHandler: @escaping (NetworkResult<T.ResponseType>) -> Void) -> DataRequest? {
+        let url = req.setUrl()
+        let request = prepareRequestPostWithParam(for: url, req: req, parameters: parameters)
+        print("url request \(request)")
+        return Alamofire.request(request).responseJSON { (response) in
+            if let json = response.result.value {
+                print("JSON: \(JSON(json)) ")
+            }
+            
+            if let err = response.error {
+                completionHandler(NetworkResult.failure(err.localizedDescription))
+                return
+            }
+            
+            if let responseCode = response.response {
+                if let data = response.data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let object = try decoder.decode(T.ResponseType.self, from: data)
+                        completionHandler(NetworkResult.success(object))
+                    } catch let error {
+                        completionHandler(NetworkResult.failure(error.localizedDescription, responseCode.statusCode))
+                    }
+                }
+            }
+        }
+    }
+    
     
     static func uploadPic<T: BaseService>(req: T, completionHandler: @escaping (NetworkStringResult) -> Void) {
         
@@ -276,5 +306,38 @@ extension Network {
         request!.httpMethod = req.method().rawValue
         
         return request!
+    }
+    
+    private static func prepareRequestPostWithParam<T:BaseService>(for url: URL,req: T,parameters:[String:Any]? = nil) -> URLRequest {
+        let urlString = "\(url)"
+        var request : URLRequest? = nil
+        var jsonString: String = ""
+        switch req.query() {
+            
+        case .json:
+            request = URLRequest(url: url, cachePolicy: req.cachePolicy(), timeoutInterval: req.timeout())
+            if let params = parameters {
+                var urlComponent = URLComponents(string: urlString)
+                urlComponent?.queryItems = params.map {
+                    URLQueryItem(name: $0, value: "\($1)")
+                }
+                request?.url = urlComponent?.url
+            }
+            do {
+                let serialization = try JSONSerialization.data(withJSONObject: req.setParameters()!, options: JSONSerialization.WritingOptions(rawValue: 0))
+                jsonString = String(data: serialization, encoding: .utf8)!
+                request!.httpBody = serialization
+                
+            } catch {
+                assertionFailure("Error : while attemping to serialize the data for preparing httpBody \(error)")
+            }
+        case .normal:
+            request = URLRequest(url: url, cachePolicy: req.cachePolicy(), timeoutInterval: req.timeout())
+        }
+        
+        request?.allHTTPHeaderFields = req.setHeaders()
+        request?.httpMethod = req.method().rawValue
+        return request!
+            
     }
 }

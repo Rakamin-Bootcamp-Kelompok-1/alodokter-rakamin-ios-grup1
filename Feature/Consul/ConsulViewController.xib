@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConsulViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
+            <connections>
+                <outlet property="doctorCollectionvView" destination="GDH-Ul-U9s" id="I09-IN-rEg"/>
+                <outlet property="searchDoctor" destination="qnq-g6-ihm" id="lXF-Qi-aTB"/>
+                <outlet property="specialistCollectionView" destination="zc7-ud-w9X" id="xVT-lb-srB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLa-KO-5IQ" customClass="ProfileView" customModule="Alodokter_bootcamp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="226-8H-iIt"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Odg-bn-xlS">
+                    <rect key="frame" x="0.0" y="128" width="414" height="768"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WI3-QN-4F2">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="qnq-g6-ihm">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zc7-ud-w9X" userLabel="DoctorSpecialist">
+                                    <rect key="frame" x="8" y="59" width="398" height="90"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="90" id="fvA-kI-gOV"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mPR-f7-0Pi">
+                                        <size key="itemSize" width="76" height="77"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Doctor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqk-Us-uUG">
+                                    <rect key="frame" x="8" y="157" width="398" height="17"/>
+                                    <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GDH-Ul-U9s" userLabel="ListDoctor">
+                                    <rect key="frame" x="8" y="182" width="398" height="586"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9nQ-Q9-RPX">
+                                        <size key="itemSize" width="316" height="95"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="zc7-ud-w9X" firstAttribute="top" secondItem="qnq-g6-ihm" secondAttribute="bottom" constant="8" id="5kG-l2-GAw"/>
+                                <constraint firstAttribute="trailing" secondItem="xqk-Us-uUG" secondAttribute="trailing" constant="8" id="LdF-mY-sDe"/>
+                                <constraint firstAttribute="trailing" secondItem="GDH-Ul-U9s" secondAttribute="trailing" constant="8" id="MB5-Xd-AcY"/>
+                                <constraint firstAttribute="bottom" secondItem="GDH-Ul-U9s" secondAttribute="bottom" id="VDb-SJ-4E5"/>
+                                <constraint firstItem="GDH-Ul-U9s" firstAttribute="leading" secondItem="WI3-QN-4F2" secondAttribute="leading" constant="8" id="XoS-vv-DLx"/>
+                                <constraint firstAttribute="trailing" secondItem="zc7-ud-w9X" secondAttribute="trailing" constant="8" id="dZZ-ZO-L3X"/>
+                                <constraint firstAttribute="trailing" secondItem="qnq-g6-ihm" secondAttribute="trailing" id="eQk-bN-udk"/>
+                                <constraint firstItem="xqk-Us-uUG" firstAttribute="leading" secondItem="WI3-QN-4F2" secondAttribute="leading" constant="8" id="h7N-06-iuQ"/>
+                                <constraint firstItem="qnq-g6-ihm" firstAttribute="leading" secondItem="WI3-QN-4F2" secondAttribute="leading" id="kGT-8j-U4n"/>
+                                <constraint firstItem="zc7-ud-w9X" firstAttribute="leading" secondItem="WI3-QN-4F2" secondAttribute="leading" constant="8" id="kOf-nS-Wie"/>
+                                <constraint firstItem="GDH-Ul-U9s" firstAttribute="top" secondItem="xqk-Us-uUG" secondAttribute="bottom" constant="8" symbolic="YES" id="qgp-ML-PCs"/>
+                                <constraint firstItem="qnq-g6-ihm" firstAttribute="top" secondItem="WI3-QN-4F2" secondAttribute="top" id="tOp-eN-4hH"/>
+                                <constraint firstItem="xqk-Us-uUG" firstAttribute="top" secondItem="zc7-ud-w9X" secondAttribute="bottom" constant="8" id="xtE-2H-JLo"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="WI3-QN-4F2" firstAttribute="top" secondItem="Odg-bn-xlS" secondAttribute="top" id="27H-F3-5hw"/>
+                        <constraint firstItem="WI3-QN-4F2" firstAttribute="leading" secondItem="Odg-bn-xlS" secondAttribute="leading" id="3Wi-WA-VdV"/>
+                        <constraint firstItem="WI3-QN-4F2" firstAttribute="width" secondItem="Odg-bn-xlS" secondAttribute="width" id="Zwp-tA-uqd"/>
+                        <constraint firstItem="WI3-QN-4F2" firstAttribute="height" secondItem="Odg-bn-xlS" secondAttribute="height" priority="250" id="aaD-0Y-miV"/>
+                        <constraint firstAttribute="bottom" secondItem="WI3-QN-4F2" secondAttribute="bottom" id="lGE-3y-KlB"/>
+                        <constraint firstAttribute="trailing" secondItem="WI3-QN-4F2" secondAttribute="trailing" id="qRH-5c-HHn"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="TRY-io-H6M"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="GBe-IA-vpN"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Odg-bn-xlS" firstAttribute="top" secondItem="vLa-KO-5IQ" secondAttribute="bottom" constant="8" symbolic="YES" id="4Hd-AI-sbd"/>
+                <constraint firstAttribute="bottom" secondItem="Odg-bn-xlS" secondAttribute="bottom" id="5aX-SV-ZkE"/>
+                <constraint firstItem="Odg-bn-xlS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="MF2-fA-2M6"/>
+                <constraint firstItem="vLa-KO-5IQ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="MVH-9X-F7h"/>
+                <constraint firstItem="vLa-KO-5IQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RLi-oZ-KC2"/>
+                <constraint firstItem="Odg-bn-xlS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YOj-hl-FsV"/>
+                <constraint firstItem="vLa-KO-5IQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sF3-53-6ec"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="87.723214285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

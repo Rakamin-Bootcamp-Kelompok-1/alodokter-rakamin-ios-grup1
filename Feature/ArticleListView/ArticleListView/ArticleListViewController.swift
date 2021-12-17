@@ -10,6 +10,7 @@ import SDWebImage
 
 class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate {
     
+    @IBOutlet weak var profileView: ProfileView!
     @IBOutlet weak var highlightArticleImageView: UIImageView!
     @IBOutlet weak var highlightArticleLabel: UILabel!
     @IBOutlet weak var articleCollectionView: UICollectionView!
@@ -17,12 +18,18 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
     @IBOutlet weak var allArticleView: UIView!
     @IBOutlet weak var articleSearchBar: UISearchBar!
     
+    let userDefaults = UserDefaults()
     var viewModel = ArticleViewModel()
+    var profileViewModel = ProfileViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initArticleCollectionView()
         viewSetup()
+        requestData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         requestData()
     }
     
@@ -36,6 +43,9 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         tapGesture.delegate = self
         allArticleView.addGestureRecognizer(tapGesture)
         articleSearchBar.backgroundImage = UIImage()
+        
+        profileView.userNameLabel.text = "\(userDefaults.value(forKey: "fullName") ?? "User") 👋"
+        profileView.userImageButton.addTarget(self, action: #selector(presentToProfileViewController), for: .touchUpInside)
         
         self.isNavigationBarHidden = true
       
@@ -52,6 +62,21 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
     func requestData(){
         self.showParentSpinner()
         viewModel.getArticleListData()
+        profileViewModel.getUser()
+    }
+    
+    @objc func presentToProfileViewController(button: UIButton) {
+        if userDefaults.value(forKey: "token") == nil {
+            let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+            let navController = UINavigationController(rootViewController: vc)
+            navController.modalPresentationStyle = .fullScreen
+            self.present(navController, animated: true, completion: nil)
+        } else {
+            let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+            let navController = UINavigationController(rootViewController: vc)
+            navController.modalPresentationStyle = .fullScreen
+            self.present(navController, animated: true, completion: nil)
+        }
     }
     
     @objc func viewAllArticle(_ sender: UIView) {
@@ -81,6 +106,7 @@ extension ArticleListViewController: UICollectionViewDelegate, UICollectionViewD
 extension ArticleListViewController: ArticleViewModelDelegate {
     func onSuccessRequest() {
         self.removeSpinner()
+        profileView.userNameLabel.text = "\(userDefaults.value(forKey: "fullName") ?? "User") 👋"
         highlightArticleImageView.sd_setImage(with: URL(string: viewModel.articleListData[0].data[0].image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))
         highlightArticleLabel.text = viewModel.articleListData[0].data[0].article_title
         articleCollectionView.reloadData()

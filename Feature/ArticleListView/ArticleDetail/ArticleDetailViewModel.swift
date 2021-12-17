@@ -10,39 +10,59 @@ import Foundation
 protocol ArticleDetailProtocol: NSObject{
     func reloadCollection()
     func displayContent(title: String, desc: String, thumb: URL?)
-    func displayWeb(url: URL?)
 }
 
 class ArticleDetailViewModel{
+    private let adContentDetail = ArticleDetailService()
+    private let adCollectionDetail = ArticleService()
     
     weak var delegate: ArticleDetailProtocol?
-    var detailModel = [String]()
+    var collectionModel = [ArticleModel]()
     
-    func linkToWeb(tag: Int){
-        var urlString = "www"
-        switch tag{
-        case 1: urlString = "www"
-        case 2: urlString = "www"
-        case 3: urlString = "www"
-        default: break
+    func retriveData(id: Int){
+        let url = URL(string: "https://medikuy.herokuapp.com/articles/\(id)")!
+        
+        Network.requestWithURL(req: adContentDetail, costumURL: url) { result in
+            
+            DispatchQueue.main.async { [self] in
+                switch result{
+                case .success(let result):
+                    let r: ArticleModel = result
+                    
+                    var imgUrl: URL? = nil
+                    
+                    if let url = r.image_url {
+                        imgUrl = URL(string: url)
+                    }
+                    delegate?.displayContent(title: r.article_title ?? "Tidak ada judul", desc: r.content_desc ?? "Tidak ada deskripsi", thumb: imgUrl)
+                case .failure:
+                    delegate?.displayContent(title: "Tidak ada judul", desc: "Tidak ada deskripsi", thumb: nil)
+                }
+            }
         }
-        delegate?.displayWeb(url: URL(string: urlString))
-    
     }
     
-    func beginProccess(){
-        retriveData()
-        retriveCollection()
-    }
-    
-    private func retriveData(){
-        let title = "4 Manfaat Daun Sambiloto untuk Kulit yang Sayang Dilewatkan"
-        let desc = "Tak hanya baik untuk kesehatan tubuh, manfaat daun sambiloto untuk kesehatan kulit pun begitu beragam. Berbagai kandungan nutrisi di dalamnya dipercaya baik untuk mencegah infeksi pada kulit dan melindungi kulit dari bahaya radikal bebas. \nDaun sambiloto (Andrographis paniculata) adalah salah satu tanaman obat tradisional yang banyak dibudidayakan di berbagai negara Asia, termasuk Indonesia. Daun ini dipercaya dapat mengatasi berbagai masalah kesehatan, seperti gangguan fungsi hati, penyakit jantung, alergi, hingga infeksi."
-        delegate?.displayContent(title: title, desc: desc, thumb: nil)
-    }
-    
-    private func retriveCollection(){
-        detailModel = []
-        delegate?.reloadCollection()
+    func retriveCollection(id: Int){
+        let url = URL(string: "https://medikuy.herokuapp.com/articles")!
+        
+        Network.requestWithURL(req: adCollectionDetail, costumURL: url) { result in
+            
+            DispatchQueue.main.async { [self] in
+                switch result{
+                case .success(let result):
+                    var mod = [ArticleModel]()
+                    
+                    result.data.forEach { i in
+                        if i.id != id{
+                            mod.append(i)
+                        }
+                    }
+                    collectionModel = mod
+                case .failure:
+                    break
+                }
+                delegate?.reloadCollection()
+            }
+        }
     }
 }

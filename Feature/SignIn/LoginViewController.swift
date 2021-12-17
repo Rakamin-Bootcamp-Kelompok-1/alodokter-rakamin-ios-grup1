@@ -12,6 +12,7 @@ import SwiftyJSON
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var btnClose: UIButton!
     @IBOutlet weak var btnForgot: UIButton!
     @IBOutlet weak var btnSignUp: UIButton!
     @IBOutlet weak var btnLogin: UIButton!
@@ -30,6 +31,8 @@ class LoginViewController: UIViewController {
         btnLogin.layer.cornerRadius = 10
         btnShowPassword()
         setTextFieldBorder()
+        
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     @objc func togglePasswordView(_ sender: Any) {
@@ -59,10 +62,15 @@ class LoginViewController: UIViewController {
         passwordTxtField.layer.addSublayer(bottomLinePassword)
     }
 
+    @IBAction func actionBtnClose(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func actionBtnSignUp(_ sender: Any) {
         let registerVC = RegisterViewController()
-        self.navigationController?.pushViewController(registerVC, animated: false)
+        self.navigationController?.pushViewController(registerVC, animated: true)
     }
+    
     @IBAction func actionBtnLogin(_ sender: Any) {
         self.activityIndicator.isHidden = false
         guard let email = emailTxtField.text, email != "" else {
@@ -92,18 +100,26 @@ class LoginViewController: UIViewController {
         btnLogin.isHidden = true
         Alamofire.request("https://medikuy.herokuapp.com/login", method: .post, parameters: ["email":"\(email)", "password":"\(password)"]).responseJSON { (responseJson) in
             
-            do{
+            do {
                 let decoder = JSONDecoder()
                 let dataUser = try decoder.decode(UserModel.self, from: responseJson.data!)
                 DispatchQueue.main.async {
                     self.activityIndicator.isHidden = true
-                    self.userDefaults.setValue(dataUser.user?.email, forKey: "email")
-                    self.userDefaults.setValue(dataUser.user?.birthDate, forKey: "birthdate")
+                    
                     self.userDefaults.setValue(dataUser.token, forKey: "token")
-                    self.userDefaults.setValue(dataUser.user?.password, forKey: "password")
-                    self.userDefaults.setValue(dataUser.user?.gender, forKey: "gender")
-                    self.userDefaults.setValue(dataUser.user?.phoneNumber, forKey: "phoneNumber")
+                    self.userDefaults.setValue(dataUser.user?.id, forKey: "id")
                     self.userDefaults.setValue(dataUser.user?.fullname, forKey: "fullName")
+                    self.userDefaults.setValue(dataUser.user?.age, forKey: "age")
+                    self.userDefaults.setValue(dataUser.user?.email, forKey: "email")
+                    self.userDefaults.setValue(dataUser.user?.gender, forKey: "gender")
+                    self.userDefaults.setValue(dataUser.user?.birthDate, forKey: "birthDate")
+                    self.userDefaults.setValue(dataUser.user?.phoneNumber, forKey: "phoneNumber")
+                    self.userDefaults.setValue(dataUser.user?.imagePath, forKey: "imagePath")
+                    self.userDefaults.setValue(dataUser.user?.isAdmin, forKey: "isAdmin")
+                    self.userDefaults.setValue(dataUser.user?.isActive, forKey: "isActive")
+                    self.userDefaults.setValue(dataUser.user?.createdAt, forKey: "createdAt")
+                    self.userDefaults.setValue(dataUser.user?.updatedAt, forKey: "updatedAt")
+                    
                     self.btnLogin.isHidden = false
 
                     if let emailUser = self.userDefaults.value(forKey: "email") as? String {
@@ -112,6 +128,8 @@ class LoginViewController: UIViewController {
                     if let token = self.userDefaults.value(forKey: "token") as? String {
                         print("Token: \(token)")
                     }
+                    
+                    self.dismiss(animated: true, completion: nil)
                 }
                 
             } catch {

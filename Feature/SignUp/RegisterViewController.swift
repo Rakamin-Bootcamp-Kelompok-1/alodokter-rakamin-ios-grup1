@@ -10,6 +10,7 @@ import Alamofire
 
 class RegisterViewController: UIViewController {
     @IBOutlet weak var activityView: UIActivityIndicatorView!
+    @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var passwordTxtField: UITextField!
@@ -19,6 +20,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var dateTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var nameTxtField: UITextField!
+    
+    let userDefaults = UserDefaults()
     let button = UIButton(type: .custom)
     let buttonConfirmation = UIButton(type: .custom)
     let genders = ["Female", "Male"]
@@ -116,6 +119,10 @@ class RegisterViewController: UIViewController {
         dateTxtField.text = formatter.string(from: sender.date)
     }
     
+    @IBAction func actionBtnClose(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func actionBtnSignUp(_ sender: Any) {
         guard let name = nameTxtField.text, name != "" else {
             let alertController = UIAlertController(title: "Error" , message: "Full Name is Require", preferredStyle: .alert)
@@ -195,29 +202,42 @@ class RegisterViewController: UIViewController {
     func registerAF(email: String, password: String, name: String, birthdate:String, phone:String, gender:String){
         self.activityView.isHidden = false
         Alamofire.request("https://medikuy.herokuapp.com/user/add", method: .post, parameters: ["full_name": "\(name)", "password": "\(password)", "email": "\(email)", "gender": "\(gender)", "birth_date": "\(birthdate)", "phone_number": "\(phone)"]).validate().responseJSON { response in
-            switch response.result {
-            case .success:
-                let alertController = UIAlertController(title: "Success" , message: "Account has been registered", preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
-                alertController.addAction(alertAction)
-                self.present(alertController, animated: true, completion: nil)
-                self.activityView.isHidden = true
-                self.nameTxtField.text = ""
-                self.emailTxtField.text = ""
-                self.dateTxtField.text = ""
-                self.phoneTxtField.text = ""
-                self.genderTxtField.text = ""
-                self.passwordTxtField.text = ""
-                self.confirmationTxtField.text = ""
-            case .failure(let error):
-                print(error)
-                self.activityView.isHidden = true
-                let alertController = UIAlertController(title: "Error" , message: "Invalid Username or Password", preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
-                alertController.addAction(alertAction)
-                self.present(alertController, animated: true, completion: nil)
+            do {
+                let decoder = JSONDecoder()
+                let dataUser = try decoder.decode(UserModel.self, from: response.data!)
+                DispatchQueue.main.async {
+                    self.userDefaults.setValue(dataUser.token, forKey: "token")
+                    self.userDefaults.setValue(dataUser.user?.id, forKey: "id")
+                    self.userDefaults.setValue(dataUser.user?.fullname, forKey: "fullName")
+                    self.userDefaults.setValue(dataUser.user?.age, forKey: "age")
+                    self.userDefaults.setValue(dataUser.user?.email, forKey: "email")
+                    self.userDefaults.setValue(dataUser.user?.gender, forKey: "gender")
+                    self.userDefaults.setValue(dataUser.user?.birthDate, forKey: "birthDate")
+                    self.userDefaults.setValue(dataUser.user?.phoneNumber, forKey: "phoneNumber")
+                    self.userDefaults.setValue(dataUser.user?.imagePath, forKey: "imagePath")
+                    self.userDefaults.setValue(dataUser.user?.isAdmin, forKey: "isAdmin")
+                    self.userDefaults.setValue(dataUser.user?.isActive, forKey: "isActive")
+                    self.userDefaults.setValue(dataUser.user?.createdAt, forKey: "createdAt")
+                    self.userDefaults.setValue(dataUser.user?.updatedAt, forKey: "updatedAt")
+
+                    if let emailUser = self.userDefaults.value(forKey: "email") as? String {
+                        print("Email: \(emailUser)")
+                    }
+                    if let token = self.userDefaults.value(forKey: "token") as? String {
+                        print("Token: \(token)")
+                    }
+                    
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+            } catch {
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Error" , message: "Register Failed", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
-            
         }
     }
 
@@ -242,14 +262,17 @@ class RegisterViewController: UIViewController {
         confirmationTxtField.textContentType = .newPassword
         buttonConfirmation.alpha = 0.4
     }
+    
     @IBAction func actionSignIn(_ sender: Any) {
         let loginVC = LoginViewController()
-        self.navigationController?.pushViewController(loginVC, animated: false)
+        self.navigationController?.pushViewController(loginVC, animated: true)
     }
+    
     @objc func togglePasswordView(_ sender: Any) {
         passwordTxtField.isSecureTextEntry.toggle()
         button.isSelected.toggle()
         }
+    
     @objc func togglePasswordViewConfirmation(_ sender: Any) {
         confirmationTxtField.isSecureTextEntry.toggle()
         buttonConfirmation.isSelected.toggle()

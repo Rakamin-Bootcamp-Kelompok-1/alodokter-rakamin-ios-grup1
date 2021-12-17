@@ -1,26 +1,26 @@
 //
-//  HistoryBookingService.swift
+//  SchedulesDoctorService.swift
 //  Alodokter_bootcamp
 //
-//  Created by Putra on 16/12/21.
+//  Created by Putra on 17/12/21.
 //
 
 import Foundation
 
 
-class HistoryBookingService: BaseService {
+class SchedulesDoctorService: BaseService {
     
-    var userId = ""
+    var doctorId = ""
     let headers: [String : String] = [
         "Content-Type": "application/json"
     ]
     
     func method() -> Network.Method {
-        return .post
+        .post
     }
     
     func setUrl() -> URL {
-        return URL(string: Route.baseUrl + Route.historyBooking.description)!
+        return URL(string: Route.baseUrl + Route.schedulesDoctor.description)!
     }
     
     func query() -> Network.QueryType {
@@ -32,7 +32,7 @@ class HistoryBookingService: BaseService {
     }
     
     func setParameters() -> [String : Any]? {
-        ["user_id":"1"]
+        ["doctor_id" : doctorId]
     }
     
     func setHeaders() -> [String : String] {
@@ -47,7 +47,7 @@ class HistoryBookingService: BaseService {
         return .reloadRevalidatingCacheData
     }
     
-    typealias ResponseType = HistoryBookingModel
+    typealias ResponseType = SchedulesDoctorModel
     
     
 }

@@ -12,6 +12,7 @@ import SwiftyJSON
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var btnClose: UIButton!
     @IBOutlet weak var btnForgot: UIButton!
     @IBOutlet weak var btnSignUp: UIButton!
     @IBOutlet weak var btnLogin: UIButton!
@@ -31,7 +32,8 @@ class LoginViewController: UIViewController {
         btnLogin.layer.cornerRadius = 10
         btnShowPassword()
         setTextFieldBorder()
-
+        
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     @objc func togglePasswordView(_ sender: Any) {
@@ -61,10 +63,15 @@ class LoginViewController: UIViewController {
         passwordTxtField.layer.addSublayer(bottomLinePassword)
     }
 
+    @IBAction func actionBtnClose(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func actionBtnSignUp(_ sender: Any) {
         let registerVC = RegisterViewController()
-        self.navigationController?.pushViewController(registerVC, animated: false)
+        self.navigationController?.pushViewController(registerVC, animated: true)
     }
+    
     @IBAction func actionBtnLogin(_ sender: Any) {
         self.activityIndicator.isHidden = false
         guard let email = emailTxtField.text, email != "" else {
@@ -88,8 +95,8 @@ class LoginViewController: UIViewController {
     }
     @IBAction func actionBtnForgot(_ sender: Any) {
     }
-
 }
+
 extension LoginViewController: LoginViewModelProtocol{
     func onSuccess() {
         self.emailTxtField.text = ""

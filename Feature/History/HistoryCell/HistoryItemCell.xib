@@ -139,7 +139,7 @@
                 <outlet property="doctorName" destination="jjJ-7D-rkg" id="fgF-pW-CrL"/>
                 <outlet property="locationLbl" destination="3rl-6H-c6m" id="zv2-FD-XMU"/>
                 <outlet property="ratingLbl" destination="8id-BG-hG9" id="HdJ-Ef-ffT"/>
-                <outlet property="specialtyLbl" destination="3rl-6H-c6m" id="Bth-gK-q9a"/>
+                <outlet property="specialtyLbl" destination="TjF-gJ-zXU" id="Zdd-qj-z8C"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="105.46875"/>
         </tableViewCell>

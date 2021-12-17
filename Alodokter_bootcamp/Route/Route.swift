@@ -12,17 +12,21 @@ enum Route {
     
     case historyBooking
     case register
-    
+    case searchDoctor
+    case schedulesDoctor
     
     var description: String {
         switch self {
-        
         case .historyBooking:
             return "/booking/history"
-            
         case .register:
             return "/user/add"
+        case .searchDoctor:
+            return "/doctors/search"
+        case .schedulesDoctor:
+            return "/schedule/doctor"
         }
-    }
+        
+        }
     
 }

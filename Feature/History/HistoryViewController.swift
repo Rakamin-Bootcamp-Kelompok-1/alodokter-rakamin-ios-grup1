@@ -13,6 +13,9 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var doctorCollectionView: UICollectionView!
     var viewModel = HistoryBookingViewModel()
     //    @IBOutlet weak var historyTableView: UITableView!
+    
+    let userDefaults = UserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +32,7 @@ class HistoryViewController: UIViewController {
         doctorCollectionView.delegate = self
         doctorCollectionView.dataSource = self
         doctorCollectionView.register(UINib(nibName: HistoryItemCell.identifier, bundle: nil), forCellWithReuseIdentifier: HistoryItemCell.identifier)
+        profileView.userNameLabel.text = "\(userDefaults.value(forKey: "fullName") ?? "User") 👋"
         profileView.userImageButton.addTarget(self, action: #selector(presentToProfileViewController), for: .touchUpInside)
         self.view.layer.backgroundColor = UIColor.white.cgColor
         navigationItem.title = ""
@@ -37,11 +41,20 @@ class HistoryViewController: UIViewController {
     }
     
     @objc func presentToProfileViewController(button: UIButton) {
-        let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
-        let navController = UINavigationController(rootViewController: vc)
-        navController.modalPresentationStyle = .fullScreen
-        self.present(navController, animated: true, completion: nil)
+        if userDefaults.value(forKey: "token") == nil {
+            let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+            let navController = UINavigationController(rootViewController: vc)
+            navController.modalPresentationStyle = .fullScreen
+            self.present(navController, animated: true, completion: nil)
+        } else {
+            let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+            let navController = UINavigationController(rootViewController: vc)
+            navController.modalPresentationStyle = .fullScreen
+            self.present(navController, animated: true, completion: nil)
+        }
     }
+    
+    
     
 }
 
@@ -64,14 +77,20 @@ extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataS
 //             add corner radius on `contentView`
         collectionView.backgroundColor = .white
         collectionView.layer.cornerRadius = 5
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = DetailHistoryViewController(nibName: DetailHistoryViewController.identifier, bundle: nil)
+        controller.dataHistory = viewModel.historyData[indexPath.row]
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.width / 1, height: 95)
+//    }
     
     
     

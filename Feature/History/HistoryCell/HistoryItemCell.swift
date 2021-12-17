@@ -23,6 +23,7 @@ class HistoryItemCell: UICollectionViewCell {
         self.doctorName.text = history.doctor?.doctorName
         self.specialtyLbl.text = history.doctor?.speciality
         self.doctorImg.sd_setImage(with: URL(string: history.doctor?.imagePath ?? ""))
+        self.dateLbl.text = (history.doctorSchedule?.date ?? "") + " " + (history.doctorSchedule?.month ?? "")
     }
 
     override func awakeFromNib() {

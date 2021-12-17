@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+        <array key="Nunito-Regular.ttf">
+            <string>Nunito-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SchedulesCollectionViewCell" customModule="Alodokter_bootcamp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="268" height="37"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="268" height="37"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOD-b9-tJo">
+                        <rect key="frame" x="0.0" y="0.0" width="268" height="37"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WbM-vX-iW0">
+                                <rect key="frame" x="5" y="5" width="258" height="27"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Rabu 20 September 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Roc-Ab-n6X">
+                                        <rect key="frame" x="0.0" y="0.0" width="258" height="13"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMO-We-Yh7">
+                                        <rect key="frame" x="0.0" y="13" width="258" height="14"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WbM-vX-iW0" firstAttribute="leading" secondItem="sOD-b9-tJo" secondAttribute="leading" constant="5" id="0BV-cE-Krn"/>
+                            <constraint firstItem="WbM-vX-iW0" firstAttribute="top" secondItem="sOD-b9-tJo" secondAttribute="top" constant="5" id="OKn-5w-wjL"/>
+                            <constraint firstAttribute="trailing" secondItem="WbM-vX-iW0" secondAttribute="trailing" constant="5" id="ONn-qE-qPd"/>
+                            <constraint firstAttribute="bottom" secondItem="WbM-vX-iW0" secondAttribute="bottom" constant="5" id="TIt-NW-Bmw"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sOD-b9-tJo" secondAttribute="bottom" id="3rv-sy-R4B"/>
+                <constraint firstItem="sOD-b9-tJo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TLm-2u-mmU"/>
+                <constraint firstAttribute="trailing" secondItem="sOD-b9-tJo" secondAttribute="trailing" id="qcq-bQ-uBi"/>
+                <constraint firstItem="sOD-b9-tJo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vRt-JC-BxD"/>
+            </constraints>
+            <size key="customSize" width="268" height="57"/>
+            <connections>
+                <outlet property="scheduleLbl" destination="Roc-Ab-n6X" id="Lqk-da-eoq"/>
+                <outlet property="timeLbl" destination="eMO-We-Yh7" id="syL-2V-BRV"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="140.95982142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -10,6 +10,7 @@ import Alamofire
 
 class RegisterViewController: BaseViewController {
     @IBOutlet weak var activityView: UIActivityIndicatorView!
+    @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var passwordTxtField: UITextField!
@@ -19,6 +20,8 @@ class RegisterViewController: BaseViewController {
     @IBOutlet weak var dateTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var nameTxtField: UITextField!
+    
+    let userDefaults = UserDefaults()
     let button = UIButton(type: .custom)
     let buttonConfirmation = UIButton(type: .custom)
     let genders = ["Female", "Male"]
@@ -113,6 +116,10 @@ class RegisterViewController: BaseViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         dateTxtField.text = formatter.string(from: sender.date)
+    }
+    
+    @IBAction func actionBtnClose(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func actionBtnSignUp(_ sender: Any) {
@@ -212,14 +219,17 @@ class RegisterViewController: BaseViewController {
         confirmationTxtField.textContentType = .newPassword
         buttonConfirmation.alpha = 0.4
     }
+    
     @IBAction func actionSignIn(_ sender: Any) {
         let loginVC = LoginViewController()
-        self.navigationController?.pushViewController(loginVC, animated: false)
+        self.navigationController?.pushViewController(loginVC, animated: true)
     }
+    
     @objc func togglePasswordView(_ sender: Any) {
         passwordTxtField.isSecureTextEntry.toggle()
         button.isSelected.toggle()
         }
+    
     @objc func togglePasswordViewConfirmation(_ sender: Any) {
         confirmationTxtField.isSecureTextEntry.toggle()
         buttonConfirmation.isSelected.toggle()

@@ -6,16 +6,25 @@
 //
 
 import UIKit
+import SDWebImage
 
-class DetailConsultDoctorViewController: UIViewController {
+class DetailConsultDoctorViewController: BaseViewController {
 
     @IBOutlet weak var bioView: UIView!
     
+    @IBOutlet weak var scheduleCollectionView: UICollectionView!
+    @IBOutlet weak var ratingLbl: UILabel!
     @IBOutlet weak var eduCollectionView: UICollectionView!
     @IBOutlet weak var eduView: UIView!
     @IBOutlet weak var scheduleView: UIView!
+    @IBOutlet weak var doctorImg: UIImageView!
     @IBOutlet weak var doctorPreviewLbl: UILabel!
+    @IBOutlet weak var doctorNameLbl: UILabel!
+    @IBOutlet weak var specialityLbl: UILabel!
+    @IBOutlet weak var priceRateLbl: UILabel!
+    var viewModel = DetailConsulViewModel()
     var heightEdu = CGFloat()
+    var doctorResource: DoctorResource!
     static let identifier = "DetailConsultDoctorViewController"
     var preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     override func viewDidLoad() {
@@ -23,6 +32,9 @@ class DetailConsultDoctorViewController: UIViewController {
         registerCell()
         eduCollectionView.delegate = self
         eduCollectionView.dataSource = self
+        scheduleCollectionView.delegate = self
+        scheduleCollectionView.dataSource = self
+        viewModel.delegate = self
         navigationItem.title = "Detail Dokter"
         navigationController?.navigationBar.isHidden = false
         // Do any additional setup after loading the view.
@@ -40,11 +52,11 @@ class DetailConsultDoctorViewController: UIViewController {
         heightEdu = eduView.frame.height
         print("height edu awal \(heightEdu)")
 //        print("constraint \(eduView.constraints)")
-//        scheduleView.layer.shadowColor = UIColor.gray.cgColor
-//        scheduleView.layer.shadowOpacity = 0.3
-//        scheduleView.layer.shadowOffset = CGSize.zero
-//        scheduleView.layer.shadowRadius = 6
-//        scheduleView.layer.cornerRadius = 8
+        scheduleView.layer.shadowColor = UIColor.gray.cgColor
+        scheduleView.layer.shadowOpacity = 0.3
+        scheduleView.layer.shadowOffset = CGSize.zero
+        scheduleView.layer.shadowRadius = 6
+        scheduleView.layer.cornerRadius = 8
         
         let readmoreFont = UIFont.systemFont(ofSize: 9)
         let readmoreFontColor = UIColor.blue
@@ -52,11 +64,22 @@ class DetailConsultDoctorViewController: UIViewController {
             self.doctorPreviewLbl.addTrailing(with: "...", moreText: "Read More", moreTextFont: readmoreFont, moreTextColor: readmoreFontColor)
             
         }
-        doctorPreviewLbl.text = preview
+        doctorPreviewLbl.text = doctorResource.biography ?? "No Biography"
+        doctorImg.sd_setImage(with: URL(string: doctorResource.imagePath ?? ""))
+        specialityLbl.text = doctorResource.speciality ?? ""
+        priceRateLbl.text = String(doctorResource.priceRate ?? 0) ?? "0"
+        ratingLbl.text = doctorResource.star ?? "0"
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.getDoctorSchedule(doctorId: String(doctorResource.id ?? 0) ?? "0")
     }
     
     func registerCell() {
         eduCollectionView.register(UINib(nibName: EducationDocCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: EducationDocCollectionViewCell.identifier)
+        scheduleCollectionView.register(UINib(nibName: SchedulesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: SchedulesCollectionViewCell.identifier)
     }
 
 
@@ -92,12 +115,43 @@ class DetailConsultDoctorViewController: UIViewController {
 
 extension DetailConsultDoctorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        switch collectionView {
+        case scheduleCollectionView:
+            return viewModel.scheduleList.count ?? 0
+        case eduCollectionView:
+            return 5
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EducationDocCollectionViewCell.identifier, for: indexPath) as? EducationDocCollectionViewCell else { return UICollectionViewCell() }
-        return cell
+        switch collectionView {
+        case scheduleCollectionView:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SchedulesCollectionViewCell.identifier, for: indexPath) as? SchedulesCollectionViewCell else { return UICollectionViewCell() }
+            cell.setup(schedule: viewModel.scheduleList[indexPath.row])
+            return cell
+        case eduCollectionView:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EducationDocCollectionViewCell.identifier, for: indexPath) as? EducationDocCollectionViewCell else { return UICollectionViewCell() }
+            return cell
+        default:
+            return UICollectionViewCell()
+        }
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EducationDocCollectionViewCell.identifier, for: indexPath) as? EducationDocCollectionViewCell else { return UICollectionViewCell() }
+//        return cell
+    }
+    
+    
+}
+
+extension DetailConsultDoctorViewController: DetailConsulProtocol {
+    func onSuccessSchedules() {
+        print("masuk sukses view controller")
+        self.scheduleCollectionView.reloadData()
+    }
+    
+    func onFailureSchedules() {
+        print("error")
     }
     
     

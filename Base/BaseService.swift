@@ -147,7 +147,7 @@ class Network {
     static func requestParameters<T:BaseService>(req: T, parameters:[String:Any]? = nil, completionHandler: @escaping (NetworkResult<T.ResponseType>) -> Void) -> DataRequest? {
         let url = req.setUrl()
         let request = prepareRequestPostWithParam(for: url, req: req, parameters: parameters)
-        
+        print("url request \(request)")
         return Alamofire.request(request).responseJSON { (response) in
             if let json = response.result.value {
                 print("JSON: \(JSON(json)) ")
@@ -309,7 +309,7 @@ extension Network {
     }
     
     private static func prepareRequestPostWithParam<T:BaseService>(for url: URL,req: T,parameters:[String:Any]? = nil) -> URLRequest {
-        let urlString = Route.baseUrl + Route.historyBooking.description
+        let urlString = "\(url)"
         var request : URLRequest? = nil
         var jsonString: String = ""
         switch req.query() {

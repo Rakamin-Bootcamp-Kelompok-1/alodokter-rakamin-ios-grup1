@@ -20,10 +20,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailConsultDoctorViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
             <connections>
                 <outlet property="bioView" destination="YbW-gh-qaS" id="Mvq-Oa-zmW"/>
+                <outlet property="doctorImg" destination="GoS-KL-Za3" id="jId-Oe-eCM"/>
+                <outlet property="doctorNameLbl" destination="obM-Ko-YtH" id="tDs-Nx-XFe"/>
                 <outlet property="doctorPreviewLbl" destination="YnB-gL-bR4" id="WBo-s0-0Rz"/>
                 <outlet property="eduCollectionView" destination="OHt-6U-aJm" id="Xhj-ZL-1jL"/>
                 <outlet property="eduView" destination="8Sp-1w-xWY" id="O16-dZ-ssC"/>
+                <outlet property="priceRateLbl" destination="kr2-i7-cL0" id="qqO-dc-bq1"/>
+                <outlet property="ratingLbl" destination="keO-i9-UUG" id="3vq-2D-uHV"/>
+                <outlet property="scheduleCollectionView" destination="mr2-l2-HsX" id="osH-Ys-Nhi"/>
                 <outlet property="scheduleView" destination="VXc-NK-nJf" id="Gum-5l-8DP"/>
+                <outlet property="specialityLbl" destination="qE1-6J-7Wc" id="3En-e7-1be"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -217,7 +223,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXc-NK-nJf" userLabel="Schedule">
-                                    <rect key="frame" x="50" y="513" width="314" height="128"/>
+                                    <rect key="frame" x="50" y="513" width="314" height="194"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDO-2R-ASV">
                                             <rect key="frame" x="8" y="8" width="298" height="16.5"/>
@@ -225,12 +231,27 @@
                                             <color key="textColor" red="0.16078431369999999" green="0.38431372549999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mr2-l2-HsX">
+                                            <rect key="frame" x="8" y="39.5" width="298" height="146.5"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="PLF-dL-FY7">
+                                                <size key="itemSize" width="268" height="38"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="mr2-l2-HsX" secondAttribute="trailing" constant="8" id="6bZ-aH-jmG"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="FE0-ca-ZA6"/>
                                         <constraint firstItem="VDO-2R-ASV" firstAttribute="leading" secondItem="VXc-NK-nJf" secondAttribute="leading" constant="8" id="XCl-UF-BnV"/>
+                                        <constraint firstItem="mr2-l2-HsX" firstAttribute="leading" secondItem="VXc-NK-nJf" secondAttribute="leading" constant="8" id="fdY-8w-qn2"/>
                                         <constraint firstItem="VDO-2R-ASV" firstAttribute="top" secondItem="VXc-NK-nJf" secondAttribute="top" constant="8" id="hEy-eZ-JJl"/>
                                         <constraint firstAttribute="trailing" secondItem="VDO-2R-ASV" secondAttribute="trailing" constant="8" id="nQ9-gI-akC"/>
+                                        <constraint firstAttribute="bottom" secondItem="mr2-l2-HsX" secondAttribute="bottom" constant="8" id="pxb-HC-AcG"/>
+                                        <constraint firstItem="mr2-l2-HsX" firstAttribute="top" secondItem="VDO-2R-ASV" secondAttribute="bottom" constant="15" id="wLr-ju-fwZ"/>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2z-18-4e8">
@@ -241,6 +262,7 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstItem="G2z-18-4e8" firstAttribute="top" secondItem="VXc-NK-nJf" secondAttribute="bottom" constant="41" id="1Yj-ks-3FE"/>
                                 <constraint firstItem="VXc-NK-nJf" firstAttribute="leading" secondItem="hV9-9o-J8k" secondAttribute="leading" constant="50" id="2Pa-s2-X8K"/>
                                 <constraint firstAttribute="trailing" secondItem="Rfa-v7-YNh" secondAttribute="trailing" constant="50" id="4fH-xd-AR3"/>
                                 <constraint firstItem="YbW-gh-qaS" firstAttribute="leading" secondItem="hV9-9o-J8k" secondAttribute="leading" constant="50" id="4iW-Fl-E5u"/>
@@ -253,7 +275,6 @@
                                 <constraint firstAttribute="trailing" secondItem="G2z-18-4e8" secondAttribute="trailing" constant="50" id="gmj-Al-nvR"/>
                                 <constraint firstItem="VXc-NK-nJf" firstAttribute="top" secondItem="8Sp-1w-xWY" secondAttribute="bottom" constant="32" id="gpP-PT-25X"/>
                                 <constraint firstItem="Rfa-v7-YNh" firstAttribute="top" secondItem="hV9-9o-J8k" secondAttribute="top" constant="50" id="nea-A5-AJe"/>
-                                <constraint firstItem="G2z-18-4e8" firstAttribute="top" secondItem="VXc-NK-nJf" secondAttribute="bottom" constant="107" id="s4A-ws-83y"/>
                                 <constraint firstItem="8Sp-1w-xWY" firstAttribute="top" secondItem="YbW-gh-qaS" secondAttribute="bottom" constant="22.5" id="tsC-eL-PEP"/>
                                 <constraint firstAttribute="trailing" secondItem="YbW-gh-qaS" secondAttribute="trailing" constant="50" id="vAt-wf-fwp"/>
                                 <constraint firstAttribute="trailing" secondItem="VXc-NK-nJf" secondAttribute="trailing" constant="50" id="vx5-4G-5um"/>

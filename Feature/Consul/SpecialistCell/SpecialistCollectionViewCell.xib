@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SpecialistCollectionViewCell" id="gTV-IL-0wX" customClass="SpecialistCollectionViewCell" customModule="Alodokter_bootcamp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkA-UK-F7c">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_dokter_umum" translatesAutoresizingMaskIntoConstraints="NO" id="XGx-nl-ztp">
+                                <rect key="frame" x="15" y="5" width="50" height="40.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="Spesialis Anak nakal" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHh-GM-hSZ">
+                                <rect key="frame" x="4" y="49.5" width="72" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="10"/>
+                                <color key="textColor" white="0.0" alpha="0.35936853270000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XGx-nl-ztp" firstAttribute="top" secondItem="lkA-UK-F7c" secondAttribute="top" constant="5" id="7lb-5m-rku"/>
+                            <constraint firstAttribute="trailing" secondItem="SHh-GM-hSZ" secondAttribute="trailing" constant="4" id="ELW-0m-5qP"/>
+                            <constraint firstItem="SHh-GM-hSZ" firstAttribute="top" secondItem="XGx-nl-ztp" secondAttribute="bottom" constant="4" id="KNo-q1-gcb"/>
+                            <constraint firstAttribute="bottom" secondItem="SHh-GM-hSZ" secondAttribute="bottom" constant="3" id="Klg-3F-5uo"/>
+                            <constraint firstItem="SHh-GM-hSZ" firstAttribute="leading" secondItem="lkA-UK-F7c" secondAttribute="leading" constant="4" id="TRE-Xh-ftr"/>
+                            <constraint firstItem="XGx-nl-ztp" firstAttribute="leading" secondItem="lkA-UK-F7c" secondAttribute="leading" constant="15" id="cge-ya-xld"/>
+                            <constraint firstAttribute="trailing" secondItem="XGx-nl-ztp" secondAttribute="trailing" constant="15" id="hzm-6I-C3f"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="lkA-UK-F7c" secondAttribute="bottom" id="5q6-pi-dbh"/>
+                <constraint firstItem="lkA-UK-F7c" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8ES-iB-xB2"/>
+                <constraint firstAttribute="trailing" secondItem="lkA-UK-F7c" secondAttribute="trailing" id="AVX-Sg-gHw"/>
+                <constraint firstItem="lkA-UK-F7c" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zzz-JU-1n2"/>
+            </constraints>
+            <connections>
+                <outlet property="specialistImg" destination="XGx-nl-ztp" id="QQy-bo-ZOi"/>
+                <outlet property="specialistLbl" destination="SHh-GM-hSZ" id="nN7-az-nAE"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_dokter_umum" width="128" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

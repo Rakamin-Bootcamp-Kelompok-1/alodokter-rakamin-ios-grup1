@@ -11,6 +11,7 @@ class HistoryViewController: UIViewController {
 
     @IBOutlet weak var profileView: ProfileView!
     @IBOutlet weak var doctorCollectionView: UICollectionView!
+    var viewModel = HistoryBookingViewModel()
     //    @IBOutlet weak var historyTableView: UITableView!
     
     let userDefaults = UserDefaults()
@@ -20,6 +21,8 @@ class HistoryViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setupView()
+        viewModel.delegate = self
+        viewModel.getHistory()
     }
 
     func setupView() {
@@ -51,15 +54,18 @@ class HistoryViewController: UIViewController {
         }
     }
     
+    
+    
 }
 
 extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        12
+        return viewModel.historyData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryItemCell.identifier, for: indexPath)
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryItemCell.identifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryItemCell.identifier, for: indexPath) as? HistoryItemCell else { return UICollectionViewCell() }
         cell.backgroundColor = .clear // very important
         cell.layer.masksToBounds = false
         cell.layer.shadowOpacity = 0.2
@@ -67,18 +73,39 @@ extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.contentView.layer.masksToBounds = true
+        cell.setup(history: viewModel.historyData[indexPath.row])
 //             add corner radius on `contentView`
         collectionView.backgroundColor = .white
         collectionView.layer.cornerRadius = 5
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = DetailHistoryViewController(nibName: DetailHistoryViewController.identifier, bundle: nil)
+        controller.dataHistory = viewModel.historyData[indexPath.row]
+        controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.width / 1, height: 95)
+//    }
     
+    
+    
+    
+}
+
+extension HistoryViewController: HistoryBookingProtocol {
+    func onSuccessHistory() {
+        self.doctorCollectionView.reloadData()
+        print("sukses")
+    }
+    
+    func onFailureHistory() {
+        print("failure")
+    }
     
     
 }

@@ -100,6 +100,7 @@
 		497C2883276BD60E00CA01DE /* EducationDocCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2881276BD60D00CA01DE /* EducationDocCollectionViewCell.swift */; };
 		497C2884276BD60E00CA01DE /* EducationDocCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 497C2882276BD60D00CA01DE /* EducationDocCollectionViewCell.xib */; };
 		497C2887276BDE1E00CA01DE /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2886276BDE1E00CA01DE /* Route.swift */; };
+		49F75439276CAE74001D98F6 /* SearchDoctorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F75438276CAE74001D98F6 /* SearchDoctorService.swift */; };
 		4E97F1CE2748858D00C2366D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CD2748858D00C2366D /* AppDelegate.swift */; };
 		4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F1CF2748858D00C2366D /* SceneDelegate.swift */; };
 		4E97F1D52748858D00C2366D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E97F1D32748858D00C2366D /* Main.storyboard */; };
@@ -252,6 +253,7 @@
 		497C2881276BD60D00CA01DE /* EducationDocCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDocCollectionViewCell.swift; sourceTree = "<group>"; };
 		497C2882276BD60D00CA01DE /* EducationDocCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationDocCollectionViewCell.xib; sourceTree = "<group>"; };
 		497C2886276BDE1E00CA01DE /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		49F75438276CAE74001D98F6 /* SearchDoctorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDoctorService.swift; sourceTree = "<group>"; };
 		4E97F1CA2748858D00C2366D /* Alodokter_bootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alodokter_bootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E97F1CD2748858D00C2366D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E97F1CF2748858D00C2366D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -744,6 +746,7 @@
 				2C4022992767871700149B5D /* UserService.swift */,
 				497C2812276B025200CA01DE /* HistoryBookingService.swift */,
 				497C2829276B250D00CA01DE /* DoctorService.swift */,
+				49F75438276CAE74001D98F6 /* SearchDoctorService.swift */,
 			);
 			path = Service;
 			sourceTree = SOURCE_ROOT;
@@ -1134,6 +1137,7 @@
 				2F2DFB8D2769BD8800122AF1 /* PasswordForgotViewController.swift in Sources */,
 				2CDE19BF2765B68200D895B9 /* HistoryViewController.swift in Sources */,
 				497C2883276BD60E00CA01DE /* EducationDocCollectionViewCell.swift in Sources */,
+				49F75439276CAE74001D98F6 /* SearchDoctorService.swift in Sources */,
 				2F3E23172768EA9000A003FD /* ArticleDetailViewController.swift in Sources */,
 				497C2821276B101600CA01DE /* SpecialistCollectionViewCell.swift in Sources */,
 				2CDE19BC2765B68200D895B9 /* HistoryItemCell.swift in Sources */,

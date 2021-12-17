@@ -17,6 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConsulViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
             <connections>
                 <outlet property="doctorCollectionvView" destination="GDH-Ul-U9s" id="I09-IN-rEg"/>
+                <outlet property="searchDoctor" destination="qnq-g6-ihm" id="lXF-Qi-aTB"/>
                 <outlet property="specialistCollectionView" destination="zc7-ud-w9X" id="xVT-lb-srB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -39,7 +39,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rfa-v7-YNh" userLabel="DoctorProfile">
-                                    <rect key="frame" x="50" y="81" width="314" height="103"/>
+                                    <rect key="frame" x="50" y="50" width="314" height="103"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="yH9-ot-3g7">
                                             <rect key="frame" x="0.0" y="0.0" width="267" height="103"/>
@@ -151,7 +151,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbW-gh-qaS" userLabel="BioView">
-                                    <rect key="frame" x="50" y="231" width="314" height="77.5"/>
+                                    <rect key="frame" x="50" y="200" width="314" height="77.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biography" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTz-hl-HQz">
                                             <rect key="frame" x="8" y="8" width="298" height="16.5"/>
@@ -185,7 +185,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sp-1w-xWY" userLabel="Education">
-                                    <rect key="frame" x="50" y="331" width="314" height="150"/>
+                                    <rect key="frame" x="50" y="300" width="314" height="181"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Education" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdB-7V-fu9">
                                             <rect key="frame" x="8" y="8" width="298" height="16.5"/>
@@ -194,7 +194,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="OHt-6U-aJm">
-                                            <rect key="frame" x="8" y="32.5" width="298" height="109.5"/>
+                                            <rect key="frame" x="8" y="32.5" width="298" height="140.5"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="u5g-TH-gyl">
                                                 <size key="itemSize" width="268" height="25"/>
@@ -250,9 +250,9 @@
                                 <constraint firstItem="YbW-gh-qaS" firstAttribute="top" secondItem="Rfa-v7-YNh" secondAttribute="bottom" constant="47" id="Kgc-bk-1eF"/>
                                 <constraint firstAttribute="bottom" secondItem="G2z-18-4e8" secondAttribute="bottom" constant="83" id="Sgm-9s-esn"/>
                                 <constraint firstAttribute="trailing" secondItem="8Sp-1w-xWY" secondAttribute="trailing" constant="50" id="e8l-qu-B0D"/>
-                                <constraint firstItem="VXc-NK-nJf" firstAttribute="top" secondItem="8Sp-1w-xWY" secondAttribute="bottom" constant="32" id="gPx-7Y-cbZ"/>
                                 <constraint firstAttribute="trailing" secondItem="G2z-18-4e8" secondAttribute="trailing" constant="50" id="gmj-Al-nvR"/>
-                                <constraint firstItem="Rfa-v7-YNh" firstAttribute="top" secondItem="hV9-9o-J8k" secondAttribute="top" constant="81" id="nea-A5-AJe"/>
+                                <constraint firstItem="VXc-NK-nJf" firstAttribute="top" secondItem="8Sp-1w-xWY" secondAttribute="bottom" constant="32" id="gpP-PT-25X"/>
+                                <constraint firstItem="Rfa-v7-YNh" firstAttribute="top" secondItem="hV9-9o-J8k" secondAttribute="top" constant="50" id="nea-A5-AJe"/>
                                 <constraint firstItem="G2z-18-4e8" firstAttribute="top" secondItem="VXc-NK-nJf" secondAttribute="bottom" constant="107" id="s4A-ws-83y"/>
                                 <constraint firstItem="8Sp-1w-xWY" firstAttribute="top" secondItem="YbW-gh-qaS" secondAttribute="bottom" constant="22.5" id="tsC-eL-PEP"/>
                                 <constraint firstAttribute="trailing" secondItem="YbW-gh-qaS" secondAttribute="trailing" constant="50" id="vAt-wf-fwp"/>

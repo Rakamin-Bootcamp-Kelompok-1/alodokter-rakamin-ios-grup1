@@ -15,6 +15,7 @@ class DetailConsultDoctorViewController: UIViewController {
     @IBOutlet weak var eduView: UIView!
     @IBOutlet weak var scheduleView: UIView!
     @IBOutlet weak var doctorPreviewLbl: UILabel!
+    var heightEdu = CGFloat()
     static let identifier = "DetailConsultDoctorViewController"
     var preview = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     override func viewDidLoad() {
@@ -36,7 +37,9 @@ class DetailConsultDoctorViewController: UIViewController {
         eduView.layer.shadowOffset = CGSize.zero
         eduView.layer.shadowRadius = 6
         eduView.layer.cornerRadius = 8
-        
+        heightEdu = eduView.frame.height
+        print("height edu awal \(heightEdu)")
+//        print("constraint \(eduView.constraints)")
 //        scheduleView.layer.shadowColor = UIColor.gray.cgColor
 //        scheduleView.layer.shadowOpacity = 0.3
 //        scheduleView.layer.shadowOffset = CGSize.zero
@@ -70,6 +73,12 @@ class DetailConsultDoctorViewController: UIViewController {
         if sender.didTap(label: doctorPreviewLbl, inRange: readmore) {
             print("masuk readmore")
             doctorPreviewLbl.appendReadLess(after: preview, trailingContent: ".")
+            print("height edu baru \(eduView.frame.height)")
+            
+//            self.eduView.frame = CGRect(x: 0, y: 0, width: self.eduView.frame.width, height: heightEdu)
+//            self.eduCollectionView.reloadData()
+//            print("height edu ditambah \(eduView.frame.height)")
+            
         }else if sender.didTap(label: doctorPreviewLbl, inRange: readless) {
             doctorPreviewLbl.appendReadmore(after: preview, trailingContent: "Read More")
         }else{

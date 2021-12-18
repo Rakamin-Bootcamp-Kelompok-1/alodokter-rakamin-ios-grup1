@@ -93,8 +93,13 @@ class DetailConsultDoctorViewController: BaseViewController {
         eduCollectionView.register(UINib(nibName: EducationDocCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: EducationDocCollectionViewCell.identifier)
         scheduleCollectionView.register(UINib(nibName: SchedulesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: SchedulesCollectionViewCell.identifier)
     }
-
-
+    
+    @IBAction func bookingButton(_ sender: Any) {
+        let appointmentViewController = AppointmentViewController()
+        appointmentViewController.doctorResource = doctorResource
+        navigationController?.pushViewController(appointmentViewController, animated: true)
+    }
+    
     @IBAction func tapPreview(_ sender: UITapGestureRecognizer) {
         guard let text = doctorPreviewLbl.text else {
             print("masuk else")

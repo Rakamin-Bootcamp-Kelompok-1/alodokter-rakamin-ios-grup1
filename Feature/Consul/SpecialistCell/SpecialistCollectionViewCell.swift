@@ -13,6 +13,11 @@ class SpecialistCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var specialistImg: UIImageView!
     @IBOutlet weak var specialistLbl: UILabel!
+    
+    func setup(speciality: SpecialityModel) {
+        specialistLbl.text = speciality.speciality
+        specialistImg.image = speciality.image
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

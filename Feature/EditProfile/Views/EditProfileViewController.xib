@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
+            <connections>
+                <outlet property="birthDateField" destination="8gr-Vs-bhe" id="SBd-4o-zi5"/>
+                <outlet property="emailField" destination="xln-zh-IKK" id="FrH-cg-WIE"/>
+                <outlet property="fullNameField" destination="gEi-WS-DIy" id="leI-4S-SYJ"/>
+                <outlet property="phoneNumberField" destination="0pE-Pj-Ksb" id="hIZ-kq-JZI"/>
+                <outlet property="profileImageView" destination="2nw-81-I8Y" id="5qG-ZT-J7O"/>
+                <outlet property="saveEditButton" destination="b05-rw-t9s" id="jlL-Cd-2dQ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="GKP-yg-ha2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="egu-zq-5k9">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2nw-81-I8Y">
+                            <rect key="frame" x="137" y="40.5" width="140" height="139"/>
+                            <color key="tintColor" name="Button Blue"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="140" id="a8i-KU-eed"/>
+                                <constraint firstAttribute="height" constant="140" id="bSK-fW-sKx"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEi-WS-DIy" customClass="NormalTextField" customModule="Alodokter_bootcamp" customModuleProvider="target">
+                            <rect key="frame" x="32" y="240" width="350" height="30"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="qPY-Xl-XEb"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xln-zh-IKK" customClass="NormalTextField" customModule="Alodokter_bootcamp" customModuleProvider="target">
+                            <rect key="frame" x="32" y="310" width="350" height="30"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="WmC-AG-1bo"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gr-Vs-bhe" customClass="NormalTextField" customModule="Alodokter_bootcamp" customModuleProvider="target">
+                            <rect key="frame" x="32" y="380" width="350" height="30"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="uAr-LE-vBX"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pE-Pj-Ksb" customClass="NormalTextField" customModule="Alodokter_bootcamp" customModuleProvider="target">
+                            <rect key="frame" x="32" y="450" width="350" height="30"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="32V-Bb-7AP"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b05-rw-t9s" customClass="LargeButton" customModule="Alodokter_bootcamp" customModuleProvider="target">
+                            <rect key="frame" x="32" y="560" width="350" height="44"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Dyb-Vo-3bu"/>
+                            </constraints>
+                        </view>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xtC-nb-LPE">
+                            <rect key="frame" x="247" y="150.5" width="30" height="29"/>
+                            <color key="tintColor" name="Button Blue"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="bdJ-iW-GTH"/>
+                                <constraint firstAttribute="width" constant="30" id="wJo-oc-RH4"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="xtC-nb-LPE" firstAttribute="trailing" secondItem="2nw-81-I8Y" secondAttribute="trailing" id="1FL-Te-yIN"/>
+                        <constraint firstItem="gEi-WS-DIy" firstAttribute="leading" secondItem="egu-zq-5k9" secondAttribute="leading" constant="32" id="1Gx-oC-etZ"/>
+                        <constraint firstItem="0pE-Pj-Ksb" firstAttribute="leading" secondItem="egu-zq-5k9" secondAttribute="leading" constant="32" id="2p6-hu-yQp"/>
+                        <constraint firstItem="2nw-81-I8Y" firstAttribute="leading" secondItem="egu-zq-5k9" secondAttribute="leading" constant="137" id="3MO-cX-xCy"/>
+                        <constraint firstItem="8gr-Vs-bhe" firstAttribute="leading" secondItem="egu-zq-5k9" secondAttribute="leading" constant="32" id="5eY-RY-ksY"/>
+                        <constraint firstAttribute="trailing" secondItem="0pE-Pj-Ksb" secondAttribute="trailing" constant="32" id="9Wf-Zo-V4c"/>
+                        <constraint firstAttribute="trailing" secondItem="b05-rw-t9s" secondAttribute="trailing" constant="32" id="AGr-Sq-UWb"/>
+                        <constraint firstAttribute="bottom" secondItem="b05-rw-t9s" secondAttribute="bottom" constant="200" id="B6C-CN-0e2"/>
+                        <constraint firstAttribute="trailing" secondItem="xln-zh-IKK" secondAttribute="trailing" constant="32" id="JRc-H4-qhN"/>
+                        <constraint firstItem="xtC-nb-LPE" firstAttribute="bottom" secondItem="2nw-81-I8Y" secondAttribute="bottom" id="JbG-3F-g9j"/>
+                        <constraint firstItem="b05-rw-t9s" firstAttribute="leading" secondItem="egu-zq-5k9" secondAttribute="leading" constant="32" id="M3Y-Mp-OID"/>
+                        <constraint firstItem="xln-zh-IKK" firstAttribute="leading" secondItem="egu-zq-5k9" secondAttribute="leading" constant="32" id="Ovg-T9-7wZ"/>
+                        <constraint firstItem="8gr-Vs-bhe" firstAttribute="top" secondItem="xln-zh-IKK" secondAttribute="bottom" constant="40" id="QPJ-DE-Ywz"/>
+                        <constraint firstItem="gEi-WS-DIy" firstAttribute="top" secondItem="2nw-81-I8Y" secondAttribute="bottom" constant="60" id="UVk-ra-HOO"/>
+                        <constraint firstItem="0pE-Pj-Ksb" firstAttribute="top" secondItem="8gr-Vs-bhe" secondAttribute="bottom" constant="40" id="WCD-vn-xuq"/>
+                        <constraint firstItem="b05-rw-t9s" firstAttribute="top" secondItem="0pE-Pj-Ksb" secondAttribute="bottom" constant="80" id="XH1-xo-R7h"/>
+                        <constraint firstItem="xln-zh-IKK" firstAttribute="top" secondItem="gEi-WS-DIy" secondAttribute="bottom" constant="40" id="eiP-qo-aT4"/>
+                        <constraint firstItem="2nw-81-I8Y" firstAttribute="top" secondItem="egu-zq-5k9" secondAttribute="top" constant="40" id="j6k-Dq-O8u"/>
+                        <constraint firstAttribute="trailing" secondItem="2nw-81-I8Y" secondAttribute="trailing" constant="137" id="pBx-Jd-1zB"/>
+                        <constraint firstAttribute="trailing" secondItem="gEi-WS-DIy" secondAttribute="trailing" constant="32" id="yDi-FA-mwb"/>
+                        <constraint firstAttribute="trailing" secondItem="8gr-Vs-bhe" secondAttribute="trailing" constant="32" id="zkH-GI-hCZ"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Xgp-Us-mKM"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="uFZ-2R-Fdg"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="egu-zq-5k9" secondAttribute="bottom" id="6Fd-Vp-XPi"/>
+                <constraint firstItem="egu-zq-5k9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="g5J-tz-05w"/>
+                <constraint firstItem="egu-zq-5k9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="rHH-Ln-rtk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="egu-zq-5k9" secondAttribute="trailing" id="vWh-bv-1Nx"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="107.8125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="Button Blue">
+            <color red="0.27058823529411763" green="0.63921568627450975" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

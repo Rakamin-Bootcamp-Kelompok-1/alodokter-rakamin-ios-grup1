@@ -74,7 +74,7 @@ class DetailConsultDoctorViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
        
-        viewModel.getDoctorSchedule(doctorId: String(doctorResource.id ?? 0) ?? "0")
+        viewModel.getDoctorSchedule(doctorId: String(doctorResource.id ?? 0))
 //        setupView()
         
     }
@@ -83,8 +83,9 @@ class DetailConsultDoctorViewController: BaseViewController {
 //        self.educationLbl.text = doctorResource.education ?? "No available"
         self.doctorPreviewLbl.text = doctorResource.biography ?? "No Biography"
         self.doctorImg.sd_setImage(with: URL(string: doctorResource.imagePath ?? ""),placeholderImage:UIImage(named: "ic_dokter_umum"))
+        self.doctorNameLbl.text = doctorResource.doctorName ?? "Doctor Name"
         self.specialityLbl.text = doctorResource.speciality ?? ""
-        self.priceRateLbl.text = String(doctorResource.priceRate ?? 0) ?? "0"
+        self.priceRateLbl.text = String(doctorResource.priceRate ?? 0)
         self.ratingLbl.text = doctorResource.star ?? "0"
         self.locationLbl.text = doctorResource.locationPractice ?? "No Available"
         self.doctorImg.layer.cornerRadius = 8

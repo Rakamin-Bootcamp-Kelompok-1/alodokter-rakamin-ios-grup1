@@ -46,7 +46,7 @@ class ArticleAllListViewController: BaseViewController {
         articleTableView.register(UINib(nibName: "ArticleAllListTableViewCell", bundle: nil), forCellReuseIdentifier: "ArticleAllListCell")
         articleTableView.rowHeight = UITableView.automaticDimension
         articleSearchBar.backgroundImage = UIImage()
-        self.navigationItem.title = "Medikuy Artikel"
+        self.navigationItem.title = "Artikel MediKuy"
         viewModel.delegate = self
         articleSearchBar.delegate = self
     }
@@ -126,6 +126,7 @@ extension ArticleAllListViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = articleTableView.dequeueReusableCell(withIdentifier: "ArticleAllListCell", for: indexPath) as! ArticleAllListTableViewCell
+        cell.selectionStyle = .none
         cell.titleLabel.text = articles[indexPath.row].article_title ?? "Article title is empty"
         cell.descriptionLabel.text = articles[indexPath.row].content_desc ?? "Article content is empty"
         cell.articleImageView.sd_setImage(with: URL(string: articles[indexPath.row].image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))

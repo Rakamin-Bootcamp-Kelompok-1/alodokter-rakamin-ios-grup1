@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileView: UIView {
     @IBOutlet var contentView: UIView!
@@ -31,6 +32,11 @@ class ProfileView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         userImageButton.setTitle("", for: .normal)
+        if #available(iOS 13.0, *) {
+            userImageButton.sd_setImage(with: URL(string: userDefaults.value(forKey: "image_data") as? String ?? ""), for: .normal, placeholderImage: UIImage(systemName: "person.circle.fill"))
+        } else {
+            // Fallback on earlier versions
+        }
         userNameLabel.text = "\(userDefaults.value(forKey: "fullName") ?? "User") 👋"
     }
     

@@ -21,16 +21,20 @@ class HistoryBookingViewModel {
     var meta = MetaModel(page: "1", nextPage: 0, totalPage: 1)
     let userDefaults = UserDefaults()
     func getHistory(page: String) {
-        var params = ["page":"\(page)"]
+        let params = ["page":"\(page)"]
         service.userId = "\(userDefaults.value(forKey: "id") ?? "")"
         Network.requestParameters(req: service, parameters: params) { [weak self] (result) in
             switch result {
                 
             case .success(let data):
+                if page == "1" {
+                    self?.historyData.removeAll()
+                }
                 print("data =  \(data.data)")
                 self?.historyData += data.data
                 self?.meta = data.meta!
                 self?.delegate?.onSuccessHistory()
+                
             case .failure(let error):
                 print("errorny = \(error)")
                 self?.delegate?.onFailureHistory()

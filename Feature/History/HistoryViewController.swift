@@ -23,8 +23,9 @@ class HistoryViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         setupView()
-        
-        viewModel.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         viewModel.getHistory(page: self.page)
     }
 
@@ -32,6 +33,9 @@ class HistoryViewController: BaseViewController {
 //        historyTableView.register(UINib(nibName: HistoryItemCell.identifier, bundle: nil), forCellReuseIdentifier: HistoryItemCell.identifier)
 //        historyTableView.delegate = self
 //        historyTableView.dataSource = self
+        
+        viewModel.delegate = self
+        
         doctorCollectionView.delegate = self
         doctorCollectionView.dataSource = self
         doctorCollectionView.register(UINib(nibName: HistoryItemCell.identifier, bundle: nil), forCellWithReuseIdentifier: HistoryItemCell.identifier)
@@ -112,9 +116,9 @@ extension HistoryViewController: HistoryBookingProtocol {
     func onSuccessHistory() {
         self.doctorCollectionView.reloadData()
         if viewModel.historyData.count != 0 {
-            self.noOrderLbl.isHidden == true
-        }else {
-            self.noOrderLbl.isHidden == false
+            self.noOrderLbl.isHidden = true
+        } else {
+            self.noOrderLbl.isHidden = false
         }
         print("sukses")
     }

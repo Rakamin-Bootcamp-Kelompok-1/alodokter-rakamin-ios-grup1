@@ -9,10 +9,11 @@ import Foundation
 
 
 class DoctorService: BaseService {
+    var page = ""
     
-    let baseUrl: String = "https://medikuy.herokuapp.com/doctors?page=1"
+    let baseUrl: String = "https://medikuy.herokuapp.com/doctors?page="
     
-    
+
     let headers: [String : String] = [
         "Content-Type": "application/json"
     ]
@@ -22,7 +23,7 @@ class DoctorService: BaseService {
     }
     
     func setUrl() -> URL {
-        return URL(string: baseUrl)!
+        return URL(string: baseUrl + page)!
     }
     
     func query() -> Network.QueryType {

@@ -118,7 +118,7 @@ class Network {
         
         let url = req.setUrl()
         let request = prepareRequestNoBody(for: url, req: req)
-        
+        print("cek url \(url)")
         return Alamofire.request(request).responseJSON { (response) in
             if let json = response.result.value {
                 print("JSON: \(JSON(json)) ")

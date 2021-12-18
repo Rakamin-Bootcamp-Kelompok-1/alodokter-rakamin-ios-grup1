@@ -46,10 +46,10 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         
         profileView.userNameLabel.text = "\(userDefaults.value(forKey: "fullName") ?? "User") 👋"
         profileView.userImageButton.addTarget(self, action: #selector(presentToProfileViewController), for: .touchUpInside)
-        
+       
         self.isNavigationBarHidden = true
-      
         viewModel.delegate = self
+        articleSearchBar.delegate = self
     }
     
     func initArticleCollectionView() {
@@ -57,6 +57,12 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         articleCollectionView.dataSource = self
         articleCollectionView.register(UINib(nibName: "ArticleListCell", bundle: nil), forCellWithReuseIdentifier: "ArticleListCell")
         
+    }
+    
+    func highlightArticleSetup() {
+        let randomArticle = viewModel.articleListData[0].data.randomElement()
+        highlightArticleImageView.sd_setImage(with: URL(string: randomArticle!.image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))
+        highlightArticleLabel.text = randomArticle!.article_title
     }
     
     func requestData(){
@@ -86,6 +92,19 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
     }
 }
 
+extension ArticleListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let vc = ArticleAllListViewController()
+        vc.hidesBottomBarWhenPushed = true
+        vc.isGotSearchByHome = true
+        vc.searchKeywordByHome = articleSearchBar.text ?? ""
+        articleSearchBar.text = ""
+        articleSearchBar.endEditing(true)
+    
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
 extension ArticleListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.articleListData.count != 0 {
@@ -106,9 +125,8 @@ extension ArticleListViewController: UICollectionViewDelegate, UICollectionViewD
 extension ArticleListViewController: ArticleViewModelDelegate {
     func onSuccessRequest() {
         self.removeSpinner()
+        highlightArticleSetup()
         profileView.userNameLabel.text = "\(userDefaults.value(forKey: "fullName") ?? "User") 👋"
-        highlightArticleImageView.sd_setImage(with: URL(string: viewModel.articleListData[0].data[0].image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))
-        highlightArticleLabel.text = viewModel.articleListData[0].data[0].article_title
         articleCollectionView.reloadData()
     }
     

@@ -36,6 +36,10 @@ class ChangePasswordViewController: BaseViewController {
     // MARK: - Prepare UI Method
     
     func prepareUI() {
+        // View Model Delegate
+        viewModel.delegate = self
+        
+        
         // Navigation Bar Title
         self.title = "Change Password"
         

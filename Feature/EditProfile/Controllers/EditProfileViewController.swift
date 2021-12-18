@@ -39,6 +39,10 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
     // MARK: - Prepare UI Method
     
     func prepareUI() {
+        // View Model Delegate
+        viewModel.delegate = self
+        
+        
         // Navigation Bar Title
         self.title = "Edit Profile"
         
@@ -68,6 +72,9 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
         emailField.textField.addBottomBorder(color: UIColor(named: "NonActive Text")!)
         birthDateField.textField.addBottomBorder(color: UIColor(named: "NonActive Text")!)
         phoneNumberField.textField.addBottomBorder(color: UIColor(named: "NonActive Text")!)
+        
+        // Normal Text Field Date Picker
+        birthDateField.textField.setInputViewDatePicker(target: self, selector: #selector(tapDone))
         
         // Secured Text Field Placeholder Attributed String
         guard let placeholderFont = UIFont(name: "Nunito-Regular", size: 16) else {
@@ -129,9 +136,17 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
         self.imagePicker.present(from: tappedImage)
     }
     
+    @objc func tapDone() {
+        if let datePicker = birthDateField.textField.inputView as? UIDatePicker {
+            let dateformatter = DateFormatter()
+            dateformatter.dateStyle = .medium
+            birthDateField.textField.text = dateformatter.string(from: datePicker.date)
+        }
+        birthDateField.textField.resignFirstResponder() // 2-5
+    }
+    
     @objc func saveEdit(button: UIButton) {
         self.updateData()
-        self.navigationController?.popViewController(animated: true)
     }
     
 

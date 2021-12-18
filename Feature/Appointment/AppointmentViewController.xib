@@ -118,6 +118,9 @@
                                             <rect key="frame" x="269" y="0.0" width="105" height="31"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Ganti Pasien"/>
+                                            <connections>
+                                                <action selector="changePatientButton:" destination="-1" eventType="touchUpInside" id="QIH-AW-AMG"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama : Jeremy Endratno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVe-z3-dRR">
                                             <rect key="frame" x="0.0" y="41" width="374" height="19.5"/>
@@ -395,7 +398,7 @@
         <image name="ovo" width="60" height="19"/>
         <image name="star" width="28" height="28"/>
         <namedColor name="blue something 2">
-            <color red="0.16078431372549021" green="0.3843137254901961" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.16099999845027924" green="0.38400000333786011" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

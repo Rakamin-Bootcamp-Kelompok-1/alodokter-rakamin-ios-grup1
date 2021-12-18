@@ -92,6 +92,7 @@
 		2F3E230D2768DE6F00A003FD /* ArticleDetailCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3E230B2768DE6F00A003FD /* ArticleDetailCollectionCell.xib */; };
 		2F3E23172768EA9000A003FD /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E23162768EA9000A003FD /* ArticleDetailViewController.swift */; };
 		4927DF73276E074400A4078B /* SpecialityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927DF72276E074400A4078B /* SpecialityModel.swift */; };
+		4927DF75276E0F6F00A4078B /* SearchDoctorBySpecialityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927DF74276E0F6F00A4078B /* SearchDoctorBySpecialityService.swift */; };
 		497C2813276B025200CA01DE /* HistoryBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2812276B025200CA01DE /* HistoryBookingService.swift */; };
 		497C2815276B027B00CA01DE /* HistoryBookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2814276B027B00CA01DE /* HistoryBookingModel.swift */; };
 		497C2817276B07AD00CA01DE /* MetaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2816276B07AD00CA01DE /* MetaModel.swift */; };
@@ -261,6 +262,7 @@
 		381744D040FF8C533B3155AB /* Pods_Alodokter_bootcampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcampTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D1D72584417F3B8420172F /* Pods-Alodokter_bootcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp.debug.xcconfig"; sourceTree = "<group>"; };
 		4927DF72276E074400A4078B /* SpecialityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialityModel.swift; sourceTree = "<group>"; };
+		4927DF74276E0F6F00A4078B /* SearchDoctorBySpecialityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDoctorBySpecialityService.swift; sourceTree = "<group>"; };
 		497C2812276B025200CA01DE /* HistoryBookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBookingService.swift; sourceTree = "<group>"; };
 		497C2814276B027B00CA01DE /* HistoryBookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBookingModel.swift; sourceTree = "<group>"; };
 		497C2816276B07AD00CA01DE /* MetaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaModel.swift; sourceTree = "<group>"; };
@@ -837,6 +839,7 @@
 				49F75441276CDD12001D98F6 /* SchedulesDoctorService.swift */,
 				2CA846BA276DF26D00F492EC /* EditProfileService.swift */,
 				2CD51BCF276E018C005FDF6C /* RegisterService.swift */,
+				4927DF74276E0F6F00A4078B /* SearchDoctorBySpecialityService.swift */,
 			);
 			path = Service;
 			sourceTree = SOURCE_ROOT;
@@ -1217,7 +1220,6 @@
 				2C68A3D1275FF3BF002B8997 /* SignOutButton.swift in Sources */,
 				4E97F21427488BAB00C2366D /* DeviceHelper.swift in Sources */,
 				4927DF73276E074400A4078B /* SpecialityModel.swift in Sources */,
-				8019CB8E2768EF5F00B3BD77 /* LoginViewModel.swift in Sources */,
 				2C706FC6276C7750001229CE /* ChangePasswordService.swift in Sources */,
 				8019CB8A2768D96600B3BD77 /* RegisterViewModel.swift in Sources */,
 				80613364275BCE8C0065B62E /* RegisterViewController.swift in Sources */,
@@ -1244,6 +1246,7 @@
 				2CDE19B92765B68200D895B9 /* DetailHistoryViewController.swift in Sources */,
 				497C2825276B154300CA01DE /* DoctorCollectionViewCell.swift in Sources */,
 				2F3BEA6B27678158004DB446 /* ArticleDetailViewModel.swift in Sources */,
+				4927DF75276E0F6F00A4078B /* SearchDoctorBySpecialityService.swift in Sources */,
 				2CDE19DC2765B6B400D895B9 /* ArticleAllListCollectionViewCell.swift in Sources */,
 				497C2815276B027B00CA01DE /* HistoryBookingModel.swift in Sources */,
 				497C287A276BC09900CA01DE /* DetailConsultDoctorViewController.swift in Sources */,

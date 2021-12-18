@@ -12,12 +12,15 @@ protocol ConsulDoctorProtocol {
     func onFailureDoctor()
     func onSuccessSearchDoctor()
     func onFailureSearchDoctor()
+    func onSuccessDoctorBySpeciality()
+    func onFailureDoctorBySpeciality()
 }
 
 class ConsulDoctorViewModel {
     var delegate: ConsulDoctorProtocol?
     var service = DoctorService()
     var searchService = SearchDoctorService()
+    var doctorBySpecialityService = SearchDoctorBySpecialityService()
     var doctorList = [DoctorResource]()
     var searchDoctorList = [DoctorResource]()
     var specialty: [SpecialityModel] = [
@@ -53,6 +56,19 @@ class ConsulDoctorViewModel {
                 self?.delegate?.onSuccessSearchDoctor()
             case .failure(let error):
                 self?.delegate?.onFailureSearchDoctor()
+            }
+        }
+    }
+    
+    func getDoctorBySpeciality(speciality: String) {
+        doctorBySpecialityService.specialityName = speciality
+        Network.request(req: doctorBySpecialityService) {[weak self] (result) in
+            switch result {
+            case .success(let data):
+                self?.doctorList.append(contentsOf: data.data ?? [])
+                self?.delegate?.onSuccessDoctorBySpeciality()
+            case .failure(let error):
+                self?.delegate?.onFailureDoctorBySpeciality()
             }
         }
     }

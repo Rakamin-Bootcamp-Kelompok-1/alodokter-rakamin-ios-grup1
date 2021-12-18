@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConsulViewController: UIViewController {
+class ConsulViewController: BaseViewController {
 
     @IBOutlet weak var searchDoctor: UISearchBar!
     @IBOutlet weak var doctorCollectionvView: UICollectionView!
@@ -23,6 +23,7 @@ class ConsulViewController: UIViewController {
         doctorCollectionvView.dataSource = self
         viewModel.delegate = self
         viewModel.getDoctorList()
+        self.showParentSpinner()
         searchDoctor.delegate = self
 //        self.definesPresentationContext = true
         registerCell()
@@ -81,10 +82,20 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = DetailConsultDoctorViewController(nibName: DetailConsultDoctorViewController.identifier, bundle: nil)
-        controller.doctorResource = viewModel.doctorList[indexPath.row]
-        controller.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(controller, animated: true)
+        
+        if collectionView == doctorCollectionvView {
+            let controller = DetailConsultDoctorViewController(nibName: DetailConsultDoctorViewController.identifier, bundle: nil)
+            controller.doctorResource = viewModel.doctorList[indexPath.row]
+            controller.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(controller, animated: true)
+        }else if collectionView == specialistCollectionView {
+            if viewModel.doctorList.count != 0 {
+                viewModel.doctorList.removeAll()
+            }
+            viewModel.getDoctorBySpeciality(speciality: viewModel.specialty[indexPath.row].speciality)
+            self.showParentSpinner()
+        }
+        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -97,6 +108,7 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.text != "" {
             viewModel.searchDoctor(name: searchBar.text!)
+            self.showParentSpinner()
         }
     }
     
@@ -104,19 +116,33 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
 }
 
 extension ConsulViewController: ConsulDoctorProtocol {
+    func onSuccessDoctorBySpeciality() {
+        self.doctorCollectionvView.reloadData()
+        self.removeSpinner()
+    }
+    
+    func onFailureDoctorBySpeciality() {
+        self.removeSpinner()
+        print("error")
+    }
+    
     func onSuccessSearchDoctor() {
         self.doctorCollectionvView.reloadData()
+        self.removeSpinner()
     }
     
     func onFailureSearchDoctor() {
+        self.removeSpinner()
         print("error")
     }
     
     func onSuccessDoctor() {
         self.doctorCollectionvView.reloadData()
+        self.removeSpinner()
     }
     
     func onFailureDoctor() {
+        self.removeSpinner()
         print("gagal")
     }
     

@@ -20,7 +20,6 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
     
     var userDefaults = UserDefaults()
     var viewModel = ArticleViewModel()
-    var profileViewModel = ProfileViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,7 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
     
     override func viewDidAppear(_ animated: Bool) {
         requestData()
-        print("masuk sini setelah login user default \(userDefaults.value(forKey: "token"))")
+        print("masuk sini setelah login user default \(userDefaults.value(forKey: "token") ?? "")")
         profileView.userNameLabel.text = "\(userDefaults.value(forKey: "fullName") ?? "User") 👋"
     }
     
@@ -71,16 +70,14 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func requestData(){
+    func requestData() {
         self.showParentSpinner()
         viewModel.getArticleListData()
-//        profileViewModel.getUser()
     }
     
     @objc func presentToProfileViewController(button: UIButton) {
-        
-        var userDefaultLogin = UserDefaults()
-        print("token =\(userDefaults.value(forKey: "token"))")
+        let userDefaultLogin = UserDefaults()
+        print("token =\(userDefaults.value(forKey: "token") ?? "")")
         if userDefaultLogin.value(forKey: "token") == nil {
             print("masuk token nil")
             let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
@@ -144,8 +141,7 @@ extension ArticleListViewController: UICollectionViewDelegate, UICollectionViewD
 extension ArticleListViewController: ArticleViewModelDelegate {
     func onSuccessRequest() {
         self.removeSpinner()
-        print("fullname = \(userDefaults.value(forKey: "token"))")
-//        profileView.userNameLabel.text = "\(userDefaults.value(forKey: "fullName") ?? "User") 👋"
+        print("fullname = \(userDefaults.value(forKey: "token") ?? "")")
         highlightArticleImageView.sd_setImage(with: URL(string: viewModel.articleListData[0].data[0].image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))
         highlightArticleLabel.text = viewModel.articleListData[0].data[0].article_title
         articleCollectionView.reloadData()

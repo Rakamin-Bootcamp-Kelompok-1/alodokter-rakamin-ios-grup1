@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,6 +21,7 @@
                 <outlet property="contentView" destination="iN0-l3-epB" id="idp-jU-36w"/>
                 <outlet property="greetLabel" destination="uGH-Pg-0UM" id="KRZ-1o-dLH"/>
                 <outlet property="userImageButton" destination="2IT-Ot-Bu4" id="WPL-Sf-hPw"/>
+                <outlet property="userImageView" destination="YsF-cR-pHQ" id="xSe-Eb-80v"/>
                 <outlet property="userNameLabel" destination="Jsv-5R-WhF" id="Toz-um-R5R"/>
             </connections>
         </placeholder>
@@ -42,16 +42,23 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YsF-cR-pHQ">
+                    <rect key="frame" x="354" y="60" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="QRX-B4-xYt"/>
+                        <constraint firstAttribute="height" constant="50" id="pHd-7G-ygt"/>
+                    </constraints>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IT-Ot-Bu4">
-                    <rect key="frame" x="333" y="48.5" width="71" height="61.5"/>
+                    <rect key="frame" x="354" y="60" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="7bt-K5-ZhG"/>
+                        <constraint firstAttribute="width" secondItem="2IT-Ot-Bu4" secondAttribute="height" multiplier="1:1" id="Y27-gE-H2I"/>
+                        <constraint firstAttribute="width" constant="50" id="YNX-YV-XDd"/>
+                    </constraints>
                     <color key="tintColor" name="Button Blue"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain">
-                        <imageReference key="image" image="person.circle.fill" catalog="system" symbolScale="default"/>
-                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font" scale="default">
-                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                        </preferredSymbolConfiguration>
-                    </buttonConfiguration>
+                    <buttonConfiguration key="configuration" style="plain"/>
                     <connections>
                         <action selector="profileButton:" destination="-1" eventType="touchUpInside" id="kLJ-qB-kTk"/>
                     </connections>
@@ -60,9 +67,12 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="2IT-Ot-Bu4" secondAttribute="trailing" constant="10" id="78R-4M-hV4"/>
+                <constraint firstAttribute="trailing" secondItem="YsF-cR-pHQ" secondAttribute="trailing" constant="10" id="HWN-ju-bLg"/>
+                <constraint firstAttribute="bottom" secondItem="YsF-cR-pHQ" secondAttribute="bottom" constant="10" id="MWq-eH-UHF"/>
                 <constraint firstItem="uGH-Pg-0UM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Nnw-BP-Peb"/>
                 <constraint firstAttribute="bottom" secondItem="2IT-Ot-Bu4" secondAttribute="bottom" constant="10" id="ObC-vF-rWF"/>
                 <constraint firstItem="Jsv-5R-WhF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="VZx-iB-ekF"/>
+                <constraint firstItem="YsF-cR-pHQ" firstAttribute="width" secondItem="2IT-Ot-Bu4" secondAttribute="height" multiplier="1:1" id="evJ-VL-GmY"/>
                 <constraint firstAttribute="bottom" secondItem="Jsv-5R-WhF" secondAttribute="bottom" constant="20" id="k5r-0S-Ncg"/>
                 <constraint firstItem="Jsv-5R-WhF" firstAttribute="top" secondItem="uGH-Pg-0UM" secondAttribute="bottom" id="lcP-jA-vna"/>
             </constraints>
@@ -71,7 +81,6 @@
         </view>
     </objects>
     <resources>
-        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="Button Blue">
             <color red="0.27058823529411763" green="0.63921568627450975" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

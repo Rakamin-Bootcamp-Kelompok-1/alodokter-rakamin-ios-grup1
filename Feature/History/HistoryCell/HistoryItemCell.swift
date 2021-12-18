@@ -22,7 +22,7 @@ class HistoryItemCell: UICollectionViewCell {
     func setup(history: HistoryBookingResource) {
         self.doctorName.text = history.doctor?.doctorName
         self.specialtyLbl.text = history.doctor?.speciality
-        self.doctorImg.sd_setImage(with: URL(string: history.doctor?.imagePath ?? ""))
+        self.doctorImg.sd_setImage(with: URL(string: history.doctor?.imagePath ?? ""), placeholderImage:UIImage(named: "ic_dokter_umum"))
         self.dateLbl.text = (history.doctorSchedule?.date ?? "") + " " + (history.doctorSchedule?.month ?? "")
     }
 

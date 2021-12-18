@@ -134,7 +134,7 @@
                 <outlet property="doctorImg" destination="Znk-JV-Jkp" id="UtP-Xn-hwO"/>
                 <outlet property="doctorLbl" destination="EUz-bZ-8NW" id="Nqz-4Y-Dsz"/>
                 <outlet property="localtionLbl" destination="0oq-Ua-tYS" id="njw-QQ-j5G"/>
-                <outlet property="specialistLbl" destination="0oq-Ua-tYS" id="q0k-zs-6Y4"/>
+                <outlet property="specialistLbl" destination="b4Z-38-GcJ" id="A4K-1A-5DY"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="87.388392857142847"/>
         </collectionViewCell>

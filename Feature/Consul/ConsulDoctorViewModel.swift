@@ -27,7 +27,7 @@ class ConsulDoctorViewModel {
     var specialty: [SpecialityModel] = [
         SpecialityModel(id: 1, speciality: "Dokter Umum", image: UIImage(named:"ic_dokter_umum")!),
         SpecialityModel(id: 2, speciality: "Dokter Anak", image: UIImage(named: "ic_dokter_anak")!),
-        SpecialityModel(id: 1, speciality: "Dokter Mata", image: UIImage(named: "ic_dokter_umum")!),
+        SpecialityModel(id: 1, speciality: "Dokter Mata", image: UIImage(named: "ic_dokter_eye")!),
         SpecialityModel(id: 1, speciality: "Dokter Paru", image: UIImage(named: "ic_dokter_paru")!)
     
     ]

@@ -5,7 +5,7 @@
 //  Created by Putra on 16/12/21.
 //
 
-import Foundation
+import UIKit
 
 protocol ConsulDoctorProtocol {
     func onSuccessDoctor()
@@ -20,6 +20,14 @@ class ConsulDoctorViewModel {
     var searchService = SearchDoctorService()
     var doctorList = [DoctorResource]()
     var searchDoctorList = [DoctorResource]()
+    var specialty: [SpecialityModel] = [
+        SpecialityModel(id: 1, speciality: "Dokter Umum", image: UIImage(named:"ic_dokter_umum")!),
+        SpecialityModel(id: 2, speciality: "Dokter Anak", image: UIImage(named: "ic_dokter_anak")!),
+        SpecialityModel(id: 1, speciality: "Dokter Mata", image: UIImage(named: "ic_dokter_umum")!),
+        SpecialityModel(id: 1, speciality: "Dokter Paru", image: UIImage(named: "ic_dokter_paru")!)
+    
+    ]
+    
     
     func getDoctorList() {
         Network.requestNoBody(req: service) {[weak self](result) in

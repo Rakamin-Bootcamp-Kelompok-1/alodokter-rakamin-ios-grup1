@@ -25,7 +25,6 @@ class ConsulViewController: UIViewController {
         viewModel.getDoctorList()
         searchDoctor.delegate = self
 //        self.definesPresentationContext = true
-        searchDoctor.showsCancelButton = true
         registerCell()
         navigationItem.title = ""
         navigationController?.navigationBar.isHidden = true
@@ -43,7 +42,7 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
             case specialistCollectionView:
-                return 5
+                return viewModel.specialty.count
             case doctorCollectionvView:
                 if viewModel.searchDoctorList.count != 0 {
                     return viewModel.searchDoctorList.count
@@ -59,6 +58,7 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
         switch collectionView {
         case specialistCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpecialistCollectionViewCell.identifier, for: indexPath) as? SpecialistCollectionViewCell else { return UICollectionViewCell() }
+            cell.setup(speciality: viewModel.specialty[indexPath.row])
             return cell
         case doctorCollectionvView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DoctorCollectionViewCell.identifier, for: indexPath) as? DoctorCollectionViewCell else {return UICollectionViewCell() }
@@ -87,9 +87,12 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        <#code#>
-//    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == ""{
+            print("masuk reset")
+            viewModel.resetSearch()
+        }
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.text != "" {
@@ -97,10 +100,7 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print("masuk cancel")
-        viewModel.resetSearch()
-    }
+    
 }
 
 extension ConsulViewController: ConsulDoctorProtocol {

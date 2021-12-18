@@ -143,8 +143,6 @@
 		6778426BC0821FD950B0921A /* Pods_Alodokter_bootcampTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381744D040FF8C533B3155AB /* Pods_Alodokter_bootcampTests.framework */; };
 		8019CB8A2768D96600B3BD77 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8019CB892768D96600B3BD77 /* RegisterViewModel.swift */; };
 		80613364275BCE8C0065B62E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80613363275BCE8C0065B62E /* RegisterViewController.swift */; };
-		80BC4A4B275F642400E7E8FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BC4A4A275F642400E7E8FF /* LoginViewController.swift */; };
-		80BC4A4F275F647C00E7E8FF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80BC4A4E275F647C00E7E8FF /* LoginViewController.xib */; };
 		80D4FBEA276C6949001A8DD2 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D4FBE9276C6949001A8DD2 /* RegisterService.swift */; };
 		8A46F6E6C05003DC0F5BD809 /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8947D88ACBB42AFDC870192F /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework */; };
 		FAB7B29BC482E4895EAD1233 /* Pods_Alodokter_bootcamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1C8877C0AD54B5F4660C13 /* Pods_Alodokter_bootcamp.framework */; };
@@ -316,8 +314,6 @@
 		4E97F21227488BAB00C2366D /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		8019CB892768D96600B3BD77 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		80613363275BCE8C0065B62E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		80BC4A4A275F642400E7E8FF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		80BC4A4E275F647C00E7E8FF /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		80D4FBE9276C6949001A8DD2 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		8947D88ACBB42AFDC870192F /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1C8877C0AD54B5F4660C13 /* Pods_Alodokter_bootcamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -481,6 +477,14 @@
 				2CA846D9276DF34D00F492EC /* LargeButton.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2CA846E3276DFBB000F492EC /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				80D4FBE9276C6949001A8DD2 /* RegisterService.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		2CDE19AE2765B67F00D895B9 /* DetailHistory */ = {
@@ -692,6 +696,7 @@
 				4E97F1CB2748858D00C2366D /* Products */,
 				79DC3765A9DDCDAC0C607DE7 /* Pods */,
 				D29C455D0EB5B2BA2B5C0B31 /* Frameworks */,
+				2CA846E3276DFBB000F492EC /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1007,17 +1012,14 @@
 				2CDE19BE2765B68200D895B9 /* HistoryViewController.xib in Resources */,
 				497C2831276B7F8A00CA01DE /* DetailConsulViewController.xib in Resources */,
 				2CDE19BD2765B68200D895B9 /* HistoryItemCell.xib in Resources */,
-				2C68A3FF27634D5F002B8997 /* SecuredTextField.xib in Resources */,
 				2CDE19DD2765B6B400D895B9 /* ArticleAllListCollectionViewCell.xib in Resources */,
 				497C287B276BC09900CA01DE /* DetailConsultDoctorViewController.xib in Resources */,
 				2C68A3EC27612D96002B8997 /* Nunito-Medium.ttf in Resources */,
 				2CA846C8276DF32900F492EC /* NormalTextField.xib in Resources */,
-				2FC5E447276C30E800BEAA5C /* PatientsCreateViewController.xib in Resources */,
 				2CA846E0276DF34D00F492EC /* LargeButton.xib in Resources */,
 				2CDE19DD2765B6B400D895B9 /* ArticleAllListCollectionViewCell.xib in Resources */,
 				497C287B276BC09900CA01DE /* DetailConsultDoctorViewController.xib in Resources */,
 				2C68A3EC27612D96002B8997 /* Nunito-Medium.ttf in Resources */,
-				2FC5E44B276C3EC800BEAA5C /* PatientsChangeViewController.xib in Resources */,
 				2CA846DE276DF34D00F492EC /* SecuredTextField.xib in Resources */,
 				497C2826276B154300CA01DE /* DoctorCollectionViewCell.xib in Resources */,
 				2C68A3EA27612D96002B8997 /* Nunito-Bold.ttf in Resources */,
@@ -1226,9 +1228,7 @@
 				497C282A276B250D00CA01DE /* DoctorService.swift in Sources */,
 				2CDE19C02765B68200D895B9 /* HistoryBookingViewModel.swift in Sources */,
 				497C2830276B7F8A00CA01DE /* DetailConsulViewController.swift in Sources */,
-				2C68A40527634E45002B8997 /* LargeButton.swift in Sources */,
 				2CA846CD276DF34000F492EC /* LoginViewModel.swift in Sources */,
-				2FC5E44E276C41E100BEAA5C /* PatientsChangeTableCell.swift in Sources */,
 				2CA846DA276DF34D00F492EC /* ChangePasswordViewModel.swift in Sources */,
 				497C2813276B025200CA01DE /* HistoryBookingService.swift in Sources */,
 				2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */,
@@ -1250,8 +1250,6 @@
 				497C2815276B027B00CA01DE /* HistoryBookingModel.swift in Sources */,
 				497C287A276BC09900CA01DE /* DetailConsultDoctorViewController.swift in Sources */,
 				4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */,
-				2C68A40327634E3C002B8997 /* SecuredTextField.swift in Sources */,
-				2FC5E451276C916500BEAA5C /* PatientsChangeViewModel.swift in Sources */,
 				497C2887276BDE1E00CA01DE /* Route.swift in Sources */,
 				4E97F21527488BAB00C2366D /* Utiliy.swift in Sources */,
 				497C281B276B0C1C00CA01DE /* ConsulViewController.swift in Sources */,
@@ -1446,15 +1444,14 @@
 				DEVELOPMENT_TEAM = QWVAEMBXMM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Alodokter_bootcamp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MediKuy;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app wants to take pictures.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app wants to use your photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1475,15 +1472,14 @@
 				DEVELOPMENT_TEAM = QWVAEMBXMM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Alodokter_bootcamp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MediKuy;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app wants to take pictures.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app wants to use your photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";

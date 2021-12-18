@@ -49,7 +49,6 @@
 		2CA846DB276DF34D00F492EC /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846D3276DF34D00F492EC /* ChangePasswordViewController.swift */; };
 		2CA846DC276DF34D00F492EC /* SecuredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846D4276DF34D00F492EC /* SecuredTextField.swift */; };
 		2CA846DD276DF34D00F492EC /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846D5276DF34D00F492EC /* LargeButton.swift */; };
-		2CA846DE276DF34D00F492EC /* SecuredTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846D7276DF34D00F492EC /* SecuredTextField.xib */; };
 		2CA846DF276DF34D00F492EC /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846D8276DF34D00F492EC /* ChangePasswordViewController.xib */; };
 		2CA846E0276DF34D00F492EC /* LargeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846D9276DF34D00F492EC /* LargeButton.xib */; };
 		2CA846E2276DF62E00F492EC /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846E1276DF62E00F492EC /* EditProfileViewController.xib */; };
@@ -91,14 +90,22 @@
 		2F3E230C2768DE6F00A003FD /* ArticleDetailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E230A2768DE6F00A003FD /* ArticleDetailCollectionCell.swift */; };
 		2F3E230D2768DE6F00A003FD /* ArticleDetailCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3E230B2768DE6F00A003FD /* ArticleDetailCollectionCell.xib */; };
 		2F3E23172768EA9000A003FD /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E23162768EA9000A003FD /* ArticleDetailViewController.swift */; };
-		4927DF73276E074400A4078B /* SpecialityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927DF72276E074400A4078B /* SpecialityModel.swift */; };
-		4927DF75276E0F6F00A4078B /* SearchDoctorBySpecialityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927DF74276E0F6F00A4078B /* SearchDoctorBySpecialityService.swift */; };
 		2FC5E446276C30E800BEAA5C /* PatientsCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC5E444276C30E800BEAA5C /* PatientsCreateViewController.swift */; };
 		2FC5E447276C30E800BEAA5C /* PatientsCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC5E445276C30E800BEAA5C /* PatientsCreateViewController.xib */; };
 		2FC5E44A276C3EC800BEAA5C /* PatientsChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC5E448276C3EC800BEAA5C /* PatientsChangeViewController.swift */; };
 		2FC5E44B276C3EC800BEAA5C /* PatientsChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC5E449276C3EC800BEAA5C /* PatientsChangeViewController.xib */; };
 		2FC5E44E276C41E100BEAA5C /* PatientsChangeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC5E44C276C41E100BEAA5C /* PatientsChangeTableCell.swift */; };
 		2FC5E44F276C41E100BEAA5C /* PatientsChangeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC5E44D276C41E100BEAA5C /* PatientsChangeTableCell.xib */; };
+		3249DE48276E31BC007DF624 /* AppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3249DE47276E31BC007DF624 /* AppointmentViewController.swift */; };
+		3249DE4A276E31D3007DF624 /* PaymentSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3249DE49276E31D3007DF624 /* PaymentSelectionViewController.swift */; };
+		3249DE4D276E31F6007DF624 /* AppointmentTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3249DE4C276E31F6007DF624 /* AppointmentTimeCell.swift */; };
+		3249DE50276E323D007DF624 /* PaymentSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3249DE4F276E323D007DF624 /* PaymentSelectionCell.swift */; };
+		3249DE53276E3286007DF624 /* PaymentSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3249DE51276E3286007DF624 /* PaymentSelectionViewController.xib */; };
+		3249DE54276E3286007DF624 /* AppointmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3249DE52276E3286007DF624 /* AppointmentViewController.xib */; };
+		3249DE56276E3291007DF624 /* PaymentSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3249DE55276E3291007DF624 /* PaymentSelectionCell.xib */; };
+		3249DE58276E329B007DF624 /* AppointmentTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3249DE57276E329B007DF624 /* AppointmentTimeCell.xib */; };
+		4927DF73276E074400A4078B /* SpecialityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927DF72276E074400A4078B /* SpecialityModel.swift */; };
+		4927DF75276E0F6F00A4078B /* SearchDoctorBySpecialityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927DF74276E0F6F00A4078B /* SearchDoctorBySpecialityService.swift */; };
 		497C2813276B025200CA01DE /* HistoryBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2812276B025200CA01DE /* HistoryBookingService.swift */; };
 		497C2815276B027B00CA01DE /* HistoryBookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2814276B027B00CA01DE /* HistoryBookingModel.swift */; };
 		497C2817276B07AD00CA01DE /* MetaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2816276B07AD00CA01DE /* MetaModel.swift */; };
@@ -272,6 +279,14 @@
 		2FC5E44C276C41E100BEAA5C /* PatientsChangeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsChangeTableCell.swift; sourceTree = "<group>"; };
 		2FC5E44D276C41E100BEAA5C /* PatientsChangeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PatientsChangeTableCell.xib; sourceTree = "<group>"; };
 		2FC5E450276C916500BEAA5C /* PatientsChangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsChangeViewModel.swift; sourceTree = "<group>"; };
+		3249DE47276E31BC007DF624 /* AppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewController.swift; sourceTree = "<group>"; };
+		3249DE49276E31D3007DF624 /* PaymentSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectionViewController.swift; sourceTree = "<group>"; };
+		3249DE4C276E31F6007DF624 /* AppointmentTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentTimeCell.swift; sourceTree = "<group>"; };
+		3249DE4F276E323D007DF624 /* PaymentSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectionCell.swift; sourceTree = "<group>"; };
+		3249DE51276E3286007DF624 /* PaymentSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentSelectionViewController.xib; sourceTree = "<group>"; };
+		3249DE52276E3286007DF624 /* AppointmentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentViewController.xib; sourceTree = "<group>"; };
+		3249DE55276E3291007DF624 /* PaymentSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentSelectionCell.xib; sourceTree = "<group>"; };
+		3249DE57276E329B007DF624 /* AppointmentTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppointmentTimeCell.xib; sourceTree = "<group>"; };
 		381744D040FF8C533B3155AB /* Pods_Alodokter_bootcampTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcampTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D1D72584417F3B8420172F /* Pods-Alodokter_bootcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp.debug.xcconfig"; sourceTree = "<group>"; };
 		4927DF72276E074400A4078B /* SpecialityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialityModel.swift; sourceTree = "<group>"; };
@@ -641,6 +656,37 @@
 			path = Patients;
 			sourceTree = "<group>";
 		};
+		3249DE46276E31A6007DF624 /* Appointment */ = {
+			isa = PBXGroup;
+			children = (
+				3249DE52276E3286007DF624 /* AppointmentViewController.xib */,
+				3249DE51276E3286007DF624 /* PaymentSelectionViewController.xib */,
+				3249DE4E276E3202007DF624 /* PaymentSelectionCell */,
+				3249DE4B276E31DE007DF624 /* AppointmentTimeCell */,
+				3249DE47276E31BC007DF624 /* AppointmentViewController.swift */,
+				3249DE49276E31D3007DF624 /* PaymentSelectionViewController.swift */,
+			);
+			path = Appointment;
+			sourceTree = "<group>";
+		};
+		3249DE4B276E31DE007DF624 /* AppointmentTimeCell */ = {
+			isa = PBXGroup;
+			children = (
+				3249DE57276E329B007DF624 /* AppointmentTimeCell.xib */,
+				3249DE4C276E31F6007DF624 /* AppointmentTimeCell.swift */,
+			);
+			path = AppointmentTimeCell;
+			sourceTree = "<group>";
+		};
+		3249DE4E276E3202007DF624 /* PaymentSelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				3249DE55276E3291007DF624 /* PaymentSelectionCell.xib */,
+				3249DE4F276E323D007DF624 /* PaymentSelectionCell.swift */,
+			);
+			path = PaymentSelectionCell;
+			sourceTree = "<group>";
+		};
 		497C2818276B0BD000CA01DE /* Consul */ = {
 			isa = PBXGroup;
 			children = (
@@ -789,6 +835,7 @@
 		4E97F20127488BAA00C2366D /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				3249DE46276E31A6007DF624 /* Appointment */,
 				2FC5E443276C30A300BEAA5C /* Patients */,
 				497C282D276B7F6800CA01DE /* DetailConsul */,
 				497C2818276B0BD000CA01DE /* Consul */,
@@ -1029,6 +1076,7 @@
 				2C68A3E727612D96002B8997 /* Nunito-Regular.ttf in Resources */,
 				2C68A3F327612D96002B8997 /* Nunito-BlackItalic.ttf in Resources */,
 				2C68A3E427612D96002B8997 /* Nunito-SemiBold.ttf in Resources */,
+				3249DE58276E329B007DF624 /* AppointmentTimeCell.xib in Resources */,
 				4E97F1DA2748858F00C2366D /* LaunchScreen.storyboard in Resources */,
 				2CDE19E32765B6B400D895B9 /* ArticleListCell.xib in Resources */,
 				49F7543E276CDA5A001D98F6 /* SchedulesCollectionViewCell.xib in Resources */,
@@ -1040,9 +1088,9 @@
 				2CDE19BD2765B68200D895B9 /* HistoryItemCell.xib in Resources */,
 				497C287B276BC09900CA01DE /* DetailConsultDoctorViewController.xib in Resources */,
 				497C287B276BC09900CA01DE /* DetailConsultDoctorViewController.xib in Resources */,
-				2C68A3FF27634D5F002B8997 /* SecuredTextField.xib in Resources */,
 				2FC5E447276C30E800BEAA5C /* PatientsCreateViewController.xib in Resources */,
 				2CDE19DD2765B6B400D895B9 /* ArticleAllListCollectionViewCell.xib in Resources */,
+				3249DE56276E3291007DF624 /* PaymentSelectionCell.xib in Resources */,
 				2C68A3EC27612D96002B8997 /* Nunito-Medium.ttf in Resources */,
 				2FC5E44B276C3EC800BEAA5C /* PatientsChangeViewController.xib in Resources */,
 				2CA846C8276DF32900F492EC /* NormalTextField.xib in Resources */,
@@ -1072,10 +1120,12 @@
 				4E97F21B27488BAB00C2366D /* AlbumsCell.xib in Resources */,
 				2C68A3CF275FF2AB002B8997 /* SignOutButton.xib in Resources */,
 				497C2884276BD60E00CA01DE /* EducationDocCollectionViewCell.xib in Resources */,
+				3249DE54276E3286007DF624 /* AppointmentViewController.xib in Resources */,
 				2CA846E2276DF62E00F492EC /* EditProfileViewController.xib in Resources */,
 				4E97F1D72748858F00C2366D /* Assets.xcassets in Resources */,
 				2FC5E44F276C41E100BEAA5C /* PatientsChangeTableCell.xib in Resources */,
 				2C68A3CD275F7E52002B8997 /* ProfileViewController.xib in Resources */,
+				3249DE53276E3286007DF624 /* PaymentSelectionViewController.xib in Resources */,
 				497C2822276B101600CA01DE /* SpecialistCollectionViewCell.xib in Resources */,
 				2CA846DF276DF34D00F492EC /* ChangePasswordViewController.xib in Resources */,
 				4E97F1D52748858D00C2366D /* Main.storyboard in Resources */,
@@ -1224,6 +1274,7 @@
 				49F75442276CDD12001D98F6 /* SchedulesDoctorService.swift in Sources */,
 				2F2D4DC42765CC4E006EB4E5 /* UITextField.swift in Sources */,
 				2C4022922765E17500149B5D /* UITextField.swift in Sources */,
+				3249DE4D276E31F6007DF624 /* AppointmentTimeCell.swift in Sources */,
 				4E97F21327488BAB00C2366D /* UIColor.swift in Sources */,
 				2CA846DB276DF34D00F492EC /* ChangePasswordViewController.swift in Sources */,
 				2CDE19DB2765B6B400D895B9 /* ArticleAllListTableViewCell.swift in Sources */,
@@ -1235,6 +1286,7 @@
 				2CDE19E72765B6CC00D895B9 /* ArticleModel.swift in Sources */,
 				2F2DFB912769CF4B00122AF1 /* PasswordForgotViewModel.swift in Sources */,
 				2CDE19E02765B6B400D895B9 /* ArticleAllListViewController.swift in Sources */,
+				3249DE48276E31BC007DF624 /* AppointmentViewController.swift in Sources */,
 				2FC5E44A276C3EC800BEAA5C /* PatientsChangeViewController.swift in Sources */,
 				2C40229A2767871700149B5D /* UserService.swift in Sources */,
 				2F3E230C2768DE6F00A003FD /* ArticleDetailCollectionCell.swift in Sources */,
@@ -1257,7 +1309,9 @@
 				80613364275BCE8C0065B62E /* RegisterViewController.swift in Sources */,
 				2CA846DC276DF34D00F492EC /* SecuredTextField.swift in Sources */,
 				2C402296276750B900149B5D /* ProfileViewModel.swift in Sources */,
+				3249DE4A276E31D3007DF624 /* PaymentSelectionViewController.swift in Sources */,
 				497C282A276B250D00CA01DE /* DoctorService.swift in Sources */,
+				3249DE50276E323D007DF624 /* PaymentSelectionCell.swift in Sources */,
 				2CDE19C02765B68200D895B9 /* HistoryBookingViewModel.swift in Sources */,
 				497C2830276B7F8A00CA01DE /* DetailConsulViewController.swift in Sources */,
 				2FC5E44E276C41E100BEAA5C /* PatientsChangeTableCell.swift in Sources */,

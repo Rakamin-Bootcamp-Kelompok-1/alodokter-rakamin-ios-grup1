@@ -23,6 +23,7 @@ class ConsulDoctorViewModel {
     var doctorBySpecialityService = SearchDoctorBySpecialityService()
     var doctorList = [DoctorResource]()
     var searchDoctorList = [DoctorResource]()
+    var meta = MetaModel(page: "1", nextPage: 0, totalPage: 1)
     var specialty: [SpecialityModel] = [
         SpecialityModel(id: 1, speciality: "Dokter Umum", image: UIImage(named:"ic_dokter_umum")!),
         SpecialityModel(id: 2, speciality: "Dokter Anak", image: UIImage(named: "ic_dokter_anak")!),

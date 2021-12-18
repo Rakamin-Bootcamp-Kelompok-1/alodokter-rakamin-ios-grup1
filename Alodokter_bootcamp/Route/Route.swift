@@ -15,6 +15,7 @@ enum Route {
     case searchDoctor
     case schedulesDoctor
     case doctorBySpeciality
+    case booking
     
     var description: String {
         switch self {
@@ -28,6 +29,8 @@ enum Route {
             return "/schedule/doctor"
         case .doctorBySpeciality:
             return "/doctors/category"
+        case .booking:
+            return "/bookings"
         }
         
         }

@@ -165,6 +165,8 @@ class Network {
                         let object = try decoder.decode(T.ResponseType.self, from: data)
                         completionHandler(NetworkResult.success(object))
                     } catch let error {
+                        print("=======================")
+                        print(error.localizedDescription)
                         completionHandler(NetworkResult.failure(error.localizedDescription, responseCode.statusCode))
                     }
                 }

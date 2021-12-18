@@ -12,6 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppointmentViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
             <connections>
+                <outlet property="doctorImageView" destination="G03-OE-Pot" id="UBo-M2-Gob"/>
+                <outlet property="doctorNameLabel" destination="ay6-z8-WLg" id="gAm-Qw-hg3"/>
+                <outlet property="doctorPriceLabel" destination="GO5-US-eks" id="jO9-LS-eEH"/>
+                <outlet property="doctorStarLabel" destination="gvs-JK-6KJ" id="pEx-SQ-CxT"/>
+                <outlet property="doctorSubLabel" destination="IF1-3J-z3C" id="Rct-Qz-5qU"/>
                 <outlet property="paymentImageView" destination="Yyp-Rc-bAR" id="26S-bl-YHo"/>
                 <outlet property="paymentLabel" destination="8xq-7D-Tdc" id="zLf-JW-EB3"/>
                 <outlet property="paymentView" destination="mMj-Da-XRD" id="u2j-IF-01G"/>
@@ -332,6 +337,9 @@
                                             </fragment>
                                         </attributedString>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="bookAnAppointment:" destination="-1" eventType="touchUpInside" id="RvN-tD-q0F"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <viewLayoutGuide key="safeArea" id="BE9-sl-Rpd"/>

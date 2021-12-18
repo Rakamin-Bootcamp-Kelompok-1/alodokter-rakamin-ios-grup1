@@ -14,9 +14,16 @@ class AppointmentViewController: BaseViewController, UIGestureRecognizerDelegate
     @IBOutlet weak var paymentView: UIView!
     @IBOutlet weak var paymentImageView: UIImageView!
     @IBOutlet weak var paymentLabel: UILabel!
+    @IBOutlet weak var doctorImageView: UIImageView!
+    @IBOutlet weak var doctorNameLabel: UILabel!
+    @IBOutlet weak var doctorSubLabel: UILabel!
+    @IBOutlet weak var doctorPriceLabel: UILabel!
+    @IBOutlet weak var doctorStarLabel: UILabel!
     
     var oneWeekDateData: [(String, String)] = []
     var isFirstTime = true
+    var doctorResource: DoctorResource?
+    let viewModel = BookingViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +43,30 @@ class AppointmentViewController: BaseViewController, UIGestureRecognizerDelegate
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToPaymentSelection(_:)) )
         tapGesture.delegate = self
         paymentView.addGestureRecognizer(tapGesture)
-        
+        doctorImageView.sd_setImage(with: URL(string: (doctorResource?.imagePath) ?? ""), placeholderImage: UIImage(named: "docter_image"))
+        doctorSubLabel.text = doctorResource?.locationPractice
+        doctorPriceLabel.text = "\(doctorResource?.priceRate ?? 0)"
+        doctorStarLabel.text = "\(doctorResource?.star ?? "0") out of 5"
+        viewModel.delegate = self
     }
     
     private func initTimeCollectionView() {
         timeCollectionView.delegate = self
         timeCollectionView.dataSource = self
         timeCollectionView.register(UINib(nibName: "AppointmentTimeCell", bundle: nil), forCellWithReuseIdentifier: "TimeCell")
+    }
+    
+    @IBAction func bookAnAppointment(_ sender: Any) {
+        self.showParentSpinner()
+        viewModel.book(body: [
+            "message": pesanTextView.text ?? "",
+            "payment_method": paymentLabel.text ?? "",
+            "total_price": doctorResource?.priceRate ?? 0,
+            "doctor_id": 1,
+            "patient_id": 1,
+            "doctor_schedule_id": 1,
+            "user_id" : 1
+        ])
     }
     
     func timeData() {
@@ -63,6 +87,20 @@ class AppointmentViewController: BaseViewController, UIGestureRecognizerDelegate
         let paymentSelectionViewController = PaymentSelectionViewController()
         paymentSelectionViewController.appointmentVC = self
         present(paymentSelectionViewController, animated: true)
+    }
+}
+
+extension AppointmentViewController: BookingProtocol {
+    func onSuccess() {
+        self.removeSpinner()
+        let bookingViewController = BookingSuccessViewController()
+        navigationController?.pushViewController(bookingViewController, animated: true)
+    }
+    
+    func onFailure() {
+        self.removeSpinner()
+        let bookingViewController = BookingSuccessViewController()
+        navigationController?.pushViewController(bookingViewController, animated: true)
     }
 }
 

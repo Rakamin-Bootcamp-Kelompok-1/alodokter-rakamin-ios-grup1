@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConsulViewController: UIViewController {
+class ConsulViewController: BaseViewController {
 
     @IBOutlet weak var searchDoctor: UISearchBar!
     @IBOutlet weak var doctorCollectionvView: UICollectionView!
@@ -23,9 +23,9 @@ class ConsulViewController: UIViewController {
         doctorCollectionvView.dataSource = self
         viewModel.delegate = self
         viewModel.getDoctorList()
+        self.showParentSpinner()
         searchDoctor.delegate = self
 //        self.definesPresentationContext = true
-        searchDoctor.showsCancelButton = true
         registerCell()
         navigationItem.title = ""
         navigationController?.navigationBar.isHidden = true
@@ -43,7 +43,7 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
             case specialistCollectionView:
-                return 5
+                return viewModel.specialty.count
             case doctorCollectionvView:
                 if viewModel.searchDoctorList.count != 0 {
                     return viewModel.searchDoctorList.count
@@ -59,6 +59,7 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
         switch collectionView {
         case specialistCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpecialistCollectionViewCell.identifier, for: indexPath) as? SpecialistCollectionViewCell else { return UICollectionViewCell() }
+            cell.setup(speciality: viewModel.specialty[indexPath.row])
             return cell
         case doctorCollectionvView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DoctorCollectionViewCell.identifier, for: indexPath) as? DoctorCollectionViewCell else {return UICollectionViewCell() }
@@ -74,49 +75,79 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.setup(doctor: viewModel.searchDoctorList.count != 0 ? viewModel.searchDoctorList[indexPath.row] : viewModel.doctorList[indexPath.row])
             collectionView.backgroundColor = .white
             collectionView.layer.cornerRadius = 5
+            if indexPath.row + 1 == viewModel.doctorList.count {
+                
+            }
             return cell
         default:
             return UICollectionViewCell()
         }
     }
     
+   
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = DetailConsultDoctorViewController(nibName: DetailConsultDoctorViewController.identifier, bundle: nil)
-        controller.doctorResource = viewModel.doctorList[indexPath.row]
-        controller.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(controller, animated: true)
+        
+        if collectionView == doctorCollectionvView {
+            let controller = DetailConsultDoctorViewController(nibName: DetailConsultDoctorViewController.identifier, bundle: nil)
+            controller.doctorResource = viewModel.doctorList[indexPath.row]
+            controller.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(controller, animated: true)
+        }else if collectionView == specialistCollectionView {
+            if viewModel.doctorList.count != 0 {
+                viewModel.doctorList.removeAll()
+            }
+            viewModel.getDoctorBySpeciality(speciality: viewModel.specialty[indexPath.row].speciality)
+            self.showParentSpinner()
+        }
+        
     }
     
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        <#code#>
-//    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == ""{
+            print("masuk reset")
+            viewModel.resetSearch()
+        }
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.text != "" {
             viewModel.searchDoctor(name: searchBar.text!)
+            self.showParentSpinner()
         }
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print("masuk cancel")
-        viewModel.resetSearch()
-    }
+    
 }
 
 extension ConsulViewController: ConsulDoctorProtocol {
+    func onSuccessDoctorBySpeciality() {
+        self.doctorCollectionvView.reloadData()
+        self.removeSpinner()
+    }
+    
+    func onFailureDoctorBySpeciality() {
+        self.removeSpinner()
+        print("error")
+    }
+    
     func onSuccessSearchDoctor() {
         self.doctorCollectionvView.reloadData()
+        self.removeSpinner()
     }
     
     func onFailureSearchDoctor() {
+        self.removeSpinner()
         print("error")
     }
     
     func onSuccessDoctor() {
         self.doctorCollectionvView.reloadData()
+        self.removeSpinner()
     }
     
     func onFailureDoctor() {
+        self.removeSpinner()
         print("gagal")
     }
     

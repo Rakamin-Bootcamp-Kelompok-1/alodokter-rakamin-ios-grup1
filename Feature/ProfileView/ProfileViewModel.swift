@@ -14,28 +14,29 @@ protocol profileViewModelDelegate {
 
 class ProfileViewModel {
     var userService = UserService()
-    var userData: User?
+    var userData: UserModel?
     var delegate: profileViewModelDelegate?
+    let userDefaults = UserDefaults()
     
     func getUser() {
         Network.requestNoBody(req: userService) { result in
             switch result {
             case.success(let successGetData):
-//                self.userData?.id = successGetData.id
-//                self.userData?.fullname = successGetData.fullname
-//                self.userData?.password = successGetData.password
-//                self.userData?.age = successGetData.age
-//                self.userData?.email = successGetData.email
-//                self.userData?.gender = successGetData.gender
-//                self.userData?.birthDate = successGetData.birthDate
-//                self.userData?.phoneNumber = successGetData.phoneNumber
-//                self.userData?.imagePath = successGetData.imagePath
-//                self.userData?.isAdmin = successGetData.isAdmin
-//                self.userData?.isActive = successGetData.isActive
-//                self.userData?.createdAt = successGetData.createdAt
-//                self.userData?.updatedAt = successGetData.updatedAt
-                
                 DispatchQueue.main.async {
+                    self.userDefaults.setValue(successGetData.token, forKey: "token")
+                    self.userDefaults.setValue(successGetData.user?.id, forKey: "id")
+                    self.userDefaults.setValue(successGetData.user?.fullname, forKey: "fullName")
+                    self.userDefaults.setValue(successGetData.user?.age, forKey: "age")
+                    self.userDefaults.setValue(successGetData.user?.email, forKey: "email")
+                    self.userDefaults.setValue(successGetData.user?.gender, forKey: "gender")
+                    self.userDefaults.setValue(successGetData.user?.birthDate, forKey: "birthDate")
+                    self.userDefaults.setValue(successGetData.user?.phoneNumber, forKey: "phoneNumber")
+                    self.userDefaults.setValue(successGetData.user?.imagePath, forKey: "imagePath")
+                    self.userDefaults.setValue(successGetData.user?.isAdmin, forKey: "isAdmin")
+                    self.userDefaults.setValue(successGetData.user?.isActive, forKey: "isActive")
+                    self.userDefaults.setValue(successGetData.user?.createdAt, forKey: "createdAt")
+                    self.userDefaults.setValue(successGetData.user?.updatedAt, forKey: "updatedAt")
+                    
                     self.userData = successGetData
                     self.delegate?.onSuccessRequest()
                 }

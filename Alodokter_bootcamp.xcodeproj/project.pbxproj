@@ -12,6 +12,7 @@
 		2C402296276750B900149B5D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C402295276750B900149B5D /* ProfileViewModel.swift */; };
 		2C40229A2767871700149B5D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4022992767871700149B5D /* UserService.swift */; };
 		2C57FFC4276A27510025AF06 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C57FFC3276A27510025AF06 /* RegisterViewController.xib */; };
+		2C57FFD1276BCF3F0025AF06 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57FFD0276BCF3F0025AF06 /* ImagePicker.swift */; };
 		2C68A3BF275F5E71002B8997 /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3BE275F5E71002B8997 /* ProfileHeader.xib */; };
 		2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68A3C0275F623D002B8997 /* ProfileHeader.swift */; };
 		2C68A3C3275F73C9002B8997 /* ProfileCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3C2275F73C9002B8997 /* ProfileCard.xib */; };
@@ -38,12 +39,24 @@
 		2C68A3F127612D96002B8997 /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3E127612D93002B8997 /* Nunito-ExtraBoldItalic.ttf */; };
 		2C68A3F227612D96002B8997 /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3E227612D94002B8997 /* Nunito-LightItalic.ttf */; };
 		2C68A3F327612D96002B8997 /* Nunito-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3E327612D95002B8997 /* Nunito-BlackItalic.ttf */; };
-		2C68A3FF27634D5F002B8997 /* SecuredTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3FE27634D5F002B8997 /* SecuredTextField.xib */; };
-		2C68A40127634D94002B8997 /* LargeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A40027634D94002B8997 /* LargeButton.xib */; };
-		2C68A40327634E3C002B8997 /* SecuredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68A40227634E3C002B8997 /* SecuredTextField.swift */; };
-		2C68A40527634E45002B8997 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68A40427634E45002B8997 /* LargeButton.swift */; };
-		2C68A40827635000002B8997 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68A40627635000002B8997 /* ChangePasswordViewController.swift */; };
-		2C68A40927635000002B8997 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A40727635000002B8997 /* ChangePasswordViewController.xib */; };
+		2C706FC6276C7750001229CE /* ChangePasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C706FC5276C7750001229CE /* ChangePasswordService.swift */; };
+		2CA846BB276DF26D00F492EC /* EditProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846BA276DF26D00F492EC /* EditProfileService.swift */; };
+		2CA846C5276DF32900F492EC /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846BF276DF32900F492EC /* EditProfileViewModel.swift */; };
+		2CA846C6276DF32900F492EC /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846C1276DF32900F492EC /* NormalTextField.swift */; };
+		2CA846C7276DF32900F492EC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846C2276DF32900F492EC /* EditProfileViewController.swift */; };
+		2CA846C8276DF32900F492EC /* NormalTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846C4276DF32900F492EC /* NormalTextField.xib */; };
+		2CA846DA276DF34D00F492EC /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846D1276DF34D00F492EC /* ChangePasswordViewModel.swift */; };
+		2CA846DB276DF34D00F492EC /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846D3276DF34D00F492EC /* ChangePasswordViewController.swift */; };
+		2CA846DC276DF34D00F492EC /* SecuredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846D4276DF34D00F492EC /* SecuredTextField.swift */; };
+		2CA846DD276DF34D00F492EC /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846D5276DF34D00F492EC /* LargeButton.swift */; };
+		2CA846DE276DF34D00F492EC /* SecuredTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846D7276DF34D00F492EC /* SecuredTextField.xib */; };
+		2CA846DF276DF34D00F492EC /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846D8276DF34D00F492EC /* ChangePasswordViewController.xib */; };
+		2CA846E0276DF34D00F492EC /* LargeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846D9276DF34D00F492EC /* LargeButton.xib */; };
+		2CA846E2276DF62E00F492EC /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846E1276DF62E00F492EC /* EditProfileViewController.xib */; };
+		2CD51BD0276E018C005FDF6C /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD51BCF276E018C005FDF6C /* RegisterService.swift */; };
+		2CD51BD5276E0249005FDF6C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD51BD2276E0249005FDF6C /* LoginViewModel.swift */; };
+		2CD51BD6276E0249005FDF6C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD51BD3276E0249005FDF6C /* LoginViewController.xib */; };
+		2CD51BD7276E0249005FDF6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD51BD4276E0249005FDF6C /* LoginViewController.swift */; };
 		2CDE19B92765B68200D895B9 /* DetailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19AF2765B67F00D895B9 /* DetailHistoryViewController.swift */; };
 		2CDE19BA2765B68200D895B9 /* DetailHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE19B02765B67F00D895B9 /* DetailHistoryViewController.xib */; };
 		2CDE19BB2765B68200D895B9 /* DetailBookingHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19B12765B67F00D895B9 /* DetailBookingHistoryViewModel.swift */; };
@@ -131,10 +144,7 @@
 		4E97F22027488BAB00C2366D /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E97F21227488BAB00C2366D /* BaseService.swift */; };
 		6778426BC0821FD950B0921A /* Pods_Alodokter_bootcampTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381744D040FF8C533B3155AB /* Pods_Alodokter_bootcampTests.framework */; };
 		8019CB8A2768D96600B3BD77 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8019CB892768D96600B3BD77 /* RegisterViewModel.swift */; };
-		8019CB8E2768EF5F00B3BD77 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8019CB8D2768EF5F00B3BD77 /* LoginViewModel.swift */; };
 		80613364275BCE8C0065B62E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80613363275BCE8C0065B62E /* RegisterViewController.swift */; };
-		80BC4A4B275F642400E7E8FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BC4A4A275F642400E7E8FF /* LoginViewController.swift */; };
-		80BC4A4F275F647C00E7E8FF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80BC4A4E275F647C00E7E8FF /* LoginViewController.xib */; };
 		8A46F6E6C05003DC0F5BD809 /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8947D88ACBB42AFDC870192F /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework */; };
 		FAB7B29BC482E4895EAD1233 /* Pods_Alodokter_bootcamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1C8877C0AD54B5F4660C13 /* Pods_Alodokter_bootcamp.framework */; };
 /* End PBXBuildFile section */
@@ -166,6 +176,7 @@
 		2C402295276750B900149B5D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		2C4022992767871700149B5D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2C57FFC3276A27510025AF06 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		2C57FFD0276BCF3F0025AF06 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2C68A3BE275F5E71002B8997 /* ProfileHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
 		2C68A3C0275F623D002B8997 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		2C68A3C2275F73C9002B8997 /* ProfileCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCard.xib; sourceTree = "<group>"; };
@@ -192,12 +203,24 @@
 		2C68A3E127612D93002B8997 /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		2C68A3E227612D94002B8997 /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
 		2C68A3E327612D95002B8997 /* Nunito-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-BlackItalic.ttf"; sourceTree = "<group>"; };
-		2C68A3FE27634D5F002B8997 /* SecuredTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecuredTextField.xib; sourceTree = "<group>"; };
-		2C68A40027634D94002B8997 /* LargeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeButton.xib; sourceTree = "<group>"; };
-		2C68A40227634E3C002B8997 /* SecuredTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecuredTextField.swift; sourceTree = "<group>"; };
-		2C68A40427634E45002B8997 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
-		2C68A40627635000002B8997 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		2C68A40727635000002B8997 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		2C706FC5276C7750001229CE /* ChangePasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordService.swift; sourceTree = "<group>"; };
+		2CA846BA276DF26D00F492EC /* EditProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileService.swift; sourceTree = "<group>"; };
+		2CA846BF276DF32900F492EC /* EditProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		2CA846C1276DF32900F492EC /* NormalTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
+		2CA846C2276DF32900F492EC /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		2CA846C4276DF32900F492EC /* NormalTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalTextField.xib; sourceTree = "<group>"; };
+		2CA846D1276DF34D00F492EC /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		2CA846D3276DF34D00F492EC /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		2CA846D4276DF34D00F492EC /* SecuredTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecuredTextField.swift; sourceTree = "<group>"; };
+		2CA846D5276DF34D00F492EC /* LargeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
+		2CA846D7276DF34D00F492EC /* SecuredTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecuredTextField.xib; sourceTree = "<group>"; };
+		2CA846D8276DF34D00F492EC /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		2CA846D9276DF34D00F492EC /* LargeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargeButton.xib; sourceTree = "<group>"; };
+		2CA846E1276DF62E00F492EC /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
+		2CD51BCF276E018C005FDF6C /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		2CD51BD2276E0249005FDF6C /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2CD51BD3276E0249005FDF6C /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		2CD51BD4276E0249005FDF6C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2CDE19AF2765B67F00D895B9 /* DetailHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailHistoryViewController.swift; sourceTree = "<group>"; };
 		2CDE19B02765B67F00D895B9 /* DetailHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailHistoryViewController.xib; sourceTree = "<group>"; };
 		2CDE19B12765B67F00D895B9 /* DetailBookingHistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBookingHistoryViewModel.swift; sourceTree = "<group>"; };
@@ -293,10 +316,7 @@
 		4E97F21127488BAB00C2366D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4E97F21227488BAB00C2366D /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		8019CB892768D96600B3BD77 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		8019CB8D2768EF5F00B3BD77 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		80613363275BCE8C0065B62E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		80BC4A4A275F642400E7E8FF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		80BC4A4E275F647C00E7E8FF /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		8947D88ACBB42AFDC870192F /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1C8877C0AD54B5F4660C13 /* Pods_Alodokter_bootcamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E618D3DF91A64C2A1C5B95 /* Pods-Alodokter_bootcampTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcampTests.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcampTests/Pods-Alodokter_bootcampTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -395,33 +415,70 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		2C68A3FB27621BC1002B8997 /* ChangePassword */ = {
+		2CA846BE276DF32900F492EC /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
-				2C68A3FC27634D2B002B8997 /* Views */,
-				2C68A3FD27634D36002B8997 /* Controllers */,
+				2CA846C0276DF32900F492EC /* Controllers */,
+				2CA846C3276DF32900F492EC /* Views */,
 			);
-			path = ChangePassword;
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
-		2C68A3FC27634D2B002B8997 /* Views */ = {
+		2CA846C0276DF32900F492EC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2C68A40727635000002B8997 /* ChangePasswordViewController.xib */,
-				2C68A3FE27634D5F002B8997 /* SecuredTextField.xib */,
-				2C68A40027634D94002B8997 /* LargeButton.xib */,
+				2CA846C2276DF32900F492EC /* EditProfileViewController.swift */,
+				2CA846C1276DF32900F492EC /* NormalTextField.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2CA846C3276DF32900F492EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CA846E1276DF62E00F492EC /* EditProfileViewController.xib */,
+				2CA846C4276DF32900F492EC /* NormalTextField.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		2C68A3FD27634D36002B8997 /* Controllers */ = {
+		2CA846D0276DF34D00F492EC /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
-				2C68A40627635000002B8997 /* ChangePasswordViewController.swift */,
-				2C68A40227634E3C002B8997 /* SecuredTextField.swift */,
-				2C68A40427634E45002B8997 /* LargeButton.swift */,
+				2CA846D2276DF34D00F492EC /* Controllers */,
+				2CA846D6276DF34D00F492EC /* Views */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		2CA846D2276DF34D00F492EC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CA846D3276DF34D00F492EC /* ChangePasswordViewController.swift */,
+				2CA846D4276DF34D00F492EC /* SecuredTextField.swift */,
+				2CA846D5276DF34D00F492EC /* LargeButton.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2CA846D6276DF34D00F492EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CA846D8276DF34D00F492EC /* ChangePasswordViewController.xib */,
+				2CA846D7276DF34D00F492EC /* SecuredTextField.xib */,
+				2CA846D9276DF34D00F492EC /* LargeButton.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2CD51BD1276E0249005FDF6C /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				2CD51BD2276E0249005FDF6C /* LoginViewModel.swift */,
+				2CD51BD3276E0249005FDF6C /* LoginViewController.xib */,
+				2CD51BD4276E0249005FDF6C /* LoginViewController.swift */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		2CDE19AE2765B67F00D895B9 /* DetailHistory */ = {
@@ -691,6 +748,7 @@
 				4E97F1FF27488BAA00C2366D /* DeviceHelper.swift */,
 				4E97F20027488BAA00C2366D /* Utiliy.swift */,
 				2F2D4DC32765CC4E006EB4E5 /* UITextField.swift */,
+				2C57FFD0276BCF3F0025AF06 /* ImagePicker.swift */,
 				497C2856276BBE4E00CA01DE /* UIView+Extension.swift */,
 				497C287C276BC61600CA01DE /* ExtensionUILabel.swift */,
 				497C287E276BC64500CA01DE /* Extension+UITapGesture.swift */,
@@ -703,7 +761,7 @@
 			children = (
 				497C282D276B7F6800CA01DE /* DetailConsul */,
 				497C2818276B0BD000CA01DE /* Consul */,
-				80BC4A49275F640200E7E8FF /* SignIn */,
+				2CD51BD1276E0249005FDF6C /* SignIn */,
 				80613360275BCE370065B62E /* SignUp */,
 				4E97F20227488BAA00C2366D /* SplashScreen */,
 				2CDE19C42765B69F00D895B9 /* SignIn */,
@@ -714,7 +772,10 @@
 				2CDE19B22765B68100D895B9 /* History */,
 				2CDE19AE2765B67F00D895B9 /* DetailHistory */,
 				2C68A3BD275F5985002B8997 /* ProfileView */,
-				2C68A3FB27621BC1002B8997 /* ChangePassword */,
+				2CA846BE276DF32900F492EC /* EditProfile */,
+				2CA846BF276DF32900F492EC /* EditProfileViewModel.swift */,
+				2CA846D0276DF34D00F492EC /* ChangePassword */,
+				2CA846D1276DF34D00F492EC /* ChangePasswordViewModel.swift */,
 			);
 			path = Feature;
 			sourceTree = SOURCE_ROOT;
@@ -769,10 +830,13 @@
 				2CDE19E82765B6D800D895B9 /* ArticleService.swift */,
 				4E97F20F27488BAB00C2366D /* DummyAlbumsService.swift */,
 				2C4022992767871700149B5D /* UserService.swift */,
+				2C706FC5276C7750001229CE /* ChangePasswordService.swift */,
 				497C2812276B025200CA01DE /* HistoryBookingService.swift */,
 				497C2829276B250D00CA01DE /* DoctorService.swift */,
 				49F75438276CAE74001D98F6 /* SearchDoctorService.swift */,
 				49F75441276CDD12001D98F6 /* SchedulesDoctorService.swift */,
+				2CA846BA276DF26D00F492EC /* EditProfileService.swift */,
+				2CD51BCF276E018C005FDF6C /* RegisterService.swift */,
 			);
 			path = Service;
 			sourceTree = SOURCE_ROOT;
@@ -809,16 +873,6 @@
 				8019CB892768D96600B3BD77 /* RegisterViewModel.swift */,
 			);
 			path = SignUp;
-			sourceTree = "<group>";
-		};
-		80BC4A49275F640200E7E8FF /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-				80BC4A4E275F647C00E7E8FF /* LoginViewController.xib */,
-				80BC4A4A275F642400E7E8FF /* LoginViewController.swift */,
-				8019CB8D2768EF5F00B3BD77 /* LoginViewModel.swift */,
-			);
-			path = SignIn;
 			sourceTree = "<group>";
 		};
 		D29C455D0EB5B2BA2B5C0B31 /* Frameworks */ = {
@@ -941,7 +995,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				497C281C276B0C1C00CA01DE /* ConsulViewController.xib in Resources */,
-				80BC4A4F275F647C00E7E8FF /* LoginViewController.xib in Resources */,
 				2C68A3E727612D96002B8997 /* Nunito-Regular.ttf in Resources */,
 				2C68A3F327612D96002B8997 /* Nunito-BlackItalic.ttf in Resources */,
 				2C68A3E427612D96002B8997 /* Nunito-SemiBold.ttf in Resources */,
@@ -954,14 +1007,18 @@
 				2CDE19BE2765B68200D895B9 /* HistoryViewController.xib in Resources */,
 				497C2831276B7F8A00CA01DE /* DetailConsulViewController.xib in Resources */,
 				2CDE19BD2765B68200D895B9 /* HistoryItemCell.xib in Resources */,
-				2C68A3FF27634D5F002B8997 /* SecuredTextField.xib in Resources */,
 				2CDE19DD2765B6B400D895B9 /* ArticleAllListCollectionViewCell.xib in Resources */,
 				497C287B276BC09900CA01DE /* DetailConsultDoctorViewController.xib in Resources */,
 				2C68A3EC27612D96002B8997 /* Nunito-Medium.ttf in Resources */,
+				2CA846C8276DF32900F492EC /* NormalTextField.xib in Resources */,
+				2CA846E0276DF34D00F492EC /* LargeButton.xib in Resources */,
+				2CDE19DD2765B6B400D895B9 /* ArticleAllListCollectionViewCell.xib in Resources */,
+				497C287B276BC09900CA01DE /* DetailConsultDoctorViewController.xib in Resources */,
+				2C68A3EC27612D96002B8997 /* Nunito-Medium.ttf in Resources */,
+				2CA846DE276DF34D00F492EC /* SecuredTextField.xib in Resources */,
 				497C2826276B154300CA01DE /* DoctorCollectionViewCell.xib in Resources */,
 				2C68A3EA27612D96002B8997 /* Nunito-Bold.ttf in Resources */,
 				2C68A3EE27612D96002B8997 /* Nunito-MediumItalic.ttf in Resources */,
-				2C68A40127634D94002B8997 /* LargeButton.xib in Resources */,
 				2C68A3C7275F7B37002B8997 /* ProfileCardRow.xib in Resources */,
 				2C68A3F227612D96002B8997 /* Nunito-LightItalic.ttf in Resources */,
 				4E97F21827488BAB00C2366D /* MainViewController.xib in Resources */,
@@ -978,13 +1035,15 @@
 				2F3BEA742767895F004DB446 /* ArticleDetailViewController.xib in Resources */,
 				2C68A3F027612D96002B8997 /* Nunito-Light.ttf in Resources */,
 				2C68A3EB27612D96002B8997 /* Nunito-BoldItalic.ttf in Resources */,
+				2CD51BD6276E0249005FDF6C /* LoginViewController.xib in Resources */,
 				4E97F21B27488BAB00C2366D /* AlbumsCell.xib in Resources */,
 				2C68A3CF275FF2AB002B8997 /* SignOutButton.xib in Resources */,
-				2C68A40927635000002B8997 /* ChangePasswordViewController.xib in Resources */,
 				497C2884276BD60E00CA01DE /* EducationDocCollectionViewCell.xib in Resources */,
+				2CA846E2276DF62E00F492EC /* EditProfileViewController.xib in Resources */,
 				4E97F1D72748858F00C2366D /* Assets.xcassets in Resources */,
 				2C68A3CD275F7E52002B8997 /* ProfileViewController.xib in Resources */,
 				497C2822276B101600CA01DE /* SpecialistCollectionViewCell.xib in Resources */,
+				2CA846DF276DF34D00F492EC /* ChangePasswordViewController.xib in Resources */,
 				4E97F1D52748858D00C2366D /* Main.storyboard in Resources */,
 				2CDE19DE2765B6B400D895B9 /* ArticleAllListTableViewCell.xib in Resources */,
 				2C68A3F127612D96002B8997 /* Nunito-ExtraBoldItalic.ttf in Resources */,
@@ -1119,6 +1178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA846C7276DF32900F492EC /* EditProfileViewController.swift in Sources */,
 				4E97F21F27488BAB00C2366D /* BaseViewController.swift in Sources */,
 				497C287F276BC64500CA01DE /* Extension+UITapGesture.swift in Sources */,
 				4E97F21D27488BAB00C2366D /* DummyAlbumsModel.swift in Sources */,
@@ -1126,26 +1186,31 @@
 				2CDE19E12765B6B400D895B9 /* ArticleListViewController.swift in Sources */,
 				2C68A3C9275F7C95002B8997 /* ProfileCardRow.swift in Sources */,
 				497C287D276BC61600CA01DE /* ExtensionUILabel.swift in Sources */,
+				2CD51BD5276E0249005FDF6C /* LoginViewModel.swift in Sources */,
 				49F75442276CDD12001D98F6 /* SchedulesDoctorService.swift in Sources */,
 				2F2D4DC42765CC4E006EB4E5 /* UITextField.swift in Sources */,
 				2C4022922765E17500149B5D /* UITextField.swift in Sources */,
 				4E97F21327488BAB00C2366D /* UIColor.swift in Sources */,
-				80BC4A4B275F642400E7E8FF /* LoginViewController.swift in Sources */,
+				2CA846DB276DF34D00F492EC /* ChangePasswordViewController.swift in Sources */,
 				2CDE19DB2765B6B400D895B9 /* ArticleAllListTableViewCell.swift in Sources */,
 				4E97F22027488BAB00C2366D /* BaseService.swift in Sources */,
 				2CDE19F02765B6FA00D895B9 /* TabBarViewController.swift in Sources */,
+				2CA846DD276DF34D00F492EC /* LargeButton.swift in Sources */,
 				49F75440276CDB26001D98F6 /* SchedulesDoctorModel.swift in Sources */,
 				4E97F21727488BAB00C2366D /* SplashScreenViewController.swift in Sources */,
 				2CDE19E72765B6CC00D895B9 /* ArticleModel.swift in Sources */,
 				2F2DFB912769CF4B00122AF1 /* PasswordForgotViewModel.swift in Sources */,
 				2CDE19E02765B6B400D895B9 /* ArticleAllListViewController.swift in Sources */,
 				2C40229A2767871700149B5D /* UserService.swift in Sources */,
-				2C68A40827635000002B8997 /* ChangePasswordViewController.swift in Sources */,
 				2F3E230C2768DE6F00A003FD /* ArticleDetailCollectionCell.swift in Sources */,
+				2CA846C5276DF32900F492EC /* EditProfileViewModel.swift in Sources */,
 				2CDE19BB2765B68200D895B9 /* DetailBookingHistoryViewModel.swift in Sources */,
+				2CA846BB276DF26D00F492EC /* EditProfileService.swift in Sources */,
 				2C68A3C5275F79B2002B8997 /* ProfileCard.swift in Sources */,
 				2CDE19ED2765B6F000D895B9 /* ProfileView.swift in Sources */,
 				2C402294276742D100149B5D /* UserModel.swift in Sources */,
+				2CA846C6276DF32900F492EC /* NormalTextField.swift in Sources */,
+				2CD51BD7276E0249005FDF6C /* LoginViewController.swift in Sources */,
 				497C2828276B24A700CA01DE /* DoctorModel.swift in Sources */,
 				2C68A3CB275F7E10002B8997 /* ProfileViewController.swift in Sources */,
 				4E97F21E27488BAB00C2366D /* DummyAlbumsService.swift in Sources */,
@@ -1153,13 +1218,15 @@
 				4E97F21427488BAB00C2366D /* DeviceHelper.swift in Sources */,
 				4927DF73276E074400A4078B /* SpecialityModel.swift in Sources */,
 				8019CB8E2768EF5F00B3BD77 /* LoginViewModel.swift in Sources */,
+				2C706FC6276C7750001229CE /* ChangePasswordService.swift in Sources */,
 				8019CB8A2768D96600B3BD77 /* RegisterViewModel.swift in Sources */,
 				80613364275BCE8C0065B62E /* RegisterViewController.swift in Sources */,
+				2CA846DC276DF34D00F492EC /* SecuredTextField.swift in Sources */,
 				2C402296276750B900149B5D /* ProfileViewModel.swift in Sources */,
 				497C282A276B250D00CA01DE /* DoctorService.swift in Sources */,
 				2CDE19C02765B68200D895B9 /* HistoryBookingViewModel.swift in Sources */,
 				497C2830276B7F8A00CA01DE /* DetailConsulViewController.swift in Sources */,
-				2C68A40527634E45002B8997 /* LargeButton.swift in Sources */,
+				2CA846DA276DF34D00F492EC /* ChangePasswordViewModel.swift in Sources */,
 				497C2813276B025200CA01DE /* HistoryBookingService.swift in Sources */,
 				2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */,
 				49F75444276CDE23001D98F6 /* DetailConsulViewModel.swift in Sources */,
@@ -1168,6 +1235,7 @@
 				2F2DFB8D2769BD8800122AF1 /* PasswordForgotViewController.swift in Sources */,
 				2CDE19BF2765B68200D895B9 /* HistoryViewController.swift in Sources */,
 				497C2883276BD60E00CA01DE /* EducationDocCollectionViewCell.swift in Sources */,
+				2CD51BD0276E018C005FDF6C /* RegisterService.swift in Sources */,
 				49F75439276CAE74001D98F6 /* SearchDoctorService.swift in Sources */,
 				2F3E23172768EA9000A003FD /* ArticleDetailViewController.swift in Sources */,
 				497C2821276B101600CA01DE /* SpecialistCollectionViewCell.swift in Sources */,
@@ -1180,7 +1248,6 @@
 				497C2815276B027B00CA01DE /* HistoryBookingModel.swift in Sources */,
 				497C287A276BC09900CA01DE /* DetailConsultDoctorViewController.swift in Sources */,
 				4E97F1D02748858D00C2366D /* SceneDelegate.swift in Sources */,
-				2C68A40327634E3C002B8997 /* SecuredTextField.swift in Sources */,
 				497C2887276BDE1E00CA01DE /* Route.swift in Sources */,
 				4E97F21527488BAB00C2366D /* Utiliy.swift in Sources */,
 				497C281B276B0C1C00CA01DE /* ConsulViewController.swift in Sources */,
@@ -1188,6 +1255,7 @@
 				4E97F21927488BAB00C2366D /* MainViewController.swift in Sources */,
 				2CDE19E42765B6B400D895B9 /* ArticleListCell.swift in Sources */,
 				2CDE19E52765B6B400D895B9 /* ArticleViewModel.swift in Sources */,
+				2C57FFD1276BCF3F0025AF06 /* ImagePicker.swift in Sources */,
 				49F7543D276CDA5A001D98F6 /* SchedulesCollectionViewCell.swift in Sources */,
 				497C2817276B07AD00CA01DE /* MetaModel.swift in Sources */,
 				4E97F21A27488BAB00C2366D /* MainViewModel.swift in Sources */,
@@ -1373,15 +1441,14 @@
 				DEVELOPMENT_TEAM = QWVAEMBXMM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Alodokter_bootcamp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MediKuy;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app wants to take pictures.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app wants to use your photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1402,15 +1469,14 @@
 				DEVELOPMENT_TEAM = QWVAEMBXMM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Alodokter_bootcamp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MediKuy;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app wants to take pictures.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app wants to use your photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";

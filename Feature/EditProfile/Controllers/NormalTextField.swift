@@ -1,19 +1,19 @@
 //
-//  LargeButton.swift
+//  NormalTextField.swift
 //  Alodokter_bootcamp
 //
-//  Created by Rayhan Faluda on 10/12/21.
+//  Created by Rayhan Faluda on 16/12/21.
 //
 
 import UIKit
 
-class LargeButton: UIView {
+class NormalTextField: UIView {
 
     
     // MARK: - IBOutlets
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var buttonOutlet: UIButton!
+    @IBOutlet weak var textField: UITextField!
     
     
     // MARK: - View Methods
@@ -32,7 +32,7 @@ class LargeButton: UIView {
     
     // Do stuffs here
     private func commonInit() {
-        Bundle.main.loadNibNamed("LargeButton", owner: self, options: nil)
+        Bundle.main.loadNibNamed("NormalTextField", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChangePasswordViewController: UIViewController {
+class ChangePasswordViewController: BaseViewController {
 
     
     // MARK: - IBOutlets
@@ -16,6 +16,11 @@ class ChangePasswordViewController: UIViewController {
     @IBOutlet weak var newPasswordTextField: SecuredTextField!
     @IBOutlet weak var confirmPasswordTextField: SecuredTextField!
     @IBOutlet weak var updatePasswordButton: LargeButton!
+    
+    
+    // MARK: - Variables
+    
+    var viewModel = ChangePasswordViewModel()
     
     
     // MARK: - View Life Cycle Methods
@@ -90,6 +95,15 @@ class ChangePasswordViewController: UIViewController {
             updatePasswordButton.buttonOutlet.backgroundColor = UIColor(named: "Disabled Button")!
         }
         
+        updatePasswordButton.buttonOutlet.addTarget(self, action: #selector(changePassword), for: .touchUpInside)
+        
+    }
+    
+    
+    // MARK: - Button Methods
+    
+    @objc func changePassword(button: UIButton) {
+        self.postChangePassword(password: confirmPasswordTextField.textField.text ?? "")
     }
 
 
@@ -149,5 +163,41 @@ extension ChangePasswordViewController: UITextFieldDelegate {
     
     @objc func tap(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+}
+
+
+// MARK: - Profile View Model Delegate
+
+// Commented until further optimization
+
+extension ChangePasswordViewController: changePasswordViewModelDelegate {
+    func onSuccessRequest() {
+        self.removeSpinner()
+        let alertController = UIAlertController(title: "Success" , message: "Password Updated!", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default) { action in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+    func onErrorRequest() {
+        self.removeSpinner()
+        let alertController = UIAlertController(title: "Error" , message: "Change Password Failed!", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+
+
+// MARK: - Methods
+
+extension ChangePasswordViewController {
+    func postChangePassword(password: String) {
+//        self.showParentSpinner()
+        viewModel.changePassword(password: password)
     }
 }

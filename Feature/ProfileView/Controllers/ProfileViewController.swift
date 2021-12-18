@@ -14,12 +14,13 @@ class ProfileViewController: BaseViewController {
     
     @IBOutlet weak var profileHeaderView: ProfileHeader!
     @IBOutlet weak var profileCardView1: ProfileCard!
-    @IBOutlet weak var profileCardView2: ProfileCard!
+//    @IBOutlet weak var profileCardView2: ProfileCard!
     @IBOutlet weak var signOutButton: SignOutButton!
     
     
     // MARK: - Variables
     
+    let userDefaults = UserDefaults()
     var viewModel = ProfileViewModel()
     
     
@@ -62,8 +63,8 @@ class ProfileViewController: BaseViewController {
             profileHeaderView.layer.shadowRadius = 4
             
             profileHeaderView.profileImageView.image = UIImage(systemName: "person.crop.circle.fill")
-            profileHeaderView.profileNameLabel.text = viewModel.userData?.fullname ?? "Your Name"
-            profileHeaderView.profilePhoneNumberLabel.text = viewModel.userData?.phoneNumber ?? "08xxxxxxxxxx"
+            profileHeaderView.profileNameLabel.text = userDefaults.value(forKey: "fullName") as? String ?? "Your Name"
+            profileHeaderView.profilePhoneNumberLabel.text = userDefaults.value(forKey: "phoneNumber") as? String ?? "08xxxxxxxx"
             
             
             // Profile Card 1
@@ -81,12 +82,15 @@ class ProfileViewController: BaseViewController {
             // Profile Card 1 Row
             profileCardView1.profileCardRow1.iconImageView.image = UIImage(systemName: "person.circle")
             profileCardView1.profileCardRow1.titleLabel.text = "Edit Profile"
+            profileCardView1.profileCardRow1.buttonOutlet.addTarget(self, action: #selector(pushToEditProfileView), for: .touchUpInside)
             
             profileCardView1.profileCardRow2.iconImageView.image = UIImage(systemName: "lock.fill")
             profileCardView1.profileCardRow2.titleLabel.text = "Change Password"
             profileCardView1.profileCardRow2.buttonOutlet.addTarget(self, action: #selector(pushToChangePasswordView), for: .touchUpInside)
             
             
+            // Commented until further update
+            /*
             // Profile Card 2
             profileCardView2.headerLabel.text = "About MediKuy"
             
@@ -105,6 +109,7 @@ class ProfileViewController: BaseViewController {
             
             profileCardView2.profileCardRow2.iconImageView.image = UIImage(systemName: "phone")
             profileCardView2.profileCardRow2.titleLabel.text = "Contact Us"
+            */
             
             
             // Sign Out Button
@@ -131,6 +136,8 @@ class ProfileViewController: BaseViewController {
             signOutButton.buttonOutlet.setAttributedTitle(signOutButtonAttributes, for: .highlighted)
             signOutButton.buttonOutlet.setAttributedTitle(signOutButtonAttributes, for: .focused)
             
+            signOutButton.buttonOutlet.addTarget(self, action: #selector(signOut), for: .touchUpInside)
+            
         } else {
             // Fallback on earlier versions
         }
@@ -139,13 +146,38 @@ class ProfileViewController: BaseViewController {
     
     // MARK: - Button Methods
     
+    @objc func dismissView(button: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func pushToEditProfileView(button: UIButton) {
+        let vc = EditProfileViewController(nibName: "EditProfileViewController", bundle: nil)
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
     @objc func pushToChangePasswordView(button: UIButton) {
         let vc = ChangePasswordViewController(nibName: "ChangePasswordViewController", bundle: nil)
         self.navigationController!.pushViewController(vc, animated: true)
     }
     
-    @objc func dismissView(button: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+    @objc func signOut(button: UIButton) {
+        userDefaults.removeObject(forKey: "token")
+        userDefaults.removeObject(forKey: "id")
+        userDefaults.removeObject(forKey: "fullName")
+        userDefaults.removeObject(forKey: "age")
+        userDefaults.removeObject(forKey: "email")
+        userDefaults.removeObject(forKey: "gender")
+        userDefaults.removeObject(forKey: "birthDate")
+        userDefaults.removeObject(forKey: "phoneNumber")
+        userDefaults.removeObject(forKey: "imagePath")
+        userDefaults.removeObject(forKey: "isAdmin")
+        userDefaults.removeObject(forKey: "isActive")
+        userDefaults.removeObject(forKey: "createdAt")
+        userDefaults.removeObject(forKey: "updateAt")
+        
+        self.requestData()
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
 
@@ -164,13 +196,11 @@ class ProfileViewController: BaseViewController {
 
 // MARK: - Profile View Model Delegate
 
-// Commented until further optimization
-
 extension ProfileViewController: profileViewModelDelegate {
     func onSuccessRequest() {
         self.removeSpinner()
-        profileHeaderView.profileNameLabel.text = viewModel.userData?.fullname
-        profileHeaderView.profilePhoneNumberLabel.text = viewModel.userData?.phoneNumber
+        profileHeaderView.profileNameLabel.text = userDefaults.value(forKey: "fullName") as? String ?? "Your Name"
+        profileHeaderView.profilePhoneNumberLabel.text = userDefaults.value(forKey: "phoneNumber") as? String ?? "08xxxxxxxx"
     }
 
     func onErrorRequest() {

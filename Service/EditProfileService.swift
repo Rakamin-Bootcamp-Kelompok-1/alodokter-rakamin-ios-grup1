@@ -1,25 +1,25 @@
 //
-//  RegisterService.swift
+//  EditProfileService.swift
 //  Alodokter_bootcamp
 //
-//  Created by hafied Khalifatul ash.shiddiqi on 17/12/21.
+//  Created by Rayhan Faluda on 18/12/21.
 //
+
 import Foundation
 
-class RegisterService: BaseService {
+class EditProfileService: BaseService {
     
-    let url: String = "https://medikuy.herokuapp.com/user/add"
+    let userDefaults = UserDefaults()
     
-    let headers: [String : String] = [
-        "Content-Type": "application/json"
-    ]
+    typealias ResponseType = UserModel
     
     func method() -> Network.Method {
         return .post
     }
     
     func setUrl() -> URL {
-        return URL(string: Route.baseUrl + Route.historyBooking.description)!
+        let url: String = "https://medikuy.herokuapp.com/user/update/\(userDefaults.value(forKey: "id") ?? "")"
+        return URL(string: url)!
     }
     
     func query() -> Network.QueryType {
@@ -32,10 +32,14 @@ class RegisterService: BaseService {
     
     func setParameters() -> [String : Any]? {
 //        ["user_id":"1"]
-        ["full_name": "hafied", "password": "hafied123", "email": "hafied@hotmail.com", "gender": "male", "birth_date": "05/04/2000", "phone_number": "0896542671534"]
+        ["full_name": "hafied", "email": "hafied@hotmail.com", "birth_date": "05/04/2000", "phone_number": "0896542671534"]
     }
     
     func setHeaders() -> [String : String] {
+        let headers: [String : String] = [
+            "Authorization": "Bearer \(userDefaults.value(forKey: "token") ?? "")",
+            "Content-Type": "application/json"
+        ]
         return headers
     }
     
@@ -46,8 +50,6 @@ class RegisterService: BaseService {
     func cachePolicy() -> NSURLRequest.CachePolicy {
         return .reloadRevalidatingCacheData
     }
-    
-    typealias ResponseType = UserModel
     
     
 }

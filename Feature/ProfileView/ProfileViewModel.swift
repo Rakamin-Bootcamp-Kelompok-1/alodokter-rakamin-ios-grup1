@@ -16,6 +16,7 @@ class ProfileViewModel {
     var userService = UserService()
     var userData: UserModel?
     var delegate: profileViewModelDelegate?
+    let userDefaults = UserDefaults()
     
     func getUser() {
         Network.requestNoBody(req: userService) { result in

@@ -174,11 +174,20 @@ extension ChangePasswordViewController: UITextFieldDelegate {
 extension ChangePasswordViewController: changePasswordViewModelDelegate {
     func onSuccessRequest() {
         self.removeSpinner()
-        self.navigationController?.popViewController(animated: true)
+        let alertController = UIAlertController(title: "Success" , message: "Password Updated!", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default) { action in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 
     func onErrorRequest() {
         self.removeSpinner()
+        let alertController = UIAlertController(title: "Error" , message: "Change Password Failed!", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

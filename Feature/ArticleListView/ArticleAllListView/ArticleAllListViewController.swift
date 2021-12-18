@@ -13,25 +13,14 @@ class ArticleAllListViewController: BaseViewController {
     @IBOutlet weak var articleSearchBar: UISearchBar!
     
     let viewModel = ArticleViewModel()
-    let category = ["Kesehatan", "Keluarga", "Hidup Sehat"]
+    let category = ["Keluarga", "Nutrisi", "Bayi", "Kehamilan", "Kecantikan", "Diabetes"]
     var articles: [ArticleModel] = []
     var articlePages = 1
-    var isSearhResult = false
-    var isGotSearchByHome = false
-    var searchKeywordByHome = ""
    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
-        print(isGotSearchByHome)
-        print(searchKeywordByHome)
-        
-        if isGotSearchByHome == true {
-            print("got here!")
-            getArticleDataBySearch(search: searchKeywordByHome)
-        } else {
-            getArticleData(page: articlePages)
-        }
+        getArticleData(page: articlePages)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,28 +39,11 @@ class ArticleAllListViewController: BaseViewController {
         articleSearchBar.backgroundImage = UIImage()
         self.navigationItem.title = "Medikuy Artikel"
         viewModel.delegate = self
-        articleSearchBar.delegate = self
     }
     
     func getArticleData(page: Int) {
         self.showParentSpinner()
-        viewModel.articleListData.removeAll()
         viewModel.getArticleListDataWithUrl(customUrl: URL(string: "https://medikuy.herokuapp.com/articles?page=\(page)")!)
-    }
-    
-    func getArticleDataBySearch(search: String) {
-        self.showParentSpinner()
-        articles.removeAll()
-        articleTableView.reloadData()
-        viewModel.articleListData.removeAll()
-        if search == "" {
-            isSearhResult = false
-            articlePages = 1
-            viewModel.getArticleListData()
-        } else {
-            isSearhResult = true
-            viewModel.getArticleListDataWithUrlandBody(customUrl: URL(string: "https://medikuy.herokuapp.com/article/search")!, body: ["article_title": search])
-        }
     }
 }
 
@@ -83,20 +55,15 @@ extension ArticleAllListViewController: ArticleViewModelDelegate {
     }
     
     func onErrorRequest() {
-        self.articleTableView.reloadData()
         self.removeSpinner()
     }
-}
-
-extension ArticleAllListViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        getArticleDataBySearch(search: articleSearchBar.text ?? "")
-    }
+    
+    
 }
 
 extension ArticleAllListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return category.count
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -105,15 +72,6 @@ extension ArticleAllListViewController: UICollectionViewDelegate, UICollectionVi
         cell.contentView.layer.borderWidth = 1
         cell.contentView.layer.borderColor = UIColor.black.cgColor
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.showParentSpinner()
-        articles.removeAll()
-        articleTableView.reloadData()
-        viewModel.articleListData.removeAll()
-        isSearhResult = true
-        viewModel.getArticleListDataWithUrlandBody(customUrl: URL(string: "https://medikuy.herokuapp.com/article/category")!, body: ["article_category": category[indexPath.row]])
     }
 }
 
@@ -124,8 +82,8 @@ extension ArticleAllListViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = articleTableView.dequeueReusableCell(withIdentifier: "ArticleAllListCell", for: indexPath) as! ArticleAllListTableViewCell
-        cell.titleLabel.text = articles[indexPath.row].article_title ?? "Article title is empty"
-        cell.descriptionLabel.text = articles[indexPath.row].content_desc ?? "Article content is empty"
+        cell.titleLabel.text = articles[indexPath.row].article_title
+        cell.descriptionLabel.text = articles[indexPath.row].content_desc
         cell.articleImageView.sd_setImage(with: URL(string: articles[indexPath.row].image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))
         return cell
     }
@@ -138,12 +96,10 @@ extension ArticleAllListViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if isSearhResult == false {
-            if indexPath.row + 1 == articles.count {
-                if articlePages < 4 {
-                    articlePages += 1
-                    getArticleData(page: articlePages)
-                }
+        if indexPath.row + 1 == articles.count {
+            if articlePages < 2 {
+                articlePages += 1
+                getArticleData(page: articlePages)
             }
         }
     }

@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
             <connections>
                 <outlet property="profileCardView1" destination="YJA-KC-hkR" id="taV-qn-xLS"/>
-                <outlet property="profileCardView2" destination="IHV-bb-hZV" id="2km-F3-8ux"/>
                 <outlet property="profileHeaderView" destination="W1O-ib-iVI" id="azk-wn-Ilh"/>
                 <outlet property="signOutButton" destination="f27-E2-WVP" id="XbF-pl-cYP"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kRk-rQ-Nkf"/>
@@ -34,7 +33,7 @@
                     <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uri-18-Uk2">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="432"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="254"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJA-KC-hkR" customClass="ProfileCard" customModule="Alodokter_bootcamp" customModuleProvider="target">
                                     <rect key="frame" x="16" y="16" width="382" height="146"/>
@@ -43,15 +42,8 @@
                                         <constraint firstAttribute="height" constant="146" id="FlE-3N-2cX"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHV-bb-hZV" customClass="ProfileCard" customModule="Alodokter_bootcamp" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="178" width="382" height="146"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="146" id="jfR-jY-ZU3"/>
-                                    </constraints>
-                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f27-E2-WVP" customClass="SignOutButton" customModule="Alodokter_bootcamp" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="356" width="382" height="44"/>
+                                    <rect key="frame" x="16" y="178" width="382" height="44"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="yDg-RC-paR"/>
@@ -59,14 +51,11 @@
                                 </view>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="IHV-bb-hZV" firstAttribute="leading" secondItem="Uri-18-Uk2" secondAttribute="leading" constant="16" id="5Uu-Lp-t3T"/>
-                                <constraint firstAttribute="trailing" secondItem="IHV-bb-hZV" secondAttribute="trailing" constant="16" id="76D-PV-USL"/>
                                 <constraint firstItem="YJA-KC-hkR" firstAttribute="top" secondItem="Uri-18-Uk2" secondAttribute="top" constant="16" id="NYX-id-max"/>
                                 <constraint firstItem="YJA-KC-hkR" firstAttribute="leading" secondItem="Uri-18-Uk2" secondAttribute="leading" constant="16" id="Uar-wB-Hji"/>
-                                <constraint firstItem="IHV-bb-hZV" firstAttribute="top" secondItem="YJA-KC-hkR" secondAttribute="bottom" constant="16" id="Vn0-bk-Thu"/>
                                 <constraint firstItem="f27-E2-WVP" firstAttribute="leading" secondItem="Uri-18-Uk2" secondAttribute="leading" constant="16" id="dcF-WZ-pUX"/>
                                 <constraint firstAttribute="bottom" secondItem="f27-E2-WVP" secondAttribute="bottom" constant="32" id="gH0-Yy-U9A"/>
-                                <constraint firstItem="f27-E2-WVP" firstAttribute="top" secondItem="IHV-bb-hZV" secondAttribute="bottom" constant="32" id="myH-m2-Obw"/>
+                                <constraint firstItem="f27-E2-WVP" firstAttribute="top" secondItem="YJA-KC-hkR" secondAttribute="bottom" constant="16" id="lCd-Bi-LPp"/>
                                 <constraint firstAttribute="trailing" secondItem="YJA-KC-hkR" secondAttribute="trailing" constant="16" id="rSF-oV-lOB"/>
                                 <constraint firstAttribute="trailing" secondItem="f27-E2-WVP" secondAttribute="trailing" constant="16" id="tPg-2a-JD1"/>
                             </constraints>

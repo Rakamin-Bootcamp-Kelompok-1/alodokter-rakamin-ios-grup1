@@ -24,9 +24,10 @@ class EditProfileViewModel {
         let parameters = ["full_name": "\(fullName)", "email": "\(email)", "birth_date": "\(birthDate)", "phone_number": "\(phoneNumber)"]
 
         Alamofire.request("https://medikuy.herokuapp.com/user/update/\(userDefaults.value(forKey: "id") ?? "")", method: .patch, parameters: parameters).responseJSON { responseJson in
+            print(responseJson)
             do {
                 let decoder = JSONDecoder()
-                let dataUser = try decoder.decode(UserModel.self, from: responseJson.data!)
+                let dataUser = try decoder.decode(User.self, from: responseJson.data!)
 //
 //                if dataUser.user == nil {
 //                    self.delegate?.onUpdatePatch()
@@ -36,7 +37,7 @@ class EditProfileViewModel {
 //                    }
 //                }
                 
-                if dataUser.user != nil {
+                if dataUser.id != nil {
                     DispatchQueue.main.async {
                         self.delegate?.onSuccessPatch()
                     }
@@ -44,6 +45,8 @@ class EditProfileViewModel {
                 
             } catch {
                 DispatchQueue.main.async {
+                    print(error.localizedDescription)
+                    print(error)
                     self.delegate?.onErrorPatch()
                 }
             }

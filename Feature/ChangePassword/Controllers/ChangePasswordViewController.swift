@@ -36,6 +36,9 @@ class ChangePasswordViewController: BaseViewController {
     // MARK: - Prepare UI Method
     
     func prepareUI() {
+        viewModel.delegate = self
+        
+        
         // Navigation Bar Title
         self.title = "Change Password"
         
@@ -197,7 +200,7 @@ extension ChangePasswordViewController: changePasswordViewModelDelegate {
 
 extension ChangePasswordViewController {
     func postChangePassword(password: String) {
-//        self.showParentSpinner()
+        self.showParentSpinner()
         viewModel.changePassword(password: password)
     }
 }

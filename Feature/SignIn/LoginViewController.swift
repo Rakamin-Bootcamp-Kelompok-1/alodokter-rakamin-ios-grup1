@@ -102,8 +102,8 @@ extension LoginViewController: LoginViewModelProtocol{
         self.passwordTxtField.text = ""
         self.activityIndicator.isHidden = true
         self.btnLogin.isHidden = false
-        let homeVC = TabBarViewController()
-        self.navigationController?.pushViewController(homeVC, animated: false)
+        print("Login Success: \(self.viewModel.emailU)")
+        self.dismiss(animated: true, completion: nil)
     }
     func onFailure() {
         self.activityIndicator.isHidden = true

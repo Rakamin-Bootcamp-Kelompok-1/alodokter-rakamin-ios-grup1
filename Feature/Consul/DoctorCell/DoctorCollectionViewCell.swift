@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class DoctorCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "DoctorCollectionViewCell"
@@ -31,7 +31,7 @@ class DoctorCollectionViewCell: UICollectionViewCell {
         self.doctorLbl.text = doctor.doctorName
         self.specialistLbl.text = doctor.speciality
         self.localtionLbl.text = doctor.locationPractice
-        
+        self.doctorImg.sd_setImage(with: URL(string: doctor.imagePath ?? ""))
     }
 
 }

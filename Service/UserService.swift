@@ -11,8 +11,9 @@ class UserService: BaseService {
     
     let userDefaults = UserDefaults()
     let url: String = "https://medikuy.herokuapp.com/token_authenticate"
+    var token: String = ""
     
-    typealias ResponseType = UserModel
+   
     
     func method() -> Network.Method {
         return .get
@@ -32,7 +33,7 @@ class UserService: BaseService {
     
     func setHeaders() -> [String : String] {
         let headers: [String : String] = [
-            "Authorization": "Bearer \(userDefaults.value(forKey: "token") ?? "")",
+            "Authorization": "Bearer \(token)",
             "Content-Type": "application/json"
         ]
         return headers
@@ -47,6 +48,8 @@ class UserService: BaseService {
     }
     
     func signature() -> Network.SignatureType {
-        return .emptySignature
+        return .withSignature
     }
+    
+    typealias ResponseType = UserModel
 }

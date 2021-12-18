@@ -43,6 +43,7 @@ class Network {
         case post = "POST"
         case put = "PUT"
         case delete = "DELETE"
+        case patch = "PATCH"
     }
     
     public enum QueryType {
@@ -119,6 +120,7 @@ class Network {
         let url = req.setUrl()
         let request = prepareRequestNoBody(for: url, req: req)
         print("cek url \(url)")
+        print("cek req \(request)")
         return Alamofire.request(request).responseJSON { (response) in
             if let json = response.result.value {
                 print("JSON: \(JSON(json)) ")
@@ -130,6 +132,7 @@ class Network {
             }
             
             if let responseCode = response.response {
+                print("response \(response)")
                 if let data = response.data {
                     let decoder = JSONDecoder()
                     do {

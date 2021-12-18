@@ -18,6 +18,7 @@ class SplashScreenViewController: BaseViewController {
     // MARK: - Variables
     
     var viewModel = ProfileViewModel()
+    var userDefaults = UserDefaults()
     
     
     // MARK: - View Life Cycle Methods
@@ -34,7 +35,7 @@ class SplashScreenViewController: BaseViewController {
         medikuyLabel.attributedText = medikuyMutableString
         
         // Get User Data
-        viewModel.getUser()
+        viewModel.getUser(token: "\(userDefaults.value(forKey: "fullName"))")
         
         // Splash Screen Delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {

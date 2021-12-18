@@ -75,11 +75,16 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.setup(doctor: viewModel.searchDoctorList.count != 0 ? viewModel.searchDoctorList[indexPath.row] : viewModel.doctorList[indexPath.row])
             collectionView.backgroundColor = .white
             collectionView.layer.cornerRadius = 5
+            if indexPath.row + 1 == viewModel.doctorList.count {
+                
+            }
             return cell
         default:
             return UICollectionViewCell()
         }
     }
+    
+   
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         

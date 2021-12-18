@@ -19,7 +19,7 @@ class ChangePasswordService: BaseService {
     typealias ResponseType = UserModel
     
     func method() -> Network.Method {
-        return .post
+        return .patch
     }
     
     func setUrl() -> URL {

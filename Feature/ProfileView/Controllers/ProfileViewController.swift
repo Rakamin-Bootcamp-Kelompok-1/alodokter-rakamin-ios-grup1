@@ -31,7 +31,9 @@ class ProfileViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         // View Model Delegate
+        print("masuk profile")
         viewModel.delegate = self
+        viewModel.getUser(token: "\(userDefaults.value(forKey: "token")!)")
         prepareUI()
     }
     
@@ -215,6 +217,6 @@ extension ProfileViewController: profileViewModelDelegate {
 extension ProfileViewController {
     func requestData() {
         self.showParentSpinner()
-        viewModel.getUser()
+        viewModel.getUser(token: "\(userDefaults.value(forKey: "token"))")
     }
 }

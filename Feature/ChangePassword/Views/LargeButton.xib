@@ -27,7 +27,7 @@
                         <attributedString key="attributedTitle">
                             <fragment content="Button">
                                 <attributes>
-                                    <font key="NSFont" size="17" name="Nunito-SemiBold"/>
+                                    <font key="NSFont" metaFont="system" size="17"/>
                                 </attributes>
                             </fragment>
                         </attributedString>

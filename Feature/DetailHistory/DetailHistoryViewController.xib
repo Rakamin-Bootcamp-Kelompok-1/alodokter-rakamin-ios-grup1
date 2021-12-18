@@ -22,10 +22,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailHistoryViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
             <connections>
+                <outlet property="bloodLbl" destination="isR-r6-Tu3" id="fhy-mu-f8h"/>
+                <outlet property="bookingDateLbl" destination="wm8-E0-fbP" id="w0o-iM-dlT"/>
                 <outlet property="doctorImg" destination="OjC-GB-owL" id="QPg-fG-cJj"/>
+                <outlet property="doctorName" destination="nAg-2z-DxV" id="myG-7R-tJM"/>
                 <outlet property="informationBookView" destination="cKC-Sc-O3T" id="vUg-tr-KG5"/>
+                <outlet property="messagePatient" destination="k2P-ej-p7o" id="NkD-jJ-v9s"/>
                 <outlet property="messageView" destination="F3L-cS-LWn" id="u8S-7i-aM4"/>
+                <outlet property="patientAge" destination="Sph-DG-qZ0" id="Axs-Xj-OmU"/>
+                <outlet property="patientBirthLbl" destination="FKU-LB-w9y" id="0dm-iv-Xq2"/>
+                <outlet property="patientGender" destination="W2Z-Uj-Pe1" id="QVl-2z-h1r"/>
+                <outlet property="patientLbl" destination="D6g-Aq-oQH" id="yu3-Vq-Ojo"/>
+                <outlet property="paymentLbl" destination="CUz-zq-rpo" id="KpM-Q0-NLB"/>
                 <outlet property="paymentView" destination="QQY-oj-hju" id="yga-K0-SiE"/>
+                <outlet property="specialityLbl" destination="IMV-vn-4PS" id="Xd9-VL-7eg"/>
+                <outlet property="totalPriceLbl" destination="iiY-n7-lW2" id="dQ9-He-ifX"/>
                 <outlet property="totalPriceView" destination="wxe-bc-odc" id="K78-eg-zwU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

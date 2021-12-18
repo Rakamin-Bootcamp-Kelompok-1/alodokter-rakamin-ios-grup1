@@ -24,6 +24,7 @@ class AppointmentViewController: BaseViewController, UIGestureRecognizerDelegate
     var isFirstTime = true
     var doctorResource: DoctorResource?
     let viewModel = BookingViewModel()
+    let userDefaults = UserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,10 +63,10 @@ class AppointmentViewController: BaseViewController, UIGestureRecognizerDelegate
             "message": pesanTextView.text ?? "",
             "payment_method": paymentLabel.text ?? "",
             "total_price": doctorResource?.priceRate ?? 0,
-            "doctor_id": 1,
+            "doctor_id": doctorResource?.id ?? 1,
             "patient_id": 1,
             "doctor_schedule_id": 1,
-            "user_id" : 1
+            "user_id" : userDefaults.value(forKey: "id") as? Int ?? 33
         ])
     }
     

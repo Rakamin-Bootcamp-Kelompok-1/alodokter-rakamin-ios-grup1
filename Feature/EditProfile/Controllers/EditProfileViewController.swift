@@ -18,10 +18,10 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
     @IBOutlet weak var birthDateField: NormalTextField!
     @IBOutlet weak var phoneNumberField: NormalTextField!
     @IBOutlet weak var saveEditButton: LargeButton!
-    let userDefaults = UserDefaults()
+    
     
     // MARK: - Variables
-    
+    let userDefaults = UserDefaults()
     var imagePicker: ImagePicker!
     var viewModel = EditProfileViewModel()
     
@@ -54,6 +54,13 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         profileImageView.clipsToBounds = true
         
+        if #available(iOS 13.0, *) {
+            profileImageView.sd_setImage(with: URL(string: userDefaults.value(forKey: "imageData") as? String ?? ""), placeholderImage: UIImage(systemName: "person.circle.fill")?.withTintColor(UIColor.init(named: "Button Blue") ?? UIColor.systemBlue))
+        } else {
+            // Fallback on earlier versions
+            profileImageView.sd_setImage(with: URL(string: userDefaults.value(forKey: "imageData") as? String ?? ""), placeholderImage: UIImage(named: "ic_person_circle"))
+        }
+        
         let imageTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         profileImageView.isUserInteractionEnabled = true
         profileImageView.addGestureRecognizer(imageTapGestureRecognizer)
@@ -66,6 +73,11 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
         emailField.textField.delegate = self
         birthDateField.textField.delegate = self
         phoneNumberField.textField.delegate = self
+        
+        fullNameField.textField.text = userDefaults.value(forKey: "fullName") as? String ?? ""
+        emailField.textField.text = userDefaults.value(forKey: "email") as? String ?? ""
+        birthDateField.textField.text = userDefaults.value(forKey: "birthDate") as? String ?? ""
+        phoneNumberField.textField.text = userDefaults.value(forKey: "phoneNumber") as? String ?? ""
         
         // Bottom Border/Underline
         fullNameField.textField.addBottomBorder(color: UIColor(named: "NonActive Text")!)
@@ -123,6 +135,9 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
             phoneNumberField.textField.text!.isEmpty {
             saveEditButton.buttonOutlet.isUserInteractionEnabled = false
             saveEditButton.buttonOutlet.backgroundColor = UIColor(named: "Disabled Button")!
+        } else {
+            saveEditButton.buttonOutlet.isUserInteractionEnabled = true
+            saveEditButton.buttonOutlet.backgroundColor = UIColor(named: "Button Blue")!
         }
         
         saveEditButton.buttonOutlet.addTarget(self, action: #selector(saveEdit), for: .touchUpInside)

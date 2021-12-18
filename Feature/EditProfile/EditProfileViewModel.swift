@@ -38,6 +38,10 @@ class EditProfileViewModel {
                 
                 if dataUser.user != nil {
                     DispatchQueue.main.async {
+                        UserDefaults.standard.set(dataUser.user?.fullname, forKey: "fullName")
+                        UserDefaults.standard.set(dataUser.user?.email, forKey: "email")
+                        UserDefaults.standard.set(dataUser.user?.birthDate, forKey: "birthDate")
+                        UserDefaults.standard.set(dataUser.user?.phoneNumber, forKey: "phoneNumber")
                         self.delegate?.onSuccessPatch()
                     }
                 }

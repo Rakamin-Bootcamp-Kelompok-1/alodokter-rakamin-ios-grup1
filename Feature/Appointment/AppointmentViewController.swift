@@ -88,6 +88,10 @@ class AppointmentViewController: BaseViewController, UIGestureRecognizerDelegate
         paymentSelectionViewController.appointmentVC = self
         present(paymentSelectionViewController, animated: true)
     }
+    
+    @IBAction func changePatientButton(_ sender: Any) {
+        navigationController?.pushViewController(PatientsChangeViewController(), animated: true)
+    }
 }
 
 extension AppointmentViewController: BookingProtocol {

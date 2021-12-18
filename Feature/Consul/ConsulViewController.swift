@@ -9,10 +9,14 @@ import UIKit
 
 class ConsulViewController: BaseViewController {
 
+    @IBOutlet weak var profileView: ProfileView!
     @IBOutlet weak var searchDoctor: UISearchBar!
     @IBOutlet weak var doctorCollectionvView: UICollectionView!
     @IBOutlet weak var specialistCollectionView: UICollectionView!
+    var pageData = "1"
     var viewModel = ConsulDoctorViewModel()
+    let userDefaults = UserDefaults()
+    var profileViewModel = ProfileViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +26,7 @@ class ConsulViewController: BaseViewController {
         doctorCollectionvView.delegate = self
         doctorCollectionvView.dataSource = self
         viewModel.delegate = self
-        viewModel.getDoctorList()
+        viewModel.getDoctorList(page: pageData)
         self.showParentSpinner()
         searchDoctor.delegate = self
 //        self.definesPresentationContext = true
@@ -76,7 +80,12 @@ extension ConsulViewController: UICollectionViewDelegate, UICollectionViewDataSo
             collectionView.backgroundColor = .white
             collectionView.layer.cornerRadius = 5
             if indexPath.row + 1 == viewModel.doctorList.count {
-                
+                if viewModel.meta.nextPage != nil {
+                   
+                    var nextPage = "\(viewModel.meta.nextPage!)"
+                    print("next page \(nextPage)")
+                    viewModel.getDoctorList(page: nextPage)
+                }
             }
             return cell
         default:

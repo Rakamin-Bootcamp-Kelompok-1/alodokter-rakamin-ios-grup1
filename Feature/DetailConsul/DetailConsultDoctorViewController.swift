@@ -73,6 +73,7 @@ class DetailConsultDoctorViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+       
         viewModel.getDoctorSchedule(doctorId: String(doctorResource.id ?? 0) ?? "0")
 //        setupView()
         

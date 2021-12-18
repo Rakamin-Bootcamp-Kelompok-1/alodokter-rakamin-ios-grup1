@@ -33,12 +33,16 @@ class ConsulDoctorViewModel {
     ]
     
     
-    func getDoctorList() {
+    func getDoctorList(page: String) {
+        service.page = page
+        print("service page \(service.page)")
         Network.requestNoBody(req: service) {[weak self](result) in
             switch result {
                 
             case .success(let data):
                 self?.doctorList += data.data ?? []
+                print("data meta \(data.meta)")
+                self?.meta = data.meta!
 //                self?.doctorList.append(contentsOf: data.data ?? [])
                 self?.delegate?.onSuccessDoctor()
             case .failure(let error):

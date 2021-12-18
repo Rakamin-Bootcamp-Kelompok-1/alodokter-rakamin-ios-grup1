@@ -11,6 +11,7 @@ class HistoryViewController: UIViewController {
 
     @IBOutlet weak var profileView: ProfileView!
     @IBOutlet weak var doctorCollectionView: UICollectionView!
+    var page = "1"
     var viewModel = HistoryBookingViewModel()
     //    @IBOutlet weak var historyTableView: UITableView!
     
@@ -22,7 +23,7 @@ class HistoryViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupView()
         viewModel.delegate = self
-        viewModel.getHistory()
+        viewModel.getHistory(page: self.page)
     }
 
     func setupView() {
@@ -77,6 +78,14 @@ extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataS
 //             add corner radius on `contentView`
         collectionView.backgroundColor = .white
         collectionView.layer.cornerRadius = 5
+        if indexPath.row + 1 == viewModel.historyData.count {
+            if viewModel.meta.nextPage != nil {
+                var nextPage = "\(viewModel.meta.nextPage!)"
+                print("next page \(nextPage)")
+                viewModel.getHistory(page: nextPage)
+            }
+        }
+        
         
         return cell
     }

@@ -4,7 +4,6 @@
 //
 //  Created by hafied Khalifatul ash.shiddiqi on 17/12/21.
 //
-
 import Foundation
 
 class RegisterService: BaseService {

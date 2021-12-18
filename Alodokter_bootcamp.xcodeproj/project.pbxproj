@@ -56,6 +56,7 @@
 		2CA846DF276DF34D00F492EC /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846D8276DF34D00F492EC /* ChangePasswordViewController.xib */; };
 		2CA846E0276DF34D00F492EC /* LargeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846D9276DF34D00F492EC /* LargeButton.xib */; };
 		2CA846E2276DF62E00F492EC /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846E1276DF62E00F492EC /* EditProfileViewController.xib */; };
+		2CD51BD0276E018C005FDF6C /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD51BCF276E018C005FDF6C /* RegisterService.swift */; };
 		2CDE19B92765B68200D895B9 /* DetailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19AF2765B67F00D895B9 /* DetailHistoryViewController.swift */; };
 		2CDE19BA2765B68200D895B9 /* DetailHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE19B02765B67F00D895B9 /* DetailHistoryViewController.xib */; };
 		2CDE19BB2765B68200D895B9 /* DetailBookingHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19B12765B67F00D895B9 /* DetailBookingHistoryViewModel.swift */; };
@@ -226,6 +227,7 @@
 		2CA846D8276DF34D00F492EC /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		2CA846D9276DF34D00F492EC /* LargeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargeButton.xib; sourceTree = "<group>"; };
 		2CA846E1276DF62E00F492EC /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
+		2CD51BCF276E018C005FDF6C /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		2CDE19AF2765B67F00D895B9 /* DetailHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailHistoryViewController.swift; sourceTree = "<group>"; };
 		2CDE19B02765B67F00D895B9 /* DetailHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailHistoryViewController.xib; sourceTree = "<group>"; };
 		2CDE19B12765B67F00D895B9 /* DetailBookingHistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBookingHistoryViewModel.swift; sourceTree = "<group>"; };
@@ -872,6 +874,7 @@
 				49F75438276CAE74001D98F6 /* SearchDoctorService.swift */,
 				49F75441276CDD12001D98F6 /* SchedulesDoctorService.swift */,
 				2CA846BA276DF26D00F492EC /* EditProfileService.swift */,
+				2CD51BCF276E018C005FDF6C /* RegisterService.swift */,
 			);
 			path = Service;
 			sourceTree = SOURCE_ROOT;
@@ -1275,6 +1278,7 @@
 				2F2DFB8D2769BD8800122AF1 /* PasswordForgotViewController.swift in Sources */,
 				2CDE19BF2765B68200D895B9 /* HistoryViewController.swift in Sources */,
 				497C2883276BD60E00CA01DE /* EducationDocCollectionViewCell.swift in Sources */,
+				2CD51BD0276E018C005FDF6C /* RegisterService.swift in Sources */,
 				49F75439276CAE74001D98F6 /* SearchDoctorService.swift in Sources */,
 				2F3E23172768EA9000A003FD /* ArticleDetailViewController.swift in Sources */,
 				497C2821276B101600CA01DE /* SpecialistCollectionViewCell.swift in Sources */,

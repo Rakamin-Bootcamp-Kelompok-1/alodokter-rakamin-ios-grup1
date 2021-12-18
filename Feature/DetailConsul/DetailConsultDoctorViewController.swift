@@ -12,6 +12,8 @@ class DetailConsultDoctorViewController: BaseViewController {
 
     @IBOutlet weak var bioView: UIView!
     
+    @IBOutlet weak var locationLbl: UILabel!
+    @IBOutlet weak var educationLbl: UILabel!
     @IBOutlet weak var scheduleCollectionView: UICollectionView!
     @IBOutlet weak var ratingLbl: UILabel!
     @IBOutlet weak var eduCollectionView: UICollectionView!
@@ -60,21 +62,30 @@ class DetailConsultDoctorViewController: BaseViewController {
         
         let readmoreFont = UIFont.systemFont(ofSize: 9)
         let readmoreFontColor = UIColor.blue
+        setupView()
         DispatchQueue.main.async {
             self.doctorPreviewLbl.addTrailing(with: "...", moreText: "Read More", moreTextFont: readmoreFont, moreTextColor: readmoreFontColor)
             
         }
-        doctorPreviewLbl.text = doctorResource.biography ?? "No Biography"
-        doctorImg.sd_setImage(with: URL(string: doctorResource.imagePath ?? ""))
-        specialityLbl.text = doctorResource.speciality ?? ""
-        priceRateLbl.text = String(doctorResource.priceRate ?? 0) ?? "0"
-        ratingLbl.text = doctorResource.star ?? "0"
+        
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.getDoctorSchedule(doctorId: String(doctorResource.id ?? 0) ?? "0")
+//        setupView()
+        
+    }
+    
+    func setupView() {
+//        self.educationLbl.text = doctorResource.education ?? "No available"
+        self.doctorPreviewLbl.text = doctorResource.biography ?? "No Biography"
+        self.doctorImg.sd_setImage(with: URL(string: doctorResource.imagePath ?? ""))
+        self.specialityLbl.text = doctorResource.speciality ?? ""
+        self.priceRateLbl.text = String(doctorResource.priceRate ?? 0) ?? "0"
+        self.ratingLbl.text = doctorResource.star ?? "0"
+        self.locationLbl.text = doctorResource.locationPractice ?? "No Available"
     }
     
     func registerCell() {
@@ -95,7 +106,7 @@ class DetailConsultDoctorViewController: BaseViewController {
         print("read less = \(readless)")
         if sender.didTap(label: doctorPreviewLbl, inRange: readmore) {
             print("masuk readmore")
-            doctorPreviewLbl.appendReadLess(after: preview, trailingContent: ".")
+            doctorPreviewLbl.appendReadLess(after: doctorResource.biography ?? "", trailingContent: ".")
             print("height edu baru \(eduView.frame.height)")
             
 //            self.eduView.frame = CGRect(x: 0, y: 0, width: self.eduView.frame.width, height: heightEdu)
@@ -119,7 +130,7 @@ extension DetailConsultDoctorViewController: UICollectionViewDelegate, UICollect
         case scheduleCollectionView:
             return viewModel.scheduleList.count ?? 0
         case eduCollectionView:
-            return 5
+            return 1
         default:
             return 0
         }

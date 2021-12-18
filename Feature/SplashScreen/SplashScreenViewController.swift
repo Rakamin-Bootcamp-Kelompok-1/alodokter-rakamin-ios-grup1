@@ -38,7 +38,7 @@ class SplashScreenViewController: BaseViewController {
         
         // Splash Screen Delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            let tabBarViewController = TabBarViewController()
+            let tabBarViewController = AppointmentViewController()
             let transition = CATransition()
             transition.duration = 0.5
             transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)

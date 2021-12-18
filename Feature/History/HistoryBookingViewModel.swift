@@ -18,15 +18,17 @@ class HistoryBookingViewModel {
     var delegate: HistoryBookingProtocol?
     var service = HistoryBookingService()
     var historyData = [HistoryBookingResource]()
+    var meta = MetaModel(page: "1", nextPage: 0, totalPage: 1)
     
-    func getHistory() {
-        var params = ["page":"1"]
+    func getHistory(page: String) {
+        var params = ["page":"\(page)"]
         Network.requestParameters(req: service, parameters: params) { [weak self] (result) in
             switch result {
                 
             case .success(let data):
                 print("data =  \(data.data)")
                 self?.historyData += data.data
+                self?.meta = data.meta!
                 self?.delegate?.onSuccessHistory()
             case .failure(let error):
                 print("errorny = \(error)")

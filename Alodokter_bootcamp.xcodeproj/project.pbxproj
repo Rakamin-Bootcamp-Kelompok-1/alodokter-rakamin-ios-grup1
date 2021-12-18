@@ -45,9 +45,6 @@
 		2CA846C6276DF32900F492EC /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846C1276DF32900F492EC /* NormalTextField.swift */; };
 		2CA846C7276DF32900F492EC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846C2276DF32900F492EC /* EditProfileViewController.swift */; };
 		2CA846C8276DF32900F492EC /* NormalTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846C4276DF32900F492EC /* NormalTextField.xib */; };
-		2CA846CD276DF34000F492EC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846CA276DF34000F492EC /* LoginViewModel.swift */; };
-		2CA846CE276DF34000F492EC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846CB276DF34000F492EC /* LoginViewController.xib */; };
-		2CA846CF276DF34000F492EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846CC276DF34000F492EC /* LoginViewController.swift */; };
 		2CA846DA276DF34D00F492EC /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846D1276DF34D00F492EC /* ChangePasswordViewModel.swift */; };
 		2CA846DB276DF34D00F492EC /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846D3276DF34D00F492EC /* ChangePasswordViewController.swift */; };
 		2CA846DC276DF34D00F492EC /* SecuredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA846D4276DF34D00F492EC /* SecuredTextField.swift */; };
@@ -57,6 +54,9 @@
 		2CA846E0276DF34D00F492EC /* LargeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846D9276DF34D00F492EC /* LargeButton.xib */; };
 		2CA846E2276DF62E00F492EC /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA846E1276DF62E00F492EC /* EditProfileViewController.xib */; };
 		2CD51BD0276E018C005FDF6C /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD51BCF276E018C005FDF6C /* RegisterService.swift */; };
+		2CD51BD5276E0249005FDF6C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD51BD2276E0249005FDF6C /* LoginViewModel.swift */; };
+		2CD51BD6276E0249005FDF6C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CD51BD3276E0249005FDF6C /* LoginViewController.xib */; };
+		2CD51BD7276E0249005FDF6C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD51BD4276E0249005FDF6C /* LoginViewController.swift */; };
 		2CDE19B92765B68200D895B9 /* DetailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19AF2765B67F00D895B9 /* DetailHistoryViewController.swift */; };
 		2CDE19BA2765B68200D895B9 /* DetailHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE19B02765B67F00D895B9 /* DetailHistoryViewController.xib */; };
 		2CDE19BB2765B68200D895B9 /* DetailBookingHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE19B12765B67F00D895B9 /* DetailBookingHistoryViewModel.swift */; };
@@ -144,7 +144,6 @@
 		6778426BC0821FD950B0921A /* Pods_Alodokter_bootcampTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381744D040FF8C533B3155AB /* Pods_Alodokter_bootcampTests.framework */; };
 		8019CB8A2768D96600B3BD77 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8019CB892768D96600B3BD77 /* RegisterViewModel.swift */; };
 		80613364275BCE8C0065B62E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80613363275BCE8C0065B62E /* RegisterViewController.swift */; };
-		80D4FBEA276C6949001A8DD2 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D4FBE9276C6949001A8DD2 /* RegisterService.swift */; };
 		8A46F6E6C05003DC0F5BD809 /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8947D88ACBB42AFDC870192F /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework */; };
 		FAB7B29BC482E4895EAD1233 /* Pods_Alodokter_bootcamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1C8877C0AD54B5F4660C13 /* Pods_Alodokter_bootcamp.framework */; };
 /* End PBXBuildFile section */
@@ -209,9 +208,6 @@
 		2CA846C1276DF32900F492EC /* NormalTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
 		2CA846C2276DF32900F492EC /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		2CA846C4276DF32900F492EC /* NormalTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalTextField.xib; sourceTree = "<group>"; };
-		2CA846CA276DF34000F492EC /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		2CA846CB276DF34000F492EC /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		2CA846CC276DF34000F492EC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2CA846D1276DF34D00F492EC /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		2CA846D3276DF34D00F492EC /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		2CA846D4276DF34D00F492EC /* SecuredTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecuredTextField.swift; sourceTree = "<group>"; };
@@ -221,6 +217,9 @@
 		2CA846D9276DF34D00F492EC /* LargeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargeButton.xib; sourceTree = "<group>"; };
 		2CA846E1276DF62E00F492EC /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		2CD51BCF276E018C005FDF6C /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		2CD51BD2276E0249005FDF6C /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2CD51BD3276E0249005FDF6C /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		2CD51BD4276E0249005FDF6C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2CDE19AF2765B67F00D895B9 /* DetailHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailHistoryViewController.swift; sourceTree = "<group>"; };
 		2CDE19B02765B67F00D895B9 /* DetailHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailHistoryViewController.xib; sourceTree = "<group>"; };
 		2CDE19B12765B67F00D895B9 /* DetailBookingHistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBookingHistoryViewModel.swift; sourceTree = "<group>"; };
@@ -316,7 +315,6 @@
 		4E97F21227488BAB00C2366D /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		8019CB892768D96600B3BD77 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		80613363275BCE8C0065B62E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		80D4FBE9276C6949001A8DD2 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		8947D88ACBB42AFDC870192F /* Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcamp_Alodokter_bootcampUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1C8877C0AD54B5F4660C13 /* Pods_Alodokter_bootcamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alodokter_bootcamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E618D3DF91A64C2A1C5B95 /* Pods-Alodokter_bootcampTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcampTests.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcampTests/Pods-Alodokter_bootcampTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -442,16 +440,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		2CA846C9276DF34000F492EC /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-				2CA846CA276DF34000F492EC /* LoginViewModel.swift */,
-				2CA846CB276DF34000F492EC /* LoginViewController.xib */,
-				2CA846CC276DF34000F492EC /* LoginViewController.swift */,
-			);
-			path = SignIn;
-			sourceTree = "<group>";
-		};
 		2CA846D0276DF34D00F492EC /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,12 +469,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		2CA846E3276DFBB000F492EC /* Recovered References */ = {
+		2CD51BD1276E0249005FDF6C /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				80D4FBE9276C6949001A8DD2 /* RegisterService.swift */,
+				2CD51BD2276E0249005FDF6C /* LoginViewModel.swift */,
+				2CD51BD3276E0249005FDF6C /* LoginViewController.xib */,
+				2CD51BD4276E0249005FDF6C /* LoginViewController.swift */,
 			);
-			name = "Recovered References";
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		2CDE19AE2765B67F00D895B9 /* DetailHistory */ = {
@@ -698,7 +688,6 @@
 				4E97F1CB2748858D00C2366D /* Products */,
 				79DC3765A9DDCDAC0C607DE7 /* Pods */,
 				D29C455D0EB5B2BA2B5C0B31 /* Frameworks */,
-				2CA846E3276DFBB000F492EC /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -770,7 +759,7 @@
 			children = (
 				497C282D276B7F6800CA01DE /* DetailConsul */,
 				497C2818276B0BD000CA01DE /* Consul */,
-				2CA846C9276DF34000F492EC /* SignIn */,
+				2CD51BD1276E0249005FDF6C /* SignIn */,
 				80613360275BCE370065B62E /* SignUp */,
 				4E97F20227488BAA00C2366D /* SplashScreen */,
 				2CDE19C42765B69F00D895B9 /* SignIn */,
@@ -1043,7 +1032,7 @@
 				2F3BEA742767895F004DB446 /* ArticleDetailViewController.xib in Resources */,
 				2C68A3F027612D96002B8997 /* Nunito-Light.ttf in Resources */,
 				2C68A3EB27612D96002B8997 /* Nunito-BoldItalic.ttf in Resources */,
-				2CA846CE276DF34000F492EC /* LoginViewController.xib in Resources */,
+				2CD51BD6276E0249005FDF6C /* LoginViewController.xib in Resources */,
 				4E97F21B27488BAB00C2366D /* AlbumsCell.xib in Resources */,
 				2C68A3CF275FF2AB002B8997 /* SignOutButton.xib in Resources */,
 				497C2884276BD60E00CA01DE /* EducationDocCollectionViewCell.xib in Resources */,
@@ -1194,6 +1183,7 @@
 				2CDE19E12765B6B400D895B9 /* ArticleListViewController.swift in Sources */,
 				2C68A3C9275F7C95002B8997 /* ProfileCardRow.swift in Sources */,
 				497C287D276BC61600CA01DE /* ExtensionUILabel.swift in Sources */,
+				2CD51BD5276E0249005FDF6C /* LoginViewModel.swift in Sources */,
 				49F75442276CDD12001D98F6 /* SchedulesDoctorService.swift in Sources */,
 				2F2D4DC42765CC4E006EB4E5 /* UITextField.swift in Sources */,
 				2C4022922765E17500149B5D /* UITextField.swift in Sources */,
@@ -1217,6 +1207,7 @@
 				2CDE19ED2765B6F000D895B9 /* ProfileView.swift in Sources */,
 				2C402294276742D100149B5D /* UserModel.swift in Sources */,
 				2CA846C6276DF32900F492EC /* NormalTextField.swift in Sources */,
+				2CD51BD7276E0249005FDF6C /* LoginViewController.swift in Sources */,
 				497C2828276B24A700CA01DE /* DoctorModel.swift in Sources */,
 				2C68A3CB275F7E10002B8997 /* ProfileViewController.swift in Sources */,
 				4E97F21E27488BAB00C2366D /* DummyAlbumsService.swift in Sources */,
@@ -1226,12 +1217,10 @@
 				8019CB8A2768D96600B3BD77 /* RegisterViewModel.swift in Sources */,
 				80613364275BCE8C0065B62E /* RegisterViewController.swift in Sources */,
 				2CA846DC276DF34D00F492EC /* SecuredTextField.swift in Sources */,
-				80D4FBEA276C6949001A8DD2 /* RegisterService.swift in Sources */,
 				2C402296276750B900149B5D /* ProfileViewModel.swift in Sources */,
 				497C282A276B250D00CA01DE /* DoctorService.swift in Sources */,
 				2CDE19C02765B68200D895B9 /* HistoryBookingViewModel.swift in Sources */,
 				497C2830276B7F8A00CA01DE /* DetailConsulViewController.swift in Sources */,
-				2CA846CD276DF34000F492EC /* LoginViewModel.swift in Sources */,
 				2CA846DA276DF34D00F492EC /* ChangePasswordViewModel.swift in Sources */,
 				497C2813276B025200CA01DE /* HistoryBookingService.swift in Sources */,
 				2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */,
@@ -1259,7 +1248,6 @@
 				497C281B276B0C1C00CA01DE /* ConsulViewController.swift in Sources */,
 				497C282C276B272900CA01DE /* ConsulDoctorViewModel.swift in Sources */,
 				4E97F21927488BAB00C2366D /* MainViewController.swift in Sources */,
-				2CA846CF276DF34000F492EC /* LoginViewController.swift in Sources */,
 				2CDE19E42765B6B400D895B9 /* ArticleListCell.swift in Sources */,
 				2CDE19E52765B6B400D895B9 /* ArticleViewModel.swift in Sources */,
 				2C57FFD1276BCF3F0025AF06 /* ImagePicker.swift in Sources */,

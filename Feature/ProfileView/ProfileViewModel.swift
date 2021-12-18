@@ -31,7 +31,7 @@ class ProfileViewModel {
                     self.userDefaults.setValue(successGetData.user?.gender, forKey: "gender")
                     self.userDefaults.setValue(successGetData.user?.birthDate, forKey: "birthDate")
                     self.userDefaults.setValue(successGetData.user?.phoneNumber, forKey: "phoneNumber")
-                    self.userDefaults.setValue(successGetData.user?.imagePath, forKey: "imagePath")
+                    self.userDefaults.setValue(successGetData.user?.imageData, forKey: "imageData")
                     self.userDefaults.setValue(successGetData.user?.isAdmin, forKey: "isAdmin")
                     self.userDefaults.setValue(successGetData.user?.isActive, forKey: "isActive")
                     self.userDefaults.setValue(successGetData.user?.createdAt, forKey: "createdAt")

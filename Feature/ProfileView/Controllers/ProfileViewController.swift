@@ -169,7 +169,7 @@ class ProfileViewController: BaseViewController {
         userDefaults.removeObject(forKey: "gender")
         userDefaults.removeObject(forKey: "birthDate")
         userDefaults.removeObject(forKey: "phoneNumber")
-        userDefaults.removeObject(forKey: "imagePath")
+        userDefaults.removeObject(forKey: "imageData")
         userDefaults.removeObject(forKey: "isAdmin")
         userDefaults.removeObject(forKey: "isActive")
         userDefaults.removeObject(forKey: "createdAt")

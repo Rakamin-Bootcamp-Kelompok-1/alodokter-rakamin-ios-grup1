@@ -14,7 +14,6 @@
 		2C57FFC4276A27510025AF06 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C57FFC3276A27510025AF06 /* RegisterViewController.xib */; };
 		2C57FFC7276B1A560025AF06 /* NormalTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C57FFC6276B1A560025AF06 /* NormalTextField.xib */; };
 		2C57FFCB276B1AF30025AF06 /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57FFCA276B1AF30025AF06 /* NormalTextField.swift */; };
-		2C57FFCD276B1BAB0025AF06 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C57FFCC276B1BAB0025AF06 /* EditProfileViewController.xib */; };
 		2C57FFCF276B54D50025AF06 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57FFCE276B54D50025AF06 /* EditProfileViewController.swift */; };
 		2C57FFD1276BCF3F0025AF06 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C57FFD0276BCF3F0025AF06 /* ImagePicker.swift */; };
 		2C68A3BF275F5E71002B8997 /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C68A3BE275F5E71002B8997 /* ProfileHeader.xib */; };
@@ -175,7 +174,6 @@
 		2C57FFC3276A27510025AF06 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		2C57FFC6276B1A560025AF06 /* NormalTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalTextField.xib; sourceTree = "<group>"; };
 		2C57FFCA276B1AF30025AF06 /* NormalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
-		2C57FFCC276B1BAB0025AF06 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EditProfileViewController.xib; path = ../../../../../../EditProfileViewController.xib; sourceTree = "<group>"; };
 		2C57FFCE276B54D50025AF06 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		2C57FFD0276BCF3F0025AF06 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2C68A3BE275F5E71002B8997 /* ProfileHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
@@ -356,7 +354,6 @@
 		2C57FFC8276B1AD50025AF06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2C57FFCC276B1BAB0025AF06 /* EditProfileViewController.xib */,
 				2C57FFC6276B1A560025AF06 /* NormalTextField.xib */,
 			);
 			path = Views;
@@ -1022,7 +1019,6 @@
 				2C68A3BF275F5E71002B8997 /* ProfileHeader.xib in Resources */,
 				2C68A3E627612D96002B8997 /* Nunito-ExtraLightItalic.ttf in Resources */,
 				2F3BEA742767895F004DB446 /* ArticleDetailViewController.xib in Resources */,
-				2C57FFCD276B1BAB0025AF06 /* EditProfileViewController.xib in Resources */,
 				2C68A3F027612D96002B8997 /* Nunito-Light.ttf in Resources */,
 				2C68A3EB27612D96002B8997 /* Nunito-BoldItalic.ttf in Resources */,
 				4E97F21B27488BAB00C2366D /* AlbumsCell.xib in Resources */,

@@ -172,22 +172,27 @@ class RegisterViewController: BaseViewController {
             self.present(alertController, animated: true, completion: nil)
             return
         }
-        if nameTxtField.text!.count < 8 {
+        if name.count < 7 {
             let alertController = UIAlertController(title: "Error" , message: "Minimum of 8 characters for Full Name", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
             alertController.addAction(alertAction)
             self.present(alertController, animated: true, completion: nil)
-        } else if emailTxtField.text!.count < 8 {
+        } else if email.count < 7 {
             let alertController = UIAlertController(title: "Error" , message: "Minimum of 8 characters for Email", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
             alertController.addAction(alertAction)
             self.present(alertController, animated: true, completion: nil)
-        } else if phoneTxtField.text!.count < 11 {
+        } else if phone.count < 10 {
             let alertController = UIAlertController(title: "Error" , message: "Minimum of 11 digit for Phone Number", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
             alertController.addAction(alertAction)
             self.present(alertController, animated: true, completion: nil)
-        } else if passwordTxtField.text! != confirmationTxtField.text! {
+        } else if password.count < 7 {
+            let alertController = UIAlertController(title: "Error" , message: "Minimum of 8 characters for Password", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else if password != confirmation {
             let alertController = UIAlertController(title: "Error" , message: "The password does not match", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
             alertController.addAction(alertAction)

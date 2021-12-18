@@ -37,7 +37,7 @@ struct User: Identifiable, Codable {
     var createdAt: String?
     var updatedAt: String?
     var resetPasswordToken: String?
-    var resetPasswordSentAt: Date?
+    var resetPasswordSentAt: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -71,6 +71,6 @@ struct User: Identifiable, Codable {
         createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt)
         updatedAt = try values.decodeIfPresent(String.self, forKey: .updatedAt)
         resetPasswordToken = try values.decodeIfPresent(String.self, forKey: .resetPasswordToken)
-        resetPasswordSentAt = try values.decodeIfPresent(Date.self, forKey: .resetPasswordSentAt)
+        resetPasswordSentAt = try values.decodeIfPresent(String.self, forKey: .resetPasswordSentAt)
     }
 }

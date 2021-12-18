@@ -16,7 +16,7 @@ class ChangePasswordService: BaseService {
         self.password = password
     }
     
-    typealias ResponseType = UserModel
+    typealias ResponseType = User
     
     func method() -> Network.Method {
         return .post

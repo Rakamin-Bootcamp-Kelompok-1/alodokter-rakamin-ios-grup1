@@ -39,6 +39,9 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
     // MARK: - Prepare UI Method
     
     func prepareUI() {
+        viewModel.delegate = self
+        
+        
         // Navigation Bar Title
         self.title = "Edit Profile"
         
@@ -131,7 +134,7 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
     
     @objc func saveEdit(button: UIButton) {
         self.updateData()
-        self.navigationController?.popViewController(animated: true)
+//        self.navigationController?.popViewController(animated: true)
     }
     
 
@@ -236,7 +239,7 @@ extension EditProfileViewController: editProfileViewModelDelegate {
 
 extension EditProfileViewController {
     func updateData() {
-//        self.showParentSpinner()
+        self.showParentSpinner()
         viewModel.editProfile(fullName: fullNameField.textField.text ?? "", email: emailField.textField.text ?? "", birthDate: birthDateField.textField.text ?? "", phoneNumber: phoneNumberField.textField.text ?? "")
     }
 }

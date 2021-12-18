@@ -19,9 +19,10 @@ class HistoryBookingViewModel {
     var service = HistoryBookingService()
     var historyData = [HistoryBookingResource]()
     var meta = MetaModel(page: "1", nextPage: 0, totalPage: 1)
-    
+    let userDefaults = UserDefaults()
     func getHistory(page: String) {
         var params = ["page":"\(page)"]
+        service.userId = "\(userDefaults.value(forKey: "id") ?? "")"
         Network.requestParameters(req: service, parameters: params) { [weak self] (result) in
             switch result {
                 

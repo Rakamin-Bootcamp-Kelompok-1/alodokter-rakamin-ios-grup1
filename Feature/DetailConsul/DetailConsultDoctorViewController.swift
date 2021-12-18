@@ -82,11 +82,12 @@ class DetailConsultDoctorViewController: BaseViewController {
     func setupView() {
 //        self.educationLbl.text = doctorResource.education ?? "No available"
         self.doctorPreviewLbl.text = doctorResource.biography ?? "No Biography"
-        self.doctorImg.sd_setImage(with: URL(string: doctorResource.imagePath ?? ""))
+        self.doctorImg.sd_setImage(with: URL(string: doctorResource.imagePath ?? ""),placeholderImage:UIImage(named: "ic_dokter_umum"))
         self.specialityLbl.text = doctorResource.speciality ?? ""
         self.priceRateLbl.text = String(doctorResource.priceRate ?? 0) ?? "0"
         self.ratingLbl.text = doctorResource.star ?? "0"
         self.locationLbl.text = doctorResource.locationPractice ?? "No Available"
+        self.doctorImg.layer.cornerRadius = 8
     }
     
     func registerCell() {

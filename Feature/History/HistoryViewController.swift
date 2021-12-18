@@ -7,8 +7,9 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController {
+class HistoryViewController: BaseViewController {
 
+    @IBOutlet weak var noOrderLbl: UILabel!
     @IBOutlet weak var profileView: ProfileView!
     @IBOutlet weak var doctorCollectionView: UICollectionView!
     var page = "1"
@@ -22,6 +23,7 @@ class HistoryViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setupView()
+        
         viewModel.delegate = self
         viewModel.getHistory(page: self.page)
     }
@@ -109,6 +111,11 @@ extension HistoryViewController: UICollectionViewDelegate, UICollectionViewDataS
 extension HistoryViewController: HistoryBookingProtocol {
     func onSuccessHistory() {
         self.doctorCollectionView.reloadData()
+        if viewModel.historyData.count != 0 {
+            self.noOrderLbl.isHidden == true
+        }else {
+            self.noOrderLbl.isHidden == false
+        }
         print("sukses")
     }
     

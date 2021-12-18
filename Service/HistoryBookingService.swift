@@ -32,7 +32,7 @@ class HistoryBookingService: BaseService {
     }
     
     func setParameters() -> [String : Any]? {
-        ["user_id":"1"]
+        ["user_id":"\(userId)"]
     }
     
     func setHeaders() -> [String : String] {

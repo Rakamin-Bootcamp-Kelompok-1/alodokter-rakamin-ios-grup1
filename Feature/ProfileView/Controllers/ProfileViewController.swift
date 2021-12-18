@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileViewController: BaseViewController {
 
@@ -40,7 +41,7 @@ class ProfileViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        requestData()
+//        requestData()
     }
     
     
@@ -64,7 +65,12 @@ class ProfileViewController: BaseViewController {
             profileHeaderView.layer.shadowOffset = .init(width: 0, height: 4)
             profileHeaderView.layer.shadowRadius = 4
             
-            profileHeaderView.profileImageView.image = UIImage(systemName: "person.crop.circle.fill")
+            profileHeaderView.profileImageView.layer.borderWidth = 1
+            profileHeaderView.profileImageView.layer.masksToBounds = false
+            profileHeaderView.profileImageView.layer.borderColor = UIColor.systemGray.cgColor
+            profileHeaderView.profileImageView.layer.cornerRadius = profileHeaderView.profileImageView.frame.height / 2
+            profileHeaderView.profileImageView.clipsToBounds = true
+            profileHeaderView.profileImageView.sd_setImage(with: URL(string: userDefaults.value(forKey: "imageData") as? String ?? ""), placeholderImage: UIImage(systemName: "person.circle.fill")?.withTintColor(UIColor.init(named: "Button Blue") ?? UIColor.systemBlue))
             profileHeaderView.profileNameLabel.text = userDefaults.value(forKey: "fullName") as? String ?? "Your Name"
             profileHeaderView.profilePhoneNumberLabel.text = userDefaults.value(forKey: "phoneNumber") as? String ?? "08xxxxxxxx"
             

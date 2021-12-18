@@ -97,7 +97,6 @@
 		2FC5E44B276C3EC800BEAA5C /* PatientsChangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC5E449276C3EC800BEAA5C /* PatientsChangeViewController.xib */; };
 		2FC5E44E276C41E100BEAA5C /* PatientsChangeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC5E44C276C41E100BEAA5C /* PatientsChangeTableCell.swift */; };
 		2FC5E44F276C41E100BEAA5C /* PatientsChangeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FC5E44D276C41E100BEAA5C /* PatientsChangeTableCell.xib */; };
-		2FC5E451276C916500BEAA5C /* PatientsChangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC5E450276C916500BEAA5C /* PatientsChangeViewModel.swift */; };
 		497C2813276B025200CA01DE /* HistoryBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2812276B025200CA01DE /* HistoryBookingService.swift */; };
 		497C2815276B027B00CA01DE /* HistoryBookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2814276B027B00CA01DE /* HistoryBookingModel.swift */; };
 		497C2817276B07AD00CA01DE /* MetaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2816276B07AD00CA01DE /* MetaModel.swift */; };
@@ -859,7 +858,6 @@
 				2C706FC5276C7750001229CE /* ChangePasswordService.swift */,
 				497C2812276B025200CA01DE /* HistoryBookingService.swift */,
 				497C2829276B250D00CA01DE /* DoctorService.swift */,
-				80D4FBE9276C6949001A8DD2 /* RegisterService.swift */,
 				49F75438276CAE74001D98F6 /* SearchDoctorService.swift */,
 				49F75441276CDD12001D98F6 /* SchedulesDoctorService.swift */,
 				2CA846BA276DF26D00F492EC /* EditProfileService.swift */,
@@ -1034,7 +1032,6 @@
 				2CDE19BE2765B68200D895B9 /* HistoryViewController.xib in Resources */,
 				497C2831276B7F8A00CA01DE /* DetailConsulViewController.xib in Resources */,
 				2CDE19BD2765B68200D895B9 /* HistoryItemCell.xib in Resources */,
-				2C68A3FF27634D5F002B8997 /* SecuredTextField.xib in Resources */,
 				2FC5E447276C30E800BEAA5C /* PatientsCreateViewController.xib in Resources */,
 				2CDE19DD2765B6B400D895B9 /* ArticleAllListCollectionViewCell.xib in Resources */,
 				497C287B276BC09900CA01DE /* DetailConsultDoctorViewController.xib in Resources */,
@@ -1256,9 +1253,7 @@
 				497C282A276B250D00CA01DE /* DoctorService.swift in Sources */,
 				2CDE19C02765B68200D895B9 /* HistoryBookingViewModel.swift in Sources */,
 				497C2830276B7F8A00CA01DE /* DetailConsulViewController.swift in Sources */,
-				2C68A40527634E45002B8997 /* LargeButton.swift in Sources */,
 				2FC5E44E276C41E100BEAA5C /* PatientsChangeTableCell.swift in Sources */,
-				2CA846CD276DF34000F492EC /* LoginViewModel.swift in Sources */,
 				2CA846DA276DF34D00F492EC /* ChangePasswordViewModel.swift in Sources */,
 				497C2813276B025200CA01DE /* HistoryBookingService.swift in Sources */,
 				2C68A3C1275F623D002B8997 /* ProfileHeader.swift in Sources */,
@@ -1472,7 +1467,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QWVAEMBXMM;
+				DEVELOPMENT_TEAM = CN329Q28W4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Alodokter_bootcamp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MediKuy;
@@ -1484,7 +1479,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp";
+				PRODUCT_BUNDLE_IDENTIFIER = "koron.alodokter.ios-bootcamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1500,7 +1495,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QWVAEMBXMM;
+				DEVELOPMENT_TEAM = CN329Q28W4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Alodokter_bootcamp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MediKuy;
@@ -1512,7 +1507,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alodokter.ios-bootcamp";
+				PRODUCT_BUNDLE_IDENTIFIER = "koron.alodokter.ios-bootcamp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

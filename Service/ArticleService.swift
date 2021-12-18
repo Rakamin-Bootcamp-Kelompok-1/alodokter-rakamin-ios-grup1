@@ -8,9 +8,7 @@
 import Foundation
 
 class ArticleService: BaseService {
-    var page = 2
     var url: String = "https://medikuy.herokuapp.com/articles"
-    
     
     typealias ResponseType = ArticleData
     

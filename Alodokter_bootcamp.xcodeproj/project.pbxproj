@@ -432,6 +432,7 @@
 			children = (
 				2CA846C0276DF32900F492EC /* Controllers */,
 				2CA846C3276DF32900F492EC /* Views */,
+				2CA846BF276DF32900F492EC /* EditProfileViewModel.swift */,
 			);
 			path = EditProfile;
 			sourceTree = "<group>";
@@ -800,7 +801,6 @@
 				2CDE19AE2765B67F00D895B9 /* DetailHistory */,
 				2C68A3BD275F5985002B8997 /* ProfileView */,
 				2CA846BE276DF32900F492EC /* EditProfile */,
-				2CA846BF276DF32900F492EC /* EditProfileViewModel.swift */,
 				2CA846D0276DF34D00F492EC /* ChangePassword */,
 				2CA846D1276DF34D00F492EC /* ChangePasswordViewModel.swift */,
 			);

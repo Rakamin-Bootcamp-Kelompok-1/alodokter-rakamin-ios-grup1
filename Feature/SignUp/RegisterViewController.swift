@@ -248,7 +248,15 @@ extension RegisterViewController: RegisterViewModelProtocol {
     func onSuccess() {
         self.activityView.isHidden = true
         let alertController = UIAlertController(title: "Success" , message: "Account has been registered", preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: "OK", style: .default) { action in
+            let tabBarViewController = TabBarViewController()
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            transition.type = CATransitionType.fade
+            self.navigationController?.view.layer.add(transition, forKey: nil)
+            self.navigationController?.pushViewController(tabBarViewController, animated: false)
+        }
         alertController.addAction(alertAction)
         self.present(alertController, animated: true, completion: nil)
         self.activityView.isHidden = true

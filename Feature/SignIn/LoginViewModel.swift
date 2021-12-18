@@ -26,6 +26,7 @@ class LoginViewModel {
         var params = ["email": "\(email)", "password": "\(password)"]
         
         Alamofire.request("https://medikuy.herokuapp.com/login", method: .post, parameters: params).responseJSON { (responseJson) in
+            print("response json login adalah \(responseJson)")
             do{
                 let decoder = JSONDecoder()
                 let dataUser = try decoder.decode(UserModel.self, from: responseJson.data!)
@@ -34,14 +35,16 @@ class LoginViewModel {
                     
                 } else {
                     DispatchQueue.main.async {
+                        print("token user = \(dataUser.token)")
                         guard let token = dataUser.token else { return }
                         UserDefaults.standard.set(dataUser.user?.email, forKey: "email")
                         UserDefaults.standard.set(dataUser.user?.birthDate, forKey: "birthdate")
                         UserDefaults.standard.set(token, forKey: "token")
-                        UserDefaults.standard.set(dataUser.user?.password, forKey: "password")
+                        UserDefaults.standard.set(dataUser.user?.passwordDigest, forKey: "password")
                         UserDefaults.standard.set(dataUser.user?.gender, forKey: "gender")
                         UserDefaults.standard.set(dataUser.user?.phoneNumber, forKey: "phoneNumber")
-                        UserDefaults.standard.set(dataUser.user?.fullname, forKey: "fullName")
+                        UserDefaults.standard.set(dataUser.user?.fullName, forKey: "fullName")
+                        UserDefaults.standard.set(dataUser.user?.id, forKey: "id")
                         self.emailU = email
                         self.delegate?.onSuccess()
                         

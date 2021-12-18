@@ -110,6 +110,7 @@
 		3249DE62276E45FB007DF624 /* BoookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3249DE61276E45FB007DF624 /* BoookingViewModel.swift */; };
 		4927DF73276E074400A4078B /* SpecialityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927DF72276E074400A4078B /* SpecialityModel.swift */; };
 		4927DF75276E0F6F00A4078B /* SearchDoctorBySpecialityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4927DF74276E0F6F00A4078B /* SearchDoctorBySpecialityService.swift */; };
+		493EE78C276E5DE000AE5EE1 /* SecuredTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493EE78B276E5DE000AE5EE1 /* SecuredTextField.xib */; };
 		497C2813276B025200CA01DE /* HistoryBookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2812276B025200CA01DE /* HistoryBookingService.swift */; };
 		497C2815276B027B00CA01DE /* HistoryBookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2814276B027B00CA01DE /* HistoryBookingModel.swift */; };
 		497C2817276B07AD00CA01DE /* MetaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497C2816276B07AD00CA01DE /* MetaModel.swift */; };
@@ -231,7 +232,6 @@
 		2CA846D3276DF34D00F492EC /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		2CA846D4276DF34D00F492EC /* SecuredTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecuredTextField.swift; sourceTree = "<group>"; };
 		2CA846D5276DF34D00F492EC /* LargeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
-		2CA846D7276DF34D00F492EC /* SecuredTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecuredTextField.xib; sourceTree = "<group>"; };
 		2CA846D8276DF34D00F492EC /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		2CA846D9276DF34D00F492EC /* LargeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargeButton.xib; sourceTree = "<group>"; };
 		2CA846E1276DF62E00F492EC /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
@@ -249,8 +249,6 @@
 		2CDE19B82765B68100D895B9 /* HistoryBookingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryBookingViewModel.swift; sourceTree = "<group>"; };
 		2CDE19C22765B69D00D895B9 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		2CDE19C32765B69D00D895B9 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		2CDE19C52765B69F00D895B9 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		2CDE19C62765B69F00D895B9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2CDE19CE2765B6B400D895B9 /* ArticleAllListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleAllListTableViewCell.swift; sourceTree = "<group>"; };
 		2CDE19CF2765B6B400D895B9 /* ArticleAllListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleAllListCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CDE19D02765B6B400D895B9 /* ArticleAllListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleAllListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -299,6 +297,7 @@
 		44D1D72584417F3B8420172F /* Pods-Alodokter_bootcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alodokter_bootcamp.debug.xcconfig"; path = "Target Support Files/Pods-Alodokter_bootcamp/Pods-Alodokter_bootcamp.debug.xcconfig"; sourceTree = "<group>"; };
 		4927DF72276E074400A4078B /* SpecialityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialityModel.swift; sourceTree = "<group>"; };
 		4927DF74276E0F6F00A4078B /* SearchDoctorBySpecialityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDoctorBySpecialityService.swift; sourceTree = "<group>"; };
+		493EE78B276E5DE000AE5EE1 /* SecuredTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecuredTextField.xib; sourceTree = "<group>"; };
 		497C2812276B025200CA01DE /* HistoryBookingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBookingService.swift; sourceTree = "<group>"; };
 		497C2814276B027B00CA01DE /* HistoryBookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBookingModel.swift; sourceTree = "<group>"; };
 		497C2816276B07AD00CA01DE /* MetaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaModel.swift; sourceTree = "<group>"; };
@@ -503,8 +502,8 @@
 		2CA846D6276DF34D00F492EC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				493EE78B276E5DE000AE5EE1 /* SecuredTextField.xib */,
 				2CA846D8276DF34D00F492EC /* ChangePasswordViewController.xib */,
-				2CA846D7276DF34D00F492EC /* SecuredTextField.xib */,
 				2CA846D9276DF34D00F492EC /* LargeButton.xib */,
 			);
 			path = Views;
@@ -557,15 +556,6 @@
 				2CDE19C32765B69D00D895B9 /* RegisterViewController.swift */,
 			);
 			path = SignUp;
-			sourceTree = "<group>";
-		};
-		2CDE19C42765B69F00D895B9 /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-				2CDE19C52765B69F00D895B9 /* LoginViewController.xib */,
-				2CDE19C62765B69F00D895B9 /* LoginViewController.swift */,
-			);
-			path = SignIn;
 			sourceTree = "<group>";
 		};
 		2CDE19CB2765B6B400D895B9 /* ArticleListView */ = {
@@ -853,7 +843,6 @@
 				2CD51BD1276E0249005FDF6C /* SignIn */,
 				80613360275BCE370065B62E /* SignUp */,
 				4E97F20227488BAA00C2366D /* SplashScreen */,
-				2CDE19C42765B69F00D895B9 /* SignIn */,
 				2CDE19C12765B69D00D895B9 /* SignUp */,
 				4E97F20527488BAA00C2366D /* MainView */,
 				2CDE19CB2765B6B400D895B9 /* ArticleListView */,
@@ -1109,6 +1098,7 @@
 				2CA846E0276DF34D00F492EC /* LargeButton.xib in Resources */,
 				2CDE19DD2765B6B400D895B9 /* ArticleAllListCollectionViewCell.xib in Resources */,
 				2C68A3EC27612D96002B8997 /* Nunito-Medium.ttf in Resources */,
+				493EE78C276E5DE000AE5EE1 /* SecuredTextField.xib in Resources */,
 				497C2826276B154300CA01DE /* DoctorCollectionViewCell.xib in Resources */,
 				2C68A3EA27612D96002B8997 /* Nunito-Bold.ttf in Resources */,
 				2C68A3EE27612D96002B8997 /* Nunito-MediumItalic.ttf in Resources */,
@@ -1545,7 +1535,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CN329Q28W4;
+				DEVELOPMENT_TEAM = QWVAEMBXMM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Alodokter_bootcamp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MediKuy;
@@ -1573,7 +1563,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CN329Q28W4;
+				DEVELOPMENT_TEAM = QWVAEMBXMM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Alodokter_bootcamp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MediKuy;

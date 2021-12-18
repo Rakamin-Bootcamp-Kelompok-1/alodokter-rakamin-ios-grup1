@@ -10,11 +10,16 @@ import Foundation
 class EditProfileService: BaseService {
     
     let userDefaults = UserDefaults()
+    var email = ""
+    var birthData = ""
+    var phoneNumber = ""
+    var fullName = ""
+    var parameterp: [String:String] = [:]
     
-    typealias ResponseType = UserModel
+    typealias ResponseType = User
     
     func method() -> Network.Method {
-        return .post
+        return .patch
     }
     
     func setUrl() -> URL {
@@ -32,7 +37,7 @@ class EditProfileService: BaseService {
     
     func setParameters() -> [String : Any]? {
 //        ["user_id":"1"]
-        ["full_name": "hafied", "email": "hafied@hotmail.com", "birth_date": "05/04/2000", "phone_number": "0896542671534"]
+        parameterp
     }
     
     func setHeaders() -> [String : String] {

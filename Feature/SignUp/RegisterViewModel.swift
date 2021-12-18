@@ -28,7 +28,18 @@ class RegisterViewModel {
                 let decoder = JSONDecoder()
                 let dataUser = try decoder.decode(UserModel.self, from: responseJson.data!)
                 if dataUser.user == nil {
-                    self.delegate?.onRegistered()
+                    DispatchQueue.main.async {
+                        guard let token = dataUser.token else { return }
+                        UserDefaults.standard.set(dataUser.user?.email, forKey: "email")
+                        UserDefaults.standard.set(dataUser.user?.birthDate, forKey: "birthdate")
+                        UserDefaults.standard.set(token, forKey: "token")
+                        UserDefaults.standard.set(dataUser.user?.password, forKey: "password")
+                        UserDefaults.standard.set(dataUser.user?.gender, forKey: "gender")
+                        UserDefaults.standard.set(dataUser.user?.phoneNumber, forKey: "phoneNumber")
+                        UserDefaults.standard.set(dataUser.user?.fullname, forKey: "fullName")
+                        
+                        self.delegate?.onRegistered()
+                    }
                 } else {
                     DispatchQueue.main.async {
                         self.delegate?.onSuccess()

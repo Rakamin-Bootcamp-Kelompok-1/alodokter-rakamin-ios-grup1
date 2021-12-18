@@ -38,7 +38,7 @@ class LoginViewModel {
                         print("token user = \(dataUser.token)")
                         guard let token = dataUser.token else { return }
                         UserDefaults.standard.set(dataUser.user?.email, forKey: "email")
-                        UserDefaults.standard.set(dataUser.user?.birthDate, forKey: "birthdate")
+                        UserDefaults.standard.set(dataUser.user?.birthDate, forKey: "birthDate")
                         UserDefaults.standard.set(token, forKey: "token")
                         UserDefaults.standard.set(dataUser.user?.passwordDigest, forKey: "password")
                         UserDefaults.standard.set(dataUser.user?.gender, forKey: "gender")

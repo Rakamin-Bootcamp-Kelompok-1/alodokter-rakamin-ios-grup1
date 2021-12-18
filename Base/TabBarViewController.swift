@@ -9,6 +9,7 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
     let profileView = UIView()
+    let userDefaults = UserDefaults()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +20,17 @@ class TabBarViewController: UITabBarController {
     }
     
     func tabBarSetup() {
-        viewControllers = [
-        createTabBatItem(for: ArticleListViewController(), title: NSLocalizedString("Home", comment: ""), image: UIImage(named: "HomeIcon")!),
-        createTabBatItem(for: ConsulViewController(), title: NSLocalizedString("Consultation", comment: ""), image: UIImage(named: "DoctorIcon")!),
-        createTabBatItem(for: HistoryViewController(), title: NSLocalizedString("History", comment: ""), image: UIImage(named: "HistoryIcon")!)
-        ]
+        if userDefaults.value(forKey: "token") == nil {
+            viewControllers = [
+            createTabBatItem(for: ArticleListViewController(), title: NSLocalizedString("Home", comment: ""), image: UIImage(named: "HomeIcon")!)
+            ]
+        } else {
+            viewControllers = [
+            createTabBatItem(for: ArticleListViewController(), title: NSLocalizedString("Home", comment: ""), image: UIImage(named: "HomeIcon")!),
+            createTabBatItem(for: ConsulViewController(), title: NSLocalizedString("Consultation", comment: ""), image: UIImage(named: "DoctorIcon")!),
+            createTabBatItem(for: HistoryViewController(), title: NSLocalizedString("History", comment: ""), image: UIImage(named: "HistoryIcon")!)
+            ]
+        }
     }
     
     fileprivate func createTabBatItem(for rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {

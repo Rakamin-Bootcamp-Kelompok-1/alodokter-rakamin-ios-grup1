@@ -47,6 +47,10 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         articleSearchBar.backgroundImage = UIImage()
         profileView.userNameLabel.text = "\(userDefaults.value(forKey: "fullName") ?? "User") 👋"
         profileView.userImageButton.addTarget(self, action: #selector(presentToProfileViewController), for: .touchUpInside)
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(viewArticle(_:)))
+        tapGesture2.delegate = self
+        highlightArticleImageView.isUserInteractionEnabled = true
+        highlightArticleImageView.addGestureRecognizer(tapGesture2)
         self.isNavigationBarHidden = true
         viewModel.delegate = self
         articleSearchBar.delegate = self
@@ -57,6 +61,14 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         articleCollectionView.dataSource = self
         articleCollectionView.register(UINib(nibName: "ArticleListCell", bundle: nil), forCellWithReuseIdentifier: "ArticleListCell")
         
+    }
+    
+    @objc func viewArticle(_ sender: UIImageView) {
+        let item = 10
+        let vc = ArticleDetailViewController()
+        vc.hidesBottomBarWhenPushed = true
+        vc.articleID = item
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func requestData(){
@@ -106,7 +118,7 @@ extension ArticleListViewController: UISearchBarDelegate {
 extension ArticleListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.articleListData.count != 0 {
-            return viewModel.articleListData[0].data.count
+            return viewModel.articleListData[0].data.count - 1
         }
         
         return 0
@@ -114,9 +126,18 @@ extension ArticleListViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = articleCollectionView.dequeueReusableCell(withReuseIdentifier: "ArticleListCell", for: indexPath) as! ArticleListCell
-        cell.nameLabel.text = viewModel.articleListData[0].data[indexPath.row].article_title
-        cell.articleImageView.sd_setImage(with: URL(string: viewModel.articleListData[0].data[indexPath.row].image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))
+        cell.nameLabel.text = viewModel.articleListData[0].data[indexPath.row + 1].article_title
+        cell.articleImageView.sd_setImage(with: URL(string: viewModel.articleListData[0].data[indexPath.row + 1].image_url ?? ""), placeholderImage: UIImage(named: "article_pic_example"))
+            
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = viewModel.articleListData[0].data[indexPath.row].id ?? 1
+        let vc = ArticleDetailViewController()
+        vc.articleID = item
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

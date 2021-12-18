@@ -18,7 +18,7 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
     @IBOutlet weak var birthDateField: NormalTextField!
     @IBOutlet weak var phoneNumberField: NormalTextField!
     @IBOutlet weak var saveEditButton: LargeButton!
-    
+    let userDefaults = UserDefaults()
     
     // MARK: - Variables
     

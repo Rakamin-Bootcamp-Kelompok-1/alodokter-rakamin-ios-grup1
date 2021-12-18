@@ -25,11 +25,11 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         super.viewDidLoad()
         initArticleCollectionView()
         viewSetup()
-        requestData()
+        requestDataInitial()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        requestData()
+        requestDataSecondary()
         print("masuk sini setelah login user default \(userDefaults.value(forKey: "token") ?? "")")
         profileView.userNameLabel.text = "\(userDefaults.value(forKey: "fullName") ?? "User") 👋"
     }
@@ -70,8 +70,12 @@ class ArticleListViewController: BaseViewController, UIGestureRecognizerDelegate
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func requestData() {
+    func requestDataInitial() {
         self.showParentSpinner()
+        viewModel.getArticleListData()
+    }
+    
+    func requestDataSecondary() {
         viewModel.getArticleListData()
     }
     

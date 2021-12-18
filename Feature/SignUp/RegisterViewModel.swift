@@ -33,9 +33,11 @@ class RegisterViewModel {
                         UserDefaults.standard.set(dataUser.user?.email, forKey: "email")
                         UserDefaults.standard.set(dataUser.user?.birthDate, forKey: "birthDate")
                         UserDefaults.standard.set(token, forKey: "token")
+                        UserDefaults.standard.set(dataUser.user?.passwordDigest, forKey: "password")
                         UserDefaults.standard.set(dataUser.user?.gender, forKey: "gender")
                         UserDefaults.standard.set(dataUser.user?.phoneNumber, forKey: "phoneNumber")
                         UserDefaults.standard.set(dataUser.user?.fullName, forKey: "fullName")
+                        UserDefaults.standard.set(dataUser.user?.id, forKey: "id")
                         UserDefaults.standard.set(dataUser.user?.imageData, forKey: "imageData")
                         
                         self.delegate?.onRegistered()

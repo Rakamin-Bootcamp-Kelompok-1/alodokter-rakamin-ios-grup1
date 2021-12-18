@@ -14,7 +14,7 @@ class ProfileViewController: BaseViewController {
     
     @IBOutlet weak var profileHeaderView: ProfileHeader!
     @IBOutlet weak var profileCardView1: ProfileCard!
-    @IBOutlet weak var profileCardView2: ProfileCard!
+//    @IBOutlet weak var profileCardView2: ProfileCard!
     @IBOutlet weak var signOutButton: SignOutButton!
     
     
@@ -38,7 +38,7 @@ class ProfileViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        requestData()
+        requestData()
     }
     
     
@@ -89,6 +89,8 @@ class ProfileViewController: BaseViewController {
             profileCardView1.profileCardRow2.buttonOutlet.addTarget(self, action: #selector(pushToChangePasswordView), for: .touchUpInside)
             
             
+            // Commented until further update
+            /*
             // Profile Card 2
             profileCardView2.headerLabel.text = "About MediKuy"
             
@@ -107,6 +109,7 @@ class ProfileViewController: BaseViewController {
             
             profileCardView2.profileCardRow2.iconImageView.image = UIImage(systemName: "phone")
             profileCardView2.profileCardRow2.titleLabel.text = "Contact Us"
+            */
             
             
             // Sign Out Button

@@ -23,6 +23,7 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
     // MARK: - Variables
     
     var imagePicker: ImagePicker!
+    var viewModel = EditProfileViewModel()
     
     
     // MARK: - View Life Cycle Methods
@@ -116,6 +117,8 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
             saveEditButton.buttonOutlet.isUserInteractionEnabled = false
             saveEditButton.buttonOutlet.backgroundColor = UIColor(named: "Disabled Button")!
         }
+        
+        saveEditButton.buttonOutlet.addTarget(self, action: #selector(saveEdit), for: .touchUpInside)
     }
     
     
@@ -124,6 +127,11 @@ class EditProfileViewController: BaseViewController, UINavigationControllerDeleg
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         self.imagePicker.present(from: tappedImage)
+    }
+    
+    @objc func saveEdit(button: UIButton) {
+        self.updateData()
+        self.navigationController?.popViewController(animated: true)
     }
     
 
@@ -196,5 +204,39 @@ extension EditProfileViewController: UITextFieldDelegate {
     
     @objc func tap(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+}
+
+
+// MARK: - Profile View Model Delegate
+
+extension EditProfileViewController: editProfileViewModelDelegate {
+    func onSuccessPatch() {
+        self.removeSpinner()
+        let alertController = UIAlertController(title: "Success" , message: "Profile Updated!", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default) { action in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+    func onErrorPatch() {
+        self.removeSpinner()
+        let alertController = UIAlertController(title: "Error" , message: "Edit Profile Failed!", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+
+
+// MARK: - Methods
+
+extension EditProfileViewController {
+    func updateData() {
+//        self.showParentSpinner()
+        viewModel.editProfile(fullName: fullNameField.textField.text ?? "", email: emailField.textField.text ?? "", birthDate: birthDateField.textField.text ?? "", phoneNumber: phoneNumberField.textField.text ?? "")
     }
 }

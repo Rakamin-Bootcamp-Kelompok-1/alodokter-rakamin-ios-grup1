@@ -95,6 +95,7 @@ class LoginViewController: UIViewController {
     @IBAction func actionBtnForgot(_ sender: Any) {
     }
 
+<<<<<<< Updated upstream
     func loginApiAF(email: String, password: String) {
         activityIndicator.isHidden = false
         btnLogin.isHidden = true
@@ -143,6 +144,24 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+=======
+extension LoginViewController: LoginViewModelProtocol{
+    func onSuccess() {
+        self.emailTxtField.text = ""
+        self.passwordTxtField.text = ""
+        self.activityIndicator.isHidden = true
+        self.btnLogin.isHidden = false
+        print("Login Success: \(self.viewModel.emailU)")
+        self.dismiss(animated: true, completion: nil)
+    }
+    func onFailure() {
+        self.activityIndicator.isHidden = true
+        self.btnLogin.isHidden = false
+        let alertController = UIAlertController(title: "Login Failed" , message: "Email/Password is wrong", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+>>>>>>> Stashed changes
     }
 
 }

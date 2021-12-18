@@ -479,7 +479,6 @@
 			children = (
 				2CA846D2276DF34D00F492EC /* Controllers */,
 				2CA846D6276DF34D00F492EC /* Views */,
-				2CA846D1276DF34D00F492EC /* ChangePasswordViewModel.swift */,
 			);
 			path = ChangePassword;
 			sourceTree = "<group>";
@@ -854,6 +853,7 @@
 				2C68A3BD275F5985002B8997 /* ProfileView */,
 				2CA846BE276DF32900F492EC /* EditProfile */,
 				2CA846D0276DF34D00F492EC /* ChangePassword */,
+				2CA846D1276DF34D00F492EC /* ChangePasswordViewModel.swift */,
 			);
 			path = Feature;
 			sourceTree = SOURCE_ROOT;

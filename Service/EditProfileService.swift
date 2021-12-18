@@ -11,7 +11,7 @@ class EditProfileService: BaseService {
     
     let userDefaults = UserDefaults()
     
-    typealias ResponseType = User
+    typealias ResponseType = UserModel
     
     func method() -> Network.Method {
         return .post

@@ -14,7 +14,7 @@ protocol changePasswordViewModelDelegate {
 }
 
 class ChangePasswordViewModel {
-    var userData: User?
+    var userData: UserModel?
     var delegate: changePasswordViewModelDelegate?
     let userDefaults = UserDefaults()
     
@@ -26,12 +26,11 @@ class ChangePasswordViewModel {
                 DispatchQueue.main.async {
                     self.userData = successGetData
                     self.delegate?.onSuccessRequest()
-                    print("password = \(password)")
+                    print(password)
                 }
                 
             case .failure(let error):
                 DispatchQueue.main.async {
-                    print(error)
                     self.delegate?.onErrorRequest()
                 }
             }

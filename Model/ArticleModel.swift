@@ -23,7 +23,7 @@ struct ArticleModel: Codable {
         case id = "id"
         case article_category = "article_category"
         case article_title = "article_title"
-        case image_url = "image_url"
+        case image_url = "image_data"
         case content_desc = "content_desc"
     }
     

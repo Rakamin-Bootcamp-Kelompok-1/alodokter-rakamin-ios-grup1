@@ -4,7 +4,6 @@
 //
 //  Created by hafied Khalifatul ash.shiddiqi on 07/12/21.
 //
-
 import UIKit
 import Alamofire
 import SwiftyJSON

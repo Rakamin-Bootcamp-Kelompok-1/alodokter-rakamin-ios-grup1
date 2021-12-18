@@ -44,4 +44,18 @@ class ArticleViewModel {
             }
         }
     }
+    
+    func getArticleListDataWithUrlandBody(customUrl: URL, body: [String: Any]) {
+        Network.requestWithURLandBody(req: articleService, costumURL: customUrl, body: body) { result in
+            switch result {
+            case .success(let successGetData):
+                self.articleListData.append(successGetData)
+                self.articleListData.append(successGetData)
+                self.articleListData.append(successGetData)
+                self.delegate?.onSuccessRequest()
+            case .failure(let error):
+                self.delegate?.onErrorRequest()
+            }
+        }
+    }
 }

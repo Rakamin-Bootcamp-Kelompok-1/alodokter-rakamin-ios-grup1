@@ -52,7 +52,7 @@ class DetailHistoryViewController: BaseViewController {
         self.messagePatient.text = dataHistory.message ?? ""
         self.doctorName.text = dataHistory.doctor?.doctorName ?? ""
         self.specialityLbl.text = dataHistory.doctor?.speciality ?? ""
-        self.doctorImg.sd_setImage(with: URL(string: dataHistory.doctor?.imagePath ?? ""))
+        self.doctorImg.sd_setImage(with: URL(string: dataHistory.doctor?.imagePath ?? ""),placeholderImage:UIImage(named: "ic_dokter_umum"))
         self.totalPriceLbl.text = String(dataHistory.totalPrice ?? 0) ?? "0"
         self.paymentLbl.text = dataHistory.paymentMethod ?? ""
         if dataHistory.patient != nil {

@@ -17,6 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController" customModule="Alodokter_bootcamp" customModuleProvider="target">
             <connections>
                 <outlet property="doctorCollectionView" destination="lmP-6o-SLC" id="FvB-7q-QUE"/>
+                <outlet property="noOrderLbl" destination="V2K-eS-Qtg" id="vQu-N1-0gS"/>
                 <outlet property="profileView" destination="BDa-Q3-NC7" id="K4g-w4-3BC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -49,6 +50,12 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No order history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2K-eS-Qtg">
+                    <rect key="frame" x="145" y="437.5" width="124" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,7 +64,9 @@
                 <constraint firstItem="BDa-Q3-NC7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Bc9-pn-c4e"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lmP-6o-SLC" secondAttribute="bottom" constant="22" id="Ggc-Sm-1zJ"/>
                 <constraint firstItem="v73-Ez-OZ7" firstAttribute="top" secondItem="BDa-Q3-NC7" secondAttribute="bottom" id="J1H-jp-c5P"/>
+                <constraint firstItem="V2K-eS-Qtg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Jd3-f7-Lh3"/>
                 <constraint firstItem="BDa-Q3-NC7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Npd-MY-8Pn"/>
+                <constraint firstItem="V2K-eS-Qtg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="U3D-Y1-EmO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v73-Ez-OZ7" secondAttribute="trailing" constant="46" id="ffF-7X-LsG"/>
                 <constraint firstItem="v73-Ez-OZ7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="fmQ-ru-m25"/>
                 <constraint firstAttribute="trailing" secondItem="BDa-Q3-NC7" secondAttribute="trailing" id="h6V-oB-YII"/>

@@ -21,6 +21,7 @@ class DetailConsulViewController: BaseViewController {
         backgroundBio.layer.shadowOpacity = 0.3
         backgroundBio.layer.shadowOffset = CGSize.zero
         backgroundBio.layer.shadowRadius = 6
+        
 //        backgroundBio.layer.shadowColor = UIColor.black.cgColor
 //        backgroundBio.layer.shadowOpacity = 0.2
 //        backgroundBio.layer.shadowOffset = .zero

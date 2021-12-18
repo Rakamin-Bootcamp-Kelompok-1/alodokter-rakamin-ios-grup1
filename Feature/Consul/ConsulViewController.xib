@@ -58,14 +58,8 @@
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                 </collectionView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Doctor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqk-Us-uUG">
-                                    <rect key="frame" x="8" y="157" width="398" height="17"/>
-                                    <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="12"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GDH-Ul-U9s" userLabel="ListDoctor">
-                                    <rect key="frame" x="8" y="182" width="398" height="586"/>
+                                    <rect key="frame" x="8" y="200" width="398" height="568"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9nQ-Q9-RPX">
                                         <size key="itemSize" width="316" height="95"/>
@@ -74,6 +68,12 @@
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                 </collectionView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Doctor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqk-Us-uUG">
+                                    <rect key="frame" x="8" y="165" width="398" height="17"/>
+                                    <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -87,9 +87,9 @@
                                 <constraint firstItem="xqk-Us-uUG" firstAttribute="leading" secondItem="WI3-QN-4F2" secondAttribute="leading" constant="8" id="h7N-06-iuQ"/>
                                 <constraint firstItem="qnq-g6-ihm" firstAttribute="leading" secondItem="WI3-QN-4F2" secondAttribute="leading" id="kGT-8j-U4n"/>
                                 <constraint firstItem="zc7-ud-w9X" firstAttribute="leading" secondItem="WI3-QN-4F2" secondAttribute="leading" constant="8" id="kOf-nS-Wie"/>
-                                <constraint firstItem="GDH-Ul-U9s" firstAttribute="top" secondItem="xqk-Us-uUG" secondAttribute="bottom" constant="8" symbolic="YES" id="qgp-ML-PCs"/>
+                                <constraint firstItem="GDH-Ul-U9s" firstAttribute="top" secondItem="xqk-Us-uUG" secondAttribute="bottom" constant="18" id="qgp-ML-PCs"/>
                                 <constraint firstItem="qnq-g6-ihm" firstAttribute="top" secondItem="WI3-QN-4F2" secondAttribute="top" id="tOp-eN-4hH"/>
-                                <constraint firstItem="xqk-Us-uUG" firstAttribute="top" secondItem="zc7-ud-w9X" secondAttribute="bottom" constant="8" id="xtE-2H-JLo"/>
+                                <constraint firstItem="xqk-Us-uUG" firstAttribute="top" secondItem="zc7-ud-w9X" secondAttribute="bottom" constant="16" id="xtE-2H-JLo"/>
                             </constraints>
                         </view>
                     </subviews>

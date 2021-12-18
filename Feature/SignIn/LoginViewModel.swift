@@ -45,6 +45,7 @@ class LoginViewModel {
                         UserDefaults.standard.set(dataUser.user?.phoneNumber, forKey: "phoneNumber")
                         UserDefaults.standard.set(dataUser.user?.fullName, forKey: "fullName")
                         UserDefaults.standard.set(dataUser.user?.id, forKey: "id")
+                        UserDefaults.standard.set(dataUser.user?.imageData, forKey: "imageData")
                         self.emailU = email
                         self.delegate?.onSuccess()
                         

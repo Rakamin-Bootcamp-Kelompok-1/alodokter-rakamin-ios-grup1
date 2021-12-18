@@ -10,6 +10,7 @@ import SDWebImage
 
 class ProfileView: UIView {
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userImageButton: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var greetLabel: UILabel!
@@ -31,12 +32,20 @@ class ProfileView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
         userImageButton.setTitle("", for: .normal)
+        
+        userImageView.layer.borderWidth = 1
+        userImageView.layer.masksToBounds = false
+        userImageView.layer.borderColor = UIColor.systemGray.cgColor
+        userImageView.layer.cornerRadius = userImageView.frame.height / 2
+        userImageView.clipsToBounds = true
         if #available(iOS 13.0, *) {
-            userImageButton.sd_setImage(with: URL(string: userDefaults.value(forKey: "image_data") as? String ?? ""), for: .normal, placeholderImage: UIImage(systemName: "person.circle.fill"))
+            userImageView.sd_setImage(with: URL(string: userDefaults.value(forKey: "imageData") as? String ?? ""), placeholderImage: UIImage(systemName: "person.circle.fill"))
         } else {
             // Fallback on earlier versions
         }
+        
         userNameLabel.text = "\(userDefaults.value(forKey: "fullName") ?? "User") 👋"
     }
     

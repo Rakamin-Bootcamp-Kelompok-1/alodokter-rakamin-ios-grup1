@@ -25,12 +25,19 @@ class ConsulViewController: BaseViewController {
         specialistCollectionView.dataSource = self
         doctorCollectionvView.delegate = self
         doctorCollectionvView.dataSource = self
+        
         viewModel.delegate = self
+        
         viewModel.getDoctorList(page: pageData)
+        
+        profileView.userImageButton.addTarget(self, action: #selector(presentToProfileViewController), for: .touchUpInside)
+        
         self.showParentSpinner()
+        
         searchDoctor.delegate = self
-//        self.definesPresentationContext = true
+        
         registerCell()
+        
         navigationItem.title = ""
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barTintColor = .white
@@ -39,6 +46,24 @@ class ConsulViewController: BaseViewController {
     func registerCell() {
         specialistCollectionView.register(UINib(nibName: SpecialistCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: SpecialistCollectionViewCell.identifier)
         doctorCollectionvView.register(UINib(nibName: DoctorCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: DoctorCollectionViewCell.identifier)
+    }
+    
+    @objc func presentToProfileViewController(button: UIButton) {
+        let userDefaultLogin = UserDefaults()
+        print("token =\(userDefaults.value(forKey: "token") ?? "")")
+        if userDefaultLogin.value(forKey: "token") == nil {
+            print("masuk token nil")
+            let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+            let navController = UINavigationController(rootViewController: vc)
+            navController.modalPresentationStyle = .fullScreen
+            self.present(navController, animated: true, completion: nil)
+        } else {
+            print("masuk token tidak nil")
+            let vc = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+            let navController = UINavigationController(rootViewController: vc)
+            navController.modalPresentationStyle = .fullScreen
+            self.present(navController, animated: true, completion: nil)
+        }
     }
 
 }

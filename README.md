@@ -146,7 +146,7 @@
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Creator
-MediKuy iOS app was developed by:
+MediKuy iOS app is developed by:
 * [Rayhan Martiza Faluda](https://github.com/rayhanfaluda)
 * [Jeremy Endratno](https://github.com/jeremyendratno)
 * [Ricky Austin](https://github.com/RickyAS)

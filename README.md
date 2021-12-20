@@ -68,7 +68,7 @@
 
 * Xcode version 13.0
 * Swift version 5.0
-* Minimum iOS 12.1
+* iOS 13.0
 
 ### Installation
 
